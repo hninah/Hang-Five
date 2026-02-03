@@ -119,4 +119,10 @@ public class Player : MonoBehaviour
         justTurned = true;    
     }
 
+    // added so ScoreManager can get the player speed
+    public float GetSpeed()
+    {
+        return Mathf.Abs(playerVelocity.y);
+    }
+
 }
