@@ -98,9 +98,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 819eb1a535d3a2e45b8e9029f04bfa48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scrollSpeed: 8
-  frequency: 5
-  amplitude: 0.5
+  scrollSpeed: 3
+  frequency: 2
+  amplitude: 0.01
 --- !u!61 &7751753393558367515
 BoxCollider2D:
   m_ObjectHideFlags: 0
