@@ -1,12 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
+using TMPro;
 
 public class ScoreManager : MonoBehaviour
 {
     public static ScoreManager Instance;
-    public Text scoreText;
+    public TMP_Text scoreText;
     public Player player;
 
     public float score = 0f;
