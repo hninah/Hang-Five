@@ -1,0 +1,52 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1e73c5106fe4f24f8c623b663cb8311, type: 3}
+  m_Name: Test2 Cutscene Info
+  m_EditorClassIdentifier: 
+  speakerSprites:
+  - {fileID: 5146612676036680158, guid: 337dc14b4c251b345bc534a6e8df01db, type: 3}
+  - {fileID: 3017925185602581589, guid: bb8f35504d0d42343b3cdb04faaa9d15, type: 3}
+  sceneStills:
+  - {fileID: 3666724916130892037, guid: fc584d329b77b9545b9c9c8bb829e553, type: 3}
+  directions:
+  - leftSpeaker: Archibald
+    rightSpeaker: Herbert
+    isLeftSpeaking: 0
+    isRightSpeaking: 1
+    leftSpeakerIdx: 0
+    rightSpeakerIdx: 0
+    imgIdx: 0
+    dialogue: And hast thou slain the Jabberwock?
+  - leftSpeaker: Archibald
+    rightSpeaker: Herbert
+    isLeftSpeaking: 0
+    isRightSpeaking: 1
+    leftSpeakerIdx: 0
+    rightSpeakerIdx: 1
+    imgIdx: 0
+    dialogue: Come to my arms, my beamish boy!
+  - leftSpeaker: Archibald
+    rightSpeaker: Herbert
+    isLeftSpeaking: 0
+    isRightSpeaking: 1
+    leftSpeakerIdx: 0
+    rightSpeakerIdx: 1
+    imgIdx: 0
+    dialogue: Oh frabjous day! Callooh! Callay!
+  - leftSpeaker: Archibald
+    rightSpeaker: Herbert
+    isLeftSpeaking: 1
+    isRightSpeaking: 0
+    leftSpeakerIdx: 0
+    rightSpeakerIdx: 1
+    imgIdx: 0
+    dialogue: Come on, Dad. Be cool.
