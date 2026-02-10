@@ -133,6 +133,7 @@ GameObject:
   - component: {fileID: 3175860}
   - component: {fileID: 3175859}
   - component: {fileID: 3175858}
+  - component: {fileID: 3175861}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -150,7 +151,7 @@ Animator:
   m_GameObject: {fileID: 3175857}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: ff44b79a55a34654ca5a8ccdc61c255f, type: 2}
+  m_Controller: {fileID: 9100000, guid: 9a01660239485bd45ac84e6dbe99f3c3, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -202,7 +203,7 @@ SpriteRenderer:
   m_SortingLayerID: 456014833
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 9932a9b1130b2e648a5c433109744c7e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 83b037c45f96fd049be98d03fe98a5b0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -228,6 +229,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3175861
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3175857}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b2d8ce613ccd3c4c8010f7d1ae3290b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &142016019
 GameObject:
   m_ObjectHideFlags: 0
@@ -1083,6 +1096,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bdabb6cabe0dc38419c5f2ca9306be9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  menuAnimator: {fileID: 3175858}
 --- !u!1 &2093633530
 GameObject:
   m_ObjectHideFlags: 0
@@ -1168,7 +1182,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1773565945}
         m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
-        m_MethodName: PlayGame
+        m_MethodName: OnStartPressed
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
