@@ -22,17 +22,17 @@ public class CutsceneController : MonoBehaviour
     //background image
     [SerializeField] [HideInInspector] Image backgroundImage;
 
-    //track which dialogue direction we're on
+    //track which dialogue direction (from the CutsceneInfo) we're on
     private int currIndex;
     //track whether we're done the cutscene
     private bool cutsceneEnded;
 
     //cache lengths of the lists for convenience
-    private int dirCount;
-    private int speakerCount;
-    private int stillCount;
+    private int dirCount; //length of the cutscene directions list
+    private int speakerCount; //length of the speaker sprites list
+    private int stillCount; //length of the background image sprites list
 
-    //store greyed-out colour and default unfaded
+    //store greyed-out colour and default unfaded colour
     Color32 fadedColour = new Color32(65, 61, 65, 255); //grey
     Color32 unfadedColour = new Color32(255, 255, 255, 255); //white
 
@@ -49,7 +49,8 @@ public class CutsceneController : MonoBehaviour
         if (dirCount > 0){
             dialogueText.text = sceneInfo.directions[0].dialogue;
 
-            //set up speaker names on their sides
+            //set up speaker names on each side
+            //this shows up blank if there's no speaker on that side
             leftNameText.text = sceneInfo.directions[0].leftSpeaker;
             rightNameText.text = sceneInfo.directions[0].rightSpeaker;
         }
@@ -114,34 +115,32 @@ public class CutsceneController : MonoBehaviour
             //update speaker and background displays
             updateSpeakerDisplay();
             updateBackgroundDisplay();
-            
         }
-        //otherwise end dialogue
-        else{
+
+        //modify instructions if this is the last dialogue
+        if (currIndex == (dirCount - 1)){
+
+            instructionsText.text = "Press Space to return to gameplay";
             endCutscene();
         }
     }
 
 
     void endCutscene(){
+
         cutsceneEnded = true;
-
-        //hide the speakers
-        rightImage.color = fadedColour;
-        rightNameText.enabled = false;
-        leftImage.color = fadedColour;
-        leftNameText.enabled = false;
-        //hide the instructions text
-        instructionsText.enabled = false;
-
-        //show instruction text
-        dialogueText.text = "[Press Space to move to next scene]";
+        /// any other special things for the last line of 
+        //  dialogue go here ///
     }
 
 
     void updateSpeakerDisplay(){
+        
+        //change the speaker sprites and names if needed
+        updateSpeakerInfo();
+
         //update left speaker
-        //unfaded sprite and name showing for speaker character
+        //have unfaded sprite and name showing for speaker character
         if ( sceneInfo.directions[currIndex].isLeftSpeaking ){
             leftImage.color = unfadedColour;
             leftNameText.enabled = true;
@@ -153,7 +152,7 @@ public class CutsceneController : MonoBehaviour
         }
 
         //update right speaker
-        //unfaded sprite and name showing for speaker character
+        //have unfaded sprite and name showing for speaker character
         if ( sceneInfo.directions[currIndex].isRightSpeaking ){
             rightImage.color = unfadedColour;
             rightNameText.enabled = true;
@@ -166,11 +165,35 @@ public class CutsceneController : MonoBehaviour
     }   
 
 
+    void updateSpeakerInfo(){
+        //change the speaker sprites if needed
+        //get speaker sprite indices from the current directions
+        int leftIndex = sceneInfo.directions[currIndex].leftSpeakerIdx;
+        int rightIndex = sceneInfo.directions[currIndex].rightSpeakerIdx;
+
+        //update left speaker sprite
+        if ( speakerCount > 0 && leftIndex < speakerCount){
+            //update left sprite if index is valid
+            leftImage.sprite = sceneInfo.speakerSprites[ leftIndex ];
+        }
+        //update right speaker sprite
+        if ( speakerCount > 0 && rightIndex < speakerCount){
+            //update right sprite if index is valid
+            rightImage.sprite = sceneInfo.speakerSprites[ rightIndex ];
+        }
+
+        //update speaker names in case the sprite changed
+        leftNameText.text = sceneInfo.directions[currIndex].leftSpeaker;
+        rightNameText.text = sceneInfo.directions[currIndex].rightSpeaker;
+    }
+
+
     void updateBackgroundDisplay(){
+        //get scene still index from the current directions
+        int backgroundIndex = sceneInfo.directions[currIndex].imgIdx;
+
         //change background scene still
-        if ( stillCount > 0){
-            //get scene still index from the current directions
-            int backgroundIndex = sceneInfo.directions[currIndex].imgIdx;
+        if ( stillCount > 0 && backgroundIndex < stillCount){
             //update background sprite
             backgroundImage.sprite = sceneInfo.sceneStills[ backgroundIndex ];
         }

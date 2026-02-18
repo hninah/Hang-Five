@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: Test2 Cutscene Info
   m_EditorClassIdentifier: 
   speakerSprites:
-  - {fileID: 5146612676036680158, guid: 337dc14b4c251b345bc534a6e8df01db, type: 3}
-  - {fileID: 3017925185602581589, guid: bb8f35504d0d42343b3cdb04faaa9d15, type: 3}
+  - {fileID: 0}
+  - {fileID: 0}
   sceneStills:
-  - {fileID: 3666724916130892037, guid: fc584d329b77b9545b9c9c8bb829e553, type: 3}
+  - {fileID: 0}
   directions:
   - leftSpeaker: Archibald
     rightSpeaker: Herbert
