@@ -65,6 +65,9 @@ public class Player : MonoBehaviour
     // Internal rotation variables
     private float rotation = 0.0f;
 
+    private static Player _instance;
+    public static Player Instance { get { return _instance; } }
+
     // State Control
     [Space(20)]
     [Header("State Control Variables")]
@@ -73,6 +76,12 @@ public class Player : MonoBehaviour
 
     void Awake()
     {
+        if (_instance != null)
+        {
+            print("Player with name: " + gameObject.name + " is being set as the player singleton when " + _instance.gameObject.name + " was previously assigned.");
+        }
+        _instance = this;
+
         state = PlayerState.SURFING;
         playerInput = new PlayerInput();
         playerVelocity = startingVelocity;
@@ -110,7 +119,7 @@ public class Player : MonoBehaviour
                 // above the top of the wave, but I'm not sure what I want to do with this yet.
                 if (transform.position.y >= 3.0f && flipImmunityTimer <= 0.0f && surfDirection > 0)
                 {
-                    state = PlayerState.FLIPPING;
+                    state = PlayerState.CRASHING;
                 }
 
                 break;
@@ -143,6 +152,11 @@ public class Player : MonoBehaviour
                 break;
         }
 
+    }
+
+    void OnTriggerEnter2D()
+    {
+        state = PlayerState.CRASHING;
     }
 
     // OLD VERSION: REMAINS IN CODE FOR COMPARISON
@@ -207,9 +221,7 @@ public class Player : MonoBehaviour
 
     void doNeutral()
     {
-        surfDirection = Vector2.up.y;  
-<<<<<<< HEAD
-=======
+        surfDirection = Vector2.up.y;
     }
 
     void updateFlipRotation()

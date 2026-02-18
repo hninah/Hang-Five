@@ -16,12 +16,21 @@ public class SineWaveState : State
 
 
     //update for this state
-    public override void stateUpdate(Obstacle ob){
- 
+    public override State stateUpdate(Obstacle ob){
+
+        ob.transform.position += Vector3.left * ob.scrollSpeed * Time.deltaTime;
+
         //add wave offset to position
         Vector3 waveOffset = Vector3.up * Mathf.Sin(Time.time * frequency) * amplitude;
         ob.transform.position = ob.transform.position + waveOffset;
 
+        if (ob.transform.position.x < 0.0f)
+        {
+            onExitState();
+            return new StationaryState();
+        }
+
+        return this;
     }
 
 

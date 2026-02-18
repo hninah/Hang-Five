@@ -13,6 +13,11 @@ public class SurfCamera : MonoBehaviour
     [Tooltip("Where the camera should normally be during gameplay.")]
     public Vector3 cameraIdlePosition;
 
+    void Start()
+    {
+        cameraIdlePosition = transform.position;
+    }
+
     // Update is called once per frame
     void Update()
     {

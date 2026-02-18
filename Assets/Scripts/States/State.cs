@@ -16,11 +16,14 @@ public class State
     }
 
     //default: do nothing
-    public virtual void stateUpdate(Obstacle ob){ }
+    public virtual State stateUpdate(Obstacle ob){
+        return this;
+    }
 
     public virtual void onEnterState(Obstacle ob){}
     public virtual void onEnterState(){}
 
     public virtual void onExitState(Obstacle ob){}
     public virtual void onExitState(){}
+
 }

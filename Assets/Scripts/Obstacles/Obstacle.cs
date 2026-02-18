@@ -6,6 +6,9 @@ public class Obstacle : MonoBehaviour
 {
     //basic obstacle variables
     public float scrollSpeed = 8f;
+    public float maxYBound = 0.0f;
+    public float minYBound = 0.0f;
+    public float deathBoundX = -12.0f;
 
     private string obsName;
     public string Name { get{ return obsName; } }
@@ -25,11 +28,13 @@ public class Obstacle : MonoBehaviour
 
     //update
     public void Update(){
-        scrollMotion();
-        activeState.stateUpdate(this);
-        nextState();
-    }
+        activeState = activeState.stateUpdate(this);
 
+        if (activeState.Name == "DeathState")
+        {
+            Destroy(gameObject);
+        }
+    }
 
     //move obstacle left across the screen
     public void scrollMotion(){
@@ -61,4 +66,10 @@ public class Obstacle : MonoBehaviour
         return activeState;
     }
 
+    // For dynamically setting the boundaries an obstacle should never move out of
+    public void setYBounds(float minY, float maxY)
+    {
+        minYBound = minY;
+        maxYBound = maxY;
+    }
 }
