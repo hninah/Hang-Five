@@ -759,7 +759,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b1b5a1206347a04c96a773f3be54d34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obstaclePrefab: {fileID: 3903315807331982911, guid: efb67991780983d47958e31c48712428, type: 3}
+  obstaclePrefab: {fileID: 4358317340853334762, guid: e114de55a2df7c14b8ed46b54c498003, type: 3}
   laneAnchors:
   - {fileID: 1739296097}
   - {fileID: 1794619194}
@@ -924,6 +924,10 @@ PrefabInstance:
     - target: {fileID: 3903315807331982911, guid: efb67991780983d47958e31c48712428, type: 3}
       propertyPath: m_Name
       value: Triangle
+      objectReference: {fileID: 0}
+    - target: {fileID: 3903315807331982911, guid: efb67991780983d47958e31c48712428, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7876623021512364614, guid: efb67991780983d47958e31c48712428, type: 3}
       propertyPath: m_LocalPosition.x

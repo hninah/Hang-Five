@@ -208,6 +208,8 @@ public class Player : MonoBehaviour
     void doNeutral()
     {
         surfDirection = Vector2.up.y;  
+<<<<<<< HEAD
+=======
     }
 
     void updateFlipRotation()
@@ -240,5 +242,10 @@ public class Player : MonoBehaviour
         }
 
         transform.position += playerVelocity * flipDirection * Time.deltaTime;
+    }
+    // added so ScoreManager can get the player speed
+    public float GetSpeed()
+    {
+        return Mathf.Abs(playerVelocity.y);
     }
 }
