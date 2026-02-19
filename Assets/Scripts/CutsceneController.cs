@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.InputSystem;
 
 public class CutsceneController : MonoBehaviour
 {
@@ -16,16 +17,15 @@ public class CutsceneController : MonoBehaviour
     [SerializeField] [HideInInspector] TextMeshProUGUI instructionsText;
 
     //UI image elements for this cutscene
-    //  (fill with sprites from sceneInfo.directions)
+    //  (fill with sprites from sceneInfo.speakerSprites)
     [SerializeField] [HideInInspector] Image leftImage;
     [SerializeField] [HideInInspector] Image rightImage;
     //background image
+    //  (fill with sprites from sceneInfo.sceneStills)
     [SerializeField] [HideInInspector] Image backgroundImage;
 
     //track which dialogue direction (from the CutsceneInfo) we're on
     private int currIndex;
-    //track whether we're done the cutscene
-    private bool cutsceneEnded;
 
     //cache lengths of the lists for convenience
     private int dirCount; //length of the cutscene directions list
@@ -36,69 +36,46 @@ public class CutsceneController : MonoBehaviour
     Color32 fadedColour = new Color32(65, 61, 65, 255); //grey
     Color32 unfadedColour = new Color32(255, 255, 255, 255); //white
 
+    //input handlers
+    private PlayerInput cutsceneInput;
+    private InputAction advance;
 
-    void Start(){
-        //start at first direction
-        currIndex = 0;
+
+    //set up the input and first line
+    void Awake(){
+       //start the cutscene input
+        cutsceneInput = new PlayerInput();
+
         //get lengths of lists
         dirCount = sceneInfo.directions.Count;
         speakerCount = sceneInfo.speakerSprites.Count;
         stillCount = sceneInfo.sceneStills.Count;
 
-        //start dialogue text on the first element
+        //start at first line of dialogue
+        currIndex = 0;
         if (dirCount > 0){
-            dialogueText.text = sceneInfo.directions[0].dialogue;
-
-            //set up speaker names on each side
-            //this shows up blank if there's no speaker on that side
-            leftNameText.text = sceneInfo.directions[0].leftSpeaker;
-            rightNameText.text = sceneInfo.directions[0].rightSpeaker;
-        }
-
-        //get indices for the speaker images from current directions
-        int leftSpriteIndex = sceneInfo.directions[currIndex].leftSpeakerIdx;
-        int rightSpriteIndex = sceneInfo.directions[currIndex].rightSpeakerIdx;
-        
-        //get left image sprite from speakerSprites list
-        if (leftSpriteIndex < speakerCount){
-            leftImage.sprite = sceneInfo.speakerSprites[ leftSpriteIndex ];
-        }
-        //disable left image if there's no speaker on that side
-        //  (removes empty white rectangle where sprite should be)
-        else{
-            leftImage.enabled = false;
-        }
-
-        //get right image sprite
-        if (rightSpriteIndex < speakerCount){
-            rightImage.sprite = sceneInfo.speakerSprites[ rightSpriteIndex ];
-        }
-        //disable right image if there's no speaker on that side
-        else{
-            rightImage.enabled = false;
+            dialogueText.text = sceneInfo.directions[currIndex].dialogue;
         }
 
         //fade the first non-speaker and set up background
+        updateSpeakers();
         updateSpeakerDisplay();
         updateBackgroundDisplay();
     }
 
 
-    // Update is called once per frame
-    void Update(){
-        
-        //check for input
-        if (Input.GetKeyDown(KeyCode.Space)){
+    void OnEnable(){
+        advance = cutsceneInput.Cutscene.Advance;
+        advance.Enable();
 
-            //move on from scene if cutscene ended
-            if( cutsceneEnded ){
-                ///NOTE: something here to go to next scene??///
-            }
-            //otherwise go to next line of dialogue
-            else{
-                nextLine();
-            }
-        }
+        //pressing space calls nextLine
+        // nextLine handles the logic
+        advance.performed += context => nextLine();
+    }
+
+
+    void OnDisable(){
+        cutsceneInput.Disable();
     }
 
 
@@ -113,31 +90,63 @@ public class CutsceneController : MonoBehaviour
             dialogueText.text = sceneInfo.directions[currIndex].dialogue;
 
             //update speaker and background displays
+            updateSpeakers();
             updateSpeakerDisplay();
             updateBackgroundDisplay();
         }
+        else{
+            endCutscene();
+        }
 
-        //modify instructions if this is the last dialogue
+        //special case: modify instructions if this is the last dialogue
         if (currIndex == (dirCount - 1)){
 
             instructionsText.text = "Press Space to return to gameplay";
-            endCutscene();
+
+            /// any other special things for the last line of 
+            //  dialogue go here ///
         }
     }
 
 
     void endCutscene(){
+        Debug.Log("Leaving the cutscene");
 
-        cutsceneEnded = true;
-        /// any other special things for the last line of 
-        //  dialogue go here ///
+        /// NOTE: go to next scene here ///
+    }
+
+
+    void updateSpeakers(){
+        //change the speaker sprites if needed
+        //get speaker sprite indices from the current directions
+        int leftIndex = sceneInfo.directions[currIndex].leftSpeakerIdx;
+        int rightIndex = sceneInfo.directions[currIndex].rightSpeakerIdx;
+
+        //update left speaker sprite
+        if ( speakerCount > 0 && leftIndex < speakerCount && leftIndex >= 0){
+            //update left sprite if index is valid
+            leftImage.sprite = sceneInfo.speakerSprites[ leftIndex ];
+        }
+        else{
+            leftImage.enabled = false;
+        }
+
+        //update right speaker sprite
+        if ( speakerCount > 0 && rightIndex < speakerCount && rightIndex >= 0){
+            //update right sprite if index is valid
+            rightImage.sprite = sceneInfo.speakerSprites[ rightIndex ];
+        }
+        else{
+            rightImage.enabled = false;
+        }
+
+        //update speaker names in case the speaker changed
+        leftNameText.text = sceneInfo.directions[currIndex].leftSpeaker;
+        rightNameText.text = sceneInfo.directions[currIndex].rightSpeaker;
     }
 
 
     void updateSpeakerDisplay(){
-        
-        //change the speaker sprites and names if needed
-        updateSpeakerInfo();
 
         //update left speaker
         //have unfaded sprite and name showing for speaker character
@@ -163,29 +172,6 @@ public class CutsceneController : MonoBehaviour
             rightNameText.enabled = false;
         }
     }   
-
-
-    void updateSpeakerInfo(){
-        //change the speaker sprites if needed
-        //get speaker sprite indices from the current directions
-        int leftIndex = sceneInfo.directions[currIndex].leftSpeakerIdx;
-        int rightIndex = sceneInfo.directions[currIndex].rightSpeakerIdx;
-
-        //update left speaker sprite
-        if ( speakerCount > 0 && leftIndex < speakerCount){
-            //update left sprite if index is valid
-            leftImage.sprite = sceneInfo.speakerSprites[ leftIndex ];
-        }
-        //update right speaker sprite
-        if ( speakerCount > 0 && rightIndex < speakerCount){
-            //update right sprite if index is valid
-            rightImage.sprite = sceneInfo.speakerSprites[ rightIndex ];
-        }
-
-        //update speaker names in case the sprite changed
-        leftNameText.text = sceneInfo.directions[currIndex].leftSpeaker;
-        rightNameText.text = sceneInfo.directions[currIndex].rightSpeaker;
-    }
 
 
     void updateBackgroundDisplay(){
