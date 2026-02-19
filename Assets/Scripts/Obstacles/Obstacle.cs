@@ -5,12 +5,12 @@ using UnityEngine;
 public class Obstacle : MonoBehaviour
 {
     //basic obstacle variables
-    public float scrollSpeed = 8f;
-
+    public float scrollSpeed = 4f;
     private string obsName;
     public string Name { get{ return obsName; } }
 
     public State activeState; //current state
+    public Animator animator;
 
     //constructors
     public Obstacle( string name, float speed){
@@ -49,9 +49,9 @@ public class Obstacle : MonoBehaviour
         if (nextState.Name != activeState.Name){
             ///Debug.Log("moving to " + nextState.Name);
 
-            activeState.onExitState(); //exit old state
+            activeState.onExitState(this); //exit old state
             activeState = nextState;
-            activeState.onEnterState(); //enter new state
+            activeState.onEnterState(this); //enter new state
         }
     }
 
