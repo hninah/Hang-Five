@@ -5,11 +5,13 @@ using UnityEngine;
 public class SharkAggroState : State
 {
     Vector3 targetDirection = new Vector3(-1.0f, 0.0f, 0.0f);
-    [SerializeField] float aggroSpeed = 12.0f;
+    [SerializeField] float aggroSpeed = 8.0f;
+    [SerializeField] float targetOffsetY = 0.15f;
 
     public SharkAggroState() : base("SharkPassiveState") { }
     public SharkAggroState(Vector3 currentPosition, Vector3 targetPosition) : base("SharkAggroState")
     {
+        targetPosition.y += Random.Range(-targetOffsetY, targetOffsetY);
         float directionAngle = Mathf.Atan2(targetPosition.y - currentPosition.y, targetPosition.x - currentPosition.x);
         targetDirection.x = Mathf.Cos(directionAngle);
         targetDirection.y = Mathf.Sin(directionAngle);

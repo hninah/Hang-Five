@@ -5,7 +5,7 @@ using UnityEngine;
 public class Obstacle : MonoBehaviour
 {
     //basic obstacle variables
-    public float scrollSpeed = 8f;
+    public float scrollSpeed = 5f;
     public float maxYBound = 0.0f;
     public float minYBound = 0.0f;
     public float deathBoundX = -12.0f;

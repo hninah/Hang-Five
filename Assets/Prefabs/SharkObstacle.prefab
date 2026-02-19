@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3426560386625240193}
   - component: {fileID: 1735779594903153864}
   - component: {fileID: 1290397465675383776}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SharkObstacle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -102,6 +102,7 @@ MonoBehaviour:
   scrollSpeed: 8
   maxYBound: 0
   minYBound: 0
+  deathBoundX: -12
 --- !u!61 &1735779594903153864
 BoxCollider2D:
   m_ObjectHideFlags: 0

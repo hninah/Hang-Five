@@ -61,10 +61,13 @@ public class Player : MonoBehaviour
     private float surfDirection = 1;
     private float flipDirection = 1;
     private float flipImmunityTimer = 0.0f;
+    [SerializeField] private float trickRotationMin = 45.0f;
+    [SerializeField] private float landRotationMax = -45.0f;
 
     // Internal rotation variables
     private float rotation = 0.0f;
 
+    // Singleton for easier interaction with other scripts (downside: no multiplayer, but we're not doing that?)
     private static Player _instance;
     public static Player Instance { get { return _instance; } }
 
@@ -72,13 +75,14 @@ public class Player : MonoBehaviour
     [Space(20)]
     [Header("State Control Variables")]
     [SerializeField] private float flipCoolDown = 0.2f;
-    public PlayerState state;
+    private PlayerState state;
+    public PlayerState State { get { return state; } }
 
     void Awake()
     {
         if (_instance != null)
         {
-            print("Player with name: " + gameObject.name + " is being set as the player singleton when " + _instance.gameObject.name + " was previously assigned.");
+            Debug.LogError("Player with name: " + gameObject.name + " is being set as the player singleton when " + _instance.gameObject.name + " was previously assigned.");
         }
         _instance = this;
 
@@ -117,22 +121,28 @@ public class Player : MonoBehaviour
                 // Add the timer so we don't infinitely get stuck in a flipping state
                 // The surfDirection is for preference. It does cause a bug where you can surf
                 // above the top of the wave, but I'm not sure what I want to do with this yet.
-                if (transform.position.y >= 3.0f && flipImmunityTimer <= 0.0f && surfDirection > 0)
+                if (transform.position.y >= 3.0f && rotation >= trickRotationMin)
                 {
+                    playerVelocity.y = playerVelocity.y * Mathf.Abs(rotation / maxUpRotation);
+                    state = PlayerState.FLIPPING;
+                }
+                else if (transform.position.y >= 3.0f && flipImmunityTimer <= 0.0f)
+                {
+                    print("We crashed going back up into the wave");
                     state = PlayerState.CRASHING;
                 }
 
                 break;
 
             case PlayerState.FLIPPING:
-                updateFlipRotation();
+                updateTurning();
                 updateFlipVelocity();
 
                 // FIXME: Replace with a non-placeholder condition
                 if (transform.position.y >= 3.0f) break;
 
                 // The player should be able to fail at flipping for a risk-reward dynamic
-                state = rotation >= downRotationMax && rotation <= upRotationMax
+                state = rotation <= landRotationMax 
                     ? PlayerState.SURFING
                     : PlayerState.CRASHING;
 
@@ -141,10 +151,11 @@ public class Player : MonoBehaviour
                 // Currently need this so we don't immediately go back into FLIPPING
                 flipImmunityTimer = flipCoolDown;
 
+                if (state == PlayerState.CRASHING) print("WE CRASHED GOING DOWN WITH ANGLE: " + rotation);
+
                 break;
 
             case PlayerState.CRASHING:
-                print("YOU CRASHED");
                 break;
 
             case PlayerState.OVER:
@@ -199,6 +210,15 @@ public class Player : MonoBehaviour
             // Decelerate when surfing up the wave
             playerVelocity.y = Mathf.MoveTowards(playerVelocity.y, 0.0f, decel * Time.deltaTime);
         }
+
+        transform.position += playerVelocity * angleSpeedPercentage * Time.deltaTime;
+    }
+
+    void updateAirVelocity()
+    {
+        float angleSpeedPercentage = rotation / 90.0f;
+
+        playerVelocity.y = Mathf.MoveTowards(playerVelocity.y, 0.0f, decel * Time.deltaTime);
 
         transform.position += playerVelocity * angleSpeedPercentage * Time.deltaTime;
     }

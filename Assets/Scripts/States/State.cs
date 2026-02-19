@@ -9,7 +9,6 @@ public class State
     private string stateName;
     public string Name { get{ return stateName; } }
 
-
     //constructor
     public State( string name){
         stateName = name;
