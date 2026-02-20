@@ -1,5 +1,5 @@
 {
-    "name": "player",
+    "name": "PlayerInput",
     "maps": [
         {
             "name": "Player",
@@ -540,6 +540,34 @@
                     "processors": "",
                     "groups": "XR",
                     "action": "TrackedDeviceOrientation",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "Cutscene",
+            "id": "2b4685b2-17aa-4c38-ba2e-e1ac8739a94a",
+            "actions": [
+                {
+                    "name": "Advance",
+                    "type": "Button",
+                    "id": "b5c3162e-e99a-4789-92e5-6ad659975711",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "4371198c-a499-4120-8e95-dcc76eaa9230",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse;Gamepad;Touch",
+                    "action": "Advance",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
