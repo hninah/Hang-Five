@@ -237,6 +237,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SharkSpawner
       objectReference: {fileID: 0}
+    - target: {fileID: 8846511062136673127, guid: ef7be60833b81f749a62f3ce1e95ef44, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1193,6 +1197,87 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1782339620
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 609972225773359680, guid: ef7be60833b81f749a62f3ce1e95ef44, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.01628
+      objectReference: {fileID: 0}
+    - target: {fileID: 609972225773359680, guid: ef7be60833b81f749a62f3ce1e95ef44, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.3076161
+      objectReference: {fileID: 0}
+    - target: {fileID: 609972225773359680, guid: ef7be60833b81f749a62f3ce1e95ef44, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.07670652
+      objectReference: {fileID: 0}
+    - target: {fileID: 609972225773359680, guid: ef7be60833b81f749a62f3ce1e95ef44, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 609972225773359680, guid: ef7be60833b81f749a62f3ce1e95ef44, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 609972225773359680, guid: ef7be60833b81f749a62f3ce1e95ef44, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 609972225773359680, guid: ef7be60833b81f749a62f3ce1e95ef44, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 609972225773359680, guid: ef7be60833b81f749a62f3ce1e95ef44, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 609972225773359680, guid: ef7be60833b81f749a62f3ce1e95ef44, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 609972225773359680, guid: ef7be60833b81f749a62f3ce1e95ef44, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2482574302694751342, guid: ef7be60833b81f749a62f3ce1e95ef44, type: 3}
+      propertyPath: maxDelay
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 2482574302694751342, guid: ef7be60833b81f749a62f3ce1e95ef44, type: 3}
+      propertyPath: minDelay
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2482574302694751342, guid: ef7be60833b81f749a62f3ce1e95ef44, type: 3}
+      propertyPath: obstaclePrefab
+      value: 
+      objectReference: {fileID: 2144488072472814359, guid: 8e5e73df4fcf70e488cdfae42a03cdaf, type: 3}
+    - target: {fileID: 2482574302694751342, guid: ef7be60833b81f749a62f3ce1e95ef44, type: 3}
+      propertyPath: laneAnchors.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2482574302694751342, guid: ef7be60833b81f749a62f3ce1e95ef44, type: 3}
+      propertyPath: laneAnchors.Array.data[0]
+      value: 
+      objectReference: {fileID: 29899422}
+    - target: {fileID: 8846511062136673127, guid: ef7be60833b81f749a62f3ce1e95ef44, type: 3}
+      propertyPath: m_Name
+      value: SeagullSpawner
+      objectReference: {fileID: 0}
+    - target: {fileID: 8846511062136673127, guid: ef7be60833b81f749a62f3ce1e95ef44, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ef7be60833b81f749a62f3ce1e95ef44, type: 3}
 --- !u!1 &1829128948
 GameObject:
   m_ObjectHideFlags: 0
@@ -1352,6 +1437,10 @@ PrefabInstance:
     - target: {fileID: 8846511062136673127, guid: ef7be60833b81f749a62f3ce1e95ef44, type: 3}
       propertyPath: m_Name
       value: WBSpawner
+      objectReference: {fileID: 0}
+    - target: {fileID: 8846511062136673127, guid: ef7be60833b81f749a62f3ce1e95ef44, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1566,3 +1655,4 @@ SceneRoots:
   - {fileID: 495006403}
   - {fileID: 195204259}
   - {fileID: 1836062445}
+  - {fileID: 1782339620}

@@ -8,7 +8,7 @@ public class SharkOb : Obstacle
     public float attackDistance = 10f;
     //speed that shark moves towards player while attacking
     public float attackSpeed = 1f;
-    public Transform player;
+    [HideInInspector] public Transform player;
 
     //constructors
     public SharkOb(float scrollSpeed):base("Shark", scrollSpeed) {}

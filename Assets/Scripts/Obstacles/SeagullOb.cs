@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class SeagullOb : Obstacle
 {
+    ///public float fallSpeed = 2f;
+    public float spawnWait = 20f;
+    public GameObject obsPrefab;
+
     //constructors
     public SeagullOb(float scrollSpeed):base("Seagull", scrollSpeed) {}
     public SeagullOb():base("Seagull") {}
@@ -12,21 +16,12 @@ public class SeagullOb : Obstacle
     //Start is called before the first frame update
     void Start(){
         //set starting state
-        //seagull starts in stationary state
-        activeState = new StationaryState();
+        //seagull starts and stays in spawning state
+        activeState = new SpawningState(spawnWait, obsPrefab);
+        
+        ///activeState = new StationaryState(); ///stationary if we don't want it spawning
+
         activeState.onEnterState();
     }
 
-
-    public override State getNextState(){
-        //logic to switch between states
-        
-        /*
-        if (transform.position.x < 0f && activeState.Name != "StationaryState"){
-            return new StationaryState();
-        }
-        */
-        //default: stay in current state
-        return activeState;
-    }
 }
