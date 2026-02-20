@@ -215,20 +215,20 @@ PrefabInstance:
       objectReference: {fileID: 6980086522593945716, guid: 9b7946183c052a04bb6f6b63685832b7, type: 3}
     - target: {fileID: 2482574302694751342, guid: ef7be60833b81f749a62f3ce1e95ef44, type: 3}
       propertyPath: laneAnchors.Array.size
-      value: 4
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2482574302694751342, guid: ef7be60833b81f749a62f3ce1e95ef44, type: 3}
       propertyPath: laneAnchors.Array.data[0]
       value: 
-      objectReference: {fileID: 892273634}
+      objectReference: {fileID: 457049759}
     - target: {fileID: 2482574302694751342, guid: ef7be60833b81f749a62f3ce1e95ef44, type: 3}
       propertyPath: laneAnchors.Array.data[1]
       value: 
-      objectReference: {fileID: 457049759}
+      objectReference: {fileID: 577950758}
     - target: {fileID: 2482574302694751342, guid: ef7be60833b81f749a62f3ce1e95ef44, type: 3}
       propertyPath: laneAnchors.Array.data[2]
       value: 
-      objectReference: {fileID: 576193389}
+      objectReference: {fileID: 577950758}
     - target: {fileID: 2482574302694751342, guid: ef7be60833b81f749a62f3ce1e95ef44, type: 3}
       propertyPath: laneAnchors.Array.data[3]
       value: 
@@ -780,7 +780,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 456014833
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 9932a9b1130b2e648a5c433109744c7e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1411,12 +1411,20 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2482574302694751342, guid: ef7be60833b81f749a62f3ce1e95ef44, type: 3}
+      propertyPath: maxDelay
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 2482574302694751342, guid: ef7be60833b81f749a62f3ce1e95ef44, type: 3}
+      propertyPath: minDelay
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2482574302694751342, guid: ef7be60833b81f749a62f3ce1e95ef44, type: 3}
       propertyPath: obstaclePrefab
       value: 
       objectReference: {fileID: 2963685289427379715, guid: b45699529837bd245a57f609efa5bed3, type: 3}
     - target: {fileID: 2482574302694751342, guid: ef7be60833b81f749a62f3ce1e95ef44, type: 3}
       propertyPath: laneAnchors.Array.size
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2482574302694751342, guid: ef7be60833b81f749a62f3ce1e95ef44, type: 3}
       propertyPath: laneAnchors.Array.data[0]
