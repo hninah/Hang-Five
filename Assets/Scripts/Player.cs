@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -71,6 +72,8 @@ public class Player : MonoBehaviour
     [SerializeField] private float flipCoolDown = 0.2f;
     public PlayerState state;
 
+    // Scene management
+    private bool hasReloaded = false;
     void Awake()
     {
         state = PlayerState.SURFING;
@@ -135,7 +138,14 @@ public class Player : MonoBehaviour
                 break;
 
             case PlayerState.CRASHING:
+                //transition to cutscene after
                 print("YOU CRASHED");
+                if (!hasReloaded)
+                {
+                    print("changing cutscene");
+                    hasReloaded = true;
+                    SceneManager.LoadScene("GameOver_CS");
+                }
                 break;
 
             case PlayerState.OVER:
@@ -246,5 +256,4 @@ public class Player : MonoBehaviour
     {
         return Mathf.Abs(playerVelocity.y);
     }
-
 }

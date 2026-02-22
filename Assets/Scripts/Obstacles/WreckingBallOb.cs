@@ -15,5 +15,4 @@ public class WreckingBallOb : Obstacle
         activeState = new StationaryState();
         activeState.onEnterState();
     }
-
 }

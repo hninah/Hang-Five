@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class CutsceneController : MonoBehaviour
 {
@@ -113,6 +114,7 @@ public class CutsceneController : MonoBehaviour
         Debug.Log("Leaving the cutscene");
 
         /// NOTE: go to next scene here ///
+        SceneManager.LoadScene("MainMenu");
     }
 
 

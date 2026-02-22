@@ -14,6 +14,13 @@ public class SharkOb : Obstacle
     public SharkOb(float scrollSpeed):base("Shark", scrollSpeed) {}
     public SharkOb():base("Shark") {}
 
+    //audio
+    [Header("Audio")]
+    [SerializeField] private AudioClip sharkSpawn;
+    [SerializeField] private AudioClip sharkSplash;
+    [SerializeField] private AudioClip sharkBite;
+
+    private AudioSource audioSource;
 
     //Start is called before the first frame update
     void Start(){
@@ -22,6 +29,9 @@ public class SharkOb : Obstacle
         //shark starts in stationary state
         activeState = new StationaryState();
         activeState.onEnterState();
+
+        audioSource = GetComponent<AudioSource>();
+        PlaySpawnSound();
     }
 
 
@@ -42,5 +52,24 @@ public class SharkOb : Obstacle
 
         //default: stay in current state
         return activeState;
+    }
+
+    void PlaySpawnSound()
+    {
+        if (audioSource == null) {
+            return;
+        };
+
+        // 50/50 chance
+        AudioClip clip;
+        if (Random.value > 0.5f)
+        {
+            clip = sharkSpawn;
+        }
+        else
+        {
+            clip = sharkSplash;
+        }
+        audioSource.PlayOneShot(clip);
     }
 }
