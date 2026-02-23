@@ -79,7 +79,7 @@ public class Player : MonoBehaviour
     [SerializeField] private float flipCoolDown = 0.2f;
     private PlayerState state;
     public PlayerState State { get { return state; } }
-    [SerializeField] private Transform waveTop;
+    [SerializeField] private float waveTopY = 3.0f;
     [SerializeField] private Transform waveBottom;
 
     [Space(20)]
@@ -127,16 +127,12 @@ public class Player : MonoBehaviour
                 // We want to eventually be able to go back into the flipping state when the timer's done.
                 flipImmunityTimer = Mathf.Max(flipImmunityTimer - Time.deltaTime, 0.0f);
 
-                // FIXME: replace the transform.position condition with a non-placeholder
-                // Add the timer so we don't infinitely get stuck in a flipping state
-                // The surfDirection is for preference. It does cause a bug where you can surf
-                // above the top of the wave, but I'm not sure what I want to do with this yet.
-                if (transform.position.y >= 3.0f && rotation >= trickRotationMin)
+                if (transform.position.y >= waveTopY && rotation >= trickRotationMin)
                 {
                     playerVelocity.y = playerVelocity.y * Mathf.Abs(rotation / maxUpRotation);
                     state = PlayerState.FLIPPING;
                 }
-                else if (transform.position.y >= 3.0f && flipImmunityTimer <= 0.0f)
+                else if ((transform.position.y >= waveTopY && flipImmunityTimer <= 0.0f) || transform.position.y < waveBottom.position.y)
                 {
                     print("We crashed going back up into the wave");
                     state = PlayerState.CRASHING;
@@ -148,8 +144,7 @@ public class Player : MonoBehaviour
                 updateTurning();
                 updateFlipVelocity();
 
-                // FIXME: Replace with a non-placeholder condition
-                if (transform.position.y >= 3.0f) break;
+                if (transform.position.y >= waveTopY) break;
 
                 // The player should be able to fail at flipping for a risk-reward dynamic
                 state = rotation <= landRotationMax 
@@ -171,6 +166,7 @@ public class Player : MonoBehaviour
                 break;
 
             case PlayerState.OVER:
+                Debug.Log("FIXME: Put in some way to transition scenes here.");
                 break;
 
             case PlayerState.STARTING:
