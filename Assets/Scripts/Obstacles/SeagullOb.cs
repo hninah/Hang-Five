@@ -17,8 +17,8 @@ public class SeagullOb : Obstacle
     void Start(){
         //set starting state
         //seagull starts and stays in spawning state
-        activeState = new SpawningState(spawnWait, obsPrefab);
-        
+        //activeState = new SpawningState(spawnWait, obsPrefab);
+        activeState = new SineWaveState();
         ///activeState = new StationaryState(); ///stationary if we don't want it spawning
 
         activeState.onEnterState();

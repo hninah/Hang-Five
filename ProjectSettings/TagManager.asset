@@ -47,9 +47,9 @@ TagManager:
   - name: waves
     uniqueID: 1967249433
     locked: 0
-  - name: obstacles
-    uniqueID: 2027478191
-    locked: 0
   - name: player
     uniqueID: 456014833
+    locked: 0
+  - name: obstacles
+    uniqueID: 2027478191
     locked: 0

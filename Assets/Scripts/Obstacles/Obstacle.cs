@@ -35,6 +35,8 @@ public class Obstacle : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        obstacleSpecialties();
     }
 
     //move obstacle left across the screen
@@ -72,5 +74,10 @@ public class Obstacle : MonoBehaviour
     {
         minYBound = minY;
         maxYBound = maxY;
+    }
+
+    public virtual void obstacleSpecialties()
+    {
+        return;
     }
 }

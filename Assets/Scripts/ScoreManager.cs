@@ -32,4 +32,8 @@ public class ScoreManager : MonoBehaviour
         scoreText.text = Mathf.FloorToInt(score).ToString();
     }
 
+    public void tempChangeColour()
+    {
+        scoreText.color = new Color(255, 255, 255, 1);
+    }
 }

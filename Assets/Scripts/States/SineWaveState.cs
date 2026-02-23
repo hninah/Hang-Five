@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class SineWaveState : State
 {
-    float frequency = 3f;
-    float amplitude = 0.08f;
+    float frequency = 0.08f;
+    float amplitude = 4f;
+    float arcDistance = 0.0f;
+    float arcSpeed = 90f;
 
     //constructors
     public SineWaveState():base("SineWaveState") {}
@@ -21,13 +23,15 @@ public class SineWaveState : State
         ob.transform.position += Vector3.left * ob.scrollSpeed * Time.deltaTime;
 
         //add wave offset to position
-        Vector3 waveOffset = Vector3.up * Mathf.Sin(Time.time * frequency) * amplitude;
+        arcDistance = arcDistance + arcSpeed * Time.deltaTime;
+        Debug.Log(arcDistance);
+        Vector3 waveOffset = Vector3.up * Mathf.Sin(arcDistance * Mathf.Deg2Rad) * Time.deltaTime * amplitude;
+        Debug.Log(waveOffset);
         ob.transform.position = ob.transform.position + waveOffset;
 
-        if (ob.transform.position.x < 0.0f)
+        if (ob.transform.position.x < ob.deathBoundX)
         {
-            onExitState();
-            return new StationaryState();
+            return new DeathState();
         }
 
         return this;

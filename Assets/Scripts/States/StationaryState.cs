@@ -12,4 +12,16 @@ public class StationaryState : State
         ///Debug.Log("entered " + this.Name);
     }
 
+    public override State stateUpdate(Obstacle ob)
+    {
+        ob.transform.position += Vector3.left * ob.scrollSpeed * Time.deltaTime;
+
+        if (ob.transform.position.x <= ob.deathBoundX)
+        {
+            return new DeathState();
+        }
+
+        return this;
+    }
+
 }

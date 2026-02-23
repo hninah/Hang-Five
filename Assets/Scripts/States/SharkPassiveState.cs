@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SharkPassiveState : State
 {
-    [SerializeField] float aggroDistanceX = 10.0f;
+    [SerializeField] float aggroDistanceX = 8.5f;
     [SerializeField] float frequency = 3.0f;
     [SerializeField] float amplitude = 0.08f;
 

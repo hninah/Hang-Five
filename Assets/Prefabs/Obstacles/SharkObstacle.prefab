@@ -100,9 +100,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scrollSpeed: 8
-  maxYBound: 0
-  minYBound: 0
+  maxYBound: 2.1
+  minYBound: -4.5
   deathBoundX: -12
+  animator: {fileID: 1290397465675383776}
+  aggroThreshold: 8
 --- !u!61 &1735779594903153864
 BoxCollider2D:
   m_ObjectHideFlags: 0

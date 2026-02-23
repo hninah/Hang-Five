@@ -12,6 +12,8 @@ public class LaneSpawner : MonoBehaviour
 
     float spawnTimer;
 
+    [SerializeField] List<float> obstacleProbs;
+
     void Start()
     {
         spawnTimer = Random.Range(minDelay, maxDelay);
@@ -26,7 +28,26 @@ public class LaneSpawner : MonoBehaviour
                 continue;
             }
 
-            obstacle.setYBounds(minSpawnY, maxSpawnY);
+            if (obstacle.name == "Seagull")
+            {
+                obstacle.setYBounds(-4.5f, -2.0f);
+            }
+            else
+            {
+                obstacle.setYBounds(minSpawnY, maxSpawnY);
+            }
+
+            if (obstacleProbs.Count != obstaclePrefabs.Count)
+            {
+                Debug.LogError("Obstacle Probabilities does not match number of obstacles. Manually assigning equal probabilities");
+                float prob = 1 / obstaclePrefabs.Count;
+                obstacleProbs = new List<float>(obstaclePrefabs.Count);
+
+                for (int i = 0; i < obstacleProbs.Count; ++i)
+                {
+                    obstacleProbs[i] = prob;
+                }
+            }
         }
     }
 
@@ -48,7 +69,19 @@ public class LaneSpawner : MonoBehaviour
 
     int getObstacleIndex()
     {
-        return Random.Range(0, obstaclePrefabs.Count);
+        float prob = Random.Range(0.0f, 1.0f);
+        float currentProb = 0.0f;
+        for (int i = 0; i < obstaclePrefabs.Count; ++i)
+        {
+            if (prob >= currentProb && prob < currentProb + obstacleProbs[i])
+            {
+                return i;
+            }
+
+            currentProb += obstacleProbs[i];
+        }
+
+        return 0;
     }
 
     float getObstacleSpawnY()

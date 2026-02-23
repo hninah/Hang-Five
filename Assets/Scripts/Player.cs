@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Events;
 
 public class Player : MonoBehaviour
 {
@@ -10,7 +11,8 @@ public class Player : MonoBehaviour
         SURFING,
         FLIPPING,
         CRASHING,
-        OVER
+        OVER,
+        STARTING
     };
 
     /* TODO(?):
@@ -77,6 +79,14 @@ public class Player : MonoBehaviour
     [SerializeField] private float flipCoolDown = 0.2f;
     private PlayerState state;
     public PlayerState State { get { return state; } }
+    [SerializeField] private Transform waveTop;
+    [SerializeField] private Transform waveBottom;
+
+    [Space(20)]
+    [Header("Misc.")]
+    [SerializeField] private Animator animator;
+    public UnityEvent startGame = new UnityEvent();
+    public UnityEvent endGame = new UnityEvent();
 
     void Awake()
     {
@@ -86,7 +96,7 @@ public class Player : MonoBehaviour
         }
         _instance = this;
 
-        state = PlayerState.SURFING;
+        state = PlayerState.STARTING;
         playerInput = new PlayerInput();
         playerVelocity = startingVelocity;
         rotation = transform.eulerAngles.z;
@@ -156,10 +166,19 @@ public class Player : MonoBehaviour
                 break;
 
             case PlayerState.CRASHING:
+                endGame.Invoke();
+                state = PlayerState.OVER;
                 break;
 
             case PlayerState.OVER:
-                print("NOT IMPORTANT YET");
+                break;
+
+            case PlayerState.STARTING:
+                if (surfDirection < 0)
+                {
+                    state = PlayerState.SURFING;
+                    startGame.Invoke();
+                }
                 break;
         }
 
@@ -230,6 +249,8 @@ public class Player : MonoBehaviour
             ? Mathf.MoveTowards(rotation, maxDownRotation, rotationSpeed * Time.deltaTime)
             : Mathf.MoveTowards(rotation, maxUpRotation, deRotationSpeed * Time.deltaTime);
 
+        animator.SetFloat("Rotation", rotation);
+
         // FIXME: This may lead to floating point error with the x and y rotation (sometimes accumulates error by 0.0001)
         transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y, rotation);
     }
@@ -237,11 +258,13 @@ public class Player : MonoBehaviour
     void doSurf()
     {
         surfDirection = Vector2.down.y;
+        animator.SetBool("SurfingDown", true);
     }
 
     void doNeutral()
     {
         surfDirection = Vector2.up.y;
+        animator.SetBool("SurfingDown", false);
     }
 
     void updateFlipRotation()
