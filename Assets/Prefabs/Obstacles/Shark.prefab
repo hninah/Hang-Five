@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1650043757524592058}
   - component: {fileID: -1267495088127076930}
   - component: {fileID: 7386815293633737681}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Shark
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -100,6 +100,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scrollSpeed: 2
+  maxYBound: 0
+  minYBound: 0
+  deathBoundX: -12
   animator: {fileID: -1267495088127076930}
   attackDistance: 10
   attackSpeed: 1

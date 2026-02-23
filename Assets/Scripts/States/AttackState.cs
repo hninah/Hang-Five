@@ -28,7 +28,7 @@ public class AttackState : State
 
 
     //update for this state
-    public override void stateUpdate(Obstacle ob){
+    public override State stateUpdate(Obstacle ob){
 
         //move towards the player
         ob.transform.position = Vector3.MoveTowards( 
@@ -36,6 +36,13 @@ public class AttackState : State
             player.position,
             attackSpeed * Time.deltaTime
         );
+
+        if (ob.transform.position.x < ob.deathBoundX)
+        {
+            return new DeathState();
+        }
+
+        return this;
     }
 
 

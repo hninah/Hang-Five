@@ -26,7 +26,7 @@ public class SpawningState : State
 
 
     //update for this state
-    public override void stateUpdate(Obstacle ob){
+    public override State stateUpdate(Obstacle ob){
 
         ///Debug.Log("currWait = " + currWait + ", spawnWait = " + spawnWait);
 
@@ -39,7 +39,8 @@ public class SpawningState : State
         else{
             currWait += Time.deltaTime;
         }
-        
+
+        return this;
     }
 
 
