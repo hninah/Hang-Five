@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -10,7 +12,8 @@ public class Player : MonoBehaviour
         SURFING,
         FLIPPING,
         CRASHING,
-        OVER
+        OVER,
+        STARTING
     };
 
     /* TODO(?):
@@ -61,19 +64,40 @@ public class Player : MonoBehaviour
     private float surfDirection = 1;
     private float flipDirection = 1;
     private float flipImmunityTimer = 0.0f;
+    [SerializeField] private float trickRotationMin = 45.0f;
+    [SerializeField] private float landRotationMax = -45.0f;
 
     // Internal rotation variables
     private float rotation = 0.0f;
+
+    // Singleton for easier interaction with other scripts (downside: no multiplayer, but we're not doing that?)
+    private static Player _instance;
+    public static Player Instance { get { return _instance; } }
 
     // State Control
     [Space(20)]
     [Header("State Control Variables")]
     [SerializeField] private float flipCoolDown = 0.2f;
-    public PlayerState state;
+    private PlayerState state;
+    public PlayerState State { get { return state; } }
+    [SerializeField] private float waveTopY = 3.0f;
+    [SerializeField] private Transform waveBottom;
+
+    [Space(20)]
+    [Header("Misc.")]
+    [SerializeField] private Animator animator;
+    public UnityEvent startGame = new UnityEvent();
+    public UnityEvent endGame = new UnityEvent();
 
     void Awake()
     {
-        state = PlayerState.SURFING;
+        if (_instance != null)
+        {
+            Debug.LogError("Player with name: " + gameObject.name + " is being set as the player singleton when " + _instance.gameObject.name + " was previously assigned.");
+        }
+        _instance = this;
+
+        state = PlayerState.STARTING;
         playerInput = new PlayerInput();
         playerVelocity = startingVelocity;
         rotation = transform.eulerAngles.z;
@@ -104,26 +128,27 @@ public class Player : MonoBehaviour
                 // We want to eventually be able to go back into the flipping state when the timer's done.
                 flipImmunityTimer = Mathf.Max(flipImmunityTimer - Time.deltaTime, 0.0f);
 
-                // FIXME: replace the transform.position condition with a non-placeholder
-                // Add the timer so we don't infinitely get stuck in a flipping state
-                // The surfDirection is for preference. It does cause a bug where you can surf
-                // above the top of the wave, but I'm not sure what I want to do with this yet.
-                if (transform.position.y >= 3.0f && flipImmunityTimer <= 0.0f && surfDirection > 0)
+                if (transform.position.y >= waveTopY && rotation >= trickRotationMin)
                 {
+                    playerVelocity.y = playerVelocity.y * Mathf.Abs(rotation / maxUpRotation);
                     state = PlayerState.FLIPPING;
+                }
+                else if ((transform.position.y >= waveTopY && flipImmunityTimer <= 0.0f) || transform.position.y < waveBottom.position.y)
+                {
+                    print("We crashed going back up into the wave");
+                    state = PlayerState.CRASHING;
                 }
 
                 break;
 
             case PlayerState.FLIPPING:
-                updateFlipRotation();
+                updateTurning();
                 updateFlipVelocity();
 
-                // FIXME: Replace with a non-placeholder condition
-                if (transform.position.y >= 3.0f) break;
+                if (transform.position.y >= waveTopY) break;
 
                 // The player should be able to fail at flipping for a risk-reward dynamic
-                state = rotation >= downRotationMax && rotation <= upRotationMax
+                state = rotation <= landRotationMax 
                     ? PlayerState.SURFING
                     : PlayerState.CRASHING;
 
@@ -132,17 +157,35 @@ public class Player : MonoBehaviour
                 // Currently need this so we don't immediately go back into FLIPPING
                 flipImmunityTimer = flipCoolDown;
 
+                if (state == PlayerState.CRASHING) print("WE CRASHED GOING DOWN WITH ANGLE: " + rotation);
+
                 break;
 
             case PlayerState.CRASHING:
-                print("YOU CRASHED");
+                endGame.Invoke();
+                state = PlayerState.OVER;
                 break;
 
             case PlayerState.OVER:
-                print("NOT IMPORTANT YET");
+                SceneManager.LoadScene("GameOver_CS");
+                Debug.Log("FIXME: Put in some way to transition scenes here.");
+
+                break;
+
+            case PlayerState.STARTING:
+                if (surfDirection < 0)
+                {
+                    state = PlayerState.SURFING;
+                    startGame.Invoke();
+                }
                 break;
         }
 
+    }
+
+    void OnTriggerEnter2D()
+    {
+        state = PlayerState.CRASHING;
     }
 
     // OLD VERSION: REMAINS IN CODE FOR COMPARISON
@@ -189,12 +232,23 @@ public class Player : MonoBehaviour
         transform.position += playerVelocity * angleSpeedPercentage * Time.deltaTime;
     }
 
+    void updateAirVelocity()
+    {
+        float angleSpeedPercentage = rotation / 90.0f;
+
+        playerVelocity.y = Mathf.MoveTowards(playerVelocity.y, 0.0f, decel * Time.deltaTime);
+
+        transform.position += playerVelocity * angleSpeedPercentage * Time.deltaTime;
+    }
+
     // IDEA?: experiment with making turning speed dependent on velocity?
     void updateTurning()
     {
         rotation = surfDirection < 0
             ? Mathf.MoveTowards(rotation, maxDownRotation, rotationSpeed * Time.deltaTime)
             : Mathf.MoveTowards(rotation, maxUpRotation, deRotationSpeed * Time.deltaTime);
+
+        animator.SetFloat("Rotation", rotation);
 
         // FIXME: This may lead to floating point error with the x and y rotation (sometimes accumulates error by 0.0001)
         transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y, rotation);
@@ -203,11 +257,13 @@ public class Player : MonoBehaviour
     void doSurf()
     {
         surfDirection = Vector2.down.y;
+        animator.SetBool("SurfingDown", true);
     }
 
     void doNeutral()
     {
-        surfDirection = Vector2.up.y;  
+        surfDirection = Vector2.up.y;
+        animator.SetBool("SurfingDown", false);
     }
 
     void updateFlipRotation()
@@ -246,5 +302,4 @@ public class Player : MonoBehaviour
     {
         return Mathf.Abs(playerVelocity.y);
     }
-
 }

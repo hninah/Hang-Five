@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7168998339003061759}
   - component: {fileID: 7751753393558367515}
   - component: {fileID: 8048607318707626005}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: TestObstacle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -100,6 +100,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scrollSpeed: 3
+  maxYBound: 0
+  minYBound: 0
+  deathBoundX: -12
   animator: {fileID: 0}
   frequency: 2
   amplitude: 0.01

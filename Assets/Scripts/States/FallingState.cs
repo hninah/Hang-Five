@@ -15,10 +15,12 @@ public class FallingState : State
 
 
     //update for this state
-    public override void stateUpdate(Obstacle ob){
+    public override State stateUpdate(Obstacle ob){
 
         //fall downwards
         ob.transform.position -= new Vector3(0f, fallSpeed*Time.deltaTime, 0f);
+
+        return this;
     }
 
 
