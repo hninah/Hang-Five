@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -166,7 +167,9 @@ public class Player : MonoBehaviour
                 break;
 
             case PlayerState.OVER:
+                SceneManager.LoadScene("GameOver_CS");
                 Debug.Log("FIXME: Put in some way to transition scenes here.");
+
                 break;
 
             case PlayerState.STARTING:
