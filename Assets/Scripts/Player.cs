@@ -89,6 +89,10 @@ public class Player : MonoBehaviour
     public UnityEvent startGame = new UnityEvent();
     public UnityEvent endGame = new UnityEvent();
 
+    [Header("Audio")]
+    [SerializeField] private AudioClip wipeout;
+    private AudioSource audioSource;
+
     void Awake()
     {
         if (_instance != null)
@@ -101,6 +105,7 @@ public class Player : MonoBehaviour
         playerInput = new PlayerInput();
         playerVelocity = startingVelocity;
         rotation = transform.eulerAngles.z;
+        audioSource = GetComponent<AudioSource>();
     }
 
     void OnEnable()
@@ -162,6 +167,7 @@ public class Player : MonoBehaviour
                 break;
 
             case PlayerState.CRASHING:
+                audioSource.PlayOneShot(wipeout, 0.3f);
                 endGame.Invoke();
                 state = PlayerState.OVER;
                 break;
