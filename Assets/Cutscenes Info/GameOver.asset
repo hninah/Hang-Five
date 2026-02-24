@@ -23,3 +23,4 @@ MonoBehaviour:
     rightSpeakerIdx: 0
     imgIdx: 0
     dialogue: 
+  nextCutscene: {fileID: 0}

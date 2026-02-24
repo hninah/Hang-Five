@@ -167,9 +167,12 @@ public class Player : MonoBehaviour
                 break;
 
             case PlayerState.OVER:
-                SceneManager.LoadScene("GameOver_CS");
-                Debug.Log("FIXME: Put in some way to transition scenes here.");
-
+                //SceneManager.LoadScene("GameOver_CS");
+                //Debug.Log("FIXME: Put in some way to transition scenes here.");
+                if(!CutsceneManager.Instance.finishedCutscenes)
+                    SceneManager.LoadScene("Cutscene");
+                else
+                    SceneManager.LoadScene("Gameplay");
                 break;
 
             case PlayerState.STARTING:

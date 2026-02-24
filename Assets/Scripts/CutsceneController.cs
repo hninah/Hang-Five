@@ -47,6 +47,17 @@ public class CutsceneController : MonoBehaviour
        //start the cutscene input
         cutsceneInput = new PlayerInput();
 
+        //get current cutscene info from manager
+        
+        if (CutsceneManager.Instance.currentCutscene != null){
+            Debug.Log("getting a new cutscene");
+            sceneInfo = CutsceneManager.Instance.currentCutscene;
+        }
+        else{
+            Debug.Log("reached the end of the cutscenes");
+            CutsceneManager.Instance.finishedCutscenes = true;
+        }
+        
         //get lengths of lists
         dirCount = sceneInfo.directions.Count;
         speakerCount = sceneInfo.speakerSprites.Count;
@@ -81,7 +92,7 @@ public class CutsceneController : MonoBehaviour
 
 
     void nextLine(){
-
+        Debug.Log("entering nextLine: currIndex = " + currIndex);
         //increment directions index
         ++currIndex; 
 
@@ -113,8 +124,18 @@ public class CutsceneController : MonoBehaviour
     void endCutscene(){
         Debug.Log("Leaving the cutscene");
 
-        /// NOTE: go to next scene here ///
-        SceneManager.LoadScene("MainMenu");
+        //set up next cutscene if there is one
+        if (sceneInfo.nextCutscene != null){
+            CutsceneManager.Instance.currentCutscene = sceneInfo.nextCutscene;
+        }
+        //otherwise mark that we're done
+        else{
+            Debug.Log("reached the end of the cutscenes");
+            CutsceneManager.Instance.finishedCutscenes = true;
+        }
+        
+        //return to gameplay
+        SceneManager.LoadScene("Gameplay");
     }
 
 
