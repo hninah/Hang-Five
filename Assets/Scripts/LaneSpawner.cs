@@ -9,6 +9,11 @@ public class LaneSpawner : MonoBehaviour
     [SerializeField] float maxSpawnY = 0.0f;
     [SerializeField] float minDelay = 0.6f;
     [SerializeField] float maxDelay = 1.3f;
+    // Temp difficulty scaling
+    [SerializeField] List<float> progressiveMinDelay;
+    [SerializeField] List<float> progressiveMaxDelay;
+    [SerializeField] List<float> progressiveTimeChanges;
+    int progressiveIndex = 0;
 
     float spawnTimer;
 
@@ -17,6 +22,9 @@ public class LaneSpawner : MonoBehaviour
     void Start()
     {
         spawnTimer = Random.Range(minDelay, maxDelay);
+
+        minDelay = progressiveMinDelay[progressiveIndex];
+        maxDelay = progressiveMaxDelay[progressiveIndex];
 
         foreach (GameObject prefab in obstaclePrefabs)
         {
@@ -54,6 +62,15 @@ public class LaneSpawner : MonoBehaviour
     void Update()
     {
         spawnTimer -= Time.deltaTime;
+
+        // Temp
+        progressiveTimeChanges[progressiveIndex] -= Time.deltaTime;
+        if (progressiveIndex + 1 < progressiveTimeChanges.Count && progressiveTimeChanges[progressiveIndex] <= 0.0f)
+        {
+            progressiveIndex += 1;
+            minDelay = progressiveMinDelay[progressiveIndex];
+            maxDelay = progressiveMaxDelay[progressiveIndex];
+        }
 
         if (spawnTimer <= 0f)
         {

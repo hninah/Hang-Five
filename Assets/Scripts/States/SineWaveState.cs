@@ -24,9 +24,7 @@ public class SineWaveState : State
 
         //add wave offset to position
         arcDistance = arcDistance + arcSpeed * Time.deltaTime;
-        Debug.Log(arcDistance);
         Vector3 waveOffset = Vector3.up * Mathf.Sin(arcDistance * Mathf.Deg2Rad) * Time.deltaTime * amplitude;
-        Debug.Log(waveOffset);
         ob.transform.position = ob.transform.position + waveOffset;
 
         if (ob.transform.position.x < ob.deathBoundX)
