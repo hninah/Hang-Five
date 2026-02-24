@@ -37,6 +37,8 @@ public class CutsceneInfo : ScriptableObject
     public List<Sprite> sceneStills;
     // A list of Scenedirections to load and play sequentially using a cue from another script (e.g. cutscene input system)
     public List<SceneDirection> directions = new List<SceneDirection>();
+
+    public CutsceneInfo nextCutscene; //the cutscene to play after this one
     
     // Whether the textbox should be in the lower half or upper half of the screen (useful for if an artist needs the textbox to be in a different position).
     ///public bool textAtTop;

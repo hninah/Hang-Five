@@ -1,0 +1,59 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1e73c5106fe4f24f8c623b663cb8311, type: 3}
+  m_Name: Tricks
+  m_EditorClassIdentifier: 
+  speakerSprites: []
+  sceneStills: []
+  directions:
+  - leftSpeaker: Surfer
+    rightSpeaker: ?????
+    isLeftSpeaking: 1
+    isRightSpeaking: 0
+    leftSpeakerIdx: 0
+    rightSpeakerIdx: 1
+    imgIdx: 0
+    dialogue: "Why can\u2019t I stop them? I can\u2019t fight sharks! Am I too weak?
+      Is my surfing not good enough?"
+  - leftSpeaker: Surfer
+    rightSpeaker: ?????
+    isLeftSpeaking: 0
+    isRightSpeaking: 1
+    leftSpeakerIdx: 0
+    rightSpeakerIdx: 1
+    imgIdx: 0
+    dialogue: "Your surfing is good\u2026"
+  - leftSpeaker: Surfer
+    rightSpeaker: ?????
+    isLeftSpeaking: 1
+    isRightSpeaking: 0
+    leftSpeakerIdx: 0
+    rightSpeakerIdx: 1
+    imgIdx: 0
+    dialogue: Huh?
+  - leftSpeaker: Surfer
+    rightSpeaker: ?????
+    isLeftSpeaking: 0
+    isRightSpeaking: 1
+    leftSpeakerIdx: 0
+    rightSpeakerIdx: 1
+    imgIdx: 0
+    dialogue: "You jus\u2019 need a little more style\u2026"
+  - leftSpeaker: Surfer
+    rightSpeaker: ?????
+    isLeftSpeaking: 0
+    isRightSpeaking: 1
+    leftSpeakerIdx: 0
+    rightSpeakerIdx: 1
+    imgIdx: 0
+    dialogue: What? Who are you?
+  nextCutscene: {fileID: 0}

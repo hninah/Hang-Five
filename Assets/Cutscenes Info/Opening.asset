@@ -12,14 +12,79 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1e73c5106fe4f24f8c623b663cb8311, type: 3}
   m_Name: Opening
   m_EditorClassIdentifier: 
-  speakerSprites: []
-  sceneStills: []
+  speakerSprites:
+  - {fileID: 21300000, guid: 467b8241a78b4184fa9188551dbd1315, type: 3}
+  - {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  sceneStills:
+  - {fileID: 21300000, guid: f95a98fe17bf9034082aad2bf7cebfd3, type: 3}
   directions:
   - leftSpeaker: Surfer
     rightSpeaker: Big Bad CEO
-    isLeftSpeaking: 1
+    isLeftSpeaking: 0
     isRightSpeaking: 1
     leftSpeakerIdx: 0
-    rightSpeakerIdx: 0
+    rightSpeakerIdx: 1
     imgIdx: 0
-    dialogue: 
+    dialogue: "You\u2019re still here. Didn\u2019t I tell all you water hippies to
+      skip town?"
+  - leftSpeaker: Surfer
+    rightSpeaker: Big Bad CEO
+    isLeftSpeaking: 1
+    isRightSpeaking: 0
+    leftSpeakerIdx: 0
+    rightSpeakerIdx: 1
+    imgIdx: 0
+    dialogue: "I\u2019m not goin\u2019 anywhere jack! I\u2019m not gonna let you
+      turn Big Wave Beach into a Shopping Mall! Dig?"
+  - leftSpeaker: Surfer
+    rightSpeaker: Big Bad CEO
+    isLeftSpeaking: 0
+    isRightSpeaking: 1
+    leftSpeakerIdx: 0
+    rightSpeakerIdx: 1
+    imgIdx: 0
+    dialogue: Just how are you gonna stop me, coral muncher?
+  - leftSpeaker: Surfer
+    rightSpeaker: Big Bad CEO
+    isLeftSpeaking: 1
+    isRightSpeaking: 0
+    leftSpeakerIdx: 0
+    rightSpeakerIdx: 1
+    imgIdx: 0
+    dialogue: "I\u2019m gonna surf, and keep surfing, and never stop surfing. You
+      got it? These waves are in my blood, man. You\u2019re nothin\u2019."
+  - leftSpeaker: Surfer
+    rightSpeaker: Big Bad CEO
+    isLeftSpeaking: 1
+    isRightSpeaking: 0
+    leftSpeakerIdx: 0
+    rightSpeakerIdx: 1
+    imgIdx: 0
+    dialogue: "Also, according to California Constitution, Article 4, Section 19,
+      if I\u2019m out there surfing, you can\u2019t do any construction. "
+  - leftSpeaker: Surfer
+    rightSpeaker: Big Bad CEO
+    isLeftSpeaking: 0
+    isRightSpeaking: 1
+    leftSpeakerIdx: 0
+    rightSpeakerIdx: 1
+    imgIdx: 0
+    dialogue: "You\u2019re smart for a west coaster, but if you think that\u2019ll
+      actually stop me you might as well-"
+  - leftSpeaker: Surfer
+    rightSpeaker: Big Bad CEO
+    isLeftSpeaking: 1
+    isRightSpeaking: 0
+    leftSpeakerIdx: 0
+    rightSpeakerIdx: 1
+    imgIdx: 0
+    dialogue: Yeah like, whatever man.
+  - leftSpeaker: Surfer
+    rightSpeaker: Big Bad CEO
+    isLeftSpeaking: 1
+    isRightSpeaking: 0
+    leftSpeakerIdx: 0
+    rightSpeakerIdx: 1
+    imgIdx: 0
+    dialogue: Cowabunga!
+  nextCutscene: {fileID: 11400000, guid: 81f0ca110bff7db4f9d6ee9c5d5c1f80, type: 2}
