@@ -29,8 +29,9 @@ public class SharkOb : Obstacle
         //shark starts in stationary state
         activeState = new StationaryState();
         activeState.onEnterState();
-
+        Debug.Log("Shark spawned at position: " + transform.position);
         audioSource = GetComponent<AudioSource>();
+        print("playing shark spawn");
         PlaySpawnSound();
     }
 

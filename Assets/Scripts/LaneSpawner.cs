@@ -9,44 +9,36 @@ public class LaneSpawner : MonoBehaviour
     [SerializeField] float maxSpawnY = 0.0f;
     [SerializeField] float minDelay = 0.6f;
     [SerializeField] float maxDelay = 1.3f;
+    // Temp difficulty scaling
+    [SerializeField] List<float> progressiveMinDelay;
+    [SerializeField] List<float> progressiveMaxDelay;
+    [SerializeField] List<float> progressiveTimeChanges;
+    int progressiveIndex = 0;
 
     float spawnTimer;
 
     [SerializeField] List<float> obstacleProbs;
-
+    [SerializeField] private List<GameObject> allObstaclePrefabs;
+    private List<GameObject> activeObstaclePrefabs;
     void Start()
     {
         spawnTimer = Random.Range(minDelay, maxDelay);
 
-        foreach (GameObject prefab in obstaclePrefabs)
+        minDelay = progressiveMinDelay[progressiveIndex];
+        maxDelay = progressiveMaxDelay[progressiveIndex];
+
+        // get the obstacles for whichever stage we are in
+        activeObstaclePrefabs = GameManager.Instance.GetStageObstacles();
+
+        // probabilities
+        if (obstacleProbs.Count != activeObstaclePrefabs.Count)
         {
-            Obstacle obstacle = prefab.GetComponent<Obstacle>();
+            obstacleProbs = new List<float>();
+            float equalProb = 1f / activeObstaclePrefabs.Count;
 
-            if (obstacle == null)
+            for (int i = 0; i < activeObstaclePrefabs.Count; i++)
             {
-                Debug.LogError("Obstacle: " + obstacle + " does not have an Obstacle script attached. Cannot set y boundaries.");
-                continue;
-            }
-
-            if (obstacle.name == "Seagull")
-            {
-                obstacle.setYBounds(-4.5f, -2.0f);
-            }
-            else
-            {
-                obstacle.setYBounds(minSpawnY, maxSpawnY);
-            }
-
-            if (obstacleProbs.Count != obstaclePrefabs.Count)
-            {
-                Debug.LogError("Obstacle Probabilities does not match number of obstacles. Manually assigning equal probabilities");
-                float prob = 1 / obstaclePrefabs.Count;
-                obstacleProbs = new List<float>(obstaclePrefabs.Count);
-
-                for (int i = 0; i < obstacleProbs.Count; ++i)
-                {
-                    obstacleProbs[i] = prob;
-                }
+                obstacleProbs.Add(equalProb);
             }
         }
     }
@@ -55,9 +47,18 @@ public class LaneSpawner : MonoBehaviour
     {
         spawnTimer -= Time.deltaTime;
 
+        // Temp
+        progressiveTimeChanges[progressiveIndex] -= Time.deltaTime;
+        if (progressiveIndex + 1 < progressiveTimeChanges.Count && progressiveTimeChanges[progressiveIndex] <= 0.0f)
+        {
+            progressiveIndex += 1;
+            minDelay = progressiveMinDelay[progressiveIndex];
+            maxDelay = progressiveMaxDelay[progressiveIndex];
+        }
+
         if (spawnTimer <= 0f)
         {
-            GameObject obstacleType = obstaclePrefabs[getObstacleIndex()];
+            GameObject obstacleType = activeObstaclePrefabs[getObstacleIndex()];
 
             float spawnY = getObstacleSpawnY();
             Vector3 pos = new Vector3(spawnX, spawnY, 0f);
@@ -71,7 +72,7 @@ public class LaneSpawner : MonoBehaviour
     {
         float prob = Random.Range(0.0f, 1.0f);
         float currentProb = 0.0f;
-        for (int i = 0; i < obstaclePrefabs.Count; ++i)
+        for (int i = 0; i < activeObstaclePrefabs.Count; ++i)
         {
             if (prob >= currentProb && prob < currentProb + obstacleProbs[i])
             {

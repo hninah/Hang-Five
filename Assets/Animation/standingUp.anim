@@ -28,6 +28,8 @@ AnimationClip:
       value: {fileID: 21300000, guid: d55c5aad40708c547b5f4cec7d5557a0, type: 3}
     - time: 0.6666667
       value: {fileID: 21300000, guid: 40eec6ebac64e8d43bd29127f39a2d82, type: 3}
+    - time: 0.8333333
+      value: {fileID: 21300000, guid: 132999a8b327453489be828f70061039, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -54,12 +56,13 @@ AnimationClip:
     - {fileID: 21300000, guid: ee1ed4b6233b1a74bbf784acdace9ac4, type: 3}
     - {fileID: 21300000, guid: d55c5aad40708c547b5f4cec7d5557a0, type: 3}
     - {fileID: 21300000, guid: 40eec6ebac64e8d43bd29127f39a2d82, type: 3}
+    - {fileID: 21300000, guid: 132999a8b327453489be828f70061039, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.68333334
+    m_StopTime: 0.84999996
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -79,7 +82,7 @@ AnimationClip:
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
   m_Events:
-  - time: 0.6666667
+  - time: 0.8333333
     functionName: OnStandingUpFinished
     data: 
     objectReferenceParameter: {fileID: 0}

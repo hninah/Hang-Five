@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Opening
   m_EditorClassIdentifier: 
   speakerSprites:
-  - {fileID: 21300000, guid: 467b8241a78b4184fa9188551dbd1315, type: 3}
-  - {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  - {fileID: 21300000, guid: 433f75f2fdaa60948b8f45ad0a1859d2, type: 3}
+  - {fileID: 21300000, guid: d37d63abaf6c441429e37a5eb4319bf6, type: 3}
   sceneStills:
   - {fileID: 21300000, guid: f95a98fe17bf9034082aad2bf7cebfd3, type: 3}
   directions:

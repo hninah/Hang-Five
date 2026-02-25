@@ -89,6 +89,10 @@ public class Player : MonoBehaviour
     public UnityEvent startGame = new UnityEvent();
     public UnityEvent endGame = new UnityEvent();
 
+    [Header("Audio")]
+    [SerializeField] private AudioClip wipeout;
+    private AudioSource audioSource;
+
     void Awake()
     {
         if (_instance != null)
@@ -101,6 +105,7 @@ public class Player : MonoBehaviour
         playerInput = new PlayerInput();
         playerVelocity = startingVelocity;
         rotation = transform.eulerAngles.z;
+        audioSource = GetComponent<AudioSource>();
     }
 
     void OnEnable()
@@ -162,17 +167,13 @@ public class Player : MonoBehaviour
                 break;
 
             case PlayerState.CRASHING:
+                audioSource.PlayOneShot(wipeout, 0.3f);
                 endGame.Invoke();
                 state = PlayerState.OVER;
                 break;
 
             case PlayerState.OVER:
-                //SceneManager.LoadScene("GameOver_CS");
-                //Debug.Log("FIXME: Put in some way to transition scenes here.");
-                if(!CutsceneManager.Instance.finishedCutscenes)
-                    SceneManager.LoadScene("Cutscene");
-                else
-                    SceneManager.LoadScene("Gameplay");
+                // We'll figure out what to do with this stuff later
                 break;
 
             case PlayerState.STARTING:

@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: MovingEnemy1
   m_EditorClassIdentifier: 
   speakerSprites:
-  - {fileID: 21300000, guid: 467b8241a78b4184fa9188551dbd1315, type: 3}
-  - {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  - {fileID: 21300000, guid: f3f229a9dc844814da08eab1e3dd6299, type: 3}
+  - {fileID: 21300000, guid: c052670c39a0f3e4fb380e2d11112020, type: 3}
   - {fileID: 21300000, guid: 2ca26251a9d689c4ea1c65cce63137d0, type: 3}
   - {fileID: 21300000, guid: 605188ce8e63933429ee81782fa7de9e, type: 3}
   sceneStills:
