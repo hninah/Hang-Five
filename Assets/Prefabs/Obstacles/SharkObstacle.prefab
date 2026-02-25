@@ -104,6 +104,7 @@ MonoBehaviour:
   maxYBound: 2.1
   minYBound: -4.5
   deathBoundX: -12
+  stage: 3
   animator: {fileID: 1290397465675383776}
   aggroThreshold: 8
   sharkSpawn: {fileID: 8300000, guid: 83599b35076440f4bb18742d7659c6f1, type: 3}
