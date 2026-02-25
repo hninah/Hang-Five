@@ -29,7 +29,7 @@ public class GameManager : MonoBehaviour
 
     public List<GameObject> GetStageObstacles()
     {
-        // get the obstacles for each stage rather than making lane spawner decide that
+        // get the obstacles for each stage in the game manager rather than making lane spawner decide that
         List<GameObject> obstacles = new List<GameObject>();
 
         foreach (GameObject prefab in allObstaclePrefabs)
