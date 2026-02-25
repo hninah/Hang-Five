@@ -702,6 +702,7 @@ GameObject:
   - component: {fileID: 453308569}
   - component: {fileID: 453308571}
   - component: {fileID: 453308570}
+  - component: {fileID: 453308572}
   m_Layer: 5
   m_Name: ScoreText
   m_TagString: Untagged
@@ -827,6 +828,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 453308568}
   m_CullTransparentMesh: 1
+--- !u!114 &453308572
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 453308568}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c412ec1597ef3224d87ff4e238b0f819, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: {fileID: 453308570}
 --- !u!1 &461012934
 GameObject:
   m_ObjectHideFlags: 0
@@ -1848,8 +1862,8 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 453308569}
   - {fileID: 1508497706}
+  - {fileID: 453308569}
   - {fileID: 590592177}
   - {fileID: 1266597583}
   - {fileID: 1920282482}
@@ -3384,6 +3398,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 453308572}
+        m_TargetAssemblyTypeName: DisplayScore, Assembly-CSharp
+        m_MethodName: changeTextColor
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
