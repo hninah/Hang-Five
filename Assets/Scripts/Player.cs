@@ -170,6 +170,10 @@ public class Player : MonoBehaviour
                 audioSource.PlayOneShot(wipeout, 0.3f);
                 endGame.Invoke();
                 state = PlayerState.OVER;
+                Time.timeScale = 0f;
+                int finalScore = Mathf.FloorToInt(ScoreManager.Instance.score);
+                print(finalScore);
+                GameManager.Instance.GameOver(finalScore);
                 break;
 
             case PlayerState.OVER:

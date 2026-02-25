@@ -127,7 +127,6 @@ public class CutsceneController : MonoBehaviour
         //set up next cutscene if there is one
         if (sceneInfo.nextCutscene != null){
             CutsceneManager.Instance.currentCutscene = sceneInfo.nextCutscene;
-            GameManager.Instance.currentStage++;
         }
         //otherwise mark that we're done
         else{

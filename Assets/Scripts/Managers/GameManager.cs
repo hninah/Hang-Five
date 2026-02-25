@@ -7,7 +7,10 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
 
     public int currentStage = 1;
+    public int highScore = 0;
+    public bool stageCleared = false;
     [SerializeField] private List<GameObject> allObstaclePrefabs;
+    [SerializeField] private List<int> scoreRequired;
 
     private void Awake()
     {
@@ -38,5 +41,32 @@ public class GameManager : MonoBehaviour
         }
         print("Current Stage: " + currentStage);
         return obstacles;
+    }
+
+    public bool GameOver(int finalScore)
+    {
+        if (finalScore > highScore)
+        {
+            highScore = finalScore;
+        }
+        if (currentStage > scoreRequired.Count)
+        {
+            print("all cutscenes are finished so infinite mode");
+            stageCleared = false;
+            return false;
+        }
+        else if (finalScore >= scoreRequired[currentStage - 1])
+        {
+            // check if player got enough score to pass the stage
+            print("stage passed");
+            currentStage++;
+            stageCleared = true;
+            return true;
+            
+        } else
+        {
+            print("stage failed");
+            return false;
+        }
     }
 }
