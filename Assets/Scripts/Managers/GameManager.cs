@@ -22,11 +22,6 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void NextStage()
-    {
-        currentStage++;
-    }
-
     public List<GameObject> GetStageObstacles()
     {
         // get the obstacles for each stage in the game manager rather than making lane spawner decide that

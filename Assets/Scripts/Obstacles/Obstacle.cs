@@ -10,7 +10,7 @@ public class Obstacle : MonoBehaviour
     public float minYBound = 0.0f;
     public float deathBoundX = -12.0f;
 
-    [SerializeField] private int stage = 1;
+    [SerializeField] private int stage = 1; // stage which obstacle should appear
 
     private string obsName;
     public string Name { get{ return obsName; } }

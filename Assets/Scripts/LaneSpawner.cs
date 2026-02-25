@@ -26,7 +26,11 @@ public class LaneSpawner : MonoBehaviour
 
         minDelay = progressiveMinDelay[progressiveIndex];
         maxDelay = progressiveMaxDelay[progressiveIndex];
+
+        // get the obstacles for whichever stage we are in
         activeObstaclePrefabs = GameManager.Instance.GetStageObstacles();
+
+        // probabilities
         if (obstacleProbs.Count != activeObstaclePrefabs.Count)
         {
             obstacleProbs = new List<float>();
