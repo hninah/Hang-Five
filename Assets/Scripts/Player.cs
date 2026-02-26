@@ -16,11 +16,8 @@ public class Player : MonoBehaviour
         STARTING
     };
 
-    /* TODO(?):
-     * - Add a turn transition with weight to it based on how fast the player is moving
-     *          - NOTE: The board now slows when rotating, but it's not necessarily dependent on velocity
-     * - Add collision with obstacles
-    */
+
+
     [Header("Surfing Movement Variables")]
     [SerializeField] private float accel;
     [SerializeField] private float decel;
@@ -188,6 +185,8 @@ public class Player : MonoBehaviour
 
     void OnTriggerEnter2D()
     {
+        if (state == PlayerState.CRASHING) return;
+
         state = PlayerState.CRASHING;
     }
 
