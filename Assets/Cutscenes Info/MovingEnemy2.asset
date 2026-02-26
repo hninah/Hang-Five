@@ -95,4 +95,4 @@ MonoBehaviour:
     rightSpeakerIdx: 1
     imgIdx: 0
     dialogue: "How are we gonna stop these guys\u2026"
-  nextCutscene: {fileID: 0}
+  nextCutscene: {fileID: 11400000, guid: 73448f3cb465f994ebe4a415cf8cb573, type: 2}
