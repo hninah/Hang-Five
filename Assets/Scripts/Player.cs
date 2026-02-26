@@ -167,8 +167,7 @@ public class Player : MonoBehaviour
                 break;
 
             case PlayerState.CRASHING:
-                audioSource.PlayOneShot(wipeout, 0.3f);
-                endGame.Invoke();
+                StartCoroutine(HandleCrash());
                 state = PlayerState.OVER;
                 break;
 
@@ -305,5 +304,20 @@ public class Player : MonoBehaviour
     public float GetSpeed()
     {
         return Mathf.Abs(playerVelocity.y);
+    }
+
+    IEnumerator HandleCrash()
+    {
+        audioSource.PlayOneShot(wipeout, 0.3f);
+        animator.SetTrigger("Crashing");
+
+        // wait for 1 second because that is how long the animation is
+        yield return new WaitForSeconds(1f);
+        // freeze the game so player cannot gain any more points
+        Time.timeScale = 0f;
+        endGame.Invoke();
+        int finalScore = Mathf.FloorToInt(ScoreManager.Instance.score);
+        // game mangaer gets the final score to compare if stage was passed and high score
+        GameManager.Instance.GameOver(finalScore);
     }
 }

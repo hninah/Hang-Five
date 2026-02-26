@@ -14,6 +14,9 @@ public class ScoreManager : MonoBehaviour
 
     private bool gameRunning = false;
 
+    [SerializeField] private TMP_Text highScoreText;
+    [SerializeField] private TMP_Text endScoreText;
+
     private void Awake()
     {
         if (Instance == null)
@@ -21,11 +24,29 @@ public class ScoreManager : MonoBehaviour
         else
             Destroy(gameObject);
     }
-
     private void Start()
     {
-        Player.Instance.startGame.AddListener(() => gameRunning = true);
-        Player.Instance.endGame.AddListener(() => gameRunning = false);
+        Player.Instance.startGame.AddListener(OnGameStart);
+        Player.Instance.endGame.AddListener(OnGameEnd);
+    }
+    private void OnGameStart()
+    {
+        gameRunning = true;
+    }
+
+    private void OnGameEnd()
+    {
+        gameRunning = false;
+
+        int finalScore = Mathf.FloorToInt(score);
+
+        if (finalScore > GameManager.Instance.highScore)
+        {
+            GameManager.Instance.highScore = finalScore;
+        }
+
+        endScoreText.text = "Your Score: " + finalScore;
+        highScoreText.text = "High Score: " + GameManager.Instance.highScore;
     }
 
     private void Update()

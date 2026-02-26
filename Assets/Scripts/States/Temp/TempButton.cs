@@ -7,14 +7,22 @@ public class TempButton : MonoBehaviour
 {
     public void buttonPressContinue()
     {
-        if (!CutsceneManager.Instance.finishedCutscenes)
+        Time.timeScale = 1f;
+        if (!CutsceneManager.Instance.finishedCutscenes && GameManager.Instance.stageCleared)
+        {
+            GameManager.Instance.stageCleared = false;
             SceneManager.LoadScene("Cutscene");
+        }
         else
+        {
+            GameManager.Instance.stageCleared = false;
             SceneManager.LoadScene("Gameplay");
+        }
     }
 
     public void buttonPressQuit()
     {
+        Time.timeScale = 1f;
         SceneManager.LoadScene("MainMenu");
     }
 }

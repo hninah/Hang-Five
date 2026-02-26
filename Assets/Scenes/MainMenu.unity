@@ -944,10 +944,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentStage: 1
+  highScore: 0
+  stageCleared: 0
   allObstaclePrefabs:
   - {fileID: 2144488072472814359, guid: 8e5e73df4fcf70e488cdfae42a03cdaf, type: 3}
   - {fileID: 3973058621705695172, guid: c268e31c6cd22da4d8d7bb4e1df63a15, type: 3}
   - {fileID: 2963685289427379715, guid: b45699529837bd245a57f609efa5bed3, type: 3}
+  scoreRequired: 64000000c80000002c010000
 --- !u!4 &1292449646
 Transform:
   m_ObjectHideFlags: 0
