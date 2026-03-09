@@ -2154,8 +2154,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18f354588bc5d2e4da64aed3059efcf4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentCutscene: {fileID: 11400000, guid: ae6c205bbd05f3446a8b26c5d99aef1e, type: 2}
-  finishedCutscenes: 0
+  cutsceneList:
+  - {fileID: 11400000, guid: ae6c205bbd05f3446a8b26c5d99aef1e, type: 2}
+  - {fileID: 11400000, guid: 81f0ca110bff7db4f9d6ee9c5d5c1f80, type: 2}
+  - {fileID: 11400000, guid: 881a91be47c68e0478189ebb13b347e9, type: 2}
+  - {fileID: 11400000, guid: 73448f3cb465f994ebe4a415cf8cb573, type: 2}
+  - {fileID: 11400000, guid: bccde198a3428ad43b166202f87f10d5, type: 2}
 --- !u!4 &1285992959
 Transform:
   m_ObjectHideFlags: 0

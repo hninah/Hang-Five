@@ -10,17 +10,13 @@ public class CutsceneInfo : ScriptableObject
     public struct SceneDirection
     {
         // Names of the characters on the left and right sides of the screen (really just needs to be a way to identify different character sprites to display)
+        //these are displayed in text boxes by the character sprites
         public string leftSpeaker;
         public string rightSpeaker;
 
-        // Whether the character should be "grayed out" (cue to darken their sprite a little bit using other scripts)
-        ///public bool leftFaded;
-        ///public bool rightFaded;
         //whether the character should be unfaded (reverse of leftFaded and rightFaded)
         public bool isLeftSpeaking;
         public bool isRightSpeaking;
-        // The name of the person speaking (to display in a text box)
-        /// public string speakerName;
         
         //The speaker sprites to use for each thing
         public int leftSpeakerIdx;
@@ -38,8 +34,4 @@ public class CutsceneInfo : ScriptableObject
     // A list of Scenedirections to load and play sequentially using a cue from another script (e.g. cutscene input system)
     public List<SceneDirection> directions = new List<SceneDirection>();
 
-    public CutsceneInfo nextCutscene; //the cutscene to play after this one
-    
-    // Whether the textbox should be in the lower half or upper half of the screen (useful for if an artist needs the textbox to be in a different position).
-    ///public bool textAtTop;
 }
