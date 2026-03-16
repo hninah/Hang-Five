@@ -25,6 +25,9 @@ public class TutorialManager : MonoBehaviour
     [SerializeField] private SurfCamera surfCamera;
     [SerializeField] private GameObject tutorialTarget;
 
+    [Header("UI")]
+    [SerializeField] private GameObject skipTutorialButton;
+
     void Awake()   
     {
         Instance = this;
@@ -123,5 +126,17 @@ public class TutorialManager : MonoBehaviour
         yield return new WaitForSecondsRealtime(duration);
         Time.timeScale = 1f;
     }
+    public void SkipTutorial()
+    {
+        if (currentStep == TutorialStep.Complete) return;
 
+        currentStep = TutorialStep.Complete;
+
+        obstacleSpawner.SetActive(false);
+        laneSpawner.DisableTutorialMode();
+
+        GameManager.Instance.tutorialCompleted = true;
+
+        SceneManager.LoadScene("Gameplay");
+    }
 }
