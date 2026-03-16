@@ -3,90 +3,97 @@ using UnityEngine;
 
 public class LaneSpawner : MonoBehaviour
 {
-    [SerializeField] List<GameObject> obstaclePrefabs;
-    [SerializeField] float spawnX = 12f;
-    [SerializeField] float minSpawnY = 0.0f;
-    [SerializeField] float maxSpawnY = 0.0f;
-    [SerializeField] float minDelay = 0.6f;
-    [SerializeField] float maxDelay = 1.3f;
-    // Temp difficulty scaling
-    [SerializeField] List<float> progressiveMinDelay;
-    [SerializeField] List<float> progressiveMaxDelay;
-    [SerializeField] List<float> progressiveTimeChanges;
-    int progressiveIndex = 0;
+    [Header("Prefabs")]
+    [SerializeField] private GameObject tutorialPrefab;
 
-    float spawnTimer;
+    [Header("Spawn Settings")]
+    [SerializeField] private float spawnX = 12f;
+    [SerializeField] private float minSpawnY = -4.5f;
+    [SerializeField] private float maxSpawnY = 2.1f;
 
-    [SerializeField] List<float> obstacleProbs;
-    [SerializeField] private List<GameObject> allObstaclePrefabs;
-    private List<GameObject> activeObstaclePrefabs;
-    void Start()
+    [Header("Gameplay Timing")]
+    [SerializeField] private float gameplayMinDelay = 0.7f;
+    [SerializeField] private float gameplayMaxDelay = 2f;
+
+    [Header("Tutorial Timing")]
+    [SerializeField] private float tutorialMinDelay = 2.5f;
+    [SerializeField] private float tutorialMaxDelay = 3.5f;
+
+    private float spawnTimer;
+    private bool tutorialMode = false;
+    float GetRandomDelay()
     {
-        spawnTimer = Random.Range(minDelay, maxDelay);
+        // different speed and time between spawn for tutorial
+        if (tutorialMode)
+            return Random.Range(tutorialMinDelay, tutorialMaxDelay);
 
-        minDelay = progressiveMinDelay[progressiveIndex];
-        maxDelay = progressiveMaxDelay[progressiveIndex];
-
-        // get the obstacles for whichever stage we are in
-        activeObstaclePrefabs = GameManager.Instance.GetStageObstacles();
-
-        // probabilities
-        if (obstacleProbs.Count != activeObstaclePrefabs.Count)
-        {
-            obstacleProbs = new List<float>();
-            float equalProb = 1f / activeObstaclePrefabs.Count;
-
-            for (int i = 0; i < activeObstaclePrefabs.Count; i++)
-            {
-                obstacleProbs.Add(equalProb);
-            }
-        }
+        return Random.Range(gameplayMinDelay, gameplayMaxDelay);
     }
+
+    void OnEnable()
+    {
+        spawnTimer = GetRandomDelay();
+    }
+
 
     void Update()
     {
         spawnTimer -= Time.deltaTime;
 
-        // Temp
-        progressiveTimeChanges[progressiveIndex] -= Time.deltaTime;
-        if (progressiveIndex + 1 < progressiveTimeChanges.Count && progressiveTimeChanges[progressiveIndex] <= 0.0f)
-        {
-            progressiveIndex += 1;
-            minDelay = progressiveMinDelay[progressiveIndex];
-            maxDelay = progressiveMaxDelay[progressiveIndex];
-        }
-
         if (spawnTimer <= 0f)
         {
-            GameObject obstacleType = activeObstaclePrefabs[getObstacleIndex()];
-
-            float spawnY = getObstacleSpawnY();
-            Vector3 pos = new Vector3(spawnX, spawnY, 0f);
-
-            Instantiate(obstacleType, pos, Quaternion.identity);
-            spawnTimer = Random.Range(minDelay, maxDelay);
+            SpawnObstacle();
+            spawnTimer = GetRandomDelay();
         }
     }
 
-    int getObstacleIndex()
+    void SpawnObstacle()
     {
-        float prob = Random.Range(0.0f, 1.0f);
-        float currentProb = 0.0f;
-        for (int i = 0; i < activeObstaclePrefabs.Count; ++i)
+        GameObject prefab;
+        // look for tutorial obstacle
+        if (tutorialMode && tutorialPrefab != null)
         {
-            if (prob >= currentProb && prob < currentProb + obstacleProbs[i])
-            {
-                return i;
-            }
+            prefab = tutorialPrefab;
+        }
+        else
+        {
+            // wait for gameplay scene to load and add the obstacles for that stage
+            List<GameObject> stageObstacles = GameManager.Instance.GetStageObstacles();
 
-            currentProb += obstacleProbs[i];
+            if (stageObstacles == null || stageObstacles.Count == 0)
+                return;
+
+            prefab = stageObstacles[Random.Range(0, stageObstacles.Count)];
         }
 
-        return 0;
+        float y = Random.Range(minSpawnY, maxSpawnY);
+
+        GameObject obstacle = Instantiate(prefab, new Vector3(spawnX, y, 0f), Quaternion.identity);
+
+        Obstacle obs = obstacle.GetComponent<Obstacle>();
+
+        if (obs != null)
+        {
+            // tutorial obstacles move at half the speed
+            if (tutorialMode)
+            {
+                obs.scrollSpeed = 2.5f;
+            } else
+            {
+                // regular obstacle speed
+                obs.scrollSpeed = 5f;
+            }
+        }
     }
 
-    float getObstacleSpawnY()
+    public void EnableTutorialMode()
     {
-        return Random.Range(minSpawnY, maxSpawnY);
+        tutorialMode = true;
     }
+
+    public void DisableTutorialMode()
+    {
+        tutorialMode = false;
+    }
+
 }

@@ -7,6 +7,13 @@ public class MenuAnimEvents : MonoBehaviour
 {
     public void OnStandingUpFinished()
     {
-        SceneManager.LoadScene("Gameplay"); 
+        if (!GameManager.Instance.tutorialCompleted)
+        {
+            SceneManager.LoadScene("Tutorial");
+        }
+        else
+        {
+            SceneManager.LoadScene("Gameplay");
+        }
     }
 }
