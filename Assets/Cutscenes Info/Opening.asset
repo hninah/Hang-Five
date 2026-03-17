@@ -87,4 +87,3 @@ MonoBehaviour:
     rightSpeakerIdx: 1
     imgIdx: 0
     dialogue: Cowabunga!
-  nextCutscene: {fileID: 11400000, guid: 81f0ca110bff7db4f9d6ee9c5d5c1f80, type: 2}

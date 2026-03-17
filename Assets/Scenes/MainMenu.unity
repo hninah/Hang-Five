@@ -422,6 +422,57 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &407100494
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 407100496}
+  - component: {fileID: 407100495}
+  m_Layer: 0
+  m_Name: CutsceneManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &407100495
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 407100494}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18f354588bc5d2e4da64aed3059efcf4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cutsceneList:
+  - {fileID: 11400000, guid: ae6c205bbd05f3446a8b26c5d99aef1e, type: 2}
+  - {fileID: 11400000, guid: 81f0ca110bff7db4f9d6ee9c5d5c1f80, type: 2}
+  - {fileID: 11400000, guid: 881a91be47c68e0478189ebb13b347e9, type: 2}
+  - {fileID: 11400000, guid: 73448f3cb465f994ebe4a415cf8cb573, type: 2}
+  - {fileID: 11400000, guid: bccde198a3428ad43b166202f87f10d5, type: 2}
+  obstacleCheckpoints___: 
+--- !u!4 &407100496
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 407100494}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.2050156, y: -0.2716389, z: -0.043056443}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &533794063
 GameObject:
   m_ObjectHideFlags: 0
@@ -950,7 +1001,7 @@ MonoBehaviour:
   - {fileID: 2144488072472814359, guid: 8e5e73df4fcf70e488cdfae42a03cdaf, type: 3}
   - {fileID: 3973058621705695172, guid: c268e31c6cd22da4d8d7bb4e1df63a15, type: 3}
   - {fileID: 2963685289427379715, guid: b45699529837bd245a57f609efa5bed3, type: 3}
-  scoreRequired: 64000000c80000002c010000
+  scoreRequired: 0a000000140000001e00000028000000
 --- !u!4 &1292449646
 Transform:
   m_ObjectHideFlags: 0
@@ -1435,3 +1486,4 @@ SceneRoots:
   - {fileID: 3175860}
   - {fileID: 1214434803}
   - {fileID: 1292449646}
+  - {fileID: 407100496}

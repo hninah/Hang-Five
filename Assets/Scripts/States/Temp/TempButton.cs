@@ -8,7 +8,7 @@ public class TempButton : MonoBehaviour
     public void buttonPressContinue()
     {
         Time.timeScale = 1f;
-        if (!CutsceneManager.Instance.finishedCutscenes && GameManager.Instance.stageCleared)
+        if (!CutsceneManager.Instance.isFinished() && GameManager.Instance.stageCleared)
         {
             GameManager.Instance.stageCleared = false;
             SceneManager.LoadScene("Cutscene");

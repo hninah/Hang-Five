@@ -48,12 +48,12 @@ public class AttackState : State
 
     //modify animation when we enter or leave this state
     public override void onEnterState(Obstacle ob){
-        Debug.Log("entered " + this.Name);
+        ///Debug.Log("entered " + this.Name);
         ob.animator.SetBool("isAttacking", true);
     }
 
     public override void onExitState(Obstacle ob){
-        Debug.Log("exited " + this.Name);
+        ///Debug.Log("exited " + this.Name);
         ob.animator.SetBool("isAttacking", false);
     }
 }
