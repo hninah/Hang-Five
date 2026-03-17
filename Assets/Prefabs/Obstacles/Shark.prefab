@@ -103,8 +103,8 @@ MonoBehaviour:
   maxYBound: 0
   minYBound: 0
   deathBoundX: -12
-  stage: 3
-  animator: {fileID: -1267495088127076930}
+  checkpointCutscene: 0
+  animator: {fileID: 0}
   attackDistance: 10
   attackSpeed: 1
   player: {fileID: 0}

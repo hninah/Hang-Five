@@ -1987,6 +1987,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1261724205}
   - component: {fileID: 1261724204}
+  - component: {fileID: 1261724206}
   m_Layer: 0
   m_Name: ObstacleSpawner
   m_TagString: Untagged
@@ -2035,6 +2036,8 @@ MonoBehaviour:
   - 0.3
   - 0.2
   allObstaclePrefabs: []
+  activeObstaclePrefabs: []
+  pattern: {fileID: 3488421494090527376, guid: 578f3dfb6b6ef784cbe024d0a81a0bb1, type: 3}
 --- !u!4 &1261724205
 Transform:
   m_ObjectHideFlags: 0
@@ -2050,6 +2053,26 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1261724206
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1261724203}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 567262b99d7836b4fb488453abd690e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  laneSpawner: {fileID: 1261724204}
+  allSpawnPatterns:
+  - {fileID: 3488421494090527376, guid: 578f3dfb6b6ef784cbe024d0a81a0bb1, type: 3}
+  - {fileID: 561360319913602947, guid: d02980438b41bfe42a984aff796df7f7, type: 3}
+  - {fileID: 3208524593415538471, guid: 7d3eef8e5ce3f994982dcf80876ef8a0, type: 3}
+  patternCheckpoints: 000000000100000002000000
+  minPatternDelay: 5
+  maxPatternDelay: 10
 --- !u!1 &1266597582
 GameObject:
   m_ObjectHideFlags: 0
@@ -2125,56 +2148,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!1 &1285992957
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1285992959}
-  - component: {fileID: 1285992958}
-  m_Layer: 0
-  m_Name: CutsceneManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1285992958
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1285992957}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 18f354588bc5d2e4da64aed3059efcf4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cutsceneList:
-  - {fileID: 11400000, guid: ae6c205bbd05f3446a8b26c5d99aef1e, type: 2}
-  - {fileID: 11400000, guid: 81f0ca110bff7db4f9d6ee9c5d5c1f80, type: 2}
-  - {fileID: 11400000, guid: 881a91be47c68e0478189ebb13b347e9, type: 2}
-  - {fileID: 11400000, guid: 73448f3cb465f994ebe4a415cf8cb573, type: 2}
-  - {fileID: 11400000, guid: bccde198a3428ad43b166202f87f10d5, type: 2}
---- !u!4 &1285992959
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1285992957}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.2050156, y: -0.2716389, z: -0.043056443}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1435940645
 GameObject:
   m_ObjectHideFlags: 0
@@ -3411,4 +3384,3 @@ SceneRoots:
   - {fileID: 632468985}
   - {fileID: 914982190}
   - {fileID: 1261724205}
-  - {fileID: 1285992959}
