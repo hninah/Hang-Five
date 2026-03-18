@@ -22,7 +22,6 @@ public class Obstacle : MonoBehaviour
     public State activeState; //current state
     public Animator animator;
 
-    [SerializeField] private bool tutorialObstacle = false;
     //constructors
     public Obstacle( string name, float speed){
         scrollSpeed = speed;
@@ -42,13 +41,6 @@ public class Obstacle : MonoBehaviour
         // Detect when obstacle leaves screen
         if (transform.position.x < deathBoundX)
         {
-            if (TutorialManager.Instance != null &&
-                tutorialObstacle &&
-                TutorialManager.Instance.currentStep == TutorialManager.TutorialStep.AvoidObstacles)
-            {
-                TutorialManager.Instance.ObstacleDodged();
-            }
-
             Destroy(gameObject);
         }
 

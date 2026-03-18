@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -7,28 +6,29 @@ public class TutorialManager : MonoBehaviour
 {
     public enum TutorialStep
     {
-        WaveMovement,
-        AvoidObstacles,
-        Complete
+        // three stages in the tutorial
+        BottomTarget,   // hit the target on the bottom of the wave
+        TopTarget,  // hit the target on the top of the wave
+        Complete    // tutorial completed
     }
 
     public static TutorialManager Instance;
+    // start with target being at the bottom of the wave
+    public TutorialStep currentStep = TutorialStep.BottomTarget;
 
-    public TutorialStep currentStep = TutorialStep.WaveMovement;
-
-    [SerializeField] private GameObject obstacleSpawner;
-    public TMPro.TextMeshProUGUI tutorialText;
-    [SerializeField] private LaneSpawner laneSpawner;
-
-    private int obstaclesDodged = 0;
-    [SerializeField] private Transform respawnPoint;
-    [SerializeField] private SurfCamera surfCamera;
-    [SerializeField] private GameObject tutorialTarget;
+    [Header("Targets")]
+    [SerializeField] private GameObject bottomTarget;
+    [SerializeField] private GameObject topTarget;
 
     [Header("UI")]
+    public TMPro.TextMeshProUGUI tutorialText;
     [SerializeField] private GameObject skipTutorialButton;
 
-    void Awake()   
+    [Header("Player Setup")]
+    [SerializeField] private Transform respawnPoint;
+    [SerializeField] private SurfCamera surfCamera;
+
+    void Awake()
     {
         Instance = this;
     }
@@ -36,57 +36,49 @@ public class TutorialManager : MonoBehaviour
     void Start()
     {
         tutorialText.enabled = true;
-        tutorialText.text = "Surf to the circle by holding SPACE!";
-        tutorialTarget.SetActive(true);
+
+        // Start with bottom target
+        currentStep = TutorialStep.BottomTarget;
+        // bottom target should show up and top target should not be active
+        bottomTarget.SetActive(true);
+        topTarget.SetActive(false);
+
+        tutorialText.text = "Surf down to the green circle!";
     }
-    public void PlayerHitTarget()
+
+    public void PlayerHitTarget(GameObject hitTarget)
     {
-        if (currentStep != TutorialStep.WaveMovement) return;
-
-        StartObstacleTutorial();
-    }
-
-    void StartObstacleTutorial()
-    {
-        currentStep = TutorialStep.AvoidObstacles;
-
-        FreezeGame(2f);
-
-        laneSpawner.EnableTutorialMode();
-        obstacleSpawner.SetActive(true);
-
-        obstaclesDodged = 0;
-        tutorialText.text = "Avoid the wrecking balls!";
-    }
-    public void ObstacleDodged()
-    {
-        // if player is not currently surfing then dont count the obstacles as dodged
-        if (Player.Instance.State != Player.PlayerState.SURFING) return;
-        obstaclesDodged++;
-
-        if (obstaclesDodged >= 3)
+        // when the player hits the bottom target then turn on the top target
+        if (currentStep == TutorialStep.BottomTarget && hitTarget == bottomTarget)
         {
-            TutorialComplete();
+            currentStep = TutorialStep.TopTarget;
+
+            // switch targets
+            bottomTarget.SetActive(false);
+            topTarget.SetActive(true);
+
+            tutorialText.text = "Now surf up to the next circle!";
+        }
+        else if (currentStep == TutorialStep.TopTarget && hitTarget == topTarget)
+        {
+            // when the player hits the top target the tutorial is complete
+            currentStep = TutorialStep.Complete;
+            // both targets should not be visbile anymore
+            bottomTarget.SetActive(false);
+            topTarget.SetActive(false);
+
+            tutorialText.text = "Nice! You're ready to surf!";
+
+            StartCoroutine(LoadGameplayAfterDelay());
         }
     }
 
-    public void TutorialComplete()
-    {
-        currentStep = TutorialStep.Complete;
-        // deactivate the spawner
-        obstacleSpawner.SetActive(false);
-        laneSpawner.DisableTutorialMode();
-            
-        tutorialText.text = "Great dodging! Now get surfing!";
-
-        StartCoroutine(LoadGameplayAfterDelay());
-    }
     IEnumerator LoadGameplayAfterDelay()
     {
-        FreezeGame(3f); // freeze gameplay while text shows
-
-        yield return new WaitForSecondsRealtime(3f);
-        // transition to the gameplay scene
+        // freeze the game for like 2 seconds so the player can read the text
+        FreezeGame(2f);
+        yield return new WaitForSecondsRealtime(2f);
+        // switch to gameplay scene
         GameManager.Instance.tutorialCompleted = true;
         SceneManager.LoadScene("Gameplay");
     }
@@ -95,28 +87,24 @@ public class TutorialManager : MonoBehaviour
     {
         StartCoroutine(RespawnPlayer());
     }
+
     IEnumerator RespawnPlayer()
     {
-        // hide player briefly
+        // the player disappears for like 0.2 seconds and then respawns where the respawn point is
         Player.Instance.gameObject.SetActive(false);
-
         yield return new WaitForSeconds(0.2f);
-        // put player back where it started
+
         Player.Instance.transform.position = respawnPoint.position;
-        // turn on invincibility frames
         Player.Instance.SetTutorialInvincible(true);
-        // reset player position and animation
+        // player is reset to its original state
         Player.Instance.ResetPlayer();
-        // reset camera position
+        // camera is reset to original position
         surfCamera.ResetCamera();
     }
 
-    public bool IsTutorialObstaclePhase()
-    {
-        return currentStep == TutorialStep.AvoidObstacles;
-    }
     void FreezeGame(float duration)
     {
+        // freeze the game for however many seconds
         Time.timeScale = 0f;
         StartCoroutine(UnfreezeAfter(duration));
     }
@@ -128,15 +116,10 @@ public class TutorialManager : MonoBehaviour
     }
     public void SkipTutorial()
     {
-        if (currentStep == TutorialStep.Complete) return;
-
+        // players are allowed to skip the tutorial (i put this in because i got too lazy to keep doing the tutorial)
         currentStep = TutorialStep.Complete;
 
-        obstacleSpawner.SetActive(false);
-        laneSpawner.DisableTutorialMode();
-
         GameManager.Instance.tutorialCompleted = true;
-
         SceneManager.LoadScene("Gameplay");
     }
 }

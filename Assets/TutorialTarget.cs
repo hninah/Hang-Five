@@ -21,7 +21,7 @@ public class TutorialTarget : MonoBehaviour
     {
         if (!other.CompareTag("Player")) return;
 
-        TutorialManager.Instance.PlayerHitTarget();
+        TutorialManager.Instance.PlayerHitTarget(gameObject);
         gameObject.SetActive(false);
     }
 }
