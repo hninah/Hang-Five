@@ -47,5 +47,5 @@ MonoBehaviour:
   minSpawnY: -4.5
   maxSpawnY: 2.1
   spawnX: 12
-  checkpointCutscene: 1
+  checkpointCutscene: -1
   patternName: RandomPattern

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class SeagullOb : Obstacle
 {
+    [Header("Falling Obstacle Parameters")]
     ///public float fallSpeed = 2f;
     public float spawnWait = 20f;
     public GameObject obsPrefab;
@@ -22,11 +23,8 @@ public class SeagullOb : Obstacle
     //Start is called before the first frame update
     void Start(){
         //set starting state
-        //seagull starts and stays in spawning state
         //activeState = new SpawningState(spawnWait, obsPrefab);
         activeState = new SineWaveState();
-        ///activeState = new StationaryState(); ///stationary if we don't want it spawning
-
         activeState.onEnterState();
 
         //audio setup

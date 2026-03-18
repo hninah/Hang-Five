@@ -16,10 +16,8 @@ public class LaneSpawner : MonoBehaviour
     int progressiveIndex = 0;
 
     float spawnTimer;
-
     [SerializeField] List<float> obstacleProbs;
-    [SerializeField] private List<GameObject> allObstaclePrefabs;
-    [SerializeField] private List<GameObject> activeObstaclePrefabs; ///
+    [SerializeField] private List<GameObject> activeObstaclePrefabs;
 
     [Header("Starting Pattern")]
     [SerializeField] private Pattern pattern; //obstacle spawning pattern
@@ -35,7 +33,7 @@ public class LaneSpawner : MonoBehaviour
         maxDelay = progressiveMaxDelay[progressiveIndex];
 
         // get the obstacles for whichever stage we are in
-        activeObstaclePrefabs = GameManager.Instance.GetCheckpointObstacles();
+        activeObstaclePrefabs = GameManager.Instance.GetActiveObstacles();
 
         // probabilities
         if (obstacleProbs.Count != activeObstaclePrefabs.Count)
@@ -66,10 +64,8 @@ public class LaneSpawner : MonoBehaviour
 
         if (spawnTimer <= 0f && activeObstaclePrefabs.Count > 0)
         {
-            ///Debug.Log("LS: spawning new obstacles");
             GameObject obstacleType = activeObstaclePrefabs[getObstacleIndex()];
 
-            ///float spawnY = getObstacleSpawnY();
             float spawnY = pattern.patternSpawnY();
 
             if (pattern.shouldSpawn()){
@@ -77,7 +73,6 @@ public class LaneSpawner : MonoBehaviour
 
                 Instantiate(obstacleType, pos, Quaternion.identity);
             }
-            ///else Debug.Log("LS: don't spawn this obstacle");
 
             //get custom time from the pattern when the timer's paused
             if( pattern.isTimerPaused() ){
