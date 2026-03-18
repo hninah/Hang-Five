@@ -48,16 +48,14 @@ public class CutsceneController : MonoBehaviour
         cutsceneInput = new PlayerInput();
 
         //get current cutscene info from manager
-        
-        if (CutsceneManager.Instance.currentCutscene != null){
-            Debug.Log("getting a new cutscene");
-            sceneInfo = CutsceneManager.Instance.currentCutscene;
+        if (!CutsceneManager.Instance.isFinished()){
+            ///Debug.Log("getting a new cutscene");
+            sceneInfo = CutsceneManager.Instance.getNextCutscene();
         }
         else{
             Debug.Log("reached the end of the cutscenes");
-            CutsceneManager.Instance.finishedCutscenes = true;
         }
-        
+
         //get lengths of lists
         dirCount = sceneInfo.directions.Count;
         speakerCount = sceneInfo.speakerSprites.Count;
@@ -92,7 +90,7 @@ public class CutsceneController : MonoBehaviour
 
 
     void nextLine(){
-        Debug.Log("entering nextLine: currIndex = " + currIndex);
+        ///Debug.Log("entering nextLine: currIndex = " + currIndex);
         //increment directions index
         ++currIndex; 
 
@@ -122,18 +120,8 @@ public class CutsceneController : MonoBehaviour
 
 
     void endCutscene(){
-        Debug.Log("Leaving the cutscene");
+        ///Debug.Log("Leaving the cutscene");
 
-        //set up next cutscene if there is one
-        if (sceneInfo.nextCutscene != null){
-            CutsceneManager.Instance.currentCutscene = sceneInfo.nextCutscene;
-        }
-        //otherwise mark that we're done
-        else{
-            Debug.Log("reached the end of the cutscenes");
-            CutsceneManager.Instance.finishedCutscenes = true;
-        }
-        
         //return to gameplay
         SceneManager.LoadScene("Gameplay");
     }
@@ -144,9 +132,12 @@ public class CutsceneController : MonoBehaviour
         //get speaker sprite indices from the current directions
         int leftIndex = sceneInfo.directions[currIndex].leftSpeakerIdx;
         int rightIndex = sceneInfo.directions[currIndex].rightSpeakerIdx;
-
+        
         //update left speaker sprite
         if ( speakerCount > 0 && leftIndex < speakerCount && leftIndex >= 0){
+            //re-enable the sprite if it had an invalid index earlier
+            if (!leftImage.enabled) leftImage.enabled = true;
+
             //update left sprite if index is valid
             leftImage.sprite = sceneInfo.speakerSprites[ leftIndex ];
         }
@@ -156,6 +147,9 @@ public class CutsceneController : MonoBehaviour
 
         //update right speaker sprite
         if ( speakerCount > 0 && rightIndex < speakerCount && rightIndex >= 0){
+            //re-enable the sprite if it had an invalid index earlier
+            if (!rightImage.enabled) rightImage.enabled = true;
+
             //update right sprite if index is valid
             rightImage.sprite = sceneInfo.speakerSprites[ rightIndex ];
         }

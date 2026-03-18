@@ -5,13 +5,17 @@ using UnityEngine;
 public class Obstacle : MonoBehaviour
 {
     //basic obstacle variables
+    [Header("Obstacle Parameters")]
     public float scrollSpeed = 5f;
     public float maxYBound = 0.0f;
     public float minYBound = 0.0f;
     public float deathBoundX = -12.0f;
 
-    [SerializeField] private int stage = 1; // stage which obstacle should appear
+    [Header("Use Obstacle After This Cutscene")]
+    [Tooltip("The cutscene after which this obstacle first appears (0-indexed, so if this equals 0, it will appear AFTER the first cutscene and if -1, it will appear BEFORE the first cutscene).")]
+    [SerializeField] private int checkpointCutscene = 0; //obstacle should appear after this cutscene
 
+    //obstacle name for debugging
     private string obsName;
     public string Name { get{ return obsName; } }
 
@@ -88,8 +92,8 @@ public class Obstacle : MonoBehaviour
         return;
     }
 
-    public int getStage()
+    public int getCheckpointCutscene()
     {
-        return stage;
+        return checkpointCutscene;
     }
 }

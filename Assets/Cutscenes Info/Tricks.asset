@@ -84,4 +84,3 @@ MonoBehaviour:
     rightSpeakerIdx: 1
     imgIdx: 0
     dialogue: "Once you\u2019ve got style, the truth will be revealed."
-  nextCutscene: {fileID: 11400000, guid: bccde198a3428ad43b166202f87f10d5, type: 2}

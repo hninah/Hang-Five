@@ -103,7 +103,7 @@ MonoBehaviour:
   maxYBound: 2.1
   minYBound: -4.5
   deathBoundX: -12
-  stage: 2
+  checkpointCutscene: -1
   animator: {fileID: 6721847913776360736}
   tutorialObstacle: 1
 --- !u!95 &6721847913776360736
