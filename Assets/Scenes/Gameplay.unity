@@ -2020,9 +2020,8 @@ MonoBehaviour:
   progressiveMaxDelay: []
   progressiveTimeChanges: []
   obstacleProbs: []
-  allObstaclePrefabs: []
   activeObstaclePrefabs: []
-  pattern: {fileID: 0}
+  pattern: {fileID: 561360319913602947, guid: d02980438b41bfe42a984aff796df7f7, type: 3}
 --- !u!4 &1261724205
 Transform:
   m_ObjectHideFlags: 0

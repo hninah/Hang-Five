@@ -336,7 +336,6 @@ public class Player : MonoBehaviour
     {
         audioSource.PlayOneShot(wipeout, 0.3f);
         animator.SetTrigger("Crashing");
-        Time.timeScale = 0.4f;  // slow motion effect when player crashes
         // wait for 1 second because that is how long the animation is
         yield return new WaitForSeconds(1f);
         Time.timeScale = 1f;
