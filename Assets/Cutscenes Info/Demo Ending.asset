@@ -112,4 +112,3 @@ MonoBehaviour:
     imgIdx: 0
     dialogue: "Dammit! I need to know more about his plan but\u2026 this is the end
       of the demo. I guess I\u2019ll just have to keep surfing in the meantime."
-  nextCutscene: {fileID: 0}

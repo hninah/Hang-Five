@@ -18,28 +18,16 @@ public class Pattern: MonoBehaviour
     [SerializeField] private string patternName;
     public string Name { get{ return patternName; } }
 
-    /*
-    public Pattern(string name, float min, float max){
-        patternName = name;
-        minSpawnY = min;
-        maxSpawnY = max;
-    }
-
-    public Pattern(string name, float min, float max, float x){
-        patternName = name;
-        minSpawnY = min;
-        maxSpawnY = max;
-        spawnX = x;
-    }
-    */
-
+    //spawning info (defaults)
     public virtual Vector3 patternSpawnPos(){ return new Vector3(0, 0, 0); }
     public virtual float patternSpawnY(){ return 0; }
     public virtual bool shouldSpawn(){ return true; }
 
+    //timer info (defaults)
     public virtual bool isTimerPaused(){ return false; }
     public virtual float getTimer(){ return 0; }
 
+    //checkpoint info (default)
     public int getCheckpointCutscene(){ 
         return checkpointCutscene;
     }

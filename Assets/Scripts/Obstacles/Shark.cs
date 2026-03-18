@@ -8,6 +8,7 @@ public class Shark : Obstacle
     public Shark(float scrollSpeed) : base("Shark", scrollSpeed) { }
     public Shark() : base("Shark") { }
 
+    [Header("Shark Parameters")]
     public float aggroThreshold = 100.0f;
     //audio
     [Header("Audio")]

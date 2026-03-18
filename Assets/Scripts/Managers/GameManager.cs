@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    //public/visible variables
     public static GameManager Instance;
 
     public int currentStage = 0;
@@ -12,12 +13,37 @@ public class GameManager : MonoBehaviour
     [SerializeField] private List<GameObject> allObstaclePrefabs;
     [SerializeField] private List<int> scoreRequired;
 
+    //private variables
+    private List<int> obstacleCheckpoints = new List<int>();
+
+    //track which obstacle checkpoint we expect next
+    // (this is an index in CutsceneManager's cutsceneList)
+    private int nextObsCheckpoint;
+
+    //cutscene number of the last checkpoint we passed
+    private int latestObsCheckpoint;
+    //index in obstacleCheckpoints of the last checkpoint we passed
+    private int latestObsCheckpointIndex; 
+
+
     private void Awake()
     {
         if (Instance == null)
         {
             Instance = this;
             DontDestroyOnLoad(gameObject);
+
+            //set up obstacle checkpoints from provided obstacles
+            getObstacleCheckpoints();
+
+            //start the latest and next checkpoints
+            if (obstacleCheckpoints.Count > 0){
+                latestObsCheckpoint = obstacleCheckpoints[0];
+
+                if(obstacleCheckpoints.Count > 1){
+                    nextObsCheckpoint = obstacleCheckpoints[1];
+                }
+            }
         }
         else
         {
@@ -26,39 +52,47 @@ public class GameManager : MonoBehaviour
     }
 
 
-    public List<GameObject> GetCheckpointObstacles()
-    {
-        // get the obstacles for the current checkpoint phase rather than making lane spawner decide that
+    public List<GameObject> GetActiveObstacles()
+    {   
+        int currentCutscene = CutsceneManager.Instance.getCurrentCutscene();
+
+        //update latest checkpoint and checkpoint index if 
+        // - we reached the next checkpoint
+        // - we didn't already pass the last checkpoint
+        if ( (currentCutscene == nextObsCheckpoint) && (latestObsCheckpointIndex < obstacleCheckpoints.Count)){
+
+            //reached the next checkpoint: update current checkpoint index and checkpoint
+            ++latestObsCheckpointIndex;
+            latestObsCheckpoint = obstacleCheckpoints[latestObsCheckpointIndex];
+
+            //if possible, look forward to the new nextCheckpoint
+            if ( (latestObsCheckpointIndex + 1) < obstacleCheckpoints.Count){
+                nextObsCheckpoint = obstacleCheckpoints[latestObsCheckpointIndex + 1];
+            }
+        }
+
         List<GameObject> obstacles = new List<GameObject>();
 
+        // get the obstacles for the current checkpoint phase rather than making lane spawner decide that
         foreach (GameObject prefab in allObstaclePrefabs)
         {
             Obstacle obs = prefab.GetComponent<Obstacle>();
 
-            ///Debug.Log("GM: checking obstacle " + obs.Name + " with checkpoint cutscene " + obs.getCheckpointCutscene() + ", current cutscene = " + CutsceneManager.Instance.getCurrentCutscene());
-            //to display this obstacle need:
+            //spawn this obstacle if:
             // - we reached the checkpoint where this obstacle appears
             // - we passed the cutscene associated with that checkpoint
-            if (obs != null && (obs.getCheckpointCutscene() <= CutsceneManager.Instance.getCurrentCheckpoint()) )
-                            ///&& (CutsceneManager.Instance.getCurrentCutscene() > obs.getCheckpointCutscene()))
-            {
-                ///Debug.Log("GM: valid obstacle " + obs.Name + " has checkpoint cutscene " + obs.getCheckpointCutscene() + " which is <= current checkpoint " + CutsceneManager.Instance.getCurrentCheckpoint());
+            if (obs != null && (obs.getCheckpointCutscene() <= latestObsCheckpoint)
+                            && (currentCutscene > obs.getCheckpointCutscene()))
+            {   
+                //special case: don't show seagull between cutscenes 0 and 1
+                if(currentCutscene == 1 && obs.Name == "Seagull"){
+                    continue;
+                }
+                //otherwise add to active obstacle list
                 obstacles.Add(prefab);
+                
             }
         }
-
-        ///////// PRINT STATEMENT FOR TESTING /////////
-        /*
-        string printObs = "";
-        foreach (GameObject prefab in obstacles){ 
-            Obstacle ob = prefab.GetComponent<Obstacle>();
-            printObs = printObs + "  " + ob.Name;
-        }
-        Debug.Log("GM: current checkpoint: " + CutsceneManager.Instance.getCurrentCheckpoint() + ", using [" + printObs + "]");
-        */
-        /////////////////////////////
-
-
         return obstacles;
     }
 
@@ -74,48 +108,34 @@ public class GameManager : MonoBehaviour
         //  1) we ran out of score thresholds, or
         //  2) player passed the current score threshold
         if ( (currentStage - 1) >= scoreRequired.Count){
-            print("stage passed");
+            ///print("stage passed by default");
             stageCleared = true;
             return true;
         }
         else if (( (currentStage - 1) < scoreRequired.Count) && (finalScore >= scoreRequired[currentStage - 1]))
         {
             // check if player got enough score to pass the stage
-            Debug.Log("finalScore = " + finalScore + ", score required = " + scoreRequired[currentStage - 1]);
+            ///print("stage passed");
             currentStage++;
             stageCleared = true;
             return true;
         }else
         {
-            print("stage failed");
+            ///print("stage failed");
             return false;
         }
     }
 
 
-    public List<int> getObstacleCheckpoints(){
+    private void getObstacleCheckpoints(){
 
-        List<int> checkpoints = new List<int>();
-
+        //get the list of obstacle checkpoints from the provided obstacles
         foreach (GameObject obsPrefab in allObstaclePrefabs){
             Obstacle obs = obsPrefab.GetComponent<Obstacle>();
 
-            checkpoints.Add(obs.getCheckpointCutscene());
+            obstacleCheckpoints.Add(obs.getCheckpointCutscene());
         }
 
-        ///checkpoints.Sort((a, b) => a.CompareTo(b));
-        checkpoints.Sort();
-
-        ///////// PRINT STATEMENT FOR TESTING /////////
-        /*
-        string printcp = "";
-        foreach (int cp in checkpoints){ 
-            printcp = printcp + "  " + cp;
-        }
-        Debug.Log("GM: we have obstacle checkpoints = [" + printcp + "]");
-        */
-        /////////////////////////////
-        
-        return checkpoints;
+        obstacleCheckpoints.Sort();
     }
 }

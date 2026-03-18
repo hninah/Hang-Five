@@ -457,7 +457,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 881a91be47c68e0478189ebb13b347e9, type: 2}
   - {fileID: 11400000, guid: 73448f3cb465f994ebe4a415cf8cb573, type: 2}
   - {fileID: 11400000, guid: bccde198a3428ad43b166202f87f10d5, type: 2}
-  obstacleCheckpoints___: 
 --- !u!4 &407100496
 Transform:
   m_ObjectHideFlags: 0
@@ -1001,7 +1000,7 @@ MonoBehaviour:
   - {fileID: 2144488072472814359, guid: 8e5e73df4fcf70e488cdfae42a03cdaf, type: 3}
   - {fileID: 3973058621705695172, guid: c268e31c6cd22da4d8d7bb4e1df63a15, type: 3}
   - {fileID: 2963685289427379715, guid: b45699529837bd245a57f609efa5bed3, type: 3}
-  scoreRequired: 0a000000140000001e00000028000000
+  scoreRequired: 64000000c80000002c01000090010000
 --- !u!4 &1292449646
 Transform:
   m_ObjectHideFlags: 0

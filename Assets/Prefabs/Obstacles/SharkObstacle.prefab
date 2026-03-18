@@ -104,8 +104,8 @@ MonoBehaviour:
   maxYBound: 2.1
   minYBound: -4.5
   deathBoundX: -12
-  checkpointCutscene: 1
   animator: {fileID: 1290397465675383776}
+  checkpointCutscene: 2
   aggroThreshold: 8
   sharkSpawn: {fileID: 8300000, guid: 83599b35076440f4bb18742d7659c6f1, type: 3}
   sharkSplash: {fileID: 8300000, guid: bac0d8de718b21346a610ce7a503d30b, type: 3}
