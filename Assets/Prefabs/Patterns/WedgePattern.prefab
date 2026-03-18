@@ -47,9 +47,9 @@ MonoBehaviour:
   minSpawnY: -4.5
   maxSpawnY: 2.1
   spawnX: 12
-  checkpointCutscene: -1
+  checkpointCutscene: 0
   patternName: WedgePattern
   spacingY: 1
   spacingX: 1
   numLayers: 3
-  gapTime: 5
+  gapTime: 3

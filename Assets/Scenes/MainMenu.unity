@@ -457,7 +457,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 881a91be47c68e0478189ebb13b347e9, type: 2}
   - {fileID: 11400000, guid: 73448f3cb465f994ebe4a415cf8cb573, type: 2}
   - {fileID: 11400000, guid: bccde198a3428ad43b166202f87f10d5, type: 2}
-  obstacleCheckpoints___: 
 --- !u!4 &407100496
 Transform:
   m_ObjectHideFlags: 0

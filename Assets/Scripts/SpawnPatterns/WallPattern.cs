@@ -12,22 +12,6 @@ public class WallPattern : Pattern
     private float latestY;
     private bool controllingTimer = true; //pause the spawn timer to make a wall
 
-    /*
-    //constructors
-    public WallPattern(float minY, float maxY) : 
-        base("WallPattern", minY, maxY)
-    {
-        latestY = minY;
-    }
-
-    public WallPattern(float minY, float maxY, float s) : 
-        base("WallPattern", minY, maxY)
-    {
-        latestY = minY;
-        spacing = s;
-    }
-    */
-
 
     //get Y Position for new obstacles in the pattern
     public override float patternSpawnY(){
@@ -48,7 +32,7 @@ public class WallPattern : Pattern
     }
 
 
-    //functions used to give LaneSpawner.cs info about the timer status
+    //functions used to give LaneSpawner info about the timer status
     public override bool isTimerPaused(){
         //normal timer is paused when pattern controls the timer
         if( controllingTimer ) return true;
