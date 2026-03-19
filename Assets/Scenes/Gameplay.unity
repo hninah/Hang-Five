@@ -577,6 +577,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b51c5dbc4d27429498e73127893221fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hoverScale: 1.15
 --- !u!114 &439849614
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1188,6 +1189,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b51c5dbc4d27429498e73127893221fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hoverScale: 1.15
 --- !u!1 &697491007
 GameObject:
   m_ObjectHideFlags: 0
