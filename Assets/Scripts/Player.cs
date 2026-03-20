@@ -90,6 +90,8 @@ public class Player : MonoBehaviour
     [SerializeField] private AudioClip wipeout;
     private AudioSource audioSource;
 
+    bool crashRoutineRunning = false;
+    private bool tutorialInvincible = false;
     void Awake()
     {
         if (_instance != null)
@@ -107,21 +109,34 @@ public class Player : MonoBehaviour
 
     void OnEnable()
     {
+        playerInput.Enable();
         surf = playerInput.Player.Surf;
         surf.Enable();
-        surf.performed += context => doSurf();
-        surf.canceled += context => doNeutral();
+        surf.performed += OnSurfPerformed;
+        surf.canceled += OnSurfCanceled;
     }
 
     void OnDisable()
     {
+        surf.performed -= OnSurfPerformed;
+        surf.canceled -= OnSurfCanceled;
         playerInput.Disable();
+    }
+
+    private void OnSurfPerformed(InputAction.CallbackContext context)
+    {
+        doSurf();
+    }
+
+    private void OnSurfCanceled(InputAction.CallbackContext context)
+    {
+        doNeutral();
     }
 
     // Update is called once per frame
     void Update()
     {
-        switch(state)
+        switch (state)
         {
             case PlayerState.SURFING:
                 updateTurning();
@@ -164,8 +179,18 @@ public class Player : MonoBehaviour
                 break;
 
             case PlayerState.CRASHING:
-                StartCoroutine(HandleCrash());
-                state = PlayerState.OVER;
+
+                if (tutorialInvincible)
+                {
+                    state = PlayerState.SURFING;
+                    break;
+                }
+
+                if (!crashRoutineRunning)
+                {
+                    crashRoutineRunning = true;
+                    StartCoroutine(HandleCrash());
+                }
                 break;
 
             case PlayerState.OVER:
@@ -176,6 +201,7 @@ public class Player : MonoBehaviour
                 if (surfDirection < 0)
                 {
                     state = PlayerState.SURFING;
+                    tutorialInvincible = false;
                     startGame.Invoke();
                 }
                 break;
@@ -186,6 +212,7 @@ public class Player : MonoBehaviour
     void OnTriggerEnter2D()
     {
         if (state == PlayerState.CRASHING) return;
+        if (tutorialInvincible) return;
 
         state = PlayerState.CRASHING;
     }
@@ -309,14 +336,49 @@ public class Player : MonoBehaviour
     {
         audioSource.PlayOneShot(wipeout, 0.3f);
         animator.SetTrigger("Crashing");
-
         // wait for 1 second because that is how long the animation is
         yield return new WaitForSeconds(1f);
+        Time.timeScale = 1f;
+        if (SceneManager.GetActiveScene().name == "Tutorial")
+        {
+            print("player crashed in the tutorial");
+            TutorialManager.Instance.PlayerCrashed();
+            yield break;
+        }
         // freeze the game so player cannot gain any more points
         Time.timeScale = 0f;
         endGame.Invoke();
         int finalScore = Mathf.FloorToInt(ScoreManager.Instance.score);
         // game mangaer gets the final score to compare if stage was passed and high score
         GameManager.Instance.GameOver(finalScore);
+    }
+
+    // resets the player for the tutorial 
+    public void ResetPlayer()
+    {
+        crashRoutineRunning = false;
+        if (!gameObject.activeSelf)
+            gameObject.SetActive(true);
+        state = PlayerState.STARTING;
+        playerVelocity = startingVelocity;
+        rotation = 0f;
+
+        surfDirection = 1f;
+        flipDirection = 1f;
+        flipImmunityTimer = 0f;
+
+        transform.eulerAngles = Vector3.zero;
+
+        animator.ResetTrigger("Crashing");
+        animator.SetBool("SurfingDown", false);
+
+        // Force animator back to a clean state
+        animator.Play("SurferBegin", 0, 0f);
+    }
+
+    public void SetTutorialInvincible(bool value)
+    {
+        // invincibility frames for tutorial
+        tutorialInvincible = value;
     }
 }

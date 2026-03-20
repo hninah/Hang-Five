@@ -577,6 +577,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b51c5dbc4d27429498e73127893221fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hoverScale: 1.15
 --- !u!114 &439849614
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1188,6 +1189,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b51c5dbc4d27429498e73127893221fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hoverScale: 1.15
 --- !u!1 &697491007
 GameObject:
   m_ObjectHideFlags: 0
@@ -2008,36 +2010,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   obstaclePrefabs:
-  - {fileID: 2963685289427379715, guid: b45699529837bd245a57f609efa5bed3, type: 3}
-  - {fileID: 3973058621705695172, guid: c268e31c6cd22da4d8d7bb4e1df63a15, type: 3}
   - {fileID: 2144488072472814359, guid: 8e5e73df4fcf70e488cdfae42a03cdaf, type: 3}
+  - {fileID: 3973058621705695172, guid: c268e31c6cd22da4d8d7bb4e1df63a15, type: 3}
+  - {fileID: 2963685289427379715, guid: b45699529837bd245a57f609efa5bed3, type: 3}
   spawnX: 12
   minSpawnY: -4.5
   maxSpawnY: 2.1
-  minDelay: 0.7
-  maxDelay: 2
-  progressiveMinDelay:
-  - 1
-  - 0.9
-  - 0.7
-  - 0.6
-  progressiveMaxDelay:
-  - 2
-  - 1.7
-  - 1.6
-  - 1.3
-  progressiveTimeChanges:
-  - 10
-  - 10
-  - 10
-  - 10
-  obstacleProbs:
-  - 0.5
-  - 0.3
-  - 0.2
-  allObstaclePrefabs: []
+  minDelay: 0.6
+  maxDelay: 1.3
+  progressiveMinDelay: []
+  progressiveMaxDelay: []
+  progressiveTimeChanges: []
+  obstacleProbs: []
   activeObstaclePrefabs: []
-  pattern: {fileID: 3488421494090527376, guid: 578f3dfb6b6ef784cbe024d0a81a0bb1, type: 3}
+  pattern: {fileID: 561360319913602947, guid: d02980438b41bfe42a984aff796df7f7, type: 3}
 --- !u!4 &1261724205
 Transform:
   m_ObjectHideFlags: 0
@@ -2070,7 +2056,6 @@ MonoBehaviour:
   - {fileID: 3488421494090527376, guid: 578f3dfb6b6ef784cbe024d0a81a0bb1, type: 3}
   - {fileID: 561360319913602947, guid: d02980438b41bfe42a984aff796df7f7, type: 3}
   - {fileID: 3208524593415538471, guid: 7d3eef8e5ce3f994982dcf80876ef8a0, type: 3}
-  patternCheckpoints: 000000000100000002000000
   minPatternDelay: 5
   maxPatternDelay: 10
 --- !u!1 &1266597582
@@ -2138,7 +2123,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 5fc3fa48609b1494db0b3c4050326260, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 31d374d922829eb419593134c27e8f31, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

@@ -31,4 +31,9 @@ public class SurfCamera : MonoBehaviour
             transform.position = Vector3.MoveTowards(transform.position, cameraIdlePosition, cameraSpeed * Time.deltaTime);
         }
     }
+    public void ResetCamera()
+    {
+        // resetting the camera for tutorial
+        transform.position = cameraIdlePosition;
+    }
 }

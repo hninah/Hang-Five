@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class GameManager : MonoBehaviour
 {
@@ -12,6 +14,7 @@ public class GameManager : MonoBehaviour
     public bool stageCleared = false;
     [SerializeField] private List<GameObject> allObstaclePrefabs;
     [SerializeField] private List<int> scoreRequired;
+    public bool tutorialCompleted = false;
 
     //private variables
     private List<int> obstacleCheckpoints = new List<int>();

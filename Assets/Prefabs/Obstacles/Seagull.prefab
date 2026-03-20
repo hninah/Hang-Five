@@ -107,6 +107,7 @@ MonoBehaviour:
   deathBoundX: -12
   animator: {fileID: -7412319286635077879}
   checkpointCutscene: -1
+  tutorialObstacle: 0
   spawnWait: 8
   obsPrefab: {fileID: 8340975434154102708, guid: c65ea5f411532a3488aa78342218e5ad, type: 3}
   audioClips:

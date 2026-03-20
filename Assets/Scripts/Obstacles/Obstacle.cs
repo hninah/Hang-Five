@@ -34,8 +34,15 @@ public class Obstacle : MonoBehaviour
 
 
     //update
-    public void Update(){
+    public void Update()
+    {
         activeState = activeState.stateUpdate(this);
+
+        // Detect when obstacle leaves screen
+        if (transform.position.x < deathBoundX)
+        {
+            Destroy(gameObject);
+        }
 
         if (activeState.Name == "DeathState")
         {
@@ -43,16 +50,6 @@ public class Obstacle : MonoBehaviour
         }
 
         obstacleSpecialties();
-    }
-
-    //move obstacle left across the screen
-    public void scrollMotion(){
-        transform.position += Vector3.left * scrollSpeed * Time.deltaTime;
-
-        //destroy the obstacle when offscreen
-        if (transform.position.x < -20f){
-            Destroy(gameObject);
-        }
     }
 
 
