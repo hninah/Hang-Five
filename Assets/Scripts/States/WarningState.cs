@@ -4,32 +4,35 @@ using UnityEngine;
 
 public class WarningState : State
 {
-    public Sprite warningSprite;
-    public Sprite missileSprite;
-
     private float storedScrollSpeed;
-    private SpriteRenderer spriteRenderer;
+    private Animator animator;
 
     //constructors
     public WarningState():base("WarningState"){}
 
-    public WarningState(float scrollSpeed, Sprite wSprite, Sprite mSprite):
+    public WarningState(float scrollSpeed):
         base("WarningState")
     {
         storedScrollSpeed = scrollSpeed;
-        warningSprite = wSprite;
-        missileSprite = mSprite;
     }
 
 
     public override void onEnterState(Obstacle ob){
         ob.scrollSpeed = 0f;
-        ob.GetComponent<SpriteRenderer>().sprite = warningSprite;
+
+        animator = ob.GetComponent<Animator>();
+        if(animator != null){
+            ob.GetComponent<Animator>().SetBool("isWarningEnded", false);
+        }
     }
 
 
     public override void onExitState(Obstacle ob){
         ob.scrollSpeed = storedScrollSpeed;
-        ob.GetComponent<SpriteRenderer>().sprite = missileSprite;
+
+        if(animator != null){
+            ob.GetComponent<Animator>().SetBool("isWarningEnded", true);
+        }
     }
+
 }

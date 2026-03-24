@@ -5,8 +5,6 @@ using UnityEngine;
 public class MissileOb : Obstacle
 {
     [Header("Missile Parameters")]
-    public Sprite warningSprite;
-    public Sprite missileSprite;
     public float warningTimer;
 
     //constructors
@@ -15,7 +13,7 @@ public class MissileOb : Obstacle
 
 
     void Start(){
-        activeState = new WarningState(scrollSpeed, warningSprite, missileSprite);
+        activeState = new WarningState(scrollSpeed);
         activeState.onEnterState(this);
     }
 
