@@ -149,6 +149,8 @@ public class Player : MonoBehaviour
                 {
                     playerVelocity.y = playerVelocity.y * Mathf.Abs(rotation / maxUpRotation);
                     state = PlayerState.FLIPPING;
+                    animator.SetBool("InAir", true);
+                    animator.SetInteger("TrickAnim", Random.Range(0, 2));
                 }
                 else if ((transform.position.y >= waveTopY && flipImmunityTimer <= 0.0f) || transform.position.y < waveBottom.position.y)
                 {
@@ -168,6 +170,13 @@ public class Player : MonoBehaviour
                 state = rotation <= landRotationMax 
                     ? PlayerState.SURFING
                     : PlayerState.CRASHING;
+
+                if (state == PlayerState.SURFING)
+                {
+                    TextParticleManager.Instance.generateScoreParticle(200);
+                    ScoreManager.Instance.score += 200;
+                    animator.SetBool("InAir", false);
+                }
 
                 // Reset this for later (if we didn't our velocity when going up for a flip is inverted)
                 flipDirection = 1;
