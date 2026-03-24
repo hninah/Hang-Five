@@ -98,9 +98,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39f245a26bcb4e440ababd254b5cabe6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scrollSpeed: 7
+  scrollSpeed: 12
   spawnX: 8.2
-  maxYBound: 2.1
+  maxYBound: 0
   minYBound: -4.5
   deathBoundX: -12
   animator: {fileID: 0}
