@@ -43,7 +43,7 @@ public class TutorialManager : MonoBehaviour
         bottomTarget.SetActive(true);
         topTarget.SetActive(false);
 
-        tutorialText.text = "Surf down to the green circle!";
+        tutorialText.text = "Using SPACE Surf down to the green circle!";
     }
 
     public void PlayerHitTarget(GameObject hitTarget)
@@ -57,7 +57,7 @@ public class TutorialManager : MonoBehaviour
             bottomTarget.SetActive(false);
             topTarget.SetActive(true);
 
-            tutorialText.text = "Now surf up to the next circle!";
+            tutorialText.text = "Release SPACE to surf up to the next circle!";
         }
         else if (currentStep == TutorialStep.TopTarget && hitTarget == topTarget)
         {
