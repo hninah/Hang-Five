@@ -4,7 +4,7 @@ using UnityEngine;
 public class LaneSpawner : MonoBehaviour
 {
     [SerializeField] List<GameObject> obstaclePrefabs;
-    [SerializeField] float spawnX = 12f;
+    ///[SerializeField] float spawnX = 12f;
     [SerializeField] float minSpawnY = 0.0f;
     [SerializeField] float maxSpawnY = 0.0f;
     [SerializeField] float minDelay = 0.6f;
@@ -86,6 +86,7 @@ public class LaneSpawner : MonoBehaviour
                 index = 0;
 
             GameObject obstacleType = activeObstaclePrefabs[index];
+            float spawnX = obstacleType.GetComponent<Obstacle>().getSpawnX();
 
             float spawnY = pattern.patternSpawnY();
 
