@@ -7,6 +7,7 @@ public class Obstacle : MonoBehaviour
     //basic obstacle variables
     [Header("Obstacle Parameters")]
     public float scrollSpeed = 5f;
+    public float spawnX = 12f;
     public float maxYBound = 0.0f;
     public float minYBound = 0.0f;
     public float deathBoundX = -12.0f;
@@ -50,6 +51,7 @@ public class Obstacle : MonoBehaviour
         }
 
         obstacleSpecialties();
+        nextState();
     }
 
 
@@ -58,7 +60,6 @@ public class Obstacle : MonoBehaviour
         State nextState = getNextState();
 
         if (nextState.Name != activeState.Name){
-            ///Debug.Log("moving to " + nextState.Name);
 
             activeState.onExitState(this); //exit old state
             activeState = nextState;
@@ -77,6 +78,10 @@ public class Obstacle : MonoBehaviour
     {
         minYBound = minY;
         maxYBound = maxY;
+    }
+
+    public virtual float getSpawnX(){
+        return spawnX;
     }
 
     public virtual void obstacleSpecialties()

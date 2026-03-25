@@ -136,7 +136,11 @@ public class GameManager : MonoBehaviour
         foreach (GameObject obsPrefab in allObstaclePrefabs){
             Obstacle obs = obsPrefab.GetComponent<Obstacle>();
 
-            obstacleCheckpoints.Add(obs.getCheckpointCutscene());
+            int obsPt = obs.getCheckpointCutscene();
+            
+            if ( !obstacleCheckpoints.Contains(obsPt) ){
+                obstacleCheckpoints.Add(obsPt);
+            }
         }
 
         obstacleCheckpoints.Sort();
