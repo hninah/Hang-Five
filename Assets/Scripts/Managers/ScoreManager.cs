@@ -32,21 +32,33 @@ public class ScoreManager : MonoBehaviour
     private void OnGameStart()
     {
         gameRunning = true;
+        GameManager.Instance.stageCleared = false;
     }
 
     private void OnGameEnd()
     {
+        
         gameRunning = false;
 
         int finalScore = Mathf.FloorToInt(score);
 
-        if (finalScore > GameManager.Instance.highScore)
-        {
-            GameManager.Instance.highScore = finalScore;
-        }
+        GameManager.Instance.GameOver(finalScore);
 
         endScoreText.text = "Your Score: " + finalScore;
-        highScoreText.text = "High Score: " + GameManager.Instance.highScore;
+
+        // infinite mode
+        if (GameManager.Instance.currentStage > GameManager.Instance.scoreRequired.Count)
+        {
+            highScoreText.text = "High Score: " + GameManager.Instance.highScore;
+        }
+        else if (GameManager.Instance.stageCleared)
+        {
+            highScoreText.text = "Next Target Score: " + GameManager.Instance.targetScore;
+        }
+        else
+        {
+            highScoreText.text = "Target Score: " + GameManager.Instance.targetScore;
+        }
     }
 
     private void Update()

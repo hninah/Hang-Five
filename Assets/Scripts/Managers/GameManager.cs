@@ -9,11 +9,12 @@ public class GameManager : MonoBehaviour
     //public/visible variables
     public static GameManager Instance;
 
-    public int currentStage = 0;
+    public int currentStage = 1;
     public int highScore = 0;
+    public int targetScore = 0;
     public bool stageCleared = false;
     [SerializeField] private List<GameObject> allObstaclePrefabs;
-    [SerializeField] private List<int> scoreRequired;
+    [SerializeField] public List<int> scoreRequired;
     public bool tutorialCompleted = false;
 
     //private variables
@@ -47,6 +48,9 @@ public class GameManager : MonoBehaviour
                     nextObsCheckpoint = obstacleCheckpoints[1];
                 }
             }
+            
+            // initialize the first target score
+            targetScore = scoreRequired[0];
         }
         else
         {
@@ -62,7 +66,7 @@ public class GameManager : MonoBehaviour
         //update latest checkpoint and checkpoint index if 
         // - we reached the next checkpoint
         // - we didn't already pass the last checkpoint
-        if ( (currentCutscene == nextObsCheckpoint) && (latestObsCheckpointIndex < obstacleCheckpoints.Count)){
+        if ( (currentCutscene == nextObsCheckpoint) && (latestObsCheckpointIndex < obstacleCheckpoints.Count -1)){
 
             //reached the next checkpoint: update current checkpoint index and checkpoint
             ++latestObsCheckpointIndex;
@@ -102,29 +106,37 @@ public class GameManager : MonoBehaviour
 
     public bool GameOver(int finalScore)
     {
-        if (finalScore > highScore)
-        {
-            highScore = finalScore;
-        }
-
+        Debug.Log("GameOver called, stage = " + currentStage);
         //move to next stage if:
         //  1) we ran out of score thresholds, or
         //  2) player passed the current score threshold
-        if ( (currentStage - 1) >= scoreRequired.Count){
+        if (currentStage > scoreRequired.Count)
+        {
             ///print("stage passed by default");
             stageCleared = true;
+            // display high score now that there are no more cutscenes
+            if (finalScore > highScore)
+            {
+                highScore = finalScore;
+            }
             return true;
         }
-        else if (( (currentStage - 1) < scoreRequired.Count) && (finalScore >= scoreRequired[currentStage - 1]))
+        if (finalScore >= scoreRequired[currentStage - 1])
         {
             // check if player got enough score to pass the stage
             ///print("stage passed");
             currentStage++;
             stageCleared = true;
+            // display target score needed to pass the level if there still is a next level
+            if (currentStage <= scoreRequired.Count)
+            {
+                targetScore = scoreRequired[currentStage - 1];
+            }
             return true;
         }else
         {
             ///print("stage failed");
+            stageCleared = false;
             return false;
         }
     }

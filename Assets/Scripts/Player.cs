@@ -357,9 +357,6 @@ public class Player : MonoBehaviour
         // freeze the game so player cannot gain any more points
         Time.timeScale = 0f;
         endGame.Invoke();
-        int finalScore = Mathf.FloorToInt(ScoreManager.Instance.score);
-        // game mangaer gets the final score to compare if stage was passed and high score
-        GameManager.Instance.GameOver(finalScore);
     }
 
     // resets the player for the tutorial 

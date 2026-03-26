@@ -2206,8 +2206,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -3, y: 96}
-  m_SizeDelta: {x: 198.3652, y: 46.0499}
+  m_AnchoredPosition: {x: 2.4048, y: 96}
+  m_SizeDelta: {x: 297.4547, y: 49.6531}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1435940647
 MonoBehaviour:
@@ -3213,8 +3213,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -4.6349, y: 51.25}
-  m_SizeDelta: {x: 201.6349, y: 37.5}
+  m_AnchoredPosition: {x: 0.0018635, y: 44}
+  m_SizeDelta: {x: 297.1213, y: 38.4008}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1920282483
 MonoBehaviour:
@@ -3236,7 +3236,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Target Score:'
+  m_text: 'Next Target Score: 300'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 6401d422667a9b94abe7dda92c42eff0, type: 2}
   m_sharedMaterial: {fileID: -3025812490292320111, guid: 6401d422667a9b94abe7dda92c42eff0, type: 2}

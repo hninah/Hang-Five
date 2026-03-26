@@ -729,13 +729,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentStage: 1
   highScore: 0
+  targetScore: 0
   stageCleared: 0
   allObstaclePrefabs:
   - {fileID: 2144488072472814359, guid: 8e5e73df4fcf70e488cdfae42a03cdaf, type: 3}
   - {fileID: 3973058621705695172, guid: c268e31c6cd22da4d8d7bb4e1df63a15, type: 3}
   - {fileID: 2963685289427379715, guid: b45699529837bd245a57f609efa5bed3, type: 3}
   - {fileID: 4232693083916984769, guid: 7966879c547ce3447b35c801bdf813c3, type: 3}
-  scoreRequired: 64000000c80000002c010000
+  scoreRequired: 64000000c80000002c01000090010000f401000058020000bc0200002003000084030000e80300004c040000b0040000140500002c010000
   tutorialCompleted: 0
 --- !u!4 &1292449646
 Transform:
