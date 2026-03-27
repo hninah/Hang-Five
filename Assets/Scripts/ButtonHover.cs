@@ -27,14 +27,15 @@ public class ButtonHover : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
         // pressing space does the like button animation and starts the game
         if (Keyboard.current.spaceKey.wasPressedThisFrame)
         {
-            StartCoroutine(SpacePressed());
+            animator.SetBool("hover", true);
+            FindObjectOfType<MainMenu>().OnStartPressed();
         }
     }
     IEnumerator SpacePressed()
     {
         animator.SetBool("hover", true);
         // small delay so it looks like an animaiton
-        yield return new WaitForSeconds(0.15f);
+        yield return new WaitForSeconds(0.2f);
         animator.SetBool("hover", false);
 
         // actually start the game

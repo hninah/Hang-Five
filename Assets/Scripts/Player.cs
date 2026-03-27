@@ -91,7 +91,6 @@ public class Player : MonoBehaviour
     private AudioSource audioSource;
 
     bool crashRoutineRunning = false;
-    private bool tutorialInvincible = false;
     void Awake()
     {
         if (_instance != null)
@@ -145,7 +144,7 @@ public class Player : MonoBehaviour
                 // We want to eventually be able to go back into the flipping state when the timer's done.
                 flipImmunityTimer = Mathf.Max(flipImmunityTimer - Time.deltaTime, 0.0f);
 
-                if (transform.position.y >= waveTopY && rotation >= trickRotationMin)
+                if (transform.position.y >= waveTopY && rotation >= trickRotationMin && GameManager.Instance.tutorialCompleted)
                 {
                     playerVelocity.y = playerVelocity.y * Mathf.Abs(rotation / maxUpRotation);
                     state = PlayerState.FLIPPING;
@@ -189,12 +188,6 @@ public class Player : MonoBehaviour
 
             case PlayerState.CRASHING:
 
-                if (tutorialInvincible)
-                {
-                    state = PlayerState.SURFING;
-                    break;
-                }
-
                 if (!crashRoutineRunning)
                 {
                     crashRoutineRunning = true;
@@ -210,7 +203,6 @@ public class Player : MonoBehaviour
                 if (surfDirection < 0)
                 {
                     state = PlayerState.SURFING;
-                    tutorialInvincible = false;
                     startGame.Invoke();
                 }
                 break;
@@ -221,7 +213,6 @@ public class Player : MonoBehaviour
     void OnTriggerEnter2D()
     {
         if (state == PlayerState.CRASHING) return;
-        if (tutorialInvincible) return;
 
         state = PlayerState.CRASHING;
     }
@@ -382,9 +373,4 @@ public class Player : MonoBehaviour
         animator.Play("SurferBegin", 0, 0f);
     }
 
-    public void SetTutorialInvincible(bool value)
-    {
-        // invincibility frames for tutorial
-        tutorialInvincible = value;
-    }
 }
