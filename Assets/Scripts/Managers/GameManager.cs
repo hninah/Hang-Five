@@ -154,8 +154,6 @@ public class GameManager : MonoBehaviour
             if (currentStage == scoreRequired.Count)
             {
                 inBossLevel = true;
-
-                SceneManager.LoadScene("BarkShaits"); 
                 return true;
             }
 

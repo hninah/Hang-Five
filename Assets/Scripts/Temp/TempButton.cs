@@ -32,11 +32,19 @@ public class TempButton : MonoBehaviour
     public void buttonPressContinue()
     {
         Time.timeScale = 1f;
+        // load the boss level
+        if (GameManager.Instance.inBossLevel)
+        {
+            SceneManager.LoadScene("BarkShaits");
+            return;
+        }
+        // load the cutscene
         if (!CutsceneManager.Instance.isFinished() && GameManager.Instance.stageCleared)
         {
             GameManager.Instance.stageCleared = false;
             SceneManager.LoadScene("Cutscene");
         }
+        // infinite mode
         else
         {
             GameManager.Instance.stageCleared = false;

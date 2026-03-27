@@ -2701,7 +2701,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!212 &1811432997
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2742,7 +2742,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 2027478191
   m_SortingLayer: 3
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 863fd01a051ae4743b41ea2382e34f21, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -2784,8 +2784,8 @@ Transform:
   m_GameObject: {fileID: 1811432996}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 12.82, y: -2.55, z: 10.825166}
-  m_LocalScale: {x: 2.762352, y: 2.494667, z: 1}
+  m_LocalPosition: {x: 11.35, y: -0.07, z: 10.825166}
+  m_LocalScale: {x: 2.1248012, y: 1.9757763, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -2805,6 +2805,8 @@ MonoBehaviour:
   barkShaits: {fileID: 1811432996}
   delay: 3
   laneSpawner: {fileID: 1261724204}
+  amplitude: 1.5
+  frequency: 2
 --- !u!1 &1901402359
 GameObject:
   m_ObjectHideFlags: 0
@@ -3529,6 +3531,6 @@ SceneRoots:
   - {fileID: 718741626}
   - {fileID: 632468985}
   - {fileID: 914982190}
+  - {fileID: 1811432999}
   - {fileID: 1261724205}
   - {fileID: 98424889}
-  - {fileID: 1811432999}

@@ -43,16 +43,10 @@ public class ScoreManager : MonoBehaviour
 
         int finalScore = Mathf.FloorToInt(score);
 
-        bool result = GameManager.Instance.GameOver(finalScore);
+        GameManager.Instance.GameOver(finalScore);
 
         endScoreText.text = "Your Score: " + finalScore;
 
-        // boss level
-        if (GameManager.Instance.inBossLevel)
-        {
-            SceneManager.LoadScene("BarkShaits");
-            return;
-        }
         // infinite mode
         if (GameManager.Instance.currentStage > GameManager.Instance.scoreRequired.Count)
         {
