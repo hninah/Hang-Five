@@ -27,8 +27,11 @@ public class GameManager : MonoBehaviour
     //cutscene number of the last checkpoint we passed
     private int latestObsCheckpoint;
     //index in obstacleCheckpoints of the last checkpoint we passed
-    private int latestObsCheckpointIndex; 
+    private int latestObsCheckpointIndex;
 
+    // checks if player is in the boss level and if they reach the target score 
+    public bool inBossLevel = false;
+    public int bossTargetScore = 500;
 
     private void Awake()
     {
@@ -107,38 +110,66 @@ public class GameManager : MonoBehaviour
     public bool GameOver(int finalScore)
     {
         Debug.Log("GameOver called, stage = " + currentStage);
-        //move to next stage if:
-        //  1) we ran out of score thresholds, or
-        //  2) player passed the current score threshold
+        // boss stage
+        if (inBossLevel)
+        {
+            // boss is defeated if score is greater than the set target score
+            if (finalScore >= bossTargetScore)
+            {
+                inBossLevel = false;
+
+                // go to infinite mode
+                currentStage = scoreRequired.Count + 1;
+
+                return true;
+            }
+            else
+            {
+                stageCleared = false;
+                return false;
+            }
+        }
+        // infinite mode
         if (currentStage > scoreRequired.Count)
         {
-            ///print("stage passed by default");
             stageCleared = true;
-            // display high score now that there are no more cutscenes
+
             if (finalScore > highScore)
             {
                 highScore = finalScore;
             }
+
             return true;
         }
+        //move to next stage if:
+        //  1) we ran out of score thresholds, or
+        //  2) player passed the current score threshold
+        // we have not ran out of score thresholds yet
         if (finalScore >= scoreRequired[currentStage - 1])
         {
-            // check if player got enough score to pass the stage
-            ///print("stage passed");
             currentStage++;
             stageCleared = true;
-            // display target score needed to pass the level if there still is a next level
+
+            // boss occurs at the second last score threshold because boss needs a score threshold too
+            if (currentStage == scoreRequired.Count)
+            {
+                inBossLevel = true;
+
+                SceneManager.LoadScene("BarkShaits"); 
+                return true;
+            }
+
+            // regular next level (not the boss)
             if (currentStage <= scoreRequired.Count)
             {
                 targetScore = scoreRequired[currentStage - 1];
             }
+
             return true;
-        }else
-        {
-            ///print("stage failed");
-            stageCleared = false;
-            return false;
         }
+
+        stageCleared = false;
+        return false;
     }
 
 

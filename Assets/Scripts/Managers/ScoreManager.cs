@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class ScoreManager : MonoBehaviour
 {
@@ -42,19 +43,27 @@ public class ScoreManager : MonoBehaviour
 
         int finalScore = Mathf.FloorToInt(score);
 
-        GameManager.Instance.GameOver(finalScore);
+        bool result = GameManager.Instance.GameOver(finalScore);
 
         endScoreText.text = "Your Score: " + finalScore;
 
+        // boss level
+        if (GameManager.Instance.inBossLevel)
+        {
+            SceneManager.LoadScene("BarkShaits");
+            return;
+        }
         // infinite mode
         if (GameManager.Instance.currentStage > GameManager.Instance.scoreRequired.Count)
         {
             highScoreText.text = "High Score: " + GameManager.Instance.highScore;
         }
+        // player passed the current level
         else if (GameManager.Instance.stageCleared)
         {
             highScoreText.text = "Next Target Score: " + GameManager.Instance.targetScore;
         }
+        // player did not pass the level
         else
         {
             highScoreText.text = "Target Score: " + GameManager.Instance.targetScore;
