@@ -1,0 +1,205 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1e73c5106fe4f24f8c623b663cb8311, type: 3}
+  m_Name: scene 10
+  m_EditorClassIdentifier: 
+  speakerSprites:
+  - {fileID: 21300000, guid: f3f229a9dc844814da08eab1e3dd6299, type: 3}
+  - {fileID: 21300000, guid: 433f75f2fdaa60948b8f45ad0a1859d2, type: 3}
+  - {fileID: 21300000, guid: 470dc91e34c80744e88dcae0e387fbc4, type: 3}
+  - {fileID: 21300000, guid: 1599abee4fed5634fb3a9fca33be6f63, type: 3}
+  - {fileID: 21300000, guid: 23e5f2966eef2b24994544422b320027, type: 3}
+  - {fileID: 21300000, guid: 6afe3efb80fb72a40abd765373f6598b, type: 3}
+  sceneStills:
+  - {fileID: 21300000, guid: 5f54ab9bffbfe634995edcb08bc25a05, type: 3}
+  directions:
+  - leftSpeaker: Uwe
+    rightSpeaker: Mystery Man
+    isLeftSpeaking: 1
+    isRightSpeaking: 0
+    leftSpeakerIdx: 0
+    rightSpeakerIdx: 3
+    imgIdx: 0
+    dialogue: "They\u2019re gonna kill me\u2026 they\u2019re trying to kill me\u2026\r\n"
+  - leftSpeaker: Uwe
+    rightSpeaker: Mystery Man
+    isLeftSpeaking: 0
+    isRightSpeaking: 1
+    leftSpeakerIdx: 0
+    rightSpeakerIdx: 3
+    imgIdx: 0
+    dialogue: "Breathe my friend\u2026\r\n"
+  - leftSpeaker: Uwe
+    rightSpeaker: Mystery Man
+    isLeftSpeaking: 1
+    isRightSpeaking: 0
+    leftSpeakerIdx: 1
+    rightSpeakerIdx: 3
+    imgIdx: 0
+    dialogue: "Stay back! Stay back, OK?! Who are you? Huh? \r"
+  - leftSpeaker: Uwe
+    rightSpeaker: Mystery Man
+    isLeftSpeaking: 0
+    isRightSpeaking: 1
+    leftSpeakerIdx: 1
+    rightSpeakerIdx: 3
+    imgIdx: 0
+    dialogue: "You\u2019re closer to the answer than you\u2019ve ever been\u2026 "
+  - leftSpeaker: Uwe
+    rightSpeaker: Mystery Man
+    isLeftSpeaking: 1
+    isRightSpeaking: 0
+    leftSpeakerIdx: 1
+    rightSpeakerIdx: 3
+    imgIdx: 0
+    dialogue: Shut up, ok, just shut up with that shit and tell me who you are!
+  - leftSpeaker: Uwe
+    rightSpeaker: Mystery Man
+    isLeftSpeaking: 0
+    isRightSpeaking: 1
+    leftSpeakerIdx: 1
+    rightSpeakerIdx: 3
+    imgIdx: 0
+    dialogue: "Very well my friend\u2026\r\n"
+  - leftSpeaker: Uwe
+    rightSpeaker: Mystery Man
+    isLeftSpeaking: 1
+    isRightSpeaking: 0
+    leftSpeakerIdx: 2
+    rightSpeakerIdx: 3
+    imgIdx: 0
+    dialogue: "Oh, oh man am I glad to see you!\r"
+  - leftSpeaker: Uwe
+    rightSpeaker: Ramesh
+    isLeftSpeaking: 0
+    isRightSpeaking: 1
+    leftSpeakerIdx: 2
+    rightSpeakerIdx: 4
+    imgIdx: 0
+    dialogue: "Likewise brother.\r"
+  - leftSpeaker: Uwe
+    rightSpeaker: Ramesh
+    isLeftSpeaking: 1
+    isRightSpeaking: 0
+    leftSpeakerIdx: 2
+    rightSpeakerIdx: 4
+    imgIdx: 0
+    dialogue: 'I thought you left?
+
+'
+  - leftSpeaker: Uwe
+    rightSpeaker: Ramesh
+    isLeftSpeaking: 0
+    isRightSpeaking: 1
+    leftSpeakerIdx: 2
+    rightSpeakerIdx: 5
+    imgIdx: 0
+    dialogue: "I did, but something didn\u2019t sit right with me. I started researching
+      the company here."
+  - leftSpeaker: Uwe
+    rightSpeaker: Ramesh
+    isLeftSpeaking: 0
+    isRightSpeaking: 1
+    leftSpeakerIdx: 0
+    rightSpeakerIdx: 5
+    imgIdx: 0
+    dialogue: I looked up names, manufacturing contracts, and everything traced back
+      to the Department of Defense.
+  - leftSpeaker: Uwe
+    rightSpeaker: Ramesh
+    isLeftSpeaking: 0
+    isRightSpeaking: 1
+    leftSpeakerIdx: 0
+    rightSpeakerIdx: 5
+    imgIdx: 0
+    dialogue: 'I felt I should tell you. '
+  - leftSpeaker: Uwe
+    rightSpeaker: Ramesh
+    isLeftSpeaking: 1
+    isRightSpeaking: 0
+    leftSpeakerIdx: 0
+    rightSpeakerIdx: 5
+    imgIdx: 0
+    dialogue: "The DOD?! What\u2019re they doing here?\r\n"
+  - leftSpeaker: Uwe
+    rightSpeaker: Ramesh
+    isLeftSpeaking: 0
+    isRightSpeaking: 1
+    leftSpeakerIdx: 0
+    rightSpeakerIdx: 5
+    imgIdx: 0
+    dialogue: "I don\u2019t know, but if anyone can find out, it\u2019s you, Uwe."
+  - leftSpeaker: Uwe
+    rightSpeaker: Ramesh
+    isLeftSpeaking: 1
+    isRightSpeaking: 0
+    leftSpeakerIdx: 0
+    rightSpeakerIdx: 5
+    imgIdx: 0
+    dialogue: A construction company was one thing, but how am I supposed to stop
+      the military?
+  - leftSpeaker: Uwe
+    rightSpeaker: Ramesh
+    isLeftSpeaking: 0
+    isRightSpeaking: 1
+    leftSpeakerIdx: 0
+    rightSpeakerIdx: 5
+    imgIdx: 0
+    dialogue: "You\u2019re gonna surf, and keep surfing, and never stop surfing,
+      with style."
+  - leftSpeaker: Uwe
+    rightSpeaker: Ramesh
+    isLeftSpeaking: 1
+    isRightSpeaking: 0
+    leftSpeakerIdx: 2
+    rightSpeakerIdx: 5
+    imgIdx: 0
+    dialogue: "I suppose there\u2019s no other choice then. I\u2019ve gotta ask,
+      how did you learn about surf tricks?\r\n"
+  - leftSpeaker: Uwe
+    rightSpeaker: Ramesh
+    isLeftSpeaking: 0
+    isRightSpeaking: 1
+    leftSpeakerIdx: 2
+    rightSpeakerIdx: 5
+    imgIdx: 0
+    dialogue: How do you think I ended up here? I opened up the Juice Bar to support
+      my surfing endeavors. I was quite the athlete in my day
+  - leftSpeaker: Uwe
+    rightSpeaker: Ramesh
+    isLeftSpeaking: 1
+    isRightSpeaking: 0
+    leftSpeakerIdx: 2
+    rightSpeakerIdx: 5
+    imgIdx: 0
+    dialogue: Huh, go figure. Why the secrecy though? Why hide your identity from
+      me?
+  - leftSpeaker: Uwe
+    rightSpeaker: Ramesh
+    isLeftSpeaking: 0
+    isRightSpeaking: 1
+    leftSpeakerIdx: 2
+    rightSpeakerIdx: 5
+    imgIdx: 0
+    dialogue: 'Old Indian Custom.
+
+'
+  - leftSpeaker: Uwe
+    rightSpeaker: Ramesh
+    isLeftSpeaking: 1
+    isRightSpeaking: 0
+    leftSpeakerIdx: 2
+    rightSpeakerIdx: 5
+    imgIdx: 0
+    dialogue: 'Good enough for me.
+
+'

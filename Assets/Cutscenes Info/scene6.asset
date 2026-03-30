@@ -1,0 +1,123 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1e73c5106fe4f24f8c623b663cb8311, type: 3}
+  m_Name: scene6
+  m_EditorClassIdentifier: 
+  speakerSprites:
+  - {fileID: 21300000, guid: 470dc91e34c80744e88dcae0e387fbc4, type: 3}
+  - {fileID: 21300000, guid: 523f8ed98fdee314b9d10ae7639a52e6, type: 3}
+  - {fileID: 21300000, guid: 6afe3efb80fb72a40abd765373f6598b, type: 3}
+  - {fileID: 21300000, guid: 23e5f2966eef2b24994544422b320027, type: 3}
+  sceneStills:
+  - {fileID: 21300000, guid: f95a98fe17bf9034082aad2bf7cebfd3, type: 3}
+  directions:
+  - leftSpeaker: Uwe
+    rightSpeaker: Ramesh
+    isLeftSpeaking: 1
+    isRightSpeaking: 0
+    leftSpeakerIdx: 0
+    rightSpeakerIdx: 2
+    imgIdx: 0
+    dialogue: 'Ramesh! Ramesh!
+
+'
+  - leftSpeaker: Uwe
+    rightSpeaker: Ramesh
+    isLeftSpeaking: 0
+    isRightSpeaking: 1
+    leftSpeakerIdx: 0
+    rightSpeakerIdx: 2
+    imgIdx: 0
+    dialogue: "What\u2019s up?\r\n"
+  - leftSpeaker: Uwe
+    rightSpeaker: Ramesh
+    isLeftSpeaking: 1
+    isRightSpeaking: 0
+    leftSpeakerIdx: 0
+    rightSpeakerIdx: 2
+    imgIdx: 0
+    dialogue: "There was this dude on the beach\u2026 I just saw his silhouette,
+      and, I don\u2019t know I\u2019ve never seen him before, but-\r\n"
+  - leftSpeaker: Uwe
+    rightSpeaker: Ramesh
+    isLeftSpeaking: 0
+    isRightSpeaking: 1
+    leftSpeakerIdx: 0
+    rightSpeakerIdx: 2
+    imgIdx: 0
+    dialogue: 'Calm down my friend, get to the point.
+
+'
+  - leftSpeaker: Uwe
+    rightSpeaker: Ramesh
+    isLeftSpeaking: 1
+    isRightSpeaking: 0
+    leftSpeakerIdx: 1
+    rightSpeakerIdx: 2
+    imgIdx: 0
+    dialogue: 'Tricks Ramesh! You can do tricks on the wave!
+
+'
+  - leftSpeaker: Uwe
+    rightSpeaker: Ramesh
+    isLeftSpeaking: 0
+    isRightSpeaking: 1
+    leftSpeakerIdx: 1
+    rightSpeakerIdx: 3
+    imgIdx: 0
+    dialogue: "That's great, I\u2019m happy for you. I jus\u2019 hope you enjoy doing
+      them before that damn Greenstachs company suspends all surfing-\r\n"
+  - leftSpeaker: Uwe
+    rightSpeaker: Ramesh
+    isLeftSpeaking: 1
+    isRightSpeaking: 0
+    leftSpeakerIdx: 0
+    rightSpeakerIdx: 3
+    imgIdx: 0
+    dialogue: "That\u2019s just it Ramesh! Every time I do a trick, I just\u2026
+      I feel so\u2026 powerful\u2026 I have a newfound love for surfing. "
+  - leftSpeaker: Uwe
+    rightSpeaker: Ramesh
+    isLeftSpeaking: 1
+    isRightSpeaking: 0
+    leftSpeakerIdx: 1
+    rightSpeakerIdx: 3
+    imgIdx: 0
+    dialogue: "Ramesh, baby, I\u2019m gonna stop these guys! "
+  - leftSpeaker: Uwe
+    rightSpeaker: Ramesh
+    isLeftSpeaking: 0
+    isRightSpeaking: 1
+    leftSpeakerIdx: 1
+    rightSpeakerIdx: 3
+    imgIdx: 0
+    dialogue: 'More power to you brother.
+
+'
+  - leftSpeaker: Uwe
+    rightSpeaker: Ramesh
+    isLeftSpeaking: 1
+    isRightSpeaking: 0
+    leftSpeakerIdx: 1
+    rightSpeakerIdx: 3
+    imgIdx: 0
+    dialogue: "No, more power to us! Before long, they\u2019ll be out of here, and
+      it\u2019ll be endless Grapefruit Gunshots and Pickle Surprises for the both
+      of us.\r\n"
+  - leftSpeaker: Uwe
+    rightSpeaker: Ramesh
+    isLeftSpeaking: 0
+    isRightSpeaking: 1
+    leftSpeakerIdx: 0
+    rightSpeakerIdx: 3
+    imgIdx: 0
+    dialogue: "Sure, as long as you\u2019re paying.\r\n"

@@ -15,21 +15,22 @@ MonoBehaviour:
   speakerSprites:
   - {fileID: 21300000, guid: f3f229a9dc844814da08eab1e3dd6299, type: 3}
   - {fileID: 21300000, guid: c052670c39a0f3e4fb380e2d11112020, type: 3}
-  - {fileID: 21300000, guid: 2ca26251a9d689c4ea1c65cce63137d0, type: 3}
-  - {fileID: 21300000, guid: 605188ce8e63933429ee81782fa7de9e, type: 3}
+  - {fileID: 21300000, guid: 6a87289f97791d240ae17d795755d029, type: 3}
+  - {fileID: 21300000, guid: 850e0c420136a3141877062210ea2c82, type: 3}
+  - {fileID: 21300000, guid: 433f75f2fdaa60948b8f45ad0a1859d2, type: 3}
   sceneStills:
   - {fileID: 21300000, guid: f95a98fe17bf9034082aad2bf7cebfd3, type: 3}
   directions:
-  - leftSpeaker: Surfer
+  - leftSpeaker: Uwe
     rightSpeaker: Bark Shaits
     isLeftSpeaking: 1
     isRightSpeaking: 0
     leftSpeakerIdx: 0
     rightSpeakerIdx: 1
     imgIdx: 0
-    dialogue: "Man, I hate dodging those wrecking balls! This real estate company\u2019s
+    dialogue: "I haven\u2019t had a decent surf in days. This real estate company\u2019s
       got to go ASAP. "
-  - leftSpeaker: Surfer
+  - leftSpeaker: Uwe
     rightSpeaker: Bark Shaits
     isLeftSpeaking: 0
     isRightSpeaking: 1
@@ -38,7 +39,7 @@ MonoBehaviour:
     imgIdx: 0
     dialogue: "Really? They don\u2019t seem that bad to me. I actually think it\u2019s
       great they\u2019re here!"
-  - leftSpeaker: Surfer
+  - leftSpeaker: Uwe
     rightSpeaker: Bark Shaits
     isLeftSpeaking: 1
     isRightSpeaking: 0
@@ -47,7 +48,7 @@ MonoBehaviour:
     imgIdx: 0
     dialogue: "Huh?! What\u2019re you talking about? They\u2019re jacking up prices
       and driving everyone away from the Beach."
-  - leftSpeaker: Surfer
+  - leftSpeaker: Uwe
     rightSpeaker: Bark Shaits
     isLeftSpeaking: 0
     isRightSpeaking: 1
@@ -56,15 +57,15 @@ MonoBehaviour:
     imgIdx: 0
     dialogue: "I think that\u2019s an improvement. Bringing the property value up.
       Keeping a lot of\u2026 undesirables away.\r"
-  - leftSpeaker: Surfer
+  - leftSpeaker: Uwe
     rightSpeaker: Bark Shaits
     isLeftSpeaking: 1
     isRightSpeaking: 0
     leftSpeakerIdx: 0
     rightSpeakerIdx: 1
     imgIdx: 0
-    dialogue: 'Undesirables? What the &#@$ are you talking about?! '
-  - leftSpeaker: Surfer
+    dialogue: 'Undesirables? What the hell are you talking about?! '
+  - leftSpeaker: Uwe
     rightSpeaker: Bark Shaits
     isLeftSpeaking: 0
     isRightSpeaking: 1
@@ -73,15 +74,32 @@ MonoBehaviour:
     imgIdx: 0
     dialogue: "Look, all I\u2019m saying is I feel a lot safer at the beach these
       days now that it\u2019s just us pure-skins."
-  - leftSpeaker: Surfer
+  - leftSpeaker: Uwe
     rightSpeaker: Bark Shaits
     isLeftSpeaking: 1
     isRightSpeaking: 0
-    leftSpeakerIdx: 0
+    leftSpeakerIdx: 4
+    rightSpeakerIdx: 1
+    imgIdx: 0
+    dialogue: Bro, I'm Indonesian!
+  - leftSpeaker: Uwe
+    rightSpeaker: Bark Shaits
+    isLeftSpeaking: 0
+    isRightSpeaking: 1
+    leftSpeakerIdx: 4
+    rightSpeakerIdx: 1
+    imgIdx: 0
+    dialogue: "You don\u2019t look like it. Besides, you\u2019re one of the good
+      ones. All I\u2019m saying is, I feel a lot safer at the beach these days."
+  - leftSpeaker: Uwe
+    rightSpeaker: Shark
+    isLeftSpeaking: 1
+    isRightSpeaking: 0
+    leftSpeakerIdx: 4
     rightSpeakerIdx: 1
     imgIdx: 0
     dialogue: "It\u2019s literally more dangerous than it\u2019s ever been!"
-  - leftSpeaker: Surfer
+  - leftSpeaker: Uwe
     rightSpeaker: Bark Shaits
     isLeftSpeaking: 0
     isRightSpeaking: 1
@@ -89,15 +107,23 @@ MonoBehaviour:
     rightSpeakerIdx: 1
     imgIdx: 0
     dialogue: Oh please, I for one have never felt more protected-
-  - leftSpeaker: Surfer
-    rightSpeaker: Shark
+  - leftSpeaker: Uwe
+    rightSpeaker: Bark Shaits
     isLeftSpeaking: 0
     isRightSpeaking: 1
     leftSpeakerIdx: 0
     rightSpeakerIdx: 2
     imgIdx: 0
-    dialogue: CHOMP
-  - leftSpeaker: Surfer
+    dialogue: '!'
+  - leftSpeaker: Uwe
+    rightSpeaker: SHARK
+    isLeftSpeaking: 0
+    isRightSpeaking: 1
+    leftSpeakerIdx: 0
+    rightSpeakerIdx: 3
+    imgIdx: 0
+    dialogue: CHOMP!
+  - leftSpeaker: Uwe
     rightSpeaker: 
     isLeftSpeaking: 1
     isRightSpeaking: 0
@@ -105,4 +131,3 @@ MonoBehaviour:
     rightSpeakerIdx: 3
     imgIdx: 0
     dialogue: Oh!!
-  nextCutscene: {fileID: 11400000, guid: 881a91be47c68e0478189ebb13b347e9, type: 2}

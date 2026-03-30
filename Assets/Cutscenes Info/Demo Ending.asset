@@ -15,19 +15,62 @@ MonoBehaviour:
   speakerSprites:
   - {fileID: 21300000, guid: 433f75f2fdaa60948b8f45ad0a1859d2, type: 3}
   - {fileID: 21300000, guid: d37d63abaf6c441429e37a5eb4319bf6, type: 3}
+  - {fileID: 21300000, guid: 9f463d9f5893fc74abe8f1212c86005f, type: 3}
   sceneStills:
-  - {fileID: 21300000, guid: f95a98fe17bf9034082aad2bf7cebfd3, type: 3}
+  - {fileID: 21300000, guid: 404db425f8b91b24db444e07b45b5f7c, type: 3}
   directions:
-  - leftSpeaker: Player
-    rightSpeaker: Big Bad CEO
+  - leftSpeaker: Uwe
+    rightSpeaker: Holden
     isLeftSpeaking: 0
     isRightSpeaking: 1
     leftSpeakerIdx: 0
     rightSpeakerIdx: 1
     imgIdx: 0
-    dialogue: "I litter the ocean with wrecking balls, you don\u2019t stop surfing. "
-  - leftSpeaker: Player
-    rightSpeaker: Big Bad CEO
+    dialogue: "So, do you like sharks? \r"
+  - leftSpeaker: Uwe
+    rightSpeaker: Holden
+    isLeftSpeaking: 1
+    isRightSpeaking: 0
+    leftSpeakerIdx: 0
+    rightSpeakerIdx: 1
+    imgIdx: 0
+    dialogue: "You got a lot of nerve showing your face around here! \r"
+  - leftSpeaker: Uwe
+    rightSpeaker: Holden
+    isLeftSpeaking: 0
+    isRightSpeaking: 1
+    leftSpeakerIdx: 0
+    rightSpeakerIdx: 1
+    imgIdx: 0
+    dialogue: "Yeah sorry about your friend with the fat face-\r"
+  - leftSpeaker: Uwe
+    rightSpeaker: Holden
+    isLeftSpeaking: 1
+    isRightSpeaking: 0
+    leftSpeakerIdx: 0
+    rightSpeakerIdx: 1
+    imgIdx: 0
+    dialogue: "He wasn't my friend.\r"
+  - leftSpeaker: Uwe
+    rightSpeaker: Holden
+    isLeftSpeaking: 0
+    isRightSpeaking: 1
+    leftSpeakerIdx: 0
+    rightSpeakerIdx: 1
+    imgIdx: 0
+    dialogue: Yeah well from what I gathered he was a good son. A damn patriot if
+      you ask me.
+  - leftSpeaker: Uwe
+    rightSpeaker: Holden
+    isLeftSpeaking: 0
+    isRightSpeaking: 1
+    leftSpeakerIdx: 0
+    rightSpeakerIdx: 1
+    imgIdx: 0
+    dialogue: "Y'know, I litter the ocean with wrecking balls, you don\u2019t stop
+      surfing. "
+  - leftSpeaker: Uwe
+    rightSpeaker: Holden
     isLeftSpeaking: 0
     isRightSpeaking: 1
     leftSpeakerIdx: 0
@@ -35,8 +78,8 @@ MonoBehaviour:
     imgIdx: 0
     dialogue: "I send genetically engineered attack sharks into the sea, you don\u2019t
       stop surfing. "
-  - leftSpeaker: Player
-    rightSpeaker: Big Bad CEO
+  - leftSpeaker: Uwe
+    rightSpeaker: Holden
     isLeftSpeaking: 0
     isRightSpeaking: 1
     leftSpeakerIdx: 0
@@ -45,16 +88,16 @@ MonoBehaviour:
     dialogue: "I spend hours of my own time getting seagulls familiar with your scent,
       training them to dive into waves and pluck your eyes out, yet you still won\u2019t
       stop!"
-  - leftSpeaker: Player
-    rightSpeaker: Big Bad CEO
+  - leftSpeaker: Uwe
+    rightSpeaker: Holden
     isLeftSpeaking: 0
     isRightSpeaking: 1
     leftSpeakerIdx: 0
     rightSpeakerIdx: 1
     imgIdx: 0
     dialogue: I gotta admit, I admire your tenacity.
-  - leftSpeaker: Player
-    rightSpeaker: Big Bad CEO
+  - leftSpeaker: Uwe
+    rightSpeaker: Holden
     isLeftSpeaking: 1
     isRightSpeaking: 0
     leftSpeakerIdx: 0
@@ -62,53 +105,69 @@ MonoBehaviour:
     imgIdx: 0
     dialogue: "And I admire your melting skin. Get the hell off my beach bro, the
       shopping mall\u2019s not getting made."
-  - leftSpeaker: Player
-    rightSpeaker: Big Bad CEO
+  - leftSpeaker: Uwe
+    rightSpeaker: Holden
+    isLeftSpeaking: 0
+    isRightSpeaking: 1
+    leftSpeakerIdx: 0
+    rightSpeakerIdx: 2
+    imgIdx: 0
+    dialogue: Ha ha ha ha ha ha ha ha.
+  - leftSpeaker: Uwe
+    rightSpeaker: Holden
+    isLeftSpeaking: 1
+    isRightSpeaking: 0
+    leftSpeakerIdx: 0
+    rightSpeakerIdx: 2
+    imgIdx: 0
+    dialogue: "What\u2019s funny?"
+  - leftSpeaker: Uwe
+    rightSpeaker: Holden
     isLeftSpeaking: 0
     isRightSpeaking: 1
     leftSpeakerIdx: 0
     rightSpeakerIdx: 1
     imgIdx: 0
-    dialogue: Ha ha ha ha ha ha ha ha.
-  - leftSpeaker: Player
-    rightSpeaker: Big Bad CEO
+    dialogue: "Here I was thinking you were a cut above the rest, but you\u2019re
+      no brighter than a piccadilly snowcone."
+  - leftSpeaker: Uwe
+    rightSpeaker: Holden
     isLeftSpeaking: 1
     isRightSpeaking: 0
     leftSpeakerIdx: 0
     rightSpeakerIdx: 1
     imgIdx: 0
-    dialogue: "What\u2019s funny?"
-  - leftSpeaker: Player
-    rightSpeaker: Big Bad CEO
+    dialogue: Speak English!
+  - leftSpeaker: Uwe
+    rightSpeaker: Holden
     isLeftSpeaking: 0
     isRightSpeaking: 1
     leftSpeakerIdx: 0
     rightSpeakerIdx: 1
     imgIdx: 0
-    dialogue: "Here I was thinking you were brighter than the rest, but you still
-      think I\u2019m here to build a shopping mall."
-  - leftSpeaker: Player
-    rightSpeaker: Big Bad CEO
+    dialogue: "You really think I\u2019d go through all this trouble just to build
+      a mall?"
+  - leftSpeaker: Uwe
+    rightSpeaker: Holden
     isLeftSpeaking: 1
     isRightSpeaking: 0
     leftSpeakerIdx: 0
     rightSpeakerIdx: 1
     imgIdx: 0
     dialogue: What?! Explain-
-  - leftSpeaker: Player
-    rightSpeaker: Big Bad CEO
+  - leftSpeaker: Uwe
+    rightSpeaker: Holden
     isLeftSpeaking: 0
     isRightSpeaking: 1
     leftSpeakerIdx: 0
-    rightSpeakerIdx: 1
+    rightSpeakerIdx: 2
     imgIdx: 0
     dialogue: "I\u2019ll be seeing you again soon. Ha ha ha ha ha\u2026"
-  - leftSpeaker: Player
-    rightSpeaker: Big Bad CEO
+  - leftSpeaker: Uwe
+    rightSpeaker: Holden
     isLeftSpeaking: 1
     isRightSpeaking: 0
     leftSpeakerIdx: 0
-    rightSpeakerIdx: 1
+    rightSpeakerIdx: 2
     imgIdx: 0
-    dialogue: "Dammit! I need to know more about his plan but\u2026 this is the end
-      of the demo. I guess I\u2019ll just have to keep surfing in the meantime."
+    dialogue: "Dammit! What\u2019s going on?\r"
