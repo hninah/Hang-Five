@@ -10,86 +10,98 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a1e73c5106fe4f24f8c623b663cb8311, type: 3}
-  m_Name: Tricks
+  m_Name: Missiles
   m_EditorClassIdentifier: 
   speakerSprites:
+  - {fileID: 21300000, guid: 523f8ed98fdee314b9d10ae7639a52e6, type: 3}
+  - {fileID: 21300000, guid: 7dc4b940e8a50b247a000532df738d8b, type: 3}
   - {fileID: 21300000, guid: f3f229a9dc844814da08eab1e3dd6299, type: 3}
-  - {fileID: 21300000, guid: 1599abee4fed5634fb3a9fca33be6f63, type: 3}
+  - {fileID: 21300000, guid: 433f75f2fdaa60948b8f45ad0a1859d2, type: 3}
   sceneStills:
-  - {fileID: 21300000, guid: 5f54ab9bffbfe634995edcb08bc25a05, type: 3}
+  - {fileID: 21300000, guid: 404db425f8b91b24db444e07b45b5f7c, type: 3}
   directions:
   - leftSpeaker: Uwe
-    rightSpeaker: Mystery Man
-    isLeftSpeaking: 1
-    isRightSpeaking: 0
-    leftSpeakerIdx: 0
-    rightSpeakerIdx: 1
-    imgIdx: 0
-    dialogue: "Why can\u2019t I stop this company? Am I too weak? Is my surfing not
-      good enough? I don't know how to fight a shark!"
-  - leftSpeaker: Uwe
-    rightSpeaker: Mystery Man
-    isLeftSpeaking: 1
-    isRightSpeaking: 0
-    leftSpeakerIdx: 0
-    rightSpeakerIdx: 1
-    imgIdx: 0
-    dialogue: "I don't even know what they're building! I'm wasting my time\u2026
-      I should just call it quits."
-  - leftSpeaker: Uwe
-    rightSpeaker: Mystery Man
+    rightSpeaker: Holden
     isLeftSpeaking: 0
     isRightSpeaking: 1
     leftSpeakerIdx: 0
     rightSpeakerIdx: 1
     imgIdx: 0
-    dialogue: "Your surfing is good\u2026"
+    dialogue: 'Alright, that''s enough games you little shit. Quit it with the surfing.
+
+'
   - leftSpeaker: Uwe
-    rightSpeaker: Mystery Man
+    rightSpeaker: Holden
     isLeftSpeaking: 1
     isRightSpeaking: 0
     leftSpeakerIdx: 0
     rightSpeakerIdx: 1
     imgIdx: 0
-    dialogue: Huh?
+    dialogue: 'What happened to that southern charm-
+
+'
   - leftSpeaker: Uwe
-    rightSpeaker: Mystery Man
+    rightSpeaker: Holden
     isLeftSpeaking: 0
     isRightSpeaking: 1
     leftSpeakerIdx: 0
     rightSpeakerIdx: 1
     imgIdx: 0
-    dialogue: "You jus\u2019 need a little more style\u2026"
+    dialogue: 'Shut up! Get the hell off my beach. This is your final warning.
+
+'
   - leftSpeaker: Uwe
-    rightSpeaker: Mystery Man
+    rightSpeaker: Holden
     isLeftSpeaking: 1
     isRightSpeaking: 0
     leftSpeakerIdx: 0
     rightSpeakerIdx: 1
     imgIdx: 0
-    dialogue: What? Who are you?
+    dialogue: 'Aw really? We were just getting to know each other.
+
+'
   - leftSpeaker: Uwe
-    rightSpeaker: Mystery Man
+    rightSpeaker: Holden
     isLeftSpeaking: 0
     isRightSpeaking: 1
     leftSpeakerIdx: 0
     rightSpeakerIdx: 1
     imgIdx: 0
-    dialogue: "Try and do some tricks\u2026 if you jump off the top of the wave and
-      hold space all the way down, you can do a kickflip or a handstand. "
+    dialogue: "You don\u2019t know a damn thing, and you never will.  "
   - leftSpeaker: Uwe
-    rightSpeaker: Mystery Man
+    rightSpeaker: Holden
     isLeftSpeaking: 1
     isRightSpeaking: 0
-    leftSpeakerIdx: 0
+    leftSpeakerIdx: 3
     rightSpeakerIdx: 1
     imgIdx: 0
-    dialogue: What the hell are you talking about?!
+    dialogue: "Look I don\u2019t care if it\u2019s a mall or some other junk, whatever
+      you\u2019re here to do is just not happening. I\u2019ve lost too much to give
+      up now.\r\n"
   - leftSpeaker: Uwe
-    rightSpeaker: Mystery Man
+    rightSpeaker: Holden
     isLeftSpeaking: 0
     isRightSpeaking: 1
-    leftSpeakerIdx: 0
+    leftSpeakerIdx: 2
     rightSpeakerIdx: 1
     imgIdx: 0
-    dialogue: "Once you\u2019ve got style, the truth will be revealed."
+    dialogue: "*brrzzp* Yeah, he\u2019s still not cooperating. Give clearance for
+      operation Eagle Fang. Over. *brrzzp*"
+  - leftSpeaker: Uwe
+    rightSpeaker: Holden
+    isLeftSpeaking: 1
+    isRightSpeaking: 0
+    leftSpeakerIdx: 2
+    rightSpeakerIdx: 1
+    imgIdx: 0
+    dialogue: 'What the fuck?
+
+'
+  - leftSpeaker: Uwe
+    rightSpeaker: Holden
+    isLeftSpeaking: 0
+    isRightSpeaking: 1
+    leftSpeakerIdx: 2
+    rightSpeakerIdx: 1
+    imgIdx: 0
+    dialogue: "You\u2019re dead, kid. Dead.\r\n"
