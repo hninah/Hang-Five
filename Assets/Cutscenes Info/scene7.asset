@@ -10,13 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a1e73c5106fe4f24f8c623b663cb8311, type: 3}
-  m_Name: MovingEnemy2
+  m_Name: scene7
   m_EditorClassIdentifier: 
   speakerSprites:
   - {fileID: 21300000, guid: f3f229a9dc844814da08eab1e3dd6299, type: 3}
   - {fileID: 21300000, guid: 6569f3bad81167743b09b2f983828fdb, type: 3}
-  - {fileID: 21300000, guid: 6afe3efb80fb72a40abd765373f6598b, type: 3}
-  - {fileID: 21300000, guid: 433f75f2fdaa60948b8f45ad0a1859d2, type: 3}
+  - {fileID: 21300000, guid: 23e5f2966eef2b24994544422b320027, type: 3}
   sceneStills:
   - {fileID: 21300000, guid: 404db425f8b91b24db444e07b45b5f7c, type: 3}
   directions:
@@ -24,11 +23,10 @@ MonoBehaviour:
     rightSpeaker: Ramesh
     isLeftSpeaking: 1
     isRightSpeaking: 0
-    leftSpeakerIdx: 3
+    leftSpeakerIdx: 0
     rightSpeakerIdx: 1
     imgIdx: 0
-    dialogue: "This company\u2019s gone too damn far man! It was one thing to do
-      construction, but to litter the ocean with sharks?"
+    dialogue: "Ramesh, what\u2019s going on. Why are you packing everything up?"
   - leftSpeaker: Uwe
     rightSpeaker: Ramesh
     isLeftSpeaking: 0
@@ -36,8 +34,8 @@ MonoBehaviour:
     leftSpeakerIdx: 0
     rightSpeakerIdx: 1
     imgIdx: 0
-    dialogue: "I can\u2019t believe they killed Bark! He was the first friend I made
-      when I came here!"
+    dialogue: "Well my friend, I\u2019m afraid this is the end of Ramesh\u2019s Tiki
+      Tikka Juice Hut.\r\n"
   - leftSpeaker: Uwe
     rightSpeaker: Ramesh
     isLeftSpeaking: 1
@@ -45,7 +43,7 @@ MonoBehaviour:
     leftSpeakerIdx: 0
     rightSpeakerIdx: 1
     imgIdx: 0
-    dialogue: "Oh, yeah\u2026 it\u2019s a real shame\u2026"
+    dialogue: "What? No- that\u2019s- Ramesh, you can\u2019t leave!\r\n"
   - leftSpeaker: Uwe
     rightSpeaker: Ramesh
     isLeftSpeaking: 0
@@ -53,8 +51,8 @@ MonoBehaviour:
     leftSpeakerIdx: 0
     rightSpeakerIdx: 1
     imgIdx: 0
-    dialogue: 'He was always so kind, he loved everyone. I heard you were with him
-      when he died. Please tell me, what was the last thing you guys talked about? '
+    dialogue: "I\u2019m sorry, Uwe. But with all the construction the beach has dried
+      up. We\u2019ve got no customers and barely any inventory.\r\n"
   - leftSpeaker: Uwe
     rightSpeaker: Ramesh
     isLeftSpeaking: 1
@@ -62,7 +60,7 @@ MonoBehaviour:
     leftSpeakerIdx: 0
     rightSpeakerIdx: 1
     imgIdx: 0
-    dialogue: "\u2026"
+    dialogue: "I\u2019m gonna stop them, you have to believe in me.\r\n"
   - leftSpeaker: Uwe
     rightSpeaker: Ramesh
     isLeftSpeaking: 0
@@ -70,8 +68,17 @@ MonoBehaviour:
     leftSpeakerIdx: 0
     rightSpeakerIdx: 1
     imgIdx: 0
-    dialogue: I would love to hear the last words from someone with such a kind and
-      open soul.
+    dialogue: "I hope you do, really. But I can\u2019t wait around. I\u2019ve got
+      mouths to feed."
+  - leftSpeaker: Uwe
+    rightSpeaker: Ramesh
+    isLeftSpeaking: 0
+    isRightSpeaking: 1
+    leftSpeakerIdx: 0
+    rightSpeakerIdx: 1
+    imgIdx: 0
+    dialogue: "Even if I take the risk and wait, the mall will have its own Juice
+      bar that\u2019s gonna price me out."
   - leftSpeaker: Uwe
     rightSpeaker: Ramesh
     isLeftSpeaking: 1
@@ -79,7 +86,7 @@ MonoBehaviour:
     leftSpeakerIdx: 0
     rightSpeakerIdx: 1
     imgIdx: 0
-    dialogue: "Look man, I don\u2019t think you\u2019re gonna like what he said-"
+    dialogue: "They\u2019re not building a mall!"
   - leftSpeaker: Uwe
     rightSpeaker: Ramesh
     isLeftSpeaking: 0
@@ -87,25 +94,9 @@ MonoBehaviour:
     leftSpeakerIdx: 0
     rightSpeakerIdx: 1
     imgIdx: 0
-    dialogue: "Hey, no pressure to share. Everyone grieves differently. I\u2019ll
-      always remember him as someone who loved everybody."
-  - leftSpeaker: Uwe
-    rightSpeaker: Ramesh
-    isLeftSpeaking: 0
-    isRightSpeaking: 1
-    leftSpeakerIdx: 0
-    rightSpeakerIdx: 1
-    imgIdx: 0
-    dialogue: Someone who thought all people were equal, and that we all belonged
-      on the beach.
-  - leftSpeaker: Uwe
-    rightSpeaker: Ramesh
-    isLeftSpeaking: 0
-    isRightSpeaking: 1
-    leftSpeakerIdx: 0
-    rightSpeakerIdx: 1
-    imgIdx: 0
-    dialogue: He was my damn hero.
+    dialogue: 'Oh really? What are they building then?
+
+'
   - leftSpeaker: Uwe
     rightSpeaker: Ramesh
     isLeftSpeaking: 1
@@ -113,4 +104,37 @@ MonoBehaviour:
     leftSpeakerIdx: 0
     rightSpeakerIdx: 1
     imgIdx: 0
-    dialogue: I've gotta stop this company...
+    dialogue: "I- I don\u2019t know yet. But I\u2019m gonna find out."
+  - leftSpeaker: Uwe
+    rightSpeaker: Ramesh
+    isLeftSpeaking: 0
+    isRightSpeaking: 1
+    leftSpeakerIdx: 0
+    rightSpeakerIdx: 1
+    imgIdx: 0
+    dialogue: "I wish you the best on your journey, but I can\u2019t wait any longer."
+  - leftSpeaker: Uwe
+    rightSpeaker: Ramesh
+    isLeftSpeaking: 1
+    isRightSpeaking: 0
+    leftSpeakerIdx: 0
+    rightSpeakerIdx: 1
+    imgIdx: 0
+    dialogue: "Ramesh, I- I\u2019m sorry. \r\n"
+  - leftSpeaker: Uwe
+    rightSpeaker: Ramesh
+    isLeftSpeaking: 0
+    isRightSpeaking: 1
+    leftSpeakerIdx: 0
+    rightSpeakerIdx: 2
+    imgIdx: 0
+    dialogue: "Hey, it\u2019s ok. The endless summer had to end sometime. Goodbye
+      Uwe."
+  - leftSpeaker: Uwe
+    rightSpeaker: Ramesh
+    isLeftSpeaking: 1
+    isRightSpeaking: 0
+    leftSpeakerIdx: 0
+    rightSpeakerIdx: 2
+    imgIdx: 0
+    dialogue: "I\u2019ll stop these guys! I promise.\r\n"
