@@ -21,9 +21,14 @@ public class CutsceneController : MonoBehaviour
     //  (fill with sprites from sceneInfo.speakerSprites)
     [SerializeField] [HideInInspector] Image leftImage;
     [SerializeField] [HideInInspector] Image rightImage;
+
     //background image
     //  (fill with sprites from sceneInfo.sceneStills)
     [SerializeField] [HideInInspector] Image backgroundImage;
+
+    //get references to the name panels to grey them out with their speakers
+    private Image leftNamePanel;
+    private Image rightNamePanel;
 
     //track which dialogue direction (from the CutsceneInfo) we're on
     private int currIndex;
@@ -44,6 +49,10 @@ public class CutsceneController : MonoBehaviour
 
     //set up the input and first line
     void Awake(){
+        //link to the name panels
+        leftNamePanel = transform.GetChild(1).GetComponent<Image>();
+        rightNamePanel = transform.GetChild(2).GetComponent<Image>();
+
        //start the cutscene input
         cutsceneInput = new PlayerInput();
 
@@ -136,25 +145,33 @@ public class CutsceneController : MonoBehaviour
         //update left speaker sprite
         if ( speakerCount > 0 && leftIndex < speakerCount && leftIndex >= 0){
             //re-enable the sprite if it had an invalid index earlier
-            if (!leftImage.enabled) leftImage.enabled = true;
+            if (!leftImage.enabled){
+                leftImage.enabled = true;
+                leftNamePanel.enabled = true;
+            } 
 
             //update left sprite if index is valid
             leftImage.sprite = sceneInfo.speakerSprites[ leftIndex ];
         }
         else{
             leftImage.enabled = false;
+            leftNamePanel.enabled = false;
         }
 
         //update right speaker sprite
         if ( speakerCount > 0 && rightIndex < speakerCount && rightIndex >= 0){
             //re-enable the sprite if it had an invalid index earlier
-            if (!rightImage.enabled) rightImage.enabled = true;
+            if (!rightImage.enabled){
+                rightImage.enabled = true;
+                rightNamePanel.enabled = true;
+            }
 
             //update right sprite if index is valid
             rightImage.sprite = sceneInfo.speakerSprites[ rightIndex ];
         }
         else{
             rightImage.enabled = false;
+            rightNamePanel.enabled = false;
         }
 
         //update speaker names in case the speaker changed
@@ -169,11 +186,13 @@ public class CutsceneController : MonoBehaviour
         //have unfaded sprite and name showing for speaker character
         if ( sceneInfo.directions[currIndex].isLeftSpeaking ){
             leftImage.color = unfadedColour;
+            leftNamePanel.color = unfadedColour;
             leftNameText.enabled = true;
         }
         //otherwise greyed-out sprite if not speaking
         else{
             leftImage.color = fadedColour;
+            leftNamePanel.color = fadedColour;
             leftNameText.enabled = false;
         }
 
@@ -181,11 +200,13 @@ public class CutsceneController : MonoBehaviour
         //have unfaded sprite and name showing for speaker character
         if ( sceneInfo.directions[currIndex].isRightSpeaking ){
             rightImage.color = unfadedColour;
+            rightNamePanel.color = unfadedColour;
             rightNameText.enabled = true;
         }
         //otherwise greyed-out sprite if not speaking
         else{
             rightImage.color = fadedColour;
+            rightNamePanel.color = fadedColour;
             rightNameText.enabled = false;
         }
     }   

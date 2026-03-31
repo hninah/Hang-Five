@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour
     //public/visible variables
     public static GameManager Instance;
 
-    public int currentStage = 0;
+    public int currentStage = 1;
     public int highScore = 0;
     public bool stageCleared = false;
     [SerializeField] private List<GameObject> allObstaclePrefabs;
@@ -150,8 +150,8 @@ public class GameManager : MonoBehaviour
     //use when we press the Quit button on the wipeout screen
     public void resetGameState(){
         //reset score variables
-        int currentStage = 0;
-        int highScore = 0;
+        currentStage = 1;
+        highScore = 0;
         stageCleared = false;
 
         //reset active-obstacle variables
