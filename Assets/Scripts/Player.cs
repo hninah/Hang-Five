@@ -85,6 +85,7 @@ public class Player : MonoBehaviour
     [SerializeField] private Animator animator;
     public UnityEvent startGame = new UnityEvent();
     public UnityEvent endGame = new UnityEvent();
+    public UnityEvent nextStage = new UnityEvent();
 
     [Header("Audio")]
     [SerializeField] private AudioClip wipeout;
@@ -347,7 +348,17 @@ public class Player : MonoBehaviour
         }
         // freeze the game so player cannot gain any more points
         Time.timeScale = 0f;
+        int finalScore = Mathf.FloorToInt(ScoreManager.Instance.score);
+
+        //display wipeout screen
         endGame.Invoke();
+        //display "Next" button if we passed score threshold
+        if (GameManager.Instance.passedCurrentStage(finalScore)){
+            nextStage.Invoke();
+        }
+        
+        // game manager gets the final score to compare if stage was passed and high score
+        GameManager.Instance.GameOver(finalScore);
     }
 
     // resets the player for the tutorial 

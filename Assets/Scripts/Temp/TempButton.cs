@@ -58,4 +58,9 @@ public class TempButton : MonoBehaviour
         GameManager.Instance.resetGameState();
         SceneManager.LoadScene("MainMenu");
     }
+
+    public void buttonPressRetry(){
+        Time.timeScale = 1f;
+        SceneManager.LoadScene("Gameplay");
+    }
 }
