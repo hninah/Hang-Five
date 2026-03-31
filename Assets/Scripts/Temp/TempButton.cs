@@ -55,6 +55,8 @@ public class TempButton : MonoBehaviour
     public void buttonPressQuit()
     {
         Time.timeScale = 1f;
+        CutsceneManager.Instance.resetCutscenes();
+        GameManager.Instance.resetGameState();
         SceneManager.LoadScene("MainMenu");
     }
 }

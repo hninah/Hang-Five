@@ -45,12 +45,15 @@ public class GameManager : MonoBehaviour
 
             //start the latest and next checkpoints
             if (obstacleCheckpoints.Count > 0){
+                latestObsCheckpointIndex = 0;
                 latestObsCheckpoint = obstacleCheckpoints[0];
 
                 if(obstacleCheckpoints.Count > 1){
                     nextObsCheckpoint = obstacleCheckpoints[1];
                 }
+                else Debug.Log("There's only one obstacle checkpoint");
             }
+            else Debug.Log("Remember to add obstacle checkpoints!");
             
             // initialize the first target score
             targetScore = scoreRequired[0];
@@ -185,5 +188,25 @@ public class GameManager : MonoBehaviour
         }
 
         obstacleCheckpoints.Sort();
+    }
+
+
+    //use when we press the Quit button on the wipeout screen
+    public void resetGameState(){
+        //reset score variables
+        currentStage = 1;
+        highScore = 0;
+        stageCleared = false;
+
+        //reset active-obstacle variables
+        //start the latest and next checkpoints
+        if (obstacleCheckpoints.Count > 0){
+            latestObsCheckpoint = obstacleCheckpoints[0];
+            latestObsCheckpointIndex = 0;
+
+            if(obstacleCheckpoints.Count > 1){
+                nextObsCheckpoint = obstacleCheckpoints[1];
+            }
+        }
     }
 }
