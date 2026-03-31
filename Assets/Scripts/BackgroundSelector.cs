@@ -18,6 +18,18 @@ public class BackgroundSelector : MonoBehaviour
         
         //check the cutscene manager for the current cutscene
         int nextCutscene = CutsceneManager.Instance.getCurrentCutscene();
+
+        //shortcut: night background for final scene
+        if (nextCutscene > 11 || CutsceneManager.Instance.isFinished()){
+            //inactive day and sunset
+            backgrounds[0].SetActive(false);
+            backgrounds[1].SetActive(false);
+            //active night background
+            backgrounds[2].SetActive(true);
+            return;
+        }
+
+        //otherwise track through to find the current change
         int changeCount = 0;
 
         foreach (int checkpoint in cutsceneChanges){
