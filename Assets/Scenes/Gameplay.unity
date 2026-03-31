@@ -1144,8 +1144,8 @@ MonoBehaviour:
 
 '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 6401d422667a9b94abe7dda92c42eff0, type: 2}
-  m_sharedMaterial: {fileID: -3025812490292320111, guid: 6401d422667a9b94abe7dda92c42eff0, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 57aa6318f3c52794bba143b625d9f85e, type: 2}
+  m_sharedMaterial: {fileID: 1798656068656429580, guid: 57aa6318f3c52794bba143b625d9f85e, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1612,8 +1612,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Press Space To Begin
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 6401d422667a9b94abe7dda92c42eff0, type: 2}
-  m_sharedMaterial: {fileID: -3025812490292320111, guid: 6401d422667a9b94abe7dda92c42eff0, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 57aa6318f3c52794bba143b625d9f85e, type: 2}
+  m_sharedMaterial: {fileID: 1798656068656429580, guid: 57aa6318f3c52794bba143b625d9f85e, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3939,8 +3939,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 2.4048, y: 96}
-  m_SizeDelta: {x: 297.4547, y: 49.6531}
+  m_AnchoredPosition: {x: -32.154, y: 82.207}
+  m_SizeDelta: {x: 392.0248, y: 50.8206}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1435940647
 MonoBehaviour:
@@ -3964,8 +3964,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Your Score:'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 6401d422667a9b94abe7dda92c42eff0, type: 2}
-  m_sharedMaterial: {fileID: -3025812490292320111, guid: 6401d422667a9b94abe7dda92c42eff0, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 57aa6318f3c52794bba143b625d9f85e, type: 2}
+  m_sharedMaterial: {fileID: 1798656068656429580, guid: 57aa6318f3c52794bba143b625d9f85e, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -4028,7 +4028,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1435940648
@@ -4762,8 +4762,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Press Space To Continue
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 6401d422667a9b94abe7dda92c42eff0, type: 2}
-  m_sharedMaterial: {fileID: -3025812490292320111, guid: 6401d422667a9b94abe7dda92c42eff0, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 57aa6318f3c52794bba143b625d9f85e, type: 2}
+  m_sharedMaterial: {fileID: 1798656068656429580, guid: 57aa6318f3c52794bba143b625d9f85e, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -4826,7 +4826,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1585681812
@@ -6158,8 +6158,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.0018635, y: 44}
-  m_SizeDelta: {x: 297.1213, y: 38.4008}
+  m_AnchoredPosition: {x: 0.0018921, y: 34}
+  m_SizeDelta: {x: 456.3369, y: 45.5931}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1920282483
 MonoBehaviour:
@@ -6183,8 +6183,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Next Target Score: 300'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 6401d422667a9b94abe7dda92c42eff0, type: 2}
-  m_sharedMaterial: {fileID: -3025812490292320111, guid: 6401d422667a9b94abe7dda92c42eff0, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 57aa6318f3c52794bba143b625d9f85e, type: 2}
+  m_sharedMaterial: {fileID: 1798656068656429580, guid: 57aa6318f3c52794bba143b625d9f85e, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -6220,7 +6220,7 @@ MonoBehaviour:
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
-  m_lineSpacing: -50
+  m_lineSpacing: 50
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0

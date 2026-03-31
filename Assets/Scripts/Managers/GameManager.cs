@@ -31,7 +31,6 @@ public class GameManager : MonoBehaviour
 
     // checks if player is in the boss level and if they reach the target score 
     public bool inBossLevel = false;
-    public int bossTargetScore = 500;
 
     private void Awake()
     {
@@ -117,7 +116,7 @@ public class GameManager : MonoBehaviour
         if (inBossLevel)
         {
             // boss is defeated if score is greater than the set target score
-            if (finalScore >= bossTargetScore)
+            if (finalScore >= scoreRequired[currentStage - 1])
             {
                 inBossLevel = false;
 
@@ -152,11 +151,12 @@ public class GameManager : MonoBehaviour
         {
             currentStage++;
             stageCleared = true;
-
+            
             // boss occurs at the second last score threshold because boss needs a score threshold too
             if (currentStage == scoreRequired.Count)
             {
                 inBossLevel = true;
+                targetScore = scoreRequired[currentStage - 1];
                 return true;
             }
 
