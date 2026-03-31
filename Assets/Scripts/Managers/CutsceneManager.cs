@@ -69,4 +69,10 @@ public class CutsceneManager : MonoBehaviour
         return currIndex;
     }
 
+    //used to reset when we press the Quit button on wipeout screen
+    public void resetCutscenes(){
+        currIndex = 0;
+        finishedCutscenes = false;
+    }
+
 }

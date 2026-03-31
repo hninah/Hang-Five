@@ -145,4 +145,23 @@ public class GameManager : MonoBehaviour
 
         obstacleCheckpoints.Sort();
     }
+
+
+    //use when we press the Quit button on the wipeout screen
+    public void resetGameState(){
+        //reset score variables
+        int currentStage = 0;
+        int highScore = 0;
+        stageCleared = false;
+
+        //reset active-obstacle variables
+        //start the latest and next checkpoints
+        if (obstacleCheckpoints.Count > 0){
+            latestObsCheckpoint = obstacleCheckpoints[0];
+
+            if(obstacleCheckpoints.Count > 1){
+                nextObsCheckpoint = obstacleCheckpoints[1];
+            }
+        }
+    }
 }

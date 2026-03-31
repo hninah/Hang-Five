@@ -3976,7 +3976,7 @@ Transform:
   m_GameObject: {fileID: 792953708}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.45345926, y: 2.0447233, z: 0.042924605}
+  m_LocalPosition: {x: -0.53, y: 1.06, z: 0.042924605}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4862,7 +4862,7 @@ Transform:
   m_GameObject: {fileID: 1126555647}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.42, y: 4.56, z: 0.019672833}
+  m_LocalPosition: {x: -2.42, y: 3.91, z: 0.019672833}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -6092,7 +6092,7 @@ Transform:
   m_GameObject: {fileID: 1577670906}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 6.13, y: -2.14, z: 0.11102576}
+  m_LocalPosition: {x: 5.97, y: -1.24, z: 0.11102576}
   m_LocalScale: {x: 3.5, y: 3.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8280,7 +8280,7 @@ GameObject:
   - component: {fileID: 2052777199}
   - component: {fileID: 2052777198}
   m_Layer: 0
-  m_Name: BackgroundManager
+  m_Name: BackgroundSelector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8302,7 +8302,7 @@ MonoBehaviour:
   - {fileID: 592791786}
   - {fileID: 1066374576}
   - {fileID: 2114659718}
-  cutsceneChanges: 000000000100000002000000
+  cutsceneChanges: 000000000100000002000000030000000400000005000000060000000700000008000000090000000a0000000b0000000c0000000d0000000e000000
 --- !u!4 &2052777199
 Transform:
   m_ObjectHideFlags: 0
