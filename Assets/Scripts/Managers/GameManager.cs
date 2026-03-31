@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 
 
@@ -130,6 +131,12 @@ public class GameManager : MonoBehaviour
             ///print("stage failed");
             return false;
         }
+    }
+
+    //quick check for Player.cs whether to display the "Next" button
+    public bool passedCurrentStage(int finalScore){
+        return ( (currentStage - 1) >= scoreRequired.Count) || 
+            (( (currentStage - 1) < scoreRequired.Count) && (finalScore >= scoreRequired[currentStage - 1]));
     }
 
 
