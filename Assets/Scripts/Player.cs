@@ -77,8 +77,14 @@ public class Player : MonoBehaviour
     [SerializeField] private float flipCoolDown = 0.2f;
     private PlayerState state;
     public PlayerState State { get { return state; } }
-    [SerializeField] private float waveTopY = 3.0f;
+    [SerializeField] private Transform waveTop;
     [SerializeField] private Transform waveBottom;
+    [SerializeField] private float pauseTime = 1.0f;
+    public UnityEvent tempPause = new UnityEvent();
+    public UnityEvent unPause = new UnityEvent();
+    [SerializeField] private float deathRiseHeight = 2.0f;
+    [SerializeField] private float deathRiseTime = 1.0f;
+    [SerializeField] private float deathFallTime = 0.5f;
 
     [Space(20)]
     [Header("Misc.")]
@@ -146,14 +152,14 @@ public class Player : MonoBehaviour
                 // We want to eventually be able to go back into the flipping state when the timer's done.
                 flipImmunityTimer = Mathf.Max(flipImmunityTimer - Time.deltaTime, 0.0f);
 
-                if (transform.position.y >= waveTopY && rotation >= trickRotationMin)
+                if (transform.position.y >= waveTop.position.y && rotation >= trickRotationMin)
                 {
                     playerVelocity.y = playerVelocity.y * Mathf.Abs(rotation / maxUpRotation);
                     state = PlayerState.FLIPPING;
                     animator.SetBool("InAir", true);
                     animator.SetInteger("TrickAnim", Random.Range(0, 2));
                 }
-                else if ((transform.position.y >= waveTopY && flipImmunityTimer <= 0.0f) || transform.position.y < waveBottom.position.y)
+                else if ((transform.position.y >= waveTop.position.y && flipImmunityTimer <= 0.0f) || transform.position.y < waveBottom.position.y)
                 {
                     print("We crashed going back up into the wave");
                     state = PlayerState.CRASHING;
@@ -165,7 +171,7 @@ public class Player : MonoBehaviour
                 updateTurning();
                 updateFlipVelocity();
 
-                if (transform.position.y >= waveTopY) break;
+                if (transform.position.y >= waveTop.position.y) break;
 
                 // The player should be able to fail at flipping for a risk-reward dynamic
                 state = rotation <= landRotationMax 
@@ -344,8 +350,41 @@ public class Player : MonoBehaviour
 
     IEnumerator HandleCrash()
     {
-        audioSource.PlayOneShot(wipeout, 0.3f);
         animator.SetTrigger("Crashing");
+        audioSource.PlayOneShot(wipeout, 0.3f);
+        tempPause.Invoke();
+        yield return new WaitForSeconds(pauseTime);
+        animator.SetTrigger("Death");
+        unPause.Invoke();
+
+        Vector3 startPosition = transform.position;
+        Vector3 targetPosition = startPosition + new Vector3(0.0f, deathRiseHeight, 0.0f);
+        float timer = 0.0f;
+        while (transform.position.y < startPosition.y + deathRiseHeight)
+        {
+            transform.position = Vector3.Lerp(startPosition, targetPosition, timer / deathRiseTime);
+            timer += Time.deltaTime;
+            if ((targetPosition - transform.position).magnitude <= 0.05f)
+            {
+                break;
+            }
+            yield return null;
+        }
+
+        timer = 0.0f;
+        startPosition = transform.position;
+        targetPosition = new Vector3(startPosition.x, waveBottom.position.y, 0.0f);
+        while (transform.position.y >= waveBottom.position.y)
+        {
+            transform.position = Vector3.Lerp(startPosition, targetPosition, timer / deathFallTime);
+            timer += Time.deltaTime;
+            if ((targetPosition - transform.position).magnitude <= 0.05f)
+            {
+                break;
+            }
+            yield return null;
+        }
+
         // wait for 1 second because that is how long the animation is
         yield return new WaitForSeconds(1f);
         Time.timeScale = 1f;

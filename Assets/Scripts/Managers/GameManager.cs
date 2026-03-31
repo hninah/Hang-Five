@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour
     public int highScore = 0;
     public bool stageCleared = false;
     [SerializeField] private List<GameObject> allObstaclePrefabs;
+    [SerializeField] private List<PatternScriptable> allPatterns;
     [SerializeField] private List<int> scoreRequired;
     public bool tutorialCompleted = false;
 
@@ -101,6 +102,27 @@ public class GameManager : MonoBehaviour
             }
         }
         return obstacles;
+    }
+
+    public List<PatternScriptable> GetActivePatterns()
+    {
+        List<PatternScriptable> output = new List<PatternScriptable>();
+
+        foreach (PatternScriptable pattern in allPatterns)
+        {
+            for (int i = 0; i < pattern.checkPointCutscenes.Length; ++i)
+            {
+                if (pattern.checkPointCutscenes[i] != currentStage)
+                {
+                    continue;
+                }
+
+                output.Add(pattern);
+                break;
+            }
+        }
+
+        return output;
     }
 
 

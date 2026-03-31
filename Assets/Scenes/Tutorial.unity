@@ -157,6 +157,8 @@ MonoBehaviour:
   cameraSpeed: 15
   player: {fileID: 1901402365}
   cameraIdlePosition: {x: -1, y: 0, z: -10}
+  shakeOffsetX: 0.3
+  shakeOffsetY: 0.3
 --- !u!81 &2592013
 AudioListener:
   m_ObjectHideFlags: 0
@@ -710,6 +712,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b51c5dbc4d27429498e73127893221fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hoverScale: 1.15
 --- !u!114 &439849614
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1321,6 +1324,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b51c5dbc4d27429498e73127893221fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hoverScale: 1.15
 --- !u!1 &697491007
 GameObject:
   m_ObjectHideFlags: 0
@@ -1392,7 +1396,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 456014833
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 1
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1484,7 +1488,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1967249433
-  m_SortingLayer: 1
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 9c1dc40f4942c7b4bac8e9fc06ad5b33, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1755,6 +1759,7 @@ MonoBehaviour:
   scoreMultiplier: 1
   highScoreText: {fileID: 1920282483}
   endScoreText: {fileID: 1435940647}
+  thresholdText: {fileID: 0}
 --- !u!4 &792524340
 Transform:
   m_ObjectHideFlags: 0
@@ -2101,7 +2106,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 2027478191
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
   m_Color: {r: 0.64200795, g: 1, b: 0.6367924, a: 1}
@@ -2200,7 +2205,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 456014833
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 3
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
   m_Color: {r: 1, g: 0.9638486, b: 0.5330188, a: 0.09803922}
@@ -2277,7 +2282,6 @@ MonoBehaviour:
   - {fileID: 2144488072472814359, guid: 8e5e73df4fcf70e488cdfae42a03cdaf, type: 3}
   - {fileID: 3973058621705695172, guid: c268e31c6cd22da4d8d7bb4e1df63a15, type: 3}
   - {fileID: 2963685289427379715, guid: b45699529837bd245a57f609efa5bed3, type: 3}
-  spawnX: 12
   minSpawnY: -4.5
   maxSpawnY: 2.1
   minDelay: 0.6
@@ -2286,7 +2290,6 @@ MonoBehaviour:
   progressiveMaxDelay: []
   progressiveTimeChanges: []
   obstacleProbs: []
-  allObstaclePrefabs: []
   activeObstaclePrefabs: []
   pattern: {fileID: 0}
 --- !u!4 &1261724205
@@ -2409,7 +2412,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cutsceneList: []
-  obstacleCheckpoints___: 
 --- !u!4 &1285992959
 Transform:
   m_ObjectHideFlags: 0
@@ -3072,7 +3074,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 2027478191
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
   m_Color: {r: 0.64200795, g: 1, b: 0.6367924, a: 1}
@@ -3234,7 +3236,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 456014833
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: c318252292e574f41a4cebe87408b8c2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -3328,8 +3330,18 @@ MonoBehaviour:
   trickRotationMin: 20
   landRotationMax: -5
   flipCoolDown: 0.2
-  waveTopY: 3
+  waveTop: {fileID: 1478722224}
   waveBottom: {fileID: 697491008}
+  pauseTime: 1
+  tempPause:
+    m_PersistentCalls:
+      m_Calls: []
+  unPause:
+    m_PersistentCalls:
+      m_Calls: []
+  deathRiseHeight: 2
+  deathRiseTime: 1
+  deathFallTime: 0.5
   animator: {fileID: 1901402363}
   startGame:
     m_PersistentCalls:
@@ -3457,6 +3469,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+  nextStage:
+    m_PersistentCalls:
+      m_Calls: []
   wipeout: {fileID: 8300000, guid: 12ec36c971738704bbc885995fa25036, type: 3}
 --- !u!4 &1901402366
 Transform:

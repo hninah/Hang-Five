@@ -19,7 +19,7 @@ public class NearMissBox : MonoBehaviour
 
         numNearMisses++;
 
-        // sprite.enabled = true;
+        sprite.enabled = true;
     }
 
     void OnTriggerStay2D()
@@ -27,6 +27,7 @@ public class NearMissBox : MonoBehaviour
         if (Player.Instance.State == Player.PlayerState.CRASHING || nearMissCoolDownTimer > 0.0f) return;
 
         ScoreManager.Instance.score += nearMissBonus;
+        TextParticleManager.Instance.generateScoreParticle(nearMissBonus);
         nearMissCoolDownTimer = nearMissCoolDown;
     }
 
