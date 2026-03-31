@@ -64,7 +64,7 @@ public class ScoreManager : MonoBehaviour
 
     private void Update()
     {
-        if (!gameRunning || player == null)
+        if (!gameRunning || player == null || (player.State != Player.PlayerState.SURFING && player.State != Player.PlayerState.FLIPPING))
         {
             return;
         }
