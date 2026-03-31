@@ -139,6 +139,11 @@ public class GameManager : MonoBehaviour
             (( (currentStage - 1) < scoreRequired.Count) && (finalScore >= scoreRequired[currentStage - 1]));
     }
 
+    //ScoreManager.cs can use this to set the current threshold text
+    public int getCurrentThreshold(){
+        return scoreRequired[currentStage - 1];
+    }
+
 
     private void getObstacleCheckpoints(){
 
