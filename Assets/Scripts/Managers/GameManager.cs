@@ -41,12 +41,15 @@ public class GameManager : MonoBehaviour
 
             //start the latest and next checkpoints
             if (obstacleCheckpoints.Count > 0){
+                latestObsCheckpointIndex = 0;
                 latestObsCheckpoint = obstacleCheckpoints[0];
 
                 if(obstacleCheckpoints.Count > 1){
                     nextObsCheckpoint = obstacleCheckpoints[1];
                 }
+                else Debug.Log("There's only one obstacle checkpoint");
             }
+            else Debug.Log("Remember to add obstacle checkpoints!");
         }
         else
         {
@@ -158,6 +161,7 @@ public class GameManager : MonoBehaviour
         //start the latest and next checkpoints
         if (obstacleCheckpoints.Count > 0){
             latestObsCheckpoint = obstacleCheckpoints[0];
+            latestObsCheckpointIndex = 0;
 
             if(obstacleCheckpoints.Count > 1){
                 nextObsCheckpoint = obstacleCheckpoints[1];
