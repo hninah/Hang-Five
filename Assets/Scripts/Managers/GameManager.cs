@@ -12,9 +12,10 @@ public class GameManager : MonoBehaviour
 
     public int currentStage = 1;
     public int highScore = 0;
+    public int targetScore = 0;
     public bool stageCleared = false;
     [SerializeField] private List<GameObject> allObstaclePrefabs;
-    [SerializeField] private List<int> scoreRequired;
+    [SerializeField] public List<int> scoreRequired;
     public bool tutorialCompleted = false;
 
     //private variables
@@ -27,8 +28,10 @@ public class GameManager : MonoBehaviour
     //cutscene number of the last checkpoint we passed
     private int latestObsCheckpoint;
     //index in obstacleCheckpoints of the last checkpoint we passed
-    private int latestObsCheckpointIndex; 
+    private int latestObsCheckpointIndex;
 
+    // checks if player is in the boss level and if they reach the target score 
+    public bool inBossLevel = false;
 
     private void Awake()
     {
@@ -51,6 +54,9 @@ public class GameManager : MonoBehaviour
                 else Debug.Log("There's only one obstacle checkpoint");
             }
             else Debug.Log("Remember to add obstacle checkpoints!");
+            
+            // initialize the first target score
+            targetScore = scoreRequired[0];
         }
         else
         {
@@ -66,7 +72,7 @@ public class GameManager : MonoBehaviour
         //update latest checkpoint and checkpoint index if 
         // - we reached the next checkpoint
         // - we didn't already pass the last checkpoint
-        if ( (currentCutscene == nextObsCheckpoint) && (latestObsCheckpointIndex < obstacleCheckpoints.Count)){
+        if ( (currentCutscene == nextObsCheckpoint) && (latestObsCheckpointIndex < obstacleCheckpoints.Count -1)){
 
             //reached the next checkpoint: update current checkpoint index and checkpoint
             ++latestObsCheckpointIndex;
@@ -106,31 +112,65 @@ public class GameManager : MonoBehaviour
 
     public bool GameOver(int finalScore)
     {
-        if (finalScore > highScore)
+        Debug.Log("GameOver called, stage = " + currentStage);
+        // boss stage
+        if (inBossLevel)
         {
-            highScore = finalScore;
-        }
+            // boss is defeated if score is greater than the set target score
+            if (finalScore >= scoreRequired[currentStage - 1])
+            {
+                inBossLevel = false;
 
+                // go to infinite mode
+                currentStage = scoreRequired.Count + 1;
+
+                return true;
+            }
+            else
+            {
+                stageCleared = false;
+                return false;
+            }
+        }
+        // infinite mode
+        if (currentStage > scoreRequired.Count)
+        {
+            stageCleared = true;
+
+            if (finalScore > highScore)
+            {
+                highScore = finalScore;
+            }
+
+            return true;
+        }
         //move to next stage if:
         //  1) we ran out of score thresholds, or
         //  2) player passed the current score threshold
-        if ( (currentStage - 1) >= scoreRequired.Count){
-            ///print("stage passed by default");
-            stageCleared = true;
-            return true;
-        }
-        else if (( (currentStage - 1) < scoreRequired.Count) && (finalScore >= scoreRequired[currentStage - 1]))
+        // we have not ran out of score thresholds yet
+        if (finalScore >= scoreRequired[currentStage - 1])
         {
-            // check if player got enough score to pass the stage
-            ///print("stage passed");
             currentStage++;
             stageCleared = true;
+            // boss occurs at the second last score threshold because boss needs a score threshold too
+            if (currentStage == scoreRequired.Count)
+            {
+                inBossLevel = true;
+                targetScore = scoreRequired[currentStage - 1];
+                return true;
+            }
+
+            // regular next level (not the boss)
+            if (currentStage <= scoreRequired.Count)
+            {
+                targetScore = scoreRequired[currentStage - 1];
+            }
+
             return true;
-        }else
-        {
-            ///print("stage failed");
-            return false;
         }
+
+        stageCleared = false;
+        return false;
     }
 
     //quick check for Player.cs whether to display the "Next" button
