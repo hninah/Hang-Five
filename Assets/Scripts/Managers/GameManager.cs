@@ -16,7 +16,7 @@ public class GameManager : MonoBehaviour
     public bool stageCleared = false;
     [SerializeField] private List<GameObject> allObstaclePrefabs;
     [SerializeField] private List<PatternScriptable> allPatterns;
-    [SerializeField] private List<int> scoreRequired;
+    [SerializeField] public List<int> scoreRequired;
     public bool tutorialCompleted = false;
 
     //private variables
