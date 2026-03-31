@@ -11,6 +11,7 @@ public class TempButton : MonoBehaviour
     private Vector3 startPos;
     public float hoverScale = 1.15f;
 
+
     void Start()
     {
         startPos = transform.localPosition;
@@ -19,28 +20,22 @@ public class TempButton : MonoBehaviour
     void Update()
     {
         float t = Time.time;
-
-        // slightly going up and down
         float y = Mathf.Sin(t * 2f) * 3f;
         transform.localPosition = startPos + new Vector3(0, y, 0);
-        // pressing space has the same effect as just pressing RETRY
-        if (Keyboard.current.spaceKey.wasPressedThisFrame)
-        {
-            buttonPressContinue();
-        }
     }
     public void buttonPressContinue()
     {
         Time.timeScale = 1f;
+        // load a cutscene
         if (!CutsceneManager.Instance.isFinished() && GameManager.Instance.stageCleared)
         {
-            GameManager.Instance.stageCleared = false;
             SceneManager.LoadScene("Cutscene");
         }
+        // load regular gameplay level
         else
         {
-            GameManager.Instance.stageCleared = false;
             SceneManager.LoadScene("Gameplay");
+            GameManager.Instance.stageCleared = false;
         }
     }
 
@@ -56,4 +51,5 @@ public class TempButton : MonoBehaviour
         Time.timeScale = 1f;
         SceneManager.LoadScene("Gameplay");
     }
+
 }

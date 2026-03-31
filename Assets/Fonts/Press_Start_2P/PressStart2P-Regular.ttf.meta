@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: ef4850d415018134cbae88622574e479
+guid: 0cfd70dea97cb4e4dbc104d702d4d446
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -9,7 +9,7 @@ TrueTypeFontImporter:
   characterPadding: 1
   includeFontData: 1
   fontNames:
-  - Shrikhand
+  - Press Start 2P
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0

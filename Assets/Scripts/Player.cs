@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
 
 public class Player : MonoBehaviour
 {
@@ -98,7 +99,9 @@ public class Player : MonoBehaviour
     private AudioSource audioSource;
 
     bool crashRoutineRunning = false;
-    private bool tutorialInvincible = false;
+
+    public GameObject RetryButton;
+    public GameObject NextButton; 
     void Awake()
     {
         if (_instance != null)
@@ -196,12 +199,6 @@ public class Player : MonoBehaviour
 
             case PlayerState.CRASHING:
 
-                if (tutorialInvincible)
-                {
-                    state = PlayerState.SURFING;
-                    break;
-                }
-
                 if (!crashRoutineRunning)
                 {
                     crashRoutineRunning = true;
@@ -217,7 +214,6 @@ public class Player : MonoBehaviour
                 if (surfDirection < 0)
                 {
                     state = PlayerState.SURFING;
-                    tutorialInvincible = false;
                     startGame.Invoke();
                 }
                 break;
@@ -228,7 +224,6 @@ public class Player : MonoBehaviour
     void OnTriggerEnter2D()
     {
         if (state == PlayerState.CRASHING) return;
-        if (tutorialInvincible) return;
 
         state = PlayerState.CRASHING;
     }
@@ -397,16 +392,17 @@ public class Player : MonoBehaviour
         // freeze the game so player cannot gain any more points
         Time.timeScale = 0f;
         int finalScore = Mathf.FloorToInt(ScoreManager.Instance.score);
-
+        bool cleared = GameManager.Instance.GameOver(finalScore);
         //display wipeout screen
         endGame.Invoke();
+        EventSystem.current.SetSelectedGameObject(RetryButton);
         //display "Next" button if we passed score threshold
-        if (GameManager.Instance.passedCurrentStage(finalScore)){
+        if (cleared)
+        {
             nextStage.Invoke();
+            EventSystem.current.SetSelectedGameObject(NextButton);
         }
-        
-        // game manager gets the final score to compare if stage was passed and high score
-        GameManager.Instance.GameOver(finalScore);
+
     }
 
     // resets the player for the tutorial 
@@ -432,9 +428,4 @@ public class Player : MonoBehaviour
         animator.Play("SurferBegin", 0, 0f);
     }
 
-    public void SetTutorialInvincible(bool value)
-    {
-        // invincibility frames for tutorial
-        tutorialInvincible = value;
-    }
 }

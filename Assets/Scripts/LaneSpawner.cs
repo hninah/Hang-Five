@@ -27,6 +27,9 @@ public class LaneSpawner : MonoBehaviour
     public float MinSpawnY { get { return minSpawnY; } }
     public float MaxSpawnY { get { return maxSpawnY; } }
 
+    // start of boss level there are no obstacles
+    private bool canSpawn = true;
+
     void Start()
     {
         if (progressiveMinDelay.Count > 0 && progressiveMaxDelay.Count > 0)
@@ -60,6 +63,9 @@ public class LaneSpawner : MonoBehaviour
 
     void Update()
     {
+        // no obstacles being spawned at the start of the boss level
+        if (!canSpawn) return;
+
         spawnTimer -= Time.deltaTime;
 
         if (progressiveTimeChanges.Count > 0 && progressiveIndex < progressiveTimeChanges.Count)
@@ -132,5 +138,13 @@ public class LaneSpawner : MonoBehaviour
     public void setSpawnPattern(Pattern newPattern)
     {
         pattern = newPattern;
+    }
+    public void EnableSpawning()
+    {
+        canSpawn = true;
+    }
+    public void DisableSpawning()
+    {
+        canSpawn = false;
     }
 }

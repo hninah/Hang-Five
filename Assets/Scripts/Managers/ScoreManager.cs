@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class ScoreManager : MonoBehaviour
 {
@@ -16,7 +17,6 @@ public class ScoreManager : MonoBehaviour
 
     [SerializeField] private TMP_Text highScoreText;
     [SerializeField] private TMP_Text endScoreText;
-    [SerializeField] private TMP_Text thresholdText;
 
     private void Awake()
     {
@@ -33,22 +33,33 @@ public class ScoreManager : MonoBehaviour
     private void OnGameStart()
     {
         gameRunning = true;
+        GameManager.Instance.stageCleared = false;
     }
 
     private void OnGameEnd()
     {
+        
         gameRunning = false;
 
         int finalScore = Mathf.FloorToInt(score);
 
-        if (finalScore > GameManager.Instance.highScore)
-        {
-            GameManager.Instance.highScore = finalScore;
-        }
-
         endScoreText.text = "Your Score: " + finalScore;
-        highScoreText.text = "High Score: " + GameManager.Instance.highScore;
-        thresholdText.text = "Next Cutscene Threshold: " + GameManager.Instance.getCurrentThreshold();
+
+        // infinite mode
+        if (GameManager.Instance.currentStage > GameManager.Instance.scoreRequired.Count)
+        {
+            highScoreText.text = "High Score: " + GameManager.Instance.highScore;
+        }
+        // player passed the current level
+        else if (GameManager.Instance.stageCleared)
+        {
+            highScoreText.text = "Next Target Score: " + GameManager.Instance.targetScore;
+        }
+        // player did not pass the level
+        else
+        {
+            highScoreText.text = "Target Score: " + GameManager.Instance.targetScore;
+        }
     }
 
     private void Update()
