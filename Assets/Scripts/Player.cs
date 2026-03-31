@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
 
 public class Player : MonoBehaviour
 {
@@ -92,6 +93,9 @@ public class Player : MonoBehaviour
     private AudioSource audioSource;
 
     bool crashRoutineRunning = false;
+
+    public GameObject RetryButton;
+    public GameObject NextButton; 
     void Awake()
     {
         if (_instance != null)
@@ -349,16 +353,17 @@ public class Player : MonoBehaviour
         // freeze the game so player cannot gain any more points
         Time.timeScale = 0f;
         int finalScore = Mathf.FloorToInt(ScoreManager.Instance.score);
-
+        bool cleared = GameManager.Instance.GameOver(finalScore);
         //display wipeout screen
         endGame.Invoke();
+        EventSystem.current.SetSelectedGameObject(RetryButton);
         //display "Next" button if we passed score threshold
-        if (GameManager.Instance.passedCurrentStage(finalScore)){
+        if (cleared)
+        {
             nextStage.Invoke();
+            EventSystem.current.SetSelectedGameObject(NextButton);
         }
-        
-        // game manager gets the final score to compare if stage was passed and high score
-        GameManager.Instance.GameOver(finalScore);
+
     }
 
     // resets the player for the tutorial 

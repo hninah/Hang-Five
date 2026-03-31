@@ -152,7 +152,6 @@ public class GameManager : MonoBehaviour
         {
             currentStage++;
             stageCleared = true;
-            
             // boss occurs at the second last score threshold because boss needs a score threshold too
             if (currentStage == scoreRequired.Count)
             {

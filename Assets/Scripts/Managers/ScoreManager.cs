@@ -43,8 +43,6 @@ public class ScoreManager : MonoBehaviour
 
         int finalScore = Mathf.FloorToInt(score);
 
-        GameManager.Instance.GameOver(finalScore);
-
         endScoreText.text = "Your Score: " + finalScore;
 
         // infinite mode
