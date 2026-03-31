@@ -592,10 +592,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cutsceneList:
   - {fileID: 11400000, guid: ae6c205bbd05f3446a8b26c5d99aef1e, type: 2}
+  - {fileID: 11400000, guid: 5ae51596c6adce7488ff2d09608be6a0, type: 2}
   - {fileID: 11400000, guid: 81f0ca110bff7db4f9d6ee9c5d5c1f80, type: 2}
   - {fileID: 11400000, guid: 881a91be47c68e0478189ebb13b347e9, type: 2}
-  - {fileID: 11400000, guid: 73448f3cb465f994ebe4a415cf8cb573, type: 2}
   - {fileID: 11400000, guid: bccde198a3428ad43b166202f87f10d5, type: 2}
+  - {fileID: 11400000, guid: 73448f3cb465f994ebe4a415cf8cb573, type: 2}
+  - {fileID: 11400000, guid: 7fc7c7e0cdc096645ae103b04a92d7b3, type: 2}
+  - {fileID: 11400000, guid: 3a6ed9df6f367de4d82c5af21015a219, type: 2}
+  - {fileID: 11400000, guid: 8331592086eb49949803f28a7a1d3761, type: 2}
+  - {fileID: 11400000, guid: abefb450cbd341a4b981a5ab240cf603, type: 2}
+  - {fileID: 11400000, guid: 17262bd79a2b9df4196652e2e6a9f469, type: 2}
+  - {fileID: 11400000, guid: d22170db25bb47642a0b66ca73041095, type: 2}
 --- !u!4 &407100496
 Transform:
   m_ObjectHideFlags: 0

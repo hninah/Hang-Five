@@ -14,37 +14,48 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speakerSprites:
   - {fileID: 21300000, guid: f3f229a9dc844814da08eab1e3dd6299, type: 3}
+  - {fileID: 21300000, guid: 6569f3bad81167743b09b2f983828fdb, type: 3}
   - {fileID: 21300000, guid: 6afe3efb80fb72a40abd765373f6598b, type: 3}
+  - {fileID: 21300000, guid: 433f75f2fdaa60948b8f45ad0a1859d2, type: 3}
   sceneStills:
-  - {fileID: 21300000, guid: f95a98fe17bf9034082aad2bf7cebfd3, type: 3}
+  - {fileID: 21300000, guid: 404db425f8b91b24db444e07b45b5f7c, type: 3}
   directions:
-  - leftSpeaker: Surfer
+  - leftSpeaker: Uwe
+    rightSpeaker: Ramesh
+    isLeftSpeaking: 1
+    isRightSpeaking: 0
+    leftSpeakerIdx: 3
+    rightSpeakerIdx: 1
+    imgIdx: 0
+    dialogue: "This company\u2019s gone too damn far man! It was one thing to do
+      construction, but to litter the ocean with sharks?"
+  - leftSpeaker: Uwe
     rightSpeaker: Ramesh
     isLeftSpeaking: 0
     isRightSpeaking: 1
     leftSpeakerIdx: 0
     rightSpeakerIdx: 1
     imgIdx: 0
-    dialogue: "This company\u2019s gone too damn far man, I can\u2019t believe they
-      killed Bark! He was the first friend I made when I came here!"
-  - leftSpeaker: Surfer
+    dialogue: "I can\u2019t believe they killed Bark! He was the first friend I made
+      when I came here!"
+  - leftSpeaker: Uwe
     rightSpeaker: Ramesh
     isLeftSpeaking: 1
     isRightSpeaking: 0
     leftSpeakerIdx: 0
     rightSpeakerIdx: 1
     imgIdx: 0
-    dialogue: "Yeah\u2026 it\u2019s a real shame\u2026"
-  - leftSpeaker: Surfer
+    dialogue: "Oh, yeah\u2026 it\u2019s a real shame\u2026"
+  - leftSpeaker: Uwe
     rightSpeaker: Ramesh
     isLeftSpeaking: 0
     isRightSpeaking: 1
     leftSpeakerIdx: 0
     rightSpeakerIdx: 1
     imgIdx: 0
-    dialogue: 'I heard you were with him when he died. Please tell me, what was the
-      last thing you guys talked about? '
-  - leftSpeaker: Surfer
+    dialogue: 'He was always so kind, he loved everyone. I heard you were with him
+      when he died. Please tell me, what was the last thing you guys talked about? '
+  - leftSpeaker: Uwe
     rightSpeaker: Ramesh
     isLeftSpeaking: 1
     isRightSpeaking: 0
@@ -52,7 +63,7 @@ MonoBehaviour:
     rightSpeakerIdx: 1
     imgIdx: 0
     dialogue: "\u2026"
-  - leftSpeaker: Surfer
+  - leftSpeaker: Uwe
     rightSpeaker: Ramesh
     isLeftSpeaking: 0
     isRightSpeaking: 1
@@ -61,7 +72,7 @@ MonoBehaviour:
     imgIdx: 0
     dialogue: I would love to hear the last words from someone with such a kind and
       open soul.
-  - leftSpeaker: Surfer
+  - leftSpeaker: Uwe
     rightSpeaker: Ramesh
     isLeftSpeaking: 1
     isRightSpeaking: 0
@@ -69,7 +80,7 @@ MonoBehaviour:
     rightSpeakerIdx: 1
     imgIdx: 0
     dialogue: "Look man, I don\u2019t think you\u2019re gonna like what he said-"
-  - leftSpeaker: Surfer
+  - leftSpeaker: Uwe
     rightSpeaker: Ramesh
     isLeftSpeaking: 0
     isRightSpeaking: 1
@@ -78,7 +89,7 @@ MonoBehaviour:
     imgIdx: 0
     dialogue: "Hey, no pressure to share. Everyone grieves differently. I\u2019ll
       always remember him as someone who loved everybody."
-  - leftSpeaker: Surfer
+  - leftSpeaker: Uwe
     rightSpeaker: Ramesh
     isLeftSpeaking: 0
     isRightSpeaking: 1
@@ -87,12 +98,19 @@ MonoBehaviour:
     imgIdx: 0
     dialogue: Someone who thought all people were equal, and that we all belonged
       on the beach.
-  - leftSpeaker: Surfer
+  - leftSpeaker: Uwe
+    rightSpeaker: Ramesh
+    isLeftSpeaking: 0
+    isRightSpeaking: 1
+    leftSpeakerIdx: 0
+    rightSpeakerIdx: 1
+    imgIdx: 0
+    dialogue: He was my damn hero.
+  - leftSpeaker: Uwe
     rightSpeaker: Ramesh
     isLeftSpeaking: 1
     isRightSpeaking: 0
     leftSpeakerIdx: 0
     rightSpeakerIdx: 1
     imgIdx: 0
-    dialogue: "How are we gonna stop these guys\u2026"
-  nextCutscene: {fileID: 11400000, guid: 73448f3cb465f994ebe4a415cf8cb573, type: 2}
+    dialogue: I've gotta stop this company...

@@ -1,0 +1,107 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1e73c5106fe4f24f8c623b663cb8311, type: 3}
+  m_Name: Missiles
+  m_EditorClassIdentifier: 
+  speakerSprites:
+  - {fileID: 21300000, guid: 523f8ed98fdee314b9d10ae7639a52e6, type: 3}
+  - {fileID: 21300000, guid: 7dc4b940e8a50b247a000532df738d8b, type: 3}
+  - {fileID: 21300000, guid: f3f229a9dc844814da08eab1e3dd6299, type: 3}
+  - {fileID: 21300000, guid: 433f75f2fdaa60948b8f45ad0a1859d2, type: 3}
+  sceneStills:
+  - {fileID: 21300000, guid: 404db425f8b91b24db444e07b45b5f7c, type: 3}
+  directions:
+  - leftSpeaker: Uwe
+    rightSpeaker: Holden
+    isLeftSpeaking: 0
+    isRightSpeaking: 1
+    leftSpeakerIdx: 0
+    rightSpeakerIdx: 1
+    imgIdx: 0
+    dialogue: 'Alright, that''s enough games you little shit. Quit it with the surfing.
+
+'
+  - leftSpeaker: Uwe
+    rightSpeaker: Holden
+    isLeftSpeaking: 1
+    isRightSpeaking: 0
+    leftSpeakerIdx: 0
+    rightSpeakerIdx: 1
+    imgIdx: 0
+    dialogue: 'What happened to that southern charm-
+
+'
+  - leftSpeaker: Uwe
+    rightSpeaker: Holden
+    isLeftSpeaking: 0
+    isRightSpeaking: 1
+    leftSpeakerIdx: 0
+    rightSpeakerIdx: 1
+    imgIdx: 0
+    dialogue: 'Shut up! Get the hell off my beach. This is your final warning.
+
+'
+  - leftSpeaker: Uwe
+    rightSpeaker: Holden
+    isLeftSpeaking: 1
+    isRightSpeaking: 0
+    leftSpeakerIdx: 0
+    rightSpeakerIdx: 1
+    imgIdx: 0
+    dialogue: 'Aw really? We were just getting to know each other.
+
+'
+  - leftSpeaker: Uwe
+    rightSpeaker: Holden
+    isLeftSpeaking: 0
+    isRightSpeaking: 1
+    leftSpeakerIdx: 0
+    rightSpeakerIdx: 1
+    imgIdx: 0
+    dialogue: "You don\u2019t know a damn thing, and you never will.  "
+  - leftSpeaker: Uwe
+    rightSpeaker: Holden
+    isLeftSpeaking: 1
+    isRightSpeaking: 0
+    leftSpeakerIdx: 3
+    rightSpeakerIdx: 1
+    imgIdx: 0
+    dialogue: "Look I don\u2019t care if it\u2019s a mall or some other junk, whatever
+      you\u2019re here to do is just not happening. I\u2019ve lost too much to give
+      up now.\r\n"
+  - leftSpeaker: Uwe
+    rightSpeaker: Holden
+    isLeftSpeaking: 0
+    isRightSpeaking: 1
+    leftSpeakerIdx: 2
+    rightSpeakerIdx: 1
+    imgIdx: 0
+    dialogue: "*brrzzp* Yeah, he\u2019s still not cooperating. Give clearance for
+      operation Eagle Fang. Over. *brrzzp*"
+  - leftSpeaker: Uwe
+    rightSpeaker: Holden
+    isLeftSpeaking: 1
+    isRightSpeaking: 0
+    leftSpeakerIdx: 2
+    rightSpeakerIdx: 1
+    imgIdx: 0
+    dialogue: 'What the fuck?
+
+'
+  - leftSpeaker: Uwe
+    rightSpeaker: Holden
+    isLeftSpeaking: 0
+    isRightSpeaking: 1
+    leftSpeakerIdx: 2
+    rightSpeakerIdx: 1
+    imgIdx: 0
+    dialogue: "You\u2019re dead, kid. Dead.\r\n"

@@ -19,7 +19,7 @@ public class NearMissBox : MonoBehaviour
 
         numNearMisses++;
 
-        sprite.enabled = true;
+        // sprite.enabled = true;
     }
 
     void OnTriggerStay2D()
