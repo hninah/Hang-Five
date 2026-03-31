@@ -16,6 +16,7 @@ public class ScoreManager : MonoBehaviour
 
     [SerializeField] private TMP_Text highScoreText;
     [SerializeField] private TMP_Text endScoreText;
+    [SerializeField] private TMP_Text thresholdText;
 
     private void Awake()
     {
@@ -47,6 +48,7 @@ public class ScoreManager : MonoBehaviour
 
         endScoreText.text = "Your Score: " + finalScore;
         highScoreText.text = "High Score: " + GameManager.Instance.highScore;
+        thresholdText.text = "Next Cutscene Threshold: " + GameManager.Instance.getCurrentThreshold();
     }
 
     private void Update()
