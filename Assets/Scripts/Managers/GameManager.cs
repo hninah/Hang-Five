@@ -30,6 +30,12 @@ public class GameManager : MonoBehaviour
     //index in obstacleCheckpoints of the last checkpoint we passed
     private int latestObsCheckpointIndex;
 
+    //BackgroundSelector.cs sets this, ScoreManager.cs and TextParticle.cs can 
+    //  check here to know when to have white text
+    private string background;
+    public string getBackground() { return background; }
+    public void setBackground( string newBackground ) { background = newBackground; }
+
     // checks if player is in the boss level and if they reach the target score 
     public bool inBossLevel = false;
 

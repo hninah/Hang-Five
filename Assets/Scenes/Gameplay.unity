@@ -1695,7 +1695,7 @@ GameObject:
   - component: {fileID: 592791787}
   m_Layer: 0
   m_Name: DayBackground
-  m_TagString: Untagged
+  m_TagString: Day
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3077,6 +3077,7 @@ MonoBehaviour:
   scoreMultiplier: 1
   highScoreText: {fileID: 1920282483}
   endScoreText: {fileID: 1435940647}
+  backgroundObject: {fileID: 2052777197}
 --- !u!4 &792524340
 Transform:
   m_ObjectHideFlags: 0
@@ -3552,7 +3553,7 @@ GameObject:
   - component: {fileID: 1066374577}
   m_Layer: 0
   m_Name: SunsetBackground
-  m_TagString: Untagged
+  m_TagString: Sunset
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6268,7 +6269,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 453308568}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
@@ -6278,7 +6279,7 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 1
+          m_BoolArgument: 0
         m_CallState: 2
   nextStage:
     m_PersistentCalls:
@@ -6729,7 +6730,7 @@ GameObject:
   - component: {fileID: 2114659719}
   m_Layer: 0
   m_Name: NightBackground
-  m_TagString: Untagged
+  m_TagString: Night
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
