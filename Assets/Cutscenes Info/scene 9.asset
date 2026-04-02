@@ -26,7 +26,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: ae9ae039b7ac3e249aea6fe424d68c5e, type: 3}
   - {fileID: 21300000, guid: 1599abee4fed5634fb3a9fca33be6f63, type: 3}
   sceneStills:
-  - {fileID: 21300000, guid: 5f54ab9bffbfe634995edcb08bc25a05, type: 3}
+  - {fileID: 21300000, guid: 3a9ef1041e533494cb1d9dac226293ef, type: 3}
   directions:
   - leftSpeaker: Uwe
     rightSpeaker: Soldier
@@ -148,7 +148,7 @@ MonoBehaviour:
     imgIdx: 0
     dialogue: 'Huh?
 
-      
+
 
 '
   - leftSpeaker: Uwe
@@ -160,7 +160,7 @@ MonoBehaviour:
     imgIdx: 0
     dialogue: '!!!
 
-      
+
 
 '
   - leftSpeaker: Uwe
