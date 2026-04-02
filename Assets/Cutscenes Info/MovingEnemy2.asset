@@ -18,7 +18,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6afe3efb80fb72a40abd765373f6598b, type: 3}
   - {fileID: 21300000, guid: 433f75f2fdaa60948b8f45ad0a1859d2, type: 3}
   sceneStills:
-  - {fileID: 21300000, guid: 404db425f8b91b24db444e07b45b5f7c, type: 3}
+  - {fileID: 21300000, guid: a57a485f8ada0254785ef3930d811cb7, type: 3}
   directions:
   - leftSpeaker: Uwe
     rightSpeaker: Ramesh
