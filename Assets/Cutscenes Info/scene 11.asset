@@ -24,7 +24,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 523f8ed98fdee314b9d10ae7639a52e6, type: 3}
   - {fileID: 21300000, guid: 1dcddc6faae0ed8479b9ea6f3ca8bcc7, type: 3}
   sceneStills:
-  - {fileID: 21300000, guid: 5f54ab9bffbfe634995edcb08bc25a05, type: 3}
+  - {fileID: 21300000, guid: 3a9ef1041e533494cb1d9dac226293ef, type: 3}
   directions:
   - leftSpeaker: Uwe
     rightSpeaker: Holden

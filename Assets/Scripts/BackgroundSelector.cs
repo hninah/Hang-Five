@@ -45,13 +45,13 @@ public class BackgroundSelector : MonoBehaviour
             //set active if we've looped through the changes to this one
             if (i == (changeCount - 1) % backgrounds.Count){
                 backgrounds[i].SetActive(true);
+                GameManager.Instance.setBackground( backgrounds[i].tag );
             }
             //otherwise disable it
             else{
                 backgrounds[i].SetActive(false);
             }
         }
-
     }
 
 }

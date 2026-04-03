@@ -20,7 +20,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 23e5f2966eef2b24994544422b320027, type: 3}
   - {fileID: 21300000, guid: 6afe3efb80fb72a40abd765373f6598b, type: 3}
   sceneStills:
-  - {fileID: 21300000, guid: 5f54ab9bffbfe634995edcb08bc25a05, type: 3}
+  - {fileID: 21300000, guid: 3a9ef1041e533494cb1d9dac226293ef, type: 3}
   directions:
   - leftSpeaker: Uwe
     rightSpeaker: Mystery Man
