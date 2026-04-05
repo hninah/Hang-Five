@@ -218,6 +218,15 @@ public class Player : MonoBehaviour
                 }
                 break;
         }
+        if (state == PlayerState.OVER && Keyboard.current.spaceKey.wasPressedThisFrame)
+        {
+            GameObject selected = EventSystem.current.currentSelectedGameObject;
+
+            if (selected != null)
+            {
+                selected.GetComponent<UnityEngine.UI.Button>()?.onClick.Invoke();
+            }
+        }
 
     }
 
@@ -389,18 +398,18 @@ public class Player : MonoBehaviour
             TutorialManager.Instance.PlayerCrashed();
             yield break;
         }
-        // freeze the game so player cannot gain any more points
-        Time.timeScale = 0f;
+
         int finalScore = Mathf.FloorToInt(ScoreManager.Instance.score);
         bool cleared = GameManager.Instance.GameOver(finalScore);
         //display wipeout screen
         endGame.Invoke();
-        EventSystem.current.SetSelectedGameObject(RetryButton);
+        state = PlayerState.OVER;
+        StartCoroutine(SelectButtonNextFrame(RetryButton));
         //display "Next" button if we passed score threshold
         if (cleared)
         {
             nextStage.Invoke();
-            EventSystem.current.SetSelectedGameObject(NextButton);
+            StartCoroutine(SelectButtonNextFrame(NextButton));
         }
 
     }
@@ -426,6 +435,11 @@ public class Player : MonoBehaviour
 
         // Force animator back to a clean state
         animator.Play("SurferBegin", 0, 0f);
+    }
+    IEnumerator SelectButtonNextFrame(GameObject button)
+    {
+        yield return null; // wait 1 frame
+        EventSystem.current.SetSelectedGameObject(button);
     }
 
 }

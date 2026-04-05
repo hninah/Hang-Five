@@ -8,6 +8,8 @@ using UnityEngine.InputSystem;
 public class TempButton : MonoBehaviour
 {
 
+    public GameObject retryButton;
+    public GameObject nextButton;
     private Vector3 startPos;
     public float hoverScale = 1.15f;
 
@@ -15,28 +17,49 @@ public class TempButton : MonoBehaviour
     void Start()
     {
         startPos = transform.localPosition;
+
+        bool passed = GameManager.Instance.stageCleared;
+
+        retryButton.SetActive(!passed); // show Retry if failed
+        nextButton.SetActive(passed);   // show Next if passed
     }
 
     void Update()
     {
-        float t = Time.time;
-        float y = Mathf.Sin(t * 2f) * 3f;
-        transform.localPosition = startPos + new Vector3(0, y, 0);
+        GameObject selected = EventSystem.current.currentSelectedGameObject;
+
+        if (selected == gameObject)
+        {
+            // float if selected
+            float t = Time.time;
+            float y = Mathf.Sin(t * 4f) * 5f; // slightly stronger effect
+            transform.localPosition = startPos + new Vector3(0, y, 0);
+        }
+        else
+        {
+            // reset position if not selected
+            transform.localPosition = startPos;
+        }
     }
     public void buttonPressContinue()
     {
         Time.timeScale = 1f;
-        // load a cutscene
+
         if (!CutsceneManager.Instance.isFinished() && GameManager.Instance.stageCleared)
         {
             SceneManager.LoadScene("Cutscene");
         }
-        // load regular gameplay level
         else
         {
             SceneManager.LoadScene("Gameplay");
             GameManager.Instance.stageCleared = false;
         }
+    }
+
+    public void buttonPressRetry()
+    {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene("Gameplay");
     }
 
     public void buttonPressQuit()
@@ -47,9 +70,5 @@ public class TempButton : MonoBehaviour
         SceneManager.LoadScene("MainMenu");
     }
 
-    public void buttonPressRetry(){
-        Time.timeScale = 1f;
-        SceneManager.LoadScene("Gameplay");
-    }
 
 }
