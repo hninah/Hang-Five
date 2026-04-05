@@ -404,12 +404,15 @@ public class Player : MonoBehaviour
         //display wipeout screen
         endGame.Invoke();
         state = PlayerState.OVER;
-        StartCoroutine(SelectButtonNextFrame(RetryButton));
-        //display "Next" button if we passed score threshold
+
         if (cleared)
         {
             nextStage.Invoke();
             StartCoroutine(SelectButtonNextFrame(NextButton));
+        }
+        else
+        {
+            StartCoroutine(SelectButtonNextFrame(RetryButton));
         }
 
     }

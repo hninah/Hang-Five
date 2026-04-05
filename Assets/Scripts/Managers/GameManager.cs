@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour
     public int highScore = 0;
     public int targetScore = 0;
     public bool stageCleared = false;
+    public bool beatBoss = false;
     [SerializeField] private List<GameObject> allObstaclePrefabs;
     [SerializeField] private List<PatternScriptable> allPatterns;
     [SerializeField] public List<int> scoreRequired;
@@ -40,6 +41,7 @@ public class GameManager : MonoBehaviour
     // checks if player is in the boss level and if they reach the target score 
     public bool inBossLevel = false;
 
+    public bool inInfiniteMode = false;
     private void Awake()
     {
         if (Instance == null)
@@ -140,37 +142,42 @@ public class GameManager : MonoBehaviour
 
     public bool GameOver(int finalScore)
     {
-        Debug.Log("GameOver called, stage = " + currentStage);
-        // boss stage
         if (inBossLevel)
         {
-            // boss is defeated if score is greater than the set target score
-            if (finalScore >= scoreRequired[currentStage - 1])
+            // beat the boss
+            if (finalScore >= scoreRequired[currentStage])
             {
+                targetScore = 0;
                 inBossLevel = false;
-
-                // go to infinite mode
-                currentStage = scoreRequired.Count + 1;
-
+                currentStage++;
+                stageCleared = true;
+                beatBoss = true;
                 return true;
             }
+            // did not beat the boss
             else
             {
                 stageCleared = false;
                 return false;
             }
         }
-        // infinite mode
+        // after beating the boss
         if (currentStage > scoreRequired.Count)
         {
-            stageCleared = true;
+            if (!inInfiniteMode)
+            {
+                stageCleared = true; // show Next after boss win
+                return true;
+            }
+
+            stageCleared = false;
 
             if (finalScore > highScore)
             {
                 highScore = finalScore;
             }
 
-            return true;
+            return false;
         }
         //move to next stage if:
         //  1) we ran out of score thresholds, or
@@ -181,10 +188,11 @@ public class GameManager : MonoBehaviour
             currentStage++;
             stageCleared = true;
             // boss occurs at the second last score threshold because boss needs a score threshold too
-            if (currentStage == scoreRequired.Count)
+            if (currentStage == scoreRequired.Count - 1)
             {
                 inBossLevel = true;
-                targetScore = scoreRequired[currentStage - 1];
+                inInfiniteMode = false;
+                targetScore = scoreRequired[currentStage];
                 return true;
             }
 
@@ -236,7 +244,15 @@ public class GameManager : MonoBehaviour
         currentStage = 1;
         highScore = 0;
         stageCleared = false;
+        inBossLevel = false;
+        inInfiniteMode = false;
 
+        // reset score thresholds
+        if (scoreRequired.Count > 0)
+        {
+            targetScore = scoreRequired[0];
+        }
+        setBackground("Day");
         //reset active-obstacle variables
         //start the latest and next checkpoints
         if (obstacleCheckpoints.Count > 0){

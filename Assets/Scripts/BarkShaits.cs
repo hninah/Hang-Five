@@ -15,6 +15,11 @@ public class BarkShaits : MonoBehaviour
     public float frequency = 2f;
     void Start()
     {
+        if (!GameManager.Instance.inBossLevel)
+        {
+            gameObject.SetActive(false);
+            return;
+        }
         print("in the boss level");
         ScoreManager.Instance.ResetScore();
         laneSpawner.DisableSpawning();
@@ -34,7 +39,6 @@ public class BarkShaits : MonoBehaviour
     {
         yield return new WaitForSeconds(delay);
 
-        gameObject.SetActive(true);
         // start spawning obstacles
         laneSpawner.EnableSpawning();
 

@@ -47,16 +47,24 @@ public class ScoreManager : MonoBehaviour
         gameRunning = false;
 
         int finalScore = Mathf.FloorToInt(score);
-
         endScoreText.text = "Your Score: " + finalScore;
-
+        if (GameManager.Instance.beatBoss)
+        {
+            highScoreText.gameObject.SetActive(false);
+            GameManager.Instance.beatBoss = false;
+            return;
+        } else
+        {
+            highScoreText.gameObject.SetActive(true);
+        }
         // infinite mode
-        if (GameManager.Instance.currentStage > GameManager.Instance.scoreRequired.Count)
+        if (GameManager.Instance.inInfiniteMode)
         {
             highScoreText.text = "High Score: " + GameManager.Instance.highScore;
+            return;
         }
         // player passed the current level
-        else if (GameManager.Instance.stageCleared)
+        if (GameManager.Instance.stageCleared)
         {
             highScoreText.text = "Next Target Score: " + GameManager.Instance.targetScore;
         }
