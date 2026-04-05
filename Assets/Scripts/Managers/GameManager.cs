@@ -147,7 +147,6 @@ public class GameManager : MonoBehaviour
             // beat the boss
             if (finalScore >= scoreRequired[currentStage])
             {
-                targetScore = 0;
                 inBossLevel = false;
                 currentStage++;
                 stageCleared = true;

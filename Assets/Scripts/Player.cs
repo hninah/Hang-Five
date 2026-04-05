@@ -185,7 +185,11 @@ public class Player : MonoBehaviour
 
                 if (state == PlayerState.SURFING)
                 {
-                    TextParticleManager.Instance.generateScoreParticle(200);
+                    // dont show the particles on the death screen
+                    if (state != PlayerState.CRASHING && state != PlayerState.OVER)
+                    {
+                        TextParticleManager.Instance.generateScoreParticle(200);
+                    }
                     ScoreManager.Instance.score += 200;
                     animator.SetBool("InAir", false);
                 }

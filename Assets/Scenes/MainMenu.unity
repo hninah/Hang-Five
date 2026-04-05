@@ -2642,6 +2642,7 @@ MonoBehaviour:
   highScore: 0
   targetScore: 0
   stageCleared: 0
+  beatBoss: 0
   allObstaclePrefabs:
   - {fileID: 2144488072472814359, guid: 8e5e73df4fcf70e488cdfae42a03cdaf, type: 3}
   - {fileID: 3973058621705695172, guid: c268e31c6cd22da4d8d7bb4e1df63a15, type: 3}
@@ -2659,9 +2660,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 5525264826bf97e41ba89d4362815b25, type: 2}
   - {fileID: 11400000, guid: 356a90e12632da447a49fa16dab46cca, type: 2}
   - {fileID: 11400000, guid: 01170a14bd78be64bb513eafe05bdd66, type: 2}
-  scoreRequired: 0a0000000a0000000a0000000a0000000a0000000a0000000a0000000a0000000a0000000a0000000a0000000a000000d0070000
+  scoreRequired: 0a0000000a0000000a0000000a0000000a0000000a0000000a0000000a0000000a0000000a0000000a0000000a0000000a000000d0070000
   tutorialCompleted: 0
   inBossLevel: 0
+  inInfiniteMode: 0
 --- !u!4 &1292449646
 Transform:
   m_ObjectHideFlags: 0

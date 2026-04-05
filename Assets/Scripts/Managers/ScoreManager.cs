@@ -50,10 +50,12 @@ public class ScoreManager : MonoBehaviour
         endScoreText.text = "Your Score: " + finalScore;
         if (GameManager.Instance.beatBoss)
         {
-            highScoreText.gameObject.SetActive(false);
+            highScoreText.gameObject.SetActive(true);
+            highScoreText.text = "High Score: " + GameManager.Instance.highScore;
             GameManager.Instance.beatBoss = false;
             return;
-        } else
+        }
+        else
         {
             highScoreText.gameObject.SetActive(true);
         }

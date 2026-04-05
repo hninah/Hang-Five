@@ -12,7 +12,7 @@ public class TempButton : MonoBehaviour
     public GameObject nextButton;
     private Vector3 startPos;
     public float hoverScale = 1.15f;
-
+    private bool hasPressed = false;
 
     void Start()
     {
@@ -43,8 +43,9 @@ public class TempButton : MonoBehaviour
     }
     public void buttonPressContinue()
     {
+        if (hasPressed) return;
+        hasPressed = true;
         Time.timeScale = 1f;
-
         if (!CutsceneManager.Instance.isFinished() && GameManager.Instance.stageCleared)
         {
             SceneManager.LoadScene("Cutscene");
