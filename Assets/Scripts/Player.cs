@@ -80,7 +80,6 @@ public class Player : MonoBehaviour
     public PlayerState State { get { return state; } }
     [SerializeField] private Transform waveTop;
     [SerializeField] private Transform waveBottom;
-    [SerializeField] private float pauseTime = 1.0f;
     public UnityEvent tempPause = new UnityEvent();
     public UnityEvent unPause = new UnityEvent();
     [SerializeField] private float deathRiseHeight = 2.0f;
@@ -101,7 +100,9 @@ public class Player : MonoBehaviour
     bool crashRoutineRunning = false;
 
     public GameObject RetryButton;
-    public GameObject NextButton; 
+    public GameObject NextButton;
+
+    private Collider2D col;
     void Awake()
     {
         if (_instance != null)
@@ -115,6 +116,7 @@ public class Player : MonoBehaviour
         playerVelocity = startingVelocity;
         rotation = transform.eulerAngles.z;
         audioSource = GetComponent<AudioSource>();
+        col = GetComponent<Collider2D>();
     }
 
     void OnEnable()
@@ -354,10 +356,15 @@ public class Player : MonoBehaviour
 
     IEnumerator HandleCrash()
     {
+        // turn off the collider so player can't collide with green circle
+        if (col != null)
+        {
+            col.enabled = false;
+        }
+
         animator.SetTrigger("Crashing");
         audioSource.PlayOneShot(wipeout, 0.3f);
-        tempPause.Invoke();
-        yield return new WaitForSeconds(pauseTime);
+
         animator.SetTrigger("Death");
         unPause.Invoke();
 
@@ -438,6 +445,8 @@ public class Player : MonoBehaviour
 
         // Force animator back to a clean state
         animator.Play("SurferBegin", 0, 0f);
+        // re-enable collider
+        col.enabled = true;
     }
     IEnumerator SelectButtonNextFrame(GameObject button)
     {
