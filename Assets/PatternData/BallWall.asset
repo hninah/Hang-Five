@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 781e86b6e42fd2b4e8b0d2e2404d4d6a, type: 3}
-  m_Name: WreckingWall
+  m_Name: BallWall
   m_EditorClassIdentifier: 
   obstacles:
   - {fileID: 2963685289427379715, guid: b45699529837bd245a57f609efa5bed3, type: 3}
@@ -25,5 +25,6 @@ MonoBehaviour:
   - 0
   - 0
   - 0
-  checkPointCutscenes: 060000000700000008000000090000000a0000000b0000000c0000000d0000000e0000000f00000010000000
-  coolDownTime: 5
+  checkPointCutscenes: 
+  coolDownTime: 2
+  isRandomSpawning: 0000000000

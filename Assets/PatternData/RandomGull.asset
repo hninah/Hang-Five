@@ -10,12 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 781e86b6e42fd2b4e8b0d2e2404d4d6a, type: 3}
-  m_Name: LoneGull 2
+  m_Name: RandomGull
   m_EditorClassIdentifier: 
   obstacles:
   - {fileID: 2144488072472814359, guid: 8e5e73df4fcf70e488cdfae42a03cdaf, type: 3}
-  spawnPointIdxs: 0d000000
+  spawnPointIdxs: 04000000
   timeTillSpawn:
   - 0
-  checkPointCutscenes: 01000000
+  checkPointCutscenes: 00000000
   coolDownTime: 2
+  isRandomSpawning: 01
