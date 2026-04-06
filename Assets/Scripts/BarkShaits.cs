@@ -15,11 +15,14 @@ public class BarkShaits : MonoBehaviour
     public float frequency = 2f;
     void Start()
     {
+        if (!GameManager.Instance.inBossLevel)
+        {
+            gameObject.SetActive(false);
+            return;
+        }
         print("in the boss level");
-        ScoreManager.Instance.ResetScore();
-        laneSpawner.DisableSpawning();
         // player is gonna just be surfing with no obstacles and then after a bit the boss will come in
-        StartCoroutine(SpawnBoss());
+        Player.Instance.startGame.AddListener(OnGameStart);
     }
     void Update()
     {
@@ -30,11 +33,16 @@ public class BarkShaits : MonoBehaviour
 
         gameObject.transform.position = basePosition + new Vector3(0, yOffset, 0);
     }
+    void OnGameStart()
+    {
+        ScoreManager.Instance.ResetScore();
+        laneSpawner.DisableSpawning();
+        StartCoroutine(SpawnBoss());
+    }
     IEnumerator SpawnBoss()
     {
         yield return new WaitForSeconds(delay);
 
-        gameObject.SetActive(true);
         // start spawning obstacles
         laneSpawner.EnableSpawning();
 

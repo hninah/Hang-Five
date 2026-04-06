@@ -13,6 +13,11 @@ public class SurfCamera : MonoBehaviour
     [Tooltip("Where the camera should normally be during gameplay.")]
     public Vector3 cameraIdlePosition;
 
+    private bool screenShaking = false;
+    public bool ScreenShaking { get { return screenShaking; } set { screenShaking = value; } }
+    public float shakeOffsetX = 0.3f;
+    public float shakeOffsetY = 0.3f;
+
     void Start()
     {
         cameraIdlePosition = transform.position;
@@ -21,6 +26,12 @@ public class SurfCamera : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (screenShaking)
+        {
+            transform.position = cameraIdlePosition + new Vector3(Random.Range(0.0f, shakeOffsetX), Random.Range(0.0f, shakeOffsetY), 0.0f);
+            return;
+        }
+
         // FIXME: This follow code is probably terrible (might be better to scale the camera or do something more complicated than this)
         if (player.State == Player.PlayerState.FLIPPING)
         {
@@ -31,6 +42,7 @@ public class SurfCamera : MonoBehaviour
             transform.position = Vector3.MoveTowards(transform.position, cameraIdlePosition, cameraSpeed * Time.deltaTime);
         }
     }
+
     public void ResetCamera()
     {
         // resetting the camera for tutorial

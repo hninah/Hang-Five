@@ -78,8 +78,13 @@ public class Player : MonoBehaviour
     [SerializeField] private float flipCoolDown = 0.2f;
     private PlayerState state;
     public PlayerState State { get { return state; } }
-    [SerializeField] private float waveTopY = 3.0f;
+    [SerializeField] private Transform waveTop;
     [SerializeField] private Transform waveBottom;
+    public UnityEvent tempPause = new UnityEvent();
+    public UnityEvent unPause = new UnityEvent();
+    [SerializeField] private float deathRiseHeight = 2.0f;
+    [SerializeField] private float deathRiseTime = 1.0f;
+    [SerializeField] private float deathFallTime = 0.5f;
 
     [Space(20)]
     [Header("Misc.")]
@@ -95,7 +100,9 @@ public class Player : MonoBehaviour
     bool crashRoutineRunning = false;
 
     public GameObject RetryButton;
-    public GameObject NextButton; 
+    public GameObject NextButton;
+
+    private Collider2D col;
     void Awake()
     {
         if (_instance != null)
@@ -109,6 +116,7 @@ public class Player : MonoBehaviour
         playerVelocity = startingVelocity;
         rotation = transform.eulerAngles.z;
         audioSource = GetComponent<AudioSource>();
+        col = GetComponent<Collider2D>();
     }
 
     void OnEnable()
@@ -149,14 +157,14 @@ public class Player : MonoBehaviour
                 // We want to eventually be able to go back into the flipping state when the timer's done.
                 flipImmunityTimer = Mathf.Max(flipImmunityTimer - Time.deltaTime, 0.0f);
 
-                if (transform.position.y >= waveTopY && rotation >= trickRotationMin && GameManager.Instance.tutorialCompleted)
+                if (transform.position.y >= waveTop.position.y && rotation >= trickRotationMin)
                 {
                     playerVelocity.y = playerVelocity.y * Mathf.Abs(rotation / maxUpRotation);
                     state = PlayerState.FLIPPING;
                     animator.SetBool("InAir", true);
                     animator.SetInteger("TrickAnim", Random.Range(0, 2));
                 }
-                else if ((transform.position.y >= waveTopY && flipImmunityTimer <= 0.0f) || transform.position.y < waveBottom.position.y)
+                else if ((transform.position.y >= waveTop.position.y && flipImmunityTimer <= 0.0f) || transform.position.y < waveBottom.position.y)
                 {
                     print("We crashed going back up into the wave");
                     state = PlayerState.CRASHING;
@@ -168,7 +176,7 @@ public class Player : MonoBehaviour
                 updateTurning();
                 updateFlipVelocity();
 
-                if (transform.position.y >= waveTopY) break;
+                if (transform.position.y >= waveTop.position.y) break;
 
                 // The player should be able to fail at flipping for a risk-reward dynamic
                 state = rotation <= landRotationMax 
@@ -177,7 +185,11 @@ public class Player : MonoBehaviour
 
                 if (state == PlayerState.SURFING)
                 {
-                    TextParticleManager.Instance.generateScoreParticle(200);
+                    // dont show the particles on the death screen
+                    if (state != PlayerState.CRASHING && state != PlayerState.OVER)
+                    {
+                        TextParticleManager.Instance.generateScoreParticle(200);
+                    }
                     ScoreManager.Instance.score += 200;
                     animator.SetBool("InAir", false);
                 }
@@ -211,6 +223,15 @@ public class Player : MonoBehaviour
                     startGame.Invoke();
                 }
                 break;
+        }
+        if (state == PlayerState.OVER && Keyboard.current.spaceKey.wasPressedThisFrame)
+        {
+            GameObject selected = EventSystem.current.currentSelectedGameObject;
+
+            if (selected != null)
+            {
+                selected.GetComponent<UnityEngine.UI.Button>()?.onClick.Invoke();
+            }
         }
 
     }
@@ -339,8 +360,45 @@ public class Player : MonoBehaviour
 
     IEnumerator HandleCrash()
     {
-        audioSource.PlayOneShot(wipeout, 0.3f);
+        // turn off the collider so player can't collide with green circle
+        if (col != null)
+        {
+            col.enabled = false;
+        }
+
         animator.SetTrigger("Crashing");
+        audioSource.PlayOneShot(wipeout, 0.3f);
+        animator.SetTrigger("Death");
+        unPause.Invoke();
+
+        Vector3 startPosition = transform.position;
+        Vector3 targetPosition = startPosition + new Vector3(0.0f, deathRiseHeight, 0.0f);
+        float timer = 0.0f;
+        while (transform.position.y < startPosition.y + deathRiseHeight)
+        {
+            transform.position = Vector3.Lerp(startPosition, targetPosition, timer / deathRiseTime);
+            timer += Time.deltaTime;
+            if ((targetPosition - transform.position).magnitude <= 0.05f)
+            {
+                break;
+            }
+            yield return null;
+        }
+
+        timer = 0.0f;
+        startPosition = transform.position;
+        targetPosition = new Vector3(startPosition.x, waveBottom.position.y, 0.0f);
+        while (transform.position.y >= waveBottom.position.y)
+        {
+            transform.position = Vector3.Lerp(startPosition, targetPosition, timer / deathFallTime);
+            timer += Time.deltaTime;
+            if ((targetPosition - transform.position).magnitude <= 0.05f)
+            {
+                break;
+            }
+            yield return null;
+        }
+
         // wait for 1 second because that is how long the animation is
         yield return new WaitForSeconds(1f);
         Time.timeScale = 1f;
@@ -350,18 +408,21 @@ public class Player : MonoBehaviour
             TutorialManager.Instance.PlayerCrashed();
             yield break;
         }
-        // freeze the game so player cannot gain any more points
-        Time.timeScale = 0f;
+
         int finalScore = Mathf.FloorToInt(ScoreManager.Instance.score);
         bool cleared = GameManager.Instance.GameOver(finalScore);
         //display wipeout screen
         endGame.Invoke();
-        EventSystem.current.SetSelectedGameObject(RetryButton);
-        //display "Next" button if we passed score threshold
+        state = PlayerState.OVER;
+
         if (cleared)
         {
             nextStage.Invoke();
-            EventSystem.current.SetSelectedGameObject(NextButton);
+            StartCoroutine(SelectButtonNextFrame(NextButton));
+        }
+        else
+        {
+            StartCoroutine(SelectButtonNextFrame(RetryButton));
         }
 
     }
@@ -387,6 +448,13 @@ public class Player : MonoBehaviour
 
         // Force animator back to a clean state
         animator.Play("SurferBegin", 0, 0f);
+        // re-enable collider
+        col.enabled = true;
+    }
+    IEnumerator SelectButtonNextFrame(GameObject button)
+    {
+        yield return null; // wait 1 frame
+        EventSystem.current.SetSelectedGameObject(button);
     }
 
 }
