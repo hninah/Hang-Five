@@ -34,6 +34,11 @@ public class ScoreManager : MonoBehaviour
     {
         gameRunning = true;
         GameManager.Instance.stageCleared = false;
+
+        //set score text to white if it's night
+        if (GameManager.Instance.getBackground() == "Night"){
+            scoreText.color = Color.white;
+        }
     }
 
     private void OnGameEnd()
