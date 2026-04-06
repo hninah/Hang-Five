@@ -41,7 +41,6 @@ public class GameManager : MonoBehaviour
     // checks if player is in the boss level and if they reach the target score 
     public bool inBossLevel = false;
 
-    public bool inInfiniteMode = false;
     private void Awake()
     {
         if (Instance == null)
@@ -142,15 +141,16 @@ public class GameManager : MonoBehaviour
 
     public bool GameOver(int finalScore)
     {
+        Debug.Log($"GameOver: stage={currentStage}, inBoss={inBossLevel}, score={finalScore}");
         if (inBossLevel)
         {
-            // beat the boss
-            if (finalScore >= scoreRequired[currentStage])
+            // beat the boss and im no longer in the boss level
+            if (finalScore >= scoreRequired[currentStage - 1])
             {
-                inBossLevel = false;
                 currentStage++;
                 stageCleared = true;
                 beatBoss = true;
+                inBossLevel = false;
                 return true;
             }
             // did not beat the boss
@@ -159,24 +159,22 @@ public class GameManager : MonoBehaviour
                 stageCleared = false;
                 return false;
             }
+
         }
-        // after beating the boss
-        if (currentStage > scoreRequired.Count)
+        else
         {
-            if (!inInfiniteMode)
+            // no longer in the boss level but in the infinite level
+            if (currentStage >= scoreRequired.Count)
             {
-                stageCleared = true; // show Next after boss win
-                return true;
+                stageCleared = false;
+
+                if (finalScore > highScore)
+                {
+                    highScore = finalScore;
+                }
+
+                return false;
             }
-
-            stageCleared = false;
-
-            if (finalScore > highScore)
-            {
-                highScore = finalScore;
-            }
-
-            return false;
         }
         //move to next stage if:
         //  1) we ran out of score thresholds, or
@@ -190,7 +188,6 @@ public class GameManager : MonoBehaviour
             if (currentStage == scoreRequired.Count - 1)
             {
                 inBossLevel = true;
-                inInfiniteMode = false;
                 targetScore = scoreRequired[currentStage];
                 return true;
             }
@@ -244,7 +241,7 @@ public class GameManager : MonoBehaviour
         highScore = 0;
         stageCleared = false;
         inBossLevel = false;
-        inInfiniteMode = false;
+        beatBoss = false;
 
         // reset score thresholds
         if (scoreRequired.Count > 0)

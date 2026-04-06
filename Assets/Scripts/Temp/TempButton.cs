@@ -18,7 +18,7 @@ public class TempButton : MonoBehaviour
     {
         startPos = transform.localPosition;
 
-        bool passed = GameManager.Instance.stageCleared && !GameManager.Instance.inInfiniteMode;
+        bool passed = GameManager.Instance.stageCleared;
 
         retryButton.SetActive(!passed); // show Retry if failed
         nextButton.SetActive(passed);   // show Next if passed
@@ -52,14 +52,6 @@ public class TempButton : MonoBehaviour
         }
         else
         {
-            // if we just finished the boss, enter infinite mode
-            if (!GameManager.Instance.inInfiniteMode &&
-                GameManager.Instance.currentStage == GameManager.Instance.scoreRequired.Count)
-            {
-                GameManager.Instance.inInfiniteMode = true;
-                GameManager.Instance.currentStage = GameManager.Instance.scoreRequired.Count + 1;
-            }
-
             SceneManager.LoadScene("Gameplay");
             GameManager.Instance.stageCleared = false;
         }

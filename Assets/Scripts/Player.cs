@@ -368,7 +368,6 @@ public class Player : MonoBehaviour
 
         animator.SetTrigger("Crashing");
         audioSource.PlayOneShot(wipeout, 0.3f);
-
         animator.SetTrigger("Death");
         unPause.Invoke();
 
