@@ -2649,16 +2649,6 @@ MonoBehaviour:
   - {fileID: 4232693083916984769, guid: 7966879c547ce3447b35c801bdf813c3, type: 3}
   allPatterns:
   - {fileID: 11400000, guid: 517a1383620f5414b9f93971161b1989, type: 2}
-  - {fileID: 11400000, guid: 780448188d75260489b8f68cd3cd0e1e, type: 2}
-  - {fileID: 11400000, guid: 3c297789cca8c424995c3290fe1efb27, type: 2}
-  - {fileID: 11400000, guid: 7309ee49d66eac94184bcd1cff9542a0, type: 2}
-  - {fileID: 11400000, guid: 2d5198d723048f546833017dc2d10862, type: 2}
-  - {fileID: 11400000, guid: e23e44ae823187d4aad52280d23f0680, type: 2}
-  - {fileID: 11400000, guid: 2d4674b9c7d37bf409e47a21f82bfc33, type: 2}
-  - {fileID: 11400000, guid: 6e02950bb91cf584b92b2cf1189b81d9, type: 2}
-  - {fileID: 11400000, guid: 5525264826bf97e41ba89d4362815b25, type: 2}
-  - {fileID: 11400000, guid: 356a90e12632da447a49fa16dab46cca, type: 2}
-  - {fileID: 11400000, guid: 01170a14bd78be64bb513eafe05bdd66, type: 2}
   scoreRequired: 64000000c80000002c01000090010000f4010000f4010000f4010000f4010000f4010000f4010000f4010000f4010000d0070000
   tutorialCompleted: 0
   inBossLevel: 0

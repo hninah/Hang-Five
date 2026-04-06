@@ -93,6 +93,9 @@ public class Player : MonoBehaviour
     public UnityEvent startGame = new UnityEvent();
     public UnityEvent endGame = new UnityEvent();
     public UnityEvent nextStage = new UnityEvent();
+    [SerializeField] float maxJumpHeightY = 5.4f;
+    [SerializeField] float trickScoreBonus = 100f;
+    private float maxHeightOnJump = 0.0f;
 
     [Header("Audio")]
     [SerializeField] private AudioClip wipeout;
@@ -183,8 +186,10 @@ public class Player : MonoBehaviour
 
                 if (state == PlayerState.SURFING)
                 {
-                    TextParticleManager.Instance.generateScoreParticle(200);
-                    ScoreManager.Instance.score += 200;
+                    // ScoreBonus = bonus * (height_we_got_to / max_height_we_can_go_to (estimated))
+                    int scoreBonus = (int) (trickScoreBonus * ((maxHeightOnJump - waveTop.position.y) / (maxJumpHeightY - waveTop.position.y)));
+                    TextParticleManager.Instance.generateScoreParticle(scoreBonus);
+                    ScoreManager.Instance.score += scoreBonus;
                     animator.SetBool("InAir", false);
                 }
 
@@ -333,6 +338,7 @@ public class Player : MonoBehaviour
         if (playerVelocity.y <= 0.0001f)
         {
             flipDirection = -1;
+            maxHeightOnJump = transform.position.y;
         }
 
         transform.position += playerVelocity * flipDirection * Time.deltaTime;
@@ -352,6 +358,7 @@ public class Player : MonoBehaviour
         animator.SetTrigger("Death");
         unPause.Invoke();
 
+        /*
         Vector3 startPosition = transform.position;
         Vector3 targetPosition = startPosition + new Vector3(0.0f, deathRiseHeight, 0.0f);
         float timer = 0.0f;
@@ -379,9 +386,19 @@ public class Player : MonoBehaviour
             }
             yield return null;
         }
+        */
 
-        // wait for 1 second because that is how long the animation is
-        yield return new WaitForSeconds(1f);
+        playerVelocity = new Vector3(0.0f, 12.0f, 0.0f);
+        flipDirection = 1f;
+        while (transform.position.y >= waveBottom.position.y)
+        {
+            updateFlipVelocity();
+            yield return null;
+        }
+
+        // BEFORE: Wait for 1 second due to animation length
+        // NEW: Wait for 0.2 seconds because why not
+        yield return new WaitForSeconds(0.2f);
         Time.timeScale = 1f;
         if (SceneManager.GetActiveScene().name == "Tutorial")
         {
