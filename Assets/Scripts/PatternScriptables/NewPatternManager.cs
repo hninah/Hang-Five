@@ -58,4 +58,20 @@ public class NewPatternManager : MonoBehaviour
 
         return true;
     }
+
+    public void pausePattern()
+    {
+        foreach (PatternSpawner spawner in spawners)
+        {
+            spawner.enabled = false;
+        }
+    }
+
+    public void unpausePattern()
+    {
+        foreach (PatternSpawner spawner in spawners)
+        {
+            spawner.enabled = true;
+        }
+    }
 }

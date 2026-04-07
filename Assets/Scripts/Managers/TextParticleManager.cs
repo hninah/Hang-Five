@@ -13,6 +13,7 @@ public class TextParticleManager : MonoBehaviour
     [SerializeField] Vector3 baseOffset = new Vector3(0.2f, 0.0f, 0.0f);
     [SerializeField] Transform canvasTransform;
     [SerializeField] Camera sceneCamera;
+    List<TextParticle> textParticles = new List<TextParticle>();
 
     // Start is called before the first frame update
     void Start()
@@ -32,13 +33,55 @@ public class TextParticleManager : MonoBehaviour
         }
     }
 
+    void LateUpdate()
+    {
+        if (textParticles.Count == 0) return;
+
+        List<TextParticle> tempParticles = new List<TextParticle>();
+
+        foreach (TextParticle particle in textParticles)
+        {
+            if (!particle)
+            {
+                continue;
+            }
+
+            tempParticles.Add(particle);
+        }
+
+        textParticles = tempParticles;
+    }
+
+    public void deactivateParticles()
+    {
+        foreach (TextParticle particle in textParticles)
+        {
+            if (!particle) continue;
+
+            print("disabling particle");
+            particle.gameObject.SetActive(false);
+        }
+    }
+
+    public void activateParticles()
+    {
+        foreach (TextParticle particle in textParticles)
+        {
+            if (!particle) continue;
+
+            particle.gameObject.SetActive(true);
+        }
+    }
+
     void particle(string text, Vector3 position)
     {
         position = sceneCamera.WorldToScreenPoint(Player.Instance.transform.position + baseOffset);
         position.x += Random.Range(-offsetX, offsetX);
 
         GameObject particle = Instantiate(textParticle, position, Quaternion.identity, canvasTransform) as GameObject;
-        particle.GetComponent<TextParticle>().Text = text;
+        TextParticle textPart = particle.GetComponent<TextParticle>();
+        textPart.Text = text;
+        textParticles.Add(textPart);
     }
 
     public void generateTrickParticle()

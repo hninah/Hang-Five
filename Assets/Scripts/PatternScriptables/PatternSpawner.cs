@@ -23,7 +23,9 @@ public class PatternSpawner : MonoBehaviour
                 randomSpawn = false;
             }
 
-            Instantiate(currentObject, spawnPosition, Quaternion.identity);
+            GameObject prefab = Instantiate(currentObject, spawnPosition, Quaternion.identity) as GameObject;
+            EnemyPauser.Instance.addObstacle(prefab.GetComponent<Obstacle>());
+
             currentObject = null;
             return;
         }
