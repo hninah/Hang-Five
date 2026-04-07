@@ -2664,7 +2664,6 @@ MonoBehaviour:
   scoreRequired: 0a0000000a0000000a0000000a0000000a0000000a0000000a0000000a0000000a0000000a0000000a0000000a0000000a00000014000000
   tutorialCompleted: 0
   inBossLevel: 0
-  inInfiniteMode: 0
 --- !u!4 &1292449646
 Transform:
   m_ObjectHideFlags: 0
