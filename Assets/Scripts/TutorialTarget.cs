@@ -21,6 +21,11 @@ public class TutorialTarget : MonoBehaviour
     {
         if (!other.CompareTag("Player")) return;
 
+        if (Player.Instance.State != Player.PlayerState.SURFING &&
+            Player.Instance.State != Player.PlayerState.FLIPPING)
+        {
+            return;
+        }
         TutorialManager.Instance.PlayerHitTarget(gameObject);
         gameObject.SetActive(false);
     }

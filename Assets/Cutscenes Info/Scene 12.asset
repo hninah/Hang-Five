@@ -1,0 +1,198 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1e73c5106fe4f24f8c623b663cb8311, type: 3}
+  m_Name: Scene 12
+  m_EditorClassIdentifier: 
+  speakerSprites:
+  - {fileID: 21300000, guid: d2e63eb6867cd73469e92e26006f3133, type: 3}
+  - {fileID: 21300000, guid: c9c3bcea0c73cf342adcef0b0a29ac10, type: 3}
+  - {fileID: 21300000, guid: 1dcddc6faae0ed8479b9ea6f3ca8bcc7, type: 3}
+  - {fileID: 21300000, guid: 9c836a704a16e924e882110d8acbca87, type: 3}
+  - {fileID: 21300000, guid: 8ad0163066f21a24998ceb67fe0de3e2, type: 3}
+  - {fileID: 21300000, guid: 6569f3bad81167743b09b2f983828fdb, type: 3}
+  - {fileID: 21300000, guid: 5b16b05fb59b3a64cac6addf6999c1c3, type: 3}
+  - {fileID: 21300000, guid: 59510ffb5be38444f8af66795b07b942, type: 3}
+  sceneStills:
+  - {fileID: 21300000, guid: a57a485f8ada0254785ef3930d811cb7, type: 3}
+  directions:
+  - leftSpeaker: Uwe
+    rightSpeaker: Bark Shaits
+    isLeftSpeaking: 0
+    isRightSpeaking: 1
+    leftSpeakerIdx: 0
+    rightSpeakerIdx: 2
+    imgIdx: 0
+    dialogue: "Had enough yet?\r"
+  - leftSpeaker: Uwe
+    rightSpeaker: Bark Shaits
+    isLeftSpeaking: 0
+    isRightSpeaking: 1
+    leftSpeakerIdx: 0
+    rightSpeakerIdx: 2
+    imgIdx: 0
+    dialogue: "Had enough yet?\r"
+  - leftSpeaker: Uwe
+    rightSpeaker: Bark Shaits
+    isLeftSpeaking: 1
+    isRightSpeaking: 0
+    leftSpeakerIdx: 0
+    rightSpeakerIdx: 2
+    imgIdx: 0
+    dialogue: "We\u2019re just\u2026 warming up\u2026\r\r"
+  - leftSpeaker: Uwe
+    rightSpeaker: Bark Shaits
+    isLeftSpeaking: 0
+    isRightSpeaking: 1
+    leftSpeakerIdx: 0
+    rightSpeakerIdx: 2
+    imgIdx: 0
+    dialogue: "Why won\u2019t you quit? It\u2019s obviously over for you, why does
+      this beach matter so much?\r"
+  - leftSpeaker: Uwe
+    rightSpeaker: Bark Shaits
+    isLeftSpeaking: 1
+    isRightSpeaking: 0
+    leftSpeakerIdx: 0
+    rightSpeakerIdx: 2
+    imgIdx: 0
+    dialogue: "These waves\u2026 they\u2019re in my blood man\u2026 you\u2019ll never
+      understand\u2026 \r"
+  - leftSpeaker: Uwe
+    rightSpeaker: Bark Shaits
+    isLeftSpeaking: 0
+    isRightSpeaking: 1
+    leftSpeakerIdx: 0
+    rightSpeakerIdx: 2
+    imgIdx: 0
+    dialogue: "Oh yeah? It seems like I\u2019ve got plenty good understanding of
+      the wave-\r"
+  - leftSpeaker: Uwe
+    rightSpeaker: Bark Shaits
+    isLeftSpeaking: 0
+    isRightSpeaking: 1
+    leftSpeakerIdx: 0
+    rightSpeakerIdx: 3
+    imgIdx: 0
+    dialogue: Not again!
+  - leftSpeaker: Uwe
+    rightSpeaker: SUPER SHARK
+    isLeftSpeaking: 0
+    isRightSpeaking: 1
+    leftSpeakerIdx: 0
+    rightSpeakerIdx: 4
+    imgIdx: 0
+    dialogue: "CHOMP\r"
+  - leftSpeaker: Uwe
+    rightSpeaker: Bark Shaits
+    isLeftSpeaking: 1
+    isRightSpeaking: 0
+    leftSpeakerIdx: 0
+    rightSpeakerIdx: 4
+    imgIdx: 0
+    dialogue: "Heh\u2026 ha, ha ha ha ha! Good riddance.\r"
+  - leftSpeaker: Uwe
+    rightSpeaker: Ramesh
+    isLeftSpeaking: 0
+    isRightSpeaking: 1
+    leftSpeakerIdx: 0
+    rightSpeakerIdx: 5
+    imgIdx: 0
+    dialogue: "Uwe! Are you alright?\r"
+  - leftSpeaker: Uwe
+    rightSpeaker: Ramesh
+    isLeftSpeaking: 1
+    isRightSpeaking: 0
+    leftSpeakerIdx: 0
+    rightSpeakerIdx: 5
+    imgIdx: 0
+    dialogue: "I think\u2026 I think we did it\u2026\r"
+  - leftSpeaker: Uwe
+    rightSpeaker: Ramesh
+    isLeftSpeaking: 0
+    isRightSpeaking: 1
+    leftSpeakerIdx: 0
+    rightSpeakerIdx: 5
+    imgIdx: 0
+    dialogue: "You\u2019re losing a lot of blood!"
+  - leftSpeaker: Uwe
+    rightSpeaker: Ramesh
+    isLeftSpeaking: 1
+    isRightSpeaking: 0
+    leftSpeakerIdx: 0
+    rightSpeakerIdx: 5
+    imgIdx: 0
+    dialogue: "I wanna rest, Ramesh. Let the waves wash over my wounds. Let me watch
+      the sunrise\u2026\r"
+  - leftSpeaker: Uwe
+    rightSpeaker: Ramesh
+    isLeftSpeaking: 0
+    isRightSpeaking: 1
+    leftSpeakerIdx: 0
+    rightSpeakerIdx: 7
+    imgIdx: 0
+    dialogue: "Uwe\u2026\r\n\r"
+  - leftSpeaker: Uwe
+    rightSpeaker: Ramesh
+    isLeftSpeaking: 1
+    isRightSpeaking: 0
+    leftSpeakerIdx: 0
+    rightSpeakerIdx: 7
+    imgIdx: 0
+    dialogue: "I always loved how the sunrise looked on this beach, Ramesh\u2026\r"
+  - leftSpeaker: Uwe
+    rightSpeaker: Ramesh
+    isLeftSpeaking: 0
+    isRightSpeaking: 1
+    leftSpeakerIdx: 0
+    rightSpeakerIdx: 6
+    imgIdx: 0
+    dialogue: "It\u2019s beautiful isn\u2019t it?\r\n\r"
+  - leftSpeaker: Uwe
+    rightSpeaker: Ramesh
+    isLeftSpeaking: 1
+    isRightSpeaking: 0
+    leftSpeakerIdx: 0
+    rightSpeakerIdx: 6
+    imgIdx: 0
+    dialogue: "Yes...\r"
+  - leftSpeaker: Uwe
+    rightSpeaker: Ramesh
+    isLeftSpeaking: 1
+    isRightSpeaking: 0
+    leftSpeakerIdx: 1
+    rightSpeakerIdx: 6
+    imgIdx: 0
+    dialogue: "Yes it... is...\r"
+  - leftSpeaker: Uwe
+    rightSpeaker: Ramesh
+    isLeftSpeaking: 0
+    isRightSpeaking: 1
+    leftSpeakerIdx: 1
+    rightSpeakerIdx: 6
+    imgIdx: 0
+    dialogue: "Goodnight, my friend.\r"
+  - leftSpeaker: Uwe
+    rightSpeaker: Ramesh
+    isLeftSpeaking: 1
+    isRightSpeaking: 0
+    leftSpeakerIdx: 1
+    rightSpeakerIdx: 6
+    imgIdx: 0
+    dialogue: "Goodnight... ol' buddy...\r"
+  - leftSpeaker: Uwe
+    rightSpeaker: Ramesh
+    isLeftSpeaking: 0
+    isRightSpeaking: 1
+    leftSpeakerIdx: 1
+    rightSpeakerIdx: 7
+    imgIdx: 0
+    dialogue: "Dream of ocean waves, surfer boy.\r"

@@ -43,24 +43,31 @@ public class ScoreManager : MonoBehaviour
 
     private void OnGameEnd()
     {
-        
+        Debug.Log("OnGameEnd beatBoss = " + GameManager.Instance.beatBoss);
         gameRunning = false;
 
         int finalScore = Mathf.FloorToInt(score);
-
         endScoreText.text = "Your Score: " + finalScore;
-
-        // infinite mode
-        if (GameManager.Instance.currentStage > GameManager.Instance.scoreRequired.Count)
+        // beat the boss so from now on show High score instead of target score
+        if (GameManager.Instance.beatBoss && GameManager.Instance.inBossLevel)
         {
+            // beat the boss and theres no high score or target score for this one death screen
+            highScoreText.gameObject.SetActive(false);
+            return;
+        }
+        else if (GameManager.Instance.beatBoss)
+        {
+            // beat the boss no longer in the boss level so player is in the infinite mode where high score is displayed
+            highScoreText.gameObject.SetActive(true);
             highScoreText.text = "High Score: " + GameManager.Instance.highScore;
+            return;
         }
         // player passed the current level
         else if (GameManager.Instance.stageCleared)
         {
             highScoreText.text = "Next Target Score: " + GameManager.Instance.targetScore;
         }
-        // player did not pass the level
+        // player did not pass the level or the boss level
         else
         {
             highScoreText.text = "Target Score: " + GameManager.Instance.targetScore;

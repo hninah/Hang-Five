@@ -91,8 +91,6 @@ public class TutorialManager : MonoBehaviour
 
     IEnumerator LoadGameplayAfterDelay()
     {
-        // freeze the game for like 2 seconds so the player can read the text
-        FreezeGame(2f);
         yield return new WaitForSecondsRealtime(2f);
         // switch to gameplay scene
         GameManager.Instance.tutorialCompleted = true;
@@ -123,19 +121,6 @@ public class TutorialManager : MonoBehaviour
         Player.Instance.ResetPlayer();
         surfCamera.ResetCamera();
         Player.Instance.gameObject.SetActive(true);
-    }
-
-    void FreezeGame(float duration)
-    {
-        // freeze the game for however many seconds
-        Time.timeScale = 0f;
-        StartCoroutine(UnfreezeAfter(duration));
-    }
-
-    IEnumerator UnfreezeAfter(float duration)
-    {
-        yield return new WaitForSecondsRealtime(duration);
-        Time.timeScale = 1f;
     }
     public void SkipTutorial()
     {

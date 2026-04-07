@@ -80,7 +80,6 @@ public class Player : MonoBehaviour
     public PlayerState State { get { return state; } }
     [SerializeField] private Transform waveTop;
     [SerializeField] private Transform waveBottom;
-    [SerializeField] private float pauseTime = 1.0f;
     public UnityEvent tempPause = new UnityEvent();
     public UnityEvent unPause = new UnityEvent();
     [SerializeField] private float deathRiseHeight = 2.0f;
@@ -104,7 +103,9 @@ public class Player : MonoBehaviour
     bool crashRoutineRunning = false;
 
     public GameObject RetryButton;
-    public GameObject NextButton; 
+    public GameObject NextButton;
+
+    private Collider2D col;
     void Awake()
     {
         if (_instance != null)
@@ -118,6 +119,7 @@ public class Player : MonoBehaviour
         playerVelocity = startingVelocity;
         rotation = transform.eulerAngles.z;
         audioSource = GetComponent<AudioSource>();
+        col = GetComponent<Collider2D>();
     }
 
     void OnEnable()
@@ -188,8 +190,14 @@ public class Player : MonoBehaviour
                 {
                     // ScoreBonus = bonus * (height_we_got_to / max_height_we_can_go_to (estimated))
                     int scoreBonus = (int) (trickScoreBonus * ((maxHeightOnJump - waveTop.position.y) / (maxJumpHeightY - waveTop.position.y)));
-                    TextParticleManager.Instance.generateScoreParticle(scoreBonus);
+                    // dont show the particles on the death screen
+                    if (state != PlayerState.CRASHING && state != PlayerState.OVER)
+                    {
+			    TextParticleManager.Instance.generateScoreParticle(scoreBonus);
+                    }
+
                     ScoreManager.Instance.score += scoreBonus;
+
                     animator.SetBool("InAir", false);
                 }
 
@@ -222,6 +230,15 @@ public class Player : MonoBehaviour
                     startGame.Invoke();
                 }
                 break;
+        }
+        if (state == PlayerState.OVER && Keyboard.current.spaceKey.wasPressedThisFrame)
+        {
+            GameObject selected = EventSystem.current.currentSelectedGameObject;
+
+            if (selected != null)
+            {
+                selected.GetComponent<UnityEngine.UI.Button>()?.onClick.Invoke();
+            }
         }
 
     }
@@ -351,10 +368,14 @@ public class Player : MonoBehaviour
 
     IEnumerator HandleCrash()
     {
+        // turn off the collider so player can't collide with green circle
+        if (col != null)
+        {
+            col.enabled = false;
+        }
+
         animator.SetTrigger("Crashing");
         audioSource.PlayOneShot(wipeout, 0.3f);
-        tempPause.Invoke();
-        yield return new WaitForSeconds(pauseTime);
         animator.SetTrigger("Death");
         unPause.Invoke();
 
@@ -406,18 +427,21 @@ public class Player : MonoBehaviour
             TutorialManager.Instance.PlayerCrashed();
             yield break;
         }
-        // freeze the game so player cannot gain any more points
-        Time.timeScale = 0f;
+
         int finalScore = Mathf.FloorToInt(ScoreManager.Instance.score);
         bool cleared = GameManager.Instance.GameOver(finalScore);
         //display wipeout screen
         endGame.Invoke();
-        EventSystem.current.SetSelectedGameObject(RetryButton);
-        //display "Next" button if we passed score threshold
+        state = PlayerState.OVER;
+
         if (cleared)
         {
             nextStage.Invoke();
-            EventSystem.current.SetSelectedGameObject(NextButton);
+            StartCoroutine(SelectButtonNextFrame(NextButton));
+        }
+        else
+        {
+            StartCoroutine(SelectButtonNextFrame(RetryButton));
         }
 
     }
@@ -443,6 +467,13 @@ public class Player : MonoBehaviour
 
         // Force animator back to a clean state
         animator.Play("SurferBegin", 0, 0f);
+        // re-enable collider
+        col.enabled = true;
+    }
+    IEnumerator SelectButtonNextFrame(GameObject button)
+    {
+        yield return null; // wait 1 frame
+        EventSystem.current.SetSelectedGameObject(button);
     }
 
 }
