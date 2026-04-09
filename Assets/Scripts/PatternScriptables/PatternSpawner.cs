@@ -6,6 +6,7 @@ public class PatternSpawner : MonoBehaviour
 {
     float patternTimer = 0.0f;
     GameObject currentObject;
+    bool randomSpawn = false;
 
     // Update is called once per frame
     void Update()
@@ -14,17 +15,27 @@ public class PatternSpawner : MonoBehaviour
 
         if (patternTimer <= 0.0f && currentObject != null)
         {
-            print("CREATING OBJECT");
-            Instantiate(currentObject, transform.position, Quaternion.identity);
+            Vector3 spawnPosition = transform.position;
+
+            if (randomSpawn)
+            {
+                spawnPosition.y = Random.Range(-5.8f, 2.31f);
+                randomSpawn = false;
+            }
+
+            GameObject prefab = Instantiate(currentObject, spawnPosition, Quaternion.identity) as GameObject;
+            EnemyPauser.Instance.addObstacle(prefab.GetComponent<Obstacle>());
+
             currentObject = null;
             return;
         }
     }
 
-    public void setPattern(GameObject obj, float timeToSpawn)
+    public void setPattern(GameObject obj, float timeToSpawn, bool isRandom)
     {
         patternTimer = timeToSpawn;
         currentObject = obj;
+        randomSpawn = isRandom;
     }
 
     public bool hasObject()

@@ -13,6 +13,11 @@ public class NearMissBox : MonoBehaviour
     [SerializeField] private SpriteRenderer sprite;
     int numNearMisses = 0;
 
+    void Start()
+    {
+        nearMissCoolDownTimer = nearMissCoolDown;
+    }
+
     void OnTriggerEnter2D()
     {
         if (Player.Instance.State == Player.PlayerState.CRASHING) return;

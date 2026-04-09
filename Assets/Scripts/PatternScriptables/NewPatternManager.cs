@@ -12,9 +12,13 @@ public class NewPatternManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // Comment this out if you want to add your own patterns for testing purposes
         patterns = GameManager.Instance.GetActivePatterns();
 
         currentPattern = Random.Range(0, patterns.Count);
+
+        // We want to load the patterns, then shut this off so it doesn't update until time is right.
+        gameObject.SetActive(false);
     }
 
     // Update is called once per frame
@@ -37,7 +41,7 @@ public class NewPatternManager : MonoBehaviour
             GameObject obstacle = patterns[currentPattern].obstacles[i];
             float timeTillSpawn = patterns[currentPattern].timeTillSpawn[i];
 
-            spawners[i].setPattern(obstacle, timeTillSpawn);
+            spawners[spawnerIdx].setPattern(obstacle, timeTillSpawn, patterns[currentPattern].isRandomSpawning[i]);
         }
 
         coolDownTimer = patterns[currentPattern].coolDownTime;
@@ -56,5 +60,21 @@ public class NewPatternManager : MonoBehaviour
         }
 
         return true;
+    }
+
+    public void pausePattern()
+    {
+        foreach (PatternSpawner spawner in spawners)
+        {
+            spawner.enabled = false;
+        }
+    }
+
+    public void unpausePattern()
+    {
+        foreach (PatternSpawner spawner in spawners)
+        {
+            spawner.enabled = true;
+        }
     }
 }
