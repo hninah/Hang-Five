@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 781e86b6e42fd2b4e8b0d2e2404d4d6a, type: 3}
+  m_Name: MissileUp
+  m_EditorClassIdentifier: 
+  obstacles:
+  - {fileID: 4232693083916984769, guid: 7966879c547ce3447b35c801bdf813c3, type: 3}
+  - {fileID: 4232693083916984769, guid: 7966879c547ce3447b35c801bdf813c3, type: 3}
+  spawnPointIdxs: 0000000001000000
+  timeTillSpawn:
+  - 0
+  - 0
+  checkPointCutscenes: 0a0000000b0000000d0000000e000000
+  coolDownTime: 1.2
+  isRandomSpawning: 0000

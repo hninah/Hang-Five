@@ -26,5 +26,6 @@ public class SpawnBoss : MonoBehaviour
         {
             boss.SetActive(false);
         }
+
     }
 }

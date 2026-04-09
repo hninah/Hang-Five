@@ -11,4 +11,5 @@ public class PatternScriptable : ScriptableObject
     public float[] timeTillSpawn;
     public int[] checkPointCutscenes;
     public float coolDownTime = 10.0f;
+    public bool[] isRandomSpawning;
 }

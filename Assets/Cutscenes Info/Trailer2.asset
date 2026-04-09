@@ -1,0 +1,133 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1e73c5106fe4f24f8c623b663cb8311, type: 3}
+  m_Name: Trailer2
+  m_EditorClassIdentifier: 
+  speakerSprites:
+  - {fileID: 21300000, guid: f3f229a9dc844814da08eab1e3dd6299, type: 3}
+  - {fileID: 21300000, guid: c052670c39a0f3e4fb380e2d11112020, type: 3}
+  - {fileID: 21300000, guid: 6a87289f97791d240ae17d795755d029, type: 3}
+  - {fileID: 21300000, guid: 850e0c420136a3141877062210ea2c82, type: 3}
+  - {fileID: 21300000, guid: 433f75f2fdaa60948b8f45ad0a1859d2, type: 3}
+  sceneStills:
+  - {fileID: 21300000, guid: f95a98fe17bf9034082aad2bf7cebfd3, type: 3}
+  directions:
+  - leftSpeaker: Uwe
+    rightSpeaker: Bark Shaits
+    isLeftSpeaking: 0
+    isRightSpeaking: 1
+    leftSpeakerIdx: 0
+    rightSpeakerIdx: 1
+    imgIdx: 0
+    dialogue: "Look, all I\u2019m saying is I feel a lot safer at the beach since
+      they've-"
+  - leftSpeaker: Uwe
+    rightSpeaker: SHARK
+    isLeftSpeaking: 0
+    isRightSpeaking: 1
+    leftSpeakerIdx: 0
+    rightSpeakerIdx: 3
+    imgIdx: 0
+    dialogue: CHOMP!
+  - leftSpeaker: Uwe
+    rightSpeaker: Bark Shaits
+    isLeftSpeaking: 1
+    isRightSpeaking: 0
+    leftSpeakerIdx: 0
+    rightSpeakerIdx: 1
+    imgIdx: 0
+    dialogue: "I haven\u2019t had a decent surf in days. This real estate company\u2019s
+      got to go ASAP. "
+  - leftSpeaker: Uwe
+    rightSpeaker: Bark Shaits
+    isLeftSpeaking: 0
+    isRightSpeaking: 1
+    leftSpeakerIdx: 0
+    rightSpeakerIdx: 1
+    imgIdx: 0
+    dialogue: "Really? They don\u2019t seem that bad to me. I actually think it\u2019s
+      great they\u2019re here!"
+  - leftSpeaker: Uwe
+    rightSpeaker: Bark Shaits
+    isLeftSpeaking: 1
+    isRightSpeaking: 0
+    leftSpeakerIdx: 0
+    rightSpeakerIdx: 1
+    imgIdx: 0
+    dialogue: "Huh?! What\u2019re you talking about? They\u2019re jacking up prices
+      and driving everyone away from the Beach."
+  - leftSpeaker: Uwe
+    rightSpeaker: Bark Shaits
+    isLeftSpeaking: 0
+    isRightSpeaking: 1
+    leftSpeakerIdx: 0
+    rightSpeakerIdx: 1
+    imgIdx: 0
+    dialogue: "I think that\u2019s an improvement. Bringing the property value up.
+      Keeping a lot of\u2026 undesirables away.\r"
+  - leftSpeaker: Uwe
+    rightSpeaker: Bark Shaits
+    isLeftSpeaking: 1
+    isRightSpeaking: 0
+    leftSpeakerIdx: 0
+    rightSpeakerIdx: 1
+    imgIdx: 0
+    dialogue: 'Undesirables? What the hell are you talking about?! '
+  - leftSpeaker: Uwe
+    rightSpeaker: Bark Shaits
+    isLeftSpeaking: 1
+    isRightSpeaking: 0
+    leftSpeakerIdx: 4
+    rightSpeakerIdx: 1
+    imgIdx: 0
+    dialogue: Bro, I'm Indonesian!
+  - leftSpeaker: Uwe
+    rightSpeaker: Bark Shaits
+    isLeftSpeaking: 0
+    isRightSpeaking: 1
+    leftSpeakerIdx: 4
+    rightSpeakerIdx: 1
+    imgIdx: 0
+    dialogue: "You don\u2019t look like it. Besides, you\u2019re one of the good
+      ones. All I\u2019m saying is, I feel a lot safer at the beach these days."
+  - leftSpeaker: Uwe
+    rightSpeaker: Shark
+    isLeftSpeaking: 1
+    isRightSpeaking: 0
+    leftSpeakerIdx: 4
+    rightSpeakerIdx: 1
+    imgIdx: 0
+    dialogue: "It\u2019s literally more dangerous than it\u2019s ever been!"
+  - leftSpeaker: Uwe
+    rightSpeaker: Bark Shaits
+    isLeftSpeaking: 0
+    isRightSpeaking: 1
+    leftSpeakerIdx: 0
+    rightSpeakerIdx: 1
+    imgIdx: 0
+    dialogue: Oh please, I for one have never felt more protected-
+  - leftSpeaker: Uwe
+    rightSpeaker: Bark Shaits
+    isLeftSpeaking: 0
+    isRightSpeaking: 1
+    leftSpeakerIdx: 0
+    rightSpeakerIdx: 2
+    imgIdx: 0
+    dialogue: '!'
+  - leftSpeaker: Uwe
+    rightSpeaker: 
+    isLeftSpeaking: 1
+    isRightSpeaking: 0
+    leftSpeakerIdx: 0
+    rightSpeakerIdx: 3
+    imgIdx: 0
+    dialogue: Oh!!
