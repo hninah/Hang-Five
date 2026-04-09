@@ -21,7 +21,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Tutorial.unity
     guid: e1e6fb3e68bc3ae4b908645bee740ce5
   - enabled: 1
-    path: Assets/Scenes/Gameplay.unity
+    path: Assets/Scenes/GameplayBackup.unity
     guid: f47f8d48afb0a8f49b5b29bccd7d2f3d
   - enabled: 1
     path: Assets/Scenes/BarkShaits.unity
