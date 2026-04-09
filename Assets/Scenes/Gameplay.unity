@@ -293,7 +293,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &19300279
 Transform:
   m_ObjectHideFlags: 0
@@ -1371,8 +1371,7 @@ MonoBehaviour:
   - {fileID: 107107019}
   - {fileID: 110256695}
   - {fileID: 321033597}
-  patterns:
-  - {fileID: 11400000, guid: b73f3ca122b9596449012ad61e37b876, type: 2}
+  patterns: []
 --- !u!114 &382575500
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1578,7 +1577,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 453308568}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
@@ -3435,8 +3434,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50cc2d1ac6829f74facecf9e6bed36fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nearMissBonus: 10
-  nearMissCoolDown: 0.3
+  nearMissBonus: 20
+  nearMissCoolDown: 0.2
   sprite: {fileID: 1061293759}
 --- !u!50 &738547133
 Rigidbody2D:
@@ -7727,7 +7726,6 @@ MonoBehaviour:
   flipCoolDown: 0.2
   waveTop: {fileID: 1478722224}
   waveBottom: {fileID: 697491008}
-  pauseTime: 1
   tempPause:
     m_PersistentCalls:
       m_Calls:
@@ -7859,11 +7857,23 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 1
+          m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 718741624}
         m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
         m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 382575497}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
         m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7985,6 +7995,18 @@ MonoBehaviour:
           m_BoolArgument: 1
         m_CallState: 2
       - m_Target: {fileID: 453308568}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 19300278}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6

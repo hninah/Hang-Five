@@ -10,13 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 781e86b6e42fd2b4e8b0d2e2404d4d6a, type: 3}
-  m_Name: RandomMissile
+  m_Name: MissileCenterKind
   m_EditorClassIdentifier: 
   obstacles:
   - {fileID: 4232693083916984769, guid: 7966879c547ce3447b35c801bdf813c3, type: 3}
-  spawnPointIdxs: 02000000
+  - {fileID: 4232693083916984769, guid: 7966879c547ce3447b35c801bdf813c3, type: 3}
+  - {fileID: 4232693083916984769, guid: 7966879c547ce3447b35c801bdf813c3, type: 3}
+  spawnPointIdxs: 010000000200000003000000
   timeTillSpawn:
   - 0
-  checkPointCutscenes: 0a0000000e000000
-  coolDownTime: 0.5
-  isRandomSpawning: 01
+  - 0
+  - 0
+  checkPointCutscenes: 0b0000000d0000000e000000
+  coolDownTime: 2
+  isRandomSpawning: 000000

@@ -866,7 +866,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cutsceneList:
-  - {fileID: 11400000, guid: 4df7eb1778356cd41a611f6e18d6751a, type: 2}
+  - {fileID: 11400000, guid: ae6c205bbd05f3446a8b26c5d99aef1e, type: 2}
   - {fileID: 11400000, guid: 5ae51596c6adce7488ff2d09608be6a0, type: 2}
   - {fileID: 11400000, guid: 81f0ca110bff7db4f9d6ee9c5d5c1f80, type: 2}
   - {fileID: 11400000, guid: 881a91be47c68e0478189ebb13b347e9, type: 2}
@@ -3105,21 +3105,31 @@ MonoBehaviour:
   - {fileID: 2963685289427379715, guid: b45699529837bd245a57f609efa5bed3, type: 3}
   - {fileID: 4232693083916984769, guid: 7966879c547ce3447b35c801bdf813c3, type: 3}
   allPatterns:
-  - {fileID: 11400000, guid: 517a1383620f5414b9f93971161b1989, type: 2}
-  - {fileID: 11400000, guid: 780448188d75260489b8f68cd3cd0e1e, type: 2}
-  - {fileID: 11400000, guid: 3c297789cca8c424995c3290fe1efb27, type: 2}
-  - {fileID: 11400000, guid: 7309ee49d66eac94184bcd1cff9542a0, type: 2}
-  - {fileID: 11400000, guid: 2d5198d723048f546833017dc2d10862, type: 2}
-  - {fileID: 11400000, guid: e23e44ae823187d4aad52280d23f0680, type: 2}
-  - {fileID: 11400000, guid: 2d4674b9c7d37bf409e47a21f82bfc33, type: 2}
-  - {fileID: 11400000, guid: 6e02950bb91cf584b92b2cf1189b81d9, type: 2}
-  - {fileID: 11400000, guid: 5525264826bf97e41ba89d4362815b25, type: 2}
-  - {fileID: 11400000, guid: 356a90e12632da447a49fa16dab46cca, type: 2}
-  - {fileID: 11400000, guid: 01170a14bd78be64bb513eafe05bdd66, type: 2}
-  scoreRequired: 0a0000000a0000000a0000000a0000000a0000000a0000000a0000000a0000000a0000000a0000000a0000000a0000000a00000014000000
+  - {fileID: 11400000, guid: 222b26d803e456a4ab8cf2fc80de104b, type: 2}
+  - {fileID: 11400000, guid: a6434314ad3fa7b46b059db24b632b96, type: 2}
+  - {fileID: 11400000, guid: 957fa2ce62fe8bb4b88980e78e42b563, type: 2}
+  - {fileID: 11400000, guid: 45346e2bce4181443b83f53309d26f11, type: 2}
+  - {fileID: 11400000, guid: c8a97ea1e881cf44b88b1f8c6a338846, type: 2}
+  - {fileID: 11400000, guid: febc22b07706b664fb0f0df8007c142a, type: 2}
+  - {fileID: 11400000, guid: dfa3f18ebecc85340b341434dd175102, type: 2}
+  - {fileID: 11400000, guid: 2d97f69510621ff47a008c56a29a857e, type: 2}
+  - {fileID: 11400000, guid: 0c92bc572c200d74ab7526500a99e678, type: 2}
+  - {fileID: 11400000, guid: 12a4a05a8b62dcf4f8b729c86feb94f8, type: 2}
+  - {fileID: 11400000, guid: e082f30ee7bf48741a6966dbd288a7cd, type: 2}
+  - {fileID: 11400000, guid: db72c46a7117b32428eb0827104c570e, type: 2}
+  - {fileID: 11400000, guid: 9caf70a177448b34284de81a0bebb074, type: 2}
+  - {fileID: 11400000, guid: 83add67090f0da14f85b3d51f34fc2e0, type: 2}
+  - {fileID: 11400000, guid: 871877ad8ffa3d4449e007d27e940e93, type: 2}
+  - {fileID: 11400000, guid: b73f3ca122b9596449012ad61e37b876, type: 2}
+  - {fileID: 11400000, guid: 83f232b95e96e9b439a6c8f6bd0b094c, type: 2}
+  - {fileID: 11400000, guid: 9817b9dd68fec384d913cddb9505befc, type: 2}
+  - {fileID: 11400000, guid: f4fcebb987d1f0b4189d6170b1ac7b79, type: 2}
+  - {fileID: 11400000, guid: a494216a2f0dd7647a4f43307dc97d7b, type: 2}
+  - {fileID: 11400000, guid: b9818754278f8ce43899f66da9601965, type: 2}
+  - {fileID: 11400000, guid: abf08c592a6f4a442925c4299c329a13, type: 2}
+  scoreRequired: 2c01000090010000f401000058020000bc0200002003000084030000e80300004c040000b00400001405000078050000d007000034080000
   tutorialCompleted: 0
   inBossLevel: 0
-  inInfiniteMode: 0
 --- !u!4 &1292449646
 Transform:
   m_ObjectHideFlags: 0

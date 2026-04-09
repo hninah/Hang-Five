@@ -13,9 +13,12 @@ public class NewPatternManager : MonoBehaviour
     void Start()
     {
         // Comment this out if you want to add your own patterns for testing purposes
-        // patterns = GameManager.Instance.GetActivePatterns();
+        patterns = GameManager.Instance.GetActivePatterns();
 
         currentPattern = Random.Range(0, patterns.Count);
+
+        // We want to load the patterns, then shut this off so it doesn't update until time is right.
+        gameObject.SetActive(false);
     }
 
     // Update is called once per frame

@@ -20,9 +20,9 @@ MonoBehaviour:
   spawnPointIdxs: 00000000040000000300000002000000
   timeTillSpawn:
   - 0
+  - 0.6
   - 0
-  - 0
-  - 0
-  checkPointCutscenes: 
+  - 0.3
+  checkPointCutscenes: 090000000c0000000e000000
   coolDownTime: 2.2
   isRandomSpawning: 00000100

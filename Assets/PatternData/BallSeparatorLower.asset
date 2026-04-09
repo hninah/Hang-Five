@@ -27,6 +27,6 @@ MonoBehaviour:
   - 0.4
   - 0.8
   - 0.8
-  checkPointCutscenes: 
-  coolDownTime: 3
+  checkPointCutscenes: 0e000000
+  coolDownTime: 2.1
   isRandomSpawning: 000000000000
