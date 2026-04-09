@@ -86,16 +86,32 @@ public class TextParticleManager : MonoBehaviour
 
     public void generateTrickParticle()
     {
+        if (!CanSpawnParticles()) return;
+
         particle(trickPhrases[Random.Range(0, trickPhrases.Count)], Player.Instance.transform.position + baseOffset);
     }
 
     public void generateNearMissParticle()
     {
+        if (!CanSpawnParticles()) return;
+
         particle(nearMissPhrase, Player.Instance.transform.position + baseOffset);
     }
 
     public void generateScoreParticle(int amount)
     {
+        if (!CanSpawnParticles()) return;
+
         particle("+" + amount.ToString(), Player.Instance.transform.position + baseOffset);
+    }
+    bool CanSpawnParticles()
+    {
+        // should not be able to spawn particles while in the death screen
+        if (Player.Instance == null) return false;
+
+        var state = Player.Instance.State;
+
+        return state == Player.PlayerState.SURFING ||
+               state == Player.PlayerState.FLIPPING;
     }
 }
