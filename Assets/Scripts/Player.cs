@@ -375,6 +375,7 @@ public class Player : MonoBehaviour
         }
 
         tempPause.Invoke();
+        audioSource.PlayOneShot(wipeout, 0.3f);
         animator.SetTrigger("Crashing");
         yield return new WaitForSeconds(0.5f);
         animator.SetTrigger("Death");
@@ -418,7 +419,6 @@ public class Player : MonoBehaviour
             yield return null;
         }
 
-        audioSource.PlayOneShot(wipeout, 0.3f);
 
         // BEFORE: Wait for 1 second due to animation length
         // NEW: Wait for 0.2 seconds because why not
