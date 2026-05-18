@@ -77,12 +77,7 @@ public class PatternStateManager : MonoBehaviour
                 break;
 
             case State.SPAWNING:
-                for (int i = 0; i < currentState.obstacleInfoArr.Length; ++i)
-                {
-                    ObstaclePatternInfo info = currentState.obstacleInfoArr[i];
-
-                    spawners[info.spawnIdx].setPattern(info.obstacle, info.timeTillSpawn, info.randomSpawnY);
-                }
+                spawnPattern();
 
                 managerState = State.SPAWN_WAIT;
                 break;
@@ -99,13 +94,23 @@ public class PatternStateManager : MonoBehaviour
         }
     }
 
+    private void spawnPattern()
+    {
+        for (int i = 0; i < currentState.currentPattern.obstacleInfoArr.Length; ++i)
+        {
+            ObstaclePatternInfo info = currentState.currentPattern.obstacleInfoArr[i];
+
+            spawners[info.spawnIdx].setPattern(info.obstacle, info.timeTillSpawn, info.randomSpawnY);
+        }
+    }
+
     private PatternState getStartingState()
     {
         Debug.Log($"Pattern State Debugging: {debugging}");
 
         if (!debugging)
         {
-            Debug.LogError("Non-Debugging Start State Not Implemented.");
+            return GameManager.Instance.getStartingState();
         }
 
         return debugStartState;

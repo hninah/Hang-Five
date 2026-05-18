@@ -11,8 +11,8 @@ public enum ScoreTransitionType
 [CreateAssetMenu(fileName = "New Score Transition", menuName = "Score Transition Condition")]
 public class ScoreTransitionCondition : PatternTransitionCondition
 {
-    float scoreThreshold;
-    ScoreTransitionType condition;
+    public float scoreThreshold;
+    public ScoreTransitionType condition;
 
     public override bool satisfied(Player player)
     {
