@@ -25,7 +25,7 @@ public class VelocityTransitionCondition : PatternTransitionCondition
 
     public override bool satisfied(Player player)
     {
-        float velocityToCheck = player.Velocity.y;
+        float velocityToCheck = player.Velocity.y * player.AngleSpeedPercentage;
 
         if (velocityCheckType == VelocityCheckType.ABS)
         {

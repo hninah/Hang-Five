@@ -69,6 +69,7 @@ public class Player : MonoBehaviour
     // Internal rotation variables
     private float rotation = 0.0f;
     public float Rotation { get { return rotation; } }
+    public float AngleSpeedPercentage { get { return rotation / 90.0f; } }
 
     // Singleton for easier interaction with other scripts (downside: no multiplayer, but we're not doing that?)
     private static Player _instance;

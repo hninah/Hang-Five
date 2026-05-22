@@ -1418,7 +1418,7 @@ MonoBehaviour:
   - {fileID: 321033597}
   currentState: {fileID: 0}
   managerState: 1
-  debugging: 1
+  debugging: 0
   debugStartState: {fileID: 11400000, guid: e079dfd3571d9fb4b950a290e66be6f7, type: 2}
 --- !u!1 &439849612
 GameObject:
