@@ -15,7 +15,9 @@ public class CutsceneController : MonoBehaviour
     [SerializeField] [HideInInspector] TextMeshProUGUI dialogueText;
     [SerializeField] [HideInInspector] TextMeshProUGUI leftNameText;
     [SerializeField] [HideInInspector] TextMeshProUGUI rightNameText;
-    [SerializeField] [HideInInspector] TextMeshProUGUI instructionsText;
+    //this one isn't just text because it has to change based on UI input type
+    // (see InstructionText.cs for details)
+    [SerializeField] [HideInInspector] InstructionsText instructions; 
 
     //UI image elements for this cutscene
     //  (fill with sprites from sceneInfo.speakerSprites)
@@ -120,7 +122,8 @@ public class CutsceneController : MonoBehaviour
         //special case: modify instructions if this is the last dialogue
         if (currIndex == (dirCount - 1)){
 
-            instructionsText.text = "Press Space to return to gameplay";
+            //InstructionsText handles the logic of which message to display
+            instructions.lastLine();
 
             /// any other special things for the last line of 
             //  dialogue go here ///

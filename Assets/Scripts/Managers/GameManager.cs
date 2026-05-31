@@ -236,12 +236,13 @@ public class GameManager : MonoBehaviour
 
     //use when we press the Quit button on the wipeout screen
     public void resetGameState(){
-        //reset score variables
+        //reset score, boss and tutorial variables
         currentStage = 1;
         highScore = 0;
         stageCleared = false;
         inBossLevel = false;
         beatBoss = false;
+        tutorialCompleted = false;
 
         // reset score thresholds
         if (scoreRequired.Count > 0)
