@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviour
     public bool beatBoss = false;
     [SerializeField] private List<GameObject> allObstaclePrefabs;
     [SerializeField] private List<PatternScriptable> allPatterns;
+    [SerializeField] private PatternState[] startingStates;
     [SerializeField] public List<int> scoreRequired;
     public bool tutorialCompleted = false;
 
@@ -136,6 +137,11 @@ public class GameManager : MonoBehaviour
         }
 
         return output;
+    }
+
+    public PatternState getStartingState()
+    {
+        return startingStates[CutsceneManager.Instance.getCurrentCutscene()];
     }
 
 
