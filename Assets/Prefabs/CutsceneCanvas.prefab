@@ -27,14 +27,14 @@ RectTransform:
   m_GameObject: {fileID: 155328999182529905}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.8, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4568972848762528444}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.077782094, y: 0}
   m_AnchorMax: {x: 0.93000007, y: 1}
-  m_AnchoredPosition: {x: -0.9999542, y: 161}
+  m_AnchoredPosition: {x: -0.9999542, y: 150}
   m_SizeDelta: {x: 38, y: 181.022}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8939040039783962499
@@ -164,6 +164,7 @@ GameObject:
   - component: {fileID: 806060309066341351}
   - component: {fileID: 986279295084098774}
   - component: {fileID: 8958216517828083703}
+  - component: {fileID: 6331089806584739474}
   m_Layer: 5
   m_Name: InstructionsText
   m_TagString: Untagged
@@ -218,7 +219,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Press Space
+  m_text: PRESS SPACE
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e6fccd41ffdc60647a50e945468fac0e, type: 2}
   m_sharedMaterial: {fileID: -4409237520170509489, guid: e6fccd41ffdc60647a50e945468fac0e, type: 2}
@@ -300,6 +301,96 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   txt: {fileID: 986279295084098774}
+--- !u!114 &6331089806584739474
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1314663088611412014}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 259052e2e5717a3419119f438dad3fbf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  keyboardNext:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 986279295084098774}
+        m_TargetAssemblyTypeName: TMPro.TMP_Text, Unity.TextMeshPro
+        m_MethodName: set_text
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Press Space
+          m_BoolArgument: 0
+        m_CallState: 2
+  touchscreenNext:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 986279295084098774}
+        m_TargetAssemblyTypeName: TMPro.TMP_Text, Unity.TextMeshPro
+        m_MethodName: set_text
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Tap to Continue
+          m_BoolArgument: 0
+        m_CallState: 2
+  controllerNext:
+    m_PersistentCalls:
+      m_Calls: []
+  keyboardEnd:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 986279295084098774}
+        m_TargetAssemblyTypeName: TMPro.TMP_Text, Unity.TextMeshPro
+        m_MethodName: set_text
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Press Space to Return to Gameplay
+          m_BoolArgument: 0
+        m_CallState: 2
+  touchscreenEnd:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 986279295084098774}
+        m_TargetAssemblyTypeName: TMPro.TMP_Text, Unity.TextMeshPro
+        m_MethodName: set_text
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Tap to Return to Gameplay
+          m_BoolArgument: 0
+        m_CallState: 2
+  controllerEnd:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 986279295084098774}
+        m_TargetAssemblyTypeName: TMPro.TMP_Text, Unity.TextMeshPro
+        m_MethodName: set_text
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Something
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2224361755216326420
 GameObject:
   m_ObjectHideFlags: 0
@@ -538,15 +629,15 @@ RectTransform:
   m_GameObject: {fileID: 4604330328340410942}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.8, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3157882655125415672}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -3, y: 161}
-  m_SizeDelta: {x: 0.00042725, y: 177.792}
+  m_AnchorMin: {x: 0.05648121, y: 0}
+  m_AnchorMax: {x: 0.9284813, y: 1}
+  m_AnchoredPosition: {x: -1, y: 148}
+  m_SizeDelta: {x: 34.000427, y: 177.792}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2340748619069037572
 CanvasRenderer:
@@ -1066,7 +1157,7 @@ MonoBehaviour:
   dialogueText: {fileID: 2635400550284071258}
   leftNameText: {fileID: 8577413767114451876}
   rightNameText: {fileID: 4075561992960091530}
-  instructionsText: {fileID: 986279295084098774}
+  instructions: {fileID: 6331089806584739474}
   leftImage: {fileID: 3565240046334884281}
   rightImage: {fileID: 8438099065870930474}
   backgroundImage: {fileID: 7420445636545491465}

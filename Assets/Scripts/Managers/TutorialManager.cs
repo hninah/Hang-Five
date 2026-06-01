@@ -24,8 +24,9 @@ public class TutorialManager : MonoBehaviour
     [SerializeField] private GameObject topTarget;
 
     [Header("UI")]
-    public TMPro.TextMeshProUGUI tutorialText;
     [SerializeField] private GameObject skipTutorialButton;
+    //script to change the text
+    public TutorialText tutorialText;
 
     [Header("Player Setup")]
     [SerializeField] private Transform respawnPoint;
@@ -46,7 +47,7 @@ public class TutorialManager : MonoBehaviour
         bottomTarget.SetActive(true);
         topTarget.SetActive(false);
 
-        tutorialText.text = "Using SPACE surf down to the green circle!";
+        tutorialText.setBottomTargetText();
     }
 
     public void PlayerHitTarget(GameObject hitTarget)
@@ -60,7 +61,7 @@ public class TutorialManager : MonoBehaviour
             bottomTarget.SetActive(false);
             topTarget.SetActive(true);
 
-            tutorialText.text = "Release SPACE to surf up to the next circle!";
+            tutorialText.setTopTargetText();
         }
         // when the player hits top target turn the bottom target back on
         else if (currentStep == TutorialStep.TopTarget && hitTarget == topTarget)
@@ -74,7 +75,7 @@ public class TutorialManager : MonoBehaviour
             bottomTarget.SetActive(true);
             topTarget.SetActive(false);
 
-            tutorialText.text = "Now surf back down to the bottom!";
+            tutorialText.setFinalTargetText();
         }
         // when the player hits the bottom target load the gameplay scene
         else if (currentStep == TutorialStep.FinalTarget && hitTarget == bottomTarget)
@@ -83,7 +84,7 @@ public class TutorialManager : MonoBehaviour
 
             bottomTarget.SetActive(false);
 
-            tutorialText.text = "Nice! You're ready to surf!";
+            tutorialText.setEndText();
 
             StartCoroutine(LoadGameplayAfterDelay());
         }
