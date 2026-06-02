@@ -11,11 +11,7 @@ public class TextParticle : MonoBehaviour
     public string Text { get { return particleText.text; } set { particleText.text = value; } }
 
     void Start()
-    {
-        if (GameManager.Instance.getBackground() == "Night"){
-            particleText.color = Color.white;
-        }
-    }
+    {}
 
     // Update is called once per frame
     void Update()

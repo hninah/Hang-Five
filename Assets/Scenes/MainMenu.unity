@@ -549,7 +549,7 @@ MonoBehaviour:
   m_MoveAction: {fileID: 4027752600992320976, guid: 4cdf67678d6f4c547a94c9696914e231, type: 3}
   m_SubmitAction: {fileID: 35229857338321040, guid: 4cdf67678d6f4c547a94c9696914e231, type: 3}
   m_CancelAction: {fileID: 4663019942448538737, guid: 4cdf67678d6f4c547a94c9696914e231, type: 3}
-  m_LeftClickAction: {fileID: -69552059717817851, guid: 4cdf67678d6f4c547a94c9696914e231, type: 3}
+  m_LeftClickAction: {fileID: 8056856818456041789, guid: 4cdf67678d6f4c547a94c9696914e231, type: 3}
   m_MiddleClickAction: {fileID: 5825902836036988693, guid: 4cdf67678d6f4c547a94c9696914e231, type: 3}
   m_RightClickAction: {fileID: -1934908891837317999, guid: 4cdf67678d6f4c547a94c9696914e231, type: 3}
   m_ScrollWheelAction: {fileID: 7289031092277386682, guid: 4cdf67678d6f4c547a94c9696914e231, type: 3}
