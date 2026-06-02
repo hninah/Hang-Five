@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Text;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
@@ -48,6 +49,12 @@ public class CutsceneController : MonoBehaviour
     private PlayerInput cutsceneInput;
     private InputAction advance;
 
+    // Progressive text updating
+    private Queue<char> textQueue = new Queue<char>();
+    private StringBuilder builder = new StringBuilder();
+    [SerializeField] float charactersPerSecond = 30;
+    float characterUpdateTime { get { return 1 / charactersPerSecond; } }
+    private Coroutine currentTextProgress;
 
     //set up the input and first line
     void Awake(){
@@ -59,7 +66,7 @@ public class CutsceneController : MonoBehaviour
         cutsceneInput = new PlayerInput();
 
         //get current cutscene info from manager
-        if (!CutsceneManager.Instance.isFinished()){
+        if (CutsceneManager.Instance != null && !CutsceneManager.Instance.isFinished()){
             ///Debug.Log("getting a new cutscene");
             sceneInfo = CutsceneManager.Instance.getNextCutscene();
         }
@@ -75,7 +82,7 @@ public class CutsceneController : MonoBehaviour
         //start at first line of dialogue
         currIndex = 0;
         if (dirCount > 0){
-            dialogueText.text = sceneInfo.directions[currIndex].dialogue;
+            prepareDialogue();
         }
 
         //fade the first non-speaker and set up background
@@ -99,6 +106,39 @@ public class CutsceneController : MonoBehaviour
         cutsceneInput.Disable();
     }
 
+    void prepareDialogue()
+    {
+        // Clear anything related to the current typewriting
+        if (currentTextProgress != null)
+        {
+            StopCoroutine(currentTextProgress);
+            dialogueText.text = "";
+            builder.Clear();
+            textQueue.Clear();
+        }
+
+        // Enqueue the next dialogue segment character by character for a typewriting effect
+        // NOTE: you could change this to word by word, but character by character was chosen for a little more freedom of speed control
+        foreach (char textPiece in sceneInfo.directions[currIndex].dialogue)
+        {
+            textQueue.Enqueue(textPiece);
+        }
+
+        currentTextProgress = StartCoroutine(progressiveText());
+    }
+
+    IEnumerator progressiveText()
+    {
+        while (textQueue.Count > 0)
+        {
+            // Adds characters to the text at a speed of charactersPerSecond
+            yield return new WaitForSeconds(characterUpdateTime);
+
+            builder.Append(textQueue.Dequeue());
+
+            dialogueText.text = builder.ToString();
+        }
+    }
 
     void nextLine(){
         ///Debug.Log("entering nextLine: currIndex = " + currIndex);
@@ -108,7 +148,7 @@ public class CutsceneController : MonoBehaviour
         //if didn't finish directions, set up next line
         if (currIndex < dirCount){
             //set next line of dialogue
-            dialogueText.text = sceneInfo.directions[currIndex].dialogue;
+            prepareDialogue();
 
             //update speaker and background displays
             updateSpeakers();

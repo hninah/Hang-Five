@@ -101,6 +101,8 @@ public class Player : MonoBehaviour
 
     [Header("Audio")]
     [SerializeField] private AudioClip wipeout;
+    [SerializeField] private AudioClip trickStart;
+    [SerializeField] private AudioClip trickSuccess;
     private AudioSource audioSource;
 
     bool crashRoutineRunning = false;
@@ -169,6 +171,7 @@ public class Player : MonoBehaviour
                     state = PlayerState.FLIPPING;
                     animator.SetBool("InAir", true);
                     animator.SetInteger("TrickAnim", Random.Range(0, 2));
+                    audioSource.PlayOneShot(trickStart, 0.3f);
                 }
                 else if ((transform.position.y >= waveTop.position.y && flipImmunityTimer <= 0.0f) || transform.position.y < waveBottom.position.y)
                 {
@@ -191,6 +194,8 @@ public class Player : MonoBehaviour
 
                 if (state == PlayerState.SURFING)
                 {
+                    audioSource.PlayOneShot(trickSuccess, 0.3f);
+
                     // ScoreBonus = bonus * (height_we_got_to / max_height_we_can_go_to (estimated))
                     int scoreBonus = (int) (trickScoreBonus * ((maxHeightOnJump - waveTop.position.y) / (maxJumpHeightY - waveTop.position.y)));
 

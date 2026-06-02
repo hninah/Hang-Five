@@ -1720,8 +1720,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -8684,7 +8684,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.05, y: 0.15}
+  m_Offset: {x: -0.056398153, y: -0.30116493}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -8695,7 +8695,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.5, y: 1.3}
+  m_Size: {x: 0.48720407, y: 0.30424774}
   m_EdgeRadius: 0
 --- !u!212 &1901402362
 SpriteRenderer:
@@ -9166,6 +9166,8 @@ MonoBehaviour:
   maxJumpHeightY: 5.4
   trickScoreBonus: 100
   wipeout: {fileID: 8300000, guid: 28db78ea8e25b9b4692e9112d4b9b476, type: 3}
+  trickStart: {fileID: 8300000, guid: 88fbfdb4561a0ef4f8ffa6374053638a, type: 3}
+  trickSuccess: {fileID: 8300000, guid: a596763cd13d0134f9efaafdb029e1d4, type: 3}
   RetryButton: {fileID: 1463219492}
   NextButton: {fileID: 439849612}
 --- !u!4 &1901402366
