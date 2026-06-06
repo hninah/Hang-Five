@@ -21,6 +21,8 @@ public class CutsceneInfo : ScriptableObject
         //The speaker sprites to use for each thing
         public int leftSpeakerIdx;
         public int rightSpeakerIdx;
+        //The text colour for this
+
         // The sceneStill to use (see below)
         public int imgIdx;
 

@@ -22,7 +22,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 5b16b05fb59b3a64cac6addf6999c1c3, type: 3}
   - {fileID: 21300000, guid: 59510ffb5be38444f8af66795b07b942, type: 3}
   sceneStills:
-  - {fileID: 21300000, guid: a57a485f8ada0254785ef3930d811cb7, type: 3}
+  - {fileID: 21300000, guid: 7396d3cc14a00904b8b9ec7b6419163e, type: 3}
   directions:
   - leftSpeaker: Uwe
     rightSpeaker: Bark Shaits
