@@ -12,6 +12,8 @@ public class PatternStateManager : MonoBehaviour
         SPAWN_WAIT
     }
 
+    private static PatternStateManager _instance;
+    public static PatternStateManager Instance { get { return _instance; } }
     public List<PatternSpawner> spawners;
     public PatternState currentState;
     private float coolDownTimer = 2.0f;
@@ -19,10 +21,18 @@ public class PatternStateManager : MonoBehaviour
     public State managerState = State.COOLDOWN;
     [SerializeField] private bool debugging = false;
     [SerializeField] private PatternState debugStartState;
+    private float rngNum = 0.0f;
+    public float RngNum { get { return rngNum; } }
 
     // Start is called before the first frame update
     void Start()
     {
+        if (_instance != null)
+        {
+            Destroy(gameObject);
+        }
+
+        _instance = this;
         currentState = getStartingState();
         gameObject.SetActive(false);
     }
@@ -54,6 +64,7 @@ public class PatternStateManager : MonoBehaviour
 
                 int j = 1;
                 int numTransitions = currentState.transitions.Length;
+                rngNum = Random.Range(0.0f, 1.0f);
 
                 foreach (PatternStateTransition transition in currentState.transitions)
                 {
