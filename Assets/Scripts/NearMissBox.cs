@@ -31,8 +31,9 @@ public class NearMissBox : MonoBehaviour
     {
         if (Player.Instance.State == Player.PlayerState.CRASHING || nearMissCoolDownTimer > 0.0f) return;
 
-        ScoreManager.Instance.score += nearMissBonus;
-        TextParticleManager.Instance.generateScoreParticle(nearMissBonus);
+        int bonus = nearMissBonus * numNearMisses;
+        ScoreManager.Instance.score += bonus;
+        TextParticleManager.Instance.generateScoreParticle(bonus);
         nearMissCoolDownTimer = nearMissCoolDown;
     }
 
