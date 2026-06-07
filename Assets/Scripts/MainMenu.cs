@@ -11,17 +11,20 @@ public class MainMenu : MonoBehaviour
     public Animator menuAnimator;
     
     //use to make the selected button float
+    /*
     private Vector3 startPos;
     public float hoverScale = 1.15f;
-    private bool hasPressed = false; ///
+    */
 
-
+    /*
     void Start()
     {
         startPos = transform.localPosition;
     }
+    */
 
 
+    /*
     void Update()
     {
         GameObject selected = EventSystem.current.currentSelectedGameObject;
@@ -39,6 +42,7 @@ public class MainMenu : MonoBehaviour
             transform.localPosition = startPos;
         }
     }
+    */
 
 
     public void OnStartPressed()

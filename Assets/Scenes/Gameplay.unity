@@ -2542,7 +2542,7 @@ Transform:
   m_GameObject: {fileID: 637008596}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -26.4, y: 1.5651915, z: 0.13069859}
+  m_LocalPosition: {x: -26.31, y: 1.5651915, z: 0.13069859}
   m_LocalScale: {x: 4, y: 4, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2976,6 +2976,30 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1920282481}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1435940645}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
         m_CallState: 2
 --- !u!1 &680865300
 GameObject:
@@ -5428,10 +5452,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1930095657}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.094813496, y: 0.25786433}
-  m_AnchorMax: {x: 0.8808186, y: 0.78960603}
-  m_AnchoredPosition: {x: 16.5, y: -16.5}
-  m_SizeDelta: {x: -861, y: -317}
+  m_AnchorMin: {x: 0.099181406, y: 0.25786433}
+  m_AnchorMax: {x: 0.87640935, y: 0.77211577}
+  m_AnchoredPosition: {x: 16.5, y: -10.5}
+  m_SizeDelta: {x: -849, y: -305}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1287934385
 MonoBehaviour:
@@ -5453,7 +5477,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Are you sure you want to quit? Your progress will be lost.
+  m_text: "Are you sure you want to quit? \nYour progress will be lost."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e6fccd41ffdc60647a50e945468fac0e, type: 2}
   m_sharedMaterial: {fileID: -4409237520170509489, guid: e6fccd41ffdc60647a50e945468fac0e, type: 2}
@@ -9703,10 +9727,10 @@ RectTransform:
   - {fileID: 1287934384}
   m_Father: {fileID: 914982190}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.25140628, y: 0.5}
-  m_AnchorMax: {x: 0.7533591, y: 0.89432955}
-  m_AnchoredPosition: {x: -5.5, y: -18.5}
-  m_SizeDelta: {x: 683, y: 417}
+  m_AnchorMin: {x: 0.2333165, y: 0.47500002}
+  m_AnchorMax: {x: 0.74600005, y: 0.88400006}
+  m_AnchoredPosition: {x: 11.5, y: -6.5}
+  m_SizeDelta: {x: 669, y: 407}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1930095658
 MonoBehaviour:

@@ -25,6 +25,10 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 1dcddc6faae0ed8479b9ea6f3ca8bcc7, type: 3}
   sceneStills:
   - {fileID: 21300000, guid: 4fa72b28b27596c4dbb0b339774ac0b9, type: 3}
+  textColours:
+  - {r: 0.011764706, g: 0.05490196, b: 0.25490198, a: 1}
+  - {r: 0.007843138, g: 0.25490198, b: 0.015686275, a: 1}
+  - {r: 0.7529412, g: 0.49411765, b: 0.011764706, a: 1}
   directions:
   - leftSpeaker: Uwe
     rightSpeaker: Holden
@@ -33,7 +37,8 @@ MonoBehaviour:
     leftSpeakerIdx: 0
     rightSpeakerIdx: 2
     imgIdx: 0
-    dialogue: "Why won\u2019t you die??!\r\n"
+    colourIdx: 1
+    dialogue: "Why won\u2019t you die??!\r"
   - leftSpeaker: Uwe
     rightSpeaker: Holden
     isLeftSpeaking: 1
@@ -41,8 +46,9 @@ MonoBehaviour:
     leftSpeakerIdx: 7
     rightSpeakerIdx: 2
     imgIdx: 0
+    colourIdx: 0
     dialogue: "I don\u2019t know, maybe you should ask Dick Nixon for a bigger defense
-      budget.\r\n"
+      budget.\r"
   - leftSpeaker: Uwe
     rightSpeaker: Holden
     isLeftSpeaking: 0
@@ -50,9 +56,8 @@ MonoBehaviour:
     leftSpeakerIdx: 7
     rightSpeakerIdx: 3
     imgIdx: 0
-    dialogue: '....
-
-'
+    colourIdx: 1
+    dialogue: ....
   - leftSpeaker: Uwe
     rightSpeaker: Holden
     isLeftSpeaking: 1
@@ -60,6 +65,7 @@ MonoBehaviour:
     leftSpeakerIdx: 8
     rightSpeakerIdx: 3
     imgIdx: 0
+    colourIdx: 0
     dialogue: "He\u2019s lining your pockets right? Gotta be some kind of military
       base you\u2019re building-"
   - leftSpeaker: Uwe
@@ -69,6 +75,7 @@ MonoBehaviour:
     leftSpeakerIdx: 7
     rightSpeakerIdx: 1
     imgIdx: 0
+    colourIdx: 1
     dialogue: "Well, look at little Nancy Drew here. Almost figured it all out. Suppose
       you\u2019ve earned some answers before I waste you though."
   - leftSpeaker: Uwe
@@ -78,6 +85,7 @@ MonoBehaviour:
     leftSpeakerIdx: 7
     rightSpeakerIdx: 1
     imgIdx: 0
+    colourIdx: 1
     dialogue: Yeah, we set up a base here. Need to be near the action.
   - leftSpeaker: Uwe
     rightSpeaker: Holden
@@ -86,6 +94,7 @@ MonoBehaviour:
     leftSpeakerIdx: 7
     rightSpeakerIdx: 1
     imgIdx: 0
+    colourIdx: 1
     dialogue: "Free love is already on the outs, Civil Rights mutts have been muzzled,
       there\u2019s a disillusioned society ripe for the picking."
   - leftSpeaker: Uwe
@@ -95,6 +104,7 @@ MonoBehaviour:
     leftSpeakerIdx: 7
     rightSpeakerIdx: 1
     imgIdx: 0
+    colourIdx: 1
     dialogue: "But how do you do it? Deploying soldiers? Can\u2019t do that, too
       obvious. Besides, our best guys are busy securing the H trade in Cambodia."
   - leftSpeaker: Uwe
@@ -104,6 +114,7 @@ MonoBehaviour:
     leftSpeakerIdx: 7
     rightSpeakerIdx: 1
     imgIdx: 0
+    colourIdx: 1
     dialogue: What you gotta do is infiltrate. Have agitators on the inside that
       know how to stir the pot.
   - leftSpeaker: Uwe
@@ -113,6 +124,7 @@ MonoBehaviour:
     leftSpeakerIdx: 7
     rightSpeakerIdx: 1
     imgIdx: 0
+    colourIdx: 1
     dialogue: "Government mandates and price gouging can push people down, but controlling
       ideology is how you keep \u2018em there."
   - leftSpeaker: Uwe
@@ -122,8 +134,8 @@ MonoBehaviour:
     leftSpeakerIdx: 7
     rightSpeakerIdx: 1
     imgIdx: 0
-    dialogue: 'The turn on, tune in, drop out generation has a malleable mind of
-      mush. '
+    colourIdx: 1
+    dialogue: The turn on, tune in, drop out generation has a malleable mind of mush.
   - leftSpeaker: Uwe
     rightSpeaker: Holden
     isLeftSpeaking: 0
@@ -131,6 +143,7 @@ MonoBehaviour:
     leftSpeakerIdx: 7
     rightSpeakerIdx: 1
     imgIdx: 0
+    colourIdx: 1
     dialogue: "You need to infect it and kill all that LSD empathy. Convince them
       it\u2019s all bullshit."
   - leftSpeaker: Uwe
@@ -140,6 +153,7 @@ MonoBehaviour:
     leftSpeakerIdx: 7
     rightSpeakerIdx: 1
     imgIdx: 0
+    colourIdx: 1
     dialogue: "MK Ultra isn\u2019t a needle you get injected with, it\u2019s carefully
       coordinated thought control."
   - leftSpeaker: Uwe
@@ -149,9 +163,8 @@ MonoBehaviour:
     leftSpeakerIdx: 7
     rightSpeakerIdx: 1
     imgIdx: 0
-    dialogue: 'Get to the point and waste me already.
-
-'
+    colourIdx: 0
+    dialogue: Get to the point and waste me already.
   - leftSpeaker: Uwe
     rightSpeaker: Holden
     isLeftSpeaking: 0
@@ -159,6 +172,7 @@ MonoBehaviour:
     leftSpeakerIdx: 7
     rightSpeakerIdx: 1
     imgIdx: 0
+    colourIdx: 1
     dialogue: Setting up a base in a hot area like this lets us find potential agitators.
   - leftSpeaker: Uwe
     rightSpeaker: Holden
@@ -167,6 +181,7 @@ MonoBehaviour:
     leftSpeakerIdx: 7
     rightSpeakerIdx: 1
     imgIdx: 0
+    colourIdx: 1
     dialogue: Guys on the outs who could easily bend to our control.
   - leftSpeaker: Uwe
     rightSpeaker: Holden
@@ -175,6 +190,7 @@ MonoBehaviour:
     leftSpeakerIdx: 7
     rightSpeakerIdx: 1
     imgIdx: 0
+    colourIdx: 1
     dialogue: 'From there we can take them, maybe forcibly but hey, they love big
       brother. '
   - leftSpeaker: Uwe
@@ -184,6 +200,7 @@ MonoBehaviour:
     leftSpeakerIdx: 7
     rightSpeakerIdx: 1
     imgIdx: 0
+    colourIdx: 1
     dialogue: We modify them, give them some enhancements.
   - leftSpeaker: Uwe
     rightSpeaker: Holden
@@ -192,6 +209,7 @@ MonoBehaviour:
     leftSpeakerIdx: 7
     rightSpeakerIdx: 1
     imgIdx: 0
+    colourIdx: 1
     dialogue: "Make them\u2026 superior. Really it\u2019s a simple-"
   - leftSpeaker: Uwe
     rightSpeaker: Holden
@@ -200,6 +218,7 @@ MonoBehaviour:
     leftSpeakerIdx: 0
     rightSpeakerIdx: 4
     imgIdx: 0
+    colourIdx: 1
     dialogue: '!!'
   - leftSpeaker: Uwe
     rightSpeaker: Holden
@@ -208,6 +227,7 @@ MonoBehaviour:
     leftSpeakerIdx: 0
     rightSpeakerIdx: 5
     imgIdx: 0
+    colourIdx: 0
     dialogue: Huh?!
   - leftSpeaker: Uwe
     rightSpeaker: Holden
@@ -216,7 +236,8 @@ MonoBehaviour:
     leftSpeakerIdx: 0
     rightSpeakerIdx: 5
     imgIdx: 0
-    dialogue: "Heh\u2026 ok Momma, here I come-\r\n"
+    colourIdx: 1
+    dialogue: "Heh\u2026 ok Momma, here I come-\r"
   - leftSpeaker: Uwe
     rightSpeaker: Holden
     isLeftSpeaking: 0
@@ -224,6 +245,7 @@ MonoBehaviour:
     leftSpeakerIdx: 0
     rightSpeakerIdx: 6
     imgIdx: 0
+    colourIdx: 1
     dialogue: '!'
   - leftSpeaker: Uwe
     rightSpeaker: ???
@@ -232,7 +254,8 @@ MonoBehaviour:
     leftSpeakerIdx: 0
     rightSpeakerIdx: 6
     imgIdx: 0
-    dialogue: "You\u2026 but, how are you alive?!\r\n"
+    colourIdx: 0
+    dialogue: "You\u2026 but, how are you alive?!\r"
   - leftSpeaker: Uwe
     rightSpeaker: Bark Shaits
     isLeftSpeaking: 0
@@ -240,7 +263,8 @@ MonoBehaviour:
     leftSpeakerIdx: 0
     rightSpeakerIdx: 9
     imgIdx: 0
-    dialogue: 'Holden already told you too much. He had to go, so do you. '
+    colourIdx: 2
+    dialogue: Holden already told you too much. He had to go, so do you.
   - leftSpeaker: Uwe
     rightSpeaker: Bark Shaits
     isLeftSpeaking: 1
@@ -248,7 +272,8 @@ MonoBehaviour:
     leftSpeakerIdx: 0
     rightSpeakerIdx: 9
     imgIdx: 0
-    dialogue: "What the hell happened to you? \r"
+    colourIdx: 0
+    dialogue: "What the hell happened to you?\r"
   - leftSpeaker: Uwe
     rightSpeaker: Bark Shaits
     isLeftSpeaking: 0
@@ -256,8 +281,8 @@ MonoBehaviour:
     leftSpeakerIdx: 0
     rightSpeakerIdx: 9
     imgIdx: 0
-    dialogue: "My orders are to stop you by any means necessary. Comply or die. 
-      \r"
+    colourIdx: 2
+    dialogue: "My orders are to stop you by any means necessary. Comply or die.\r"
   - leftSpeaker: Uwe
     rightSpeaker: Bark Shaits
     isLeftSpeaking: 1
@@ -265,5 +290,6 @@ MonoBehaviour:
     leftSpeakerIdx: 7
     rightSpeakerIdx: 9
     imgIdx: 0
+    colourIdx: 0
     dialogue: "Yeah whatever man, I just wanna surf, let\u2019s get this shit over
-      with.   \r"
+      with.\r"

@@ -17,6 +17,33 @@ public class ButtonHover : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
         startPos = transform.localPosition;
     }
 
+
+    void Update()
+    {
+        GameObject selected = EventSystem.current.currentSelectedGameObject;
+
+        if (selected == gameObject)
+        {
+            // float if selected
+            float t = Time.time;
+            float y = Mathf.Sin(t * 4f) * 5f; // slightly stronger effect
+            transform.localPosition = startPos + new Vector3(0, y, 0);
+
+            // pressing space does the like button animation and starts the game
+            if (Keyboard.current.spaceKey.wasPressedThisFrame)
+            {
+                animator.SetBool("hover", true);
+                ///FindObjectOfType<MainMenu>().OnStartPressed();
+            }
+        }
+        else
+        {
+            // reset position if not selected
+            transform.localPosition = startPos;
+        }
+    }
+
+    /*
     void Update()
     {
         float t = Time.time;
@@ -31,6 +58,7 @@ public class ButtonHover : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
             FindObjectOfType<MainMenu>().OnStartPressed();
         }
     }
+    */
     IEnumerator SpacePressed()
     {
         animator.SetBool("hover", true);
@@ -39,7 +67,7 @@ public class ButtonHover : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
         animator.SetBool("hover", false);
 
         // actually start the game
-        FindObjectOfType<MainMenu>().OnStartPressed();
+        ///FindObjectOfType<MainMenu>().OnStartPressed();
     }
     public void OnPointerEnter(PointerEventData eventData)
     {

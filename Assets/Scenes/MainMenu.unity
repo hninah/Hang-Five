@@ -3274,10 +3274,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: b9818754278f8ce43899f66da9601965, type: 2}
   - {fileID: 11400000, guid: abf08c592a6f4a442925c4299c329a13, type: 2}
   startingStates: []
-  scoreRequired: 2c01000090010000f401000058020000bc0200002003000084030000e80300004c040000b00400001405000078050000dc050000d0070000
+  scoreRequired: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   tutorialCompleted: 0
   inBossLevel: 0
-  inEndlessMode: 0
 --- !u!4 &1292449646
 Transform:
   m_ObjectHideFlags: 0
@@ -3601,7 +3600,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1589375159}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 26c3db0285ff69d47ae001a9b7018ad4, type: 3}
   m_Name: 
@@ -3734,8 +3733,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bdabb6cabe0dc38419c5f2ca9306be9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  menuAnimator: {fileID: 0}
-  hoverScale: 1.15
+  menuAnimator: {fileID: 1589375162}
 --- !u!1 &1751820992
 GameObject:
   m_ObjectHideFlags: 0
@@ -3976,7 +3974,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   menuAnimator: {fileID: 3175858}
-  hoverScale: 1.15
 --- !u!1 &1818406239
 GameObject:
   m_ObjectHideFlags: 0
@@ -5394,7 +5391,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2093633530}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 26c3db0285ff69d47ae001a9b7018ad4, type: 3}
   m_Name: 
@@ -5412,8 +5409,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bdabb6cabe0dc38419c5f2ca9306be9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  menuAnimator: {fileID: 0}
-  hoverScale: 1.15
+  menuAnimator: {fileID: 2093633535}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

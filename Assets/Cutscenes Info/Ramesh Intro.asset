@@ -20,6 +20,9 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 433f75f2fdaa60948b8f45ad0a1859d2, type: 3}
   sceneStills:
   - {fileID: 21300000, guid: b91d79cb1a952324da9d9e0ead00b747, type: 3}
+  textColours:
+  - {r: 0.011764706, g: 0.05490196, b: 0.25490198, a: 1}
+  - {r: 0.6039216, g: 0.23137255, b: 0.011764706, a: 1}
   directions:
   - leftSpeaker: Uwe
     rightSpeaker: Ramesh
@@ -28,6 +31,7 @@ MonoBehaviour:
     leftSpeakerIdx: 0
     rightSpeakerIdx: 2
     imgIdx: 0
+    colourIdx: 1
     dialogue: Hey Uwe!
   - leftSpeaker: Uwe
     rightSpeaker: Ramesh
@@ -36,6 +40,7 @@ MonoBehaviour:
     leftSpeakerIdx: 0
     rightSpeakerIdx: 2
     imgIdx: 0
+    colourIdx: 0
     dialogue: "Ramesh old buddy, I could use a drink.\r"
   - leftSpeaker: Uwe
     rightSpeaker: Ramesh
@@ -44,6 +49,7 @@ MonoBehaviour:
     leftSpeakerIdx: 0
     rightSpeakerIdx: 2
     imgIdx: 0
+    colourIdx: 1
     dialogue: "What\u2019ll it be?\r"
   - leftSpeaker: Uwe
     rightSpeaker: Ramesh
@@ -52,6 +58,7 @@ MonoBehaviour:
     leftSpeakerIdx: 0
     rightSpeakerIdx: 2
     imgIdx: 0
+    colourIdx: 0
     dialogue: "Just the usual.\r"
   - leftSpeaker: Uwe
     rightSpeaker: Ramesh
@@ -60,6 +67,7 @@ MonoBehaviour:
     leftSpeakerIdx: 0
     rightSpeakerIdx: 2
     imgIdx: 0
+    colourIdx: 1
     dialogue: "I\u2019m afraid we\u2019re out of Jammin\u2019 Jamu at the moment.\r"
   - leftSpeaker: Uwe
     rightSpeaker: Ramesh
@@ -68,6 +76,7 @@ MonoBehaviour:
     leftSpeakerIdx: 0
     rightSpeakerIdx: 2
     imgIdx: 0
+    colourIdx: 0
     dialogue: "Alright, how about the Pineapple Powerslap?\r"
   - leftSpeaker: Uwe
     rightSpeaker: Ramesh
@@ -76,6 +85,7 @@ MonoBehaviour:
     leftSpeakerIdx: 0
     rightSpeakerIdx: 2
     imgIdx: 0
+    colourIdx: 1
     dialogue: 'Out of that too.
 
 '
@@ -86,6 +96,7 @@ MonoBehaviour:
     leftSpeakerIdx: 1
     rightSpeakerIdx: 2
     imgIdx: 0
+    colourIdx: 0
     dialogue: "Tangerine Touchdown?\r"
   - leftSpeaker: Uwe
     rightSpeaker: Ramesh
@@ -94,6 +105,7 @@ MonoBehaviour:
     leftSpeakerIdx: 1
     rightSpeakerIdx: 2
     imgIdx: 0
+    colourIdx: 1
     dialogue: Out.
   - leftSpeaker: Uwe
     rightSpeaker: Ramesh
@@ -102,6 +114,7 @@ MonoBehaviour:
     leftSpeakerIdx: 1
     rightSpeakerIdx: 2
     imgIdx: 0
+    colourIdx: 0
     dialogue: 'Grapefruit Gunshot?
 
 '
@@ -112,6 +125,7 @@ MonoBehaviour:
     leftSpeakerIdx: 1
     rightSpeakerIdx: 2
     imgIdx: 0
+    colourIdx: 1
     dialogue: Out.
   - leftSpeaker: Uwe
     rightSpeaker: Ramesh
@@ -120,6 +134,7 @@ MonoBehaviour:
     leftSpeakerIdx: 1
     rightSpeakerIdx: 2
     imgIdx: 0
+    colourIdx: 0
     dialogue: 'Pickle Surprise?
 
 '
@@ -130,6 +145,7 @@ MonoBehaviour:
     leftSpeakerIdx: 1
     rightSpeakerIdx: 2
     imgIdx: 0
+    colourIdx: 1
     dialogue: Out.
   - leftSpeaker: Uwe
     rightSpeaker: Ramesh
@@ -138,6 +154,7 @@ MonoBehaviour:
     leftSpeakerIdx: 1
     rightSpeakerIdx: 2
     imgIdx: 0
+    colourIdx: 0
     dialogue: "Ramesh, what the hell's going on?\r"
   - leftSpeaker: Uwe
     rightSpeaker: Ramesh
@@ -146,6 +163,7 @@ MonoBehaviour:
     leftSpeakerIdx: 1
     rightSpeakerIdx: 3
     imgIdx: 0
+    colourIdx: 1
     dialogue: "I\u2019m sorry my friend. This construction project has been a pain
       to the whole beach."
   - leftSpeaker: Uwe
@@ -155,6 +173,7 @@ MonoBehaviour:
     leftSpeakerIdx: 1
     rightSpeakerIdx: 3
     imgIdx: 0
+    colourIdx: 1
     dialogue: "They\u2019re moving in, driving up prices, and getting rid of all
       my customers."
   - leftSpeaker: Uwe
@@ -164,6 +183,7 @@ MonoBehaviour:
     leftSpeakerIdx: 1
     rightSpeakerIdx: 3
     imgIdx: 0
+    colourIdx: 1
     dialogue: "For the first time in 20 years, I can\u2019t afford to order more
       ingredients."
   - leftSpeaker: Uwe
@@ -173,6 +193,7 @@ MonoBehaviour:
     leftSpeakerIdx: 4
     rightSpeakerIdx: 3
     imgIdx: 0
+    colourIdx: 0
     dialogue: Those rats. What do you have?
   - leftSpeaker: Uwe
     rightSpeaker: Ramesh
@@ -181,6 +202,7 @@ MonoBehaviour:
     leftSpeakerIdx: 1
     rightSpeakerIdx: 2
     imgIdx: 0
+    colourIdx: 1
     dialogue: Baileys and Applejuice.
   - leftSpeaker: Uwe
     rightSpeaker: Ramesh
@@ -189,6 +211,7 @@ MonoBehaviour:
     leftSpeakerIdx: 1
     rightSpeakerIdx: 3
     imgIdx: 0
+    colourIdx: 0
     dialogue: "It\u2019s bad enough they\u2019re taking over the beach, but now I
       can\u2019t get a drink?"
   - leftSpeaker: Uwe
@@ -198,4 +221,5 @@ MonoBehaviour:
     leftSpeakerIdx: 4
     rightSpeakerIdx: 3
     imgIdx: 0
+    colourIdx: 0
     dialogue: These guys suck!

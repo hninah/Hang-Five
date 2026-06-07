@@ -19,6 +19,9 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 23e5f2966eef2b24994544422b320027, type: 3}
   sceneStills:
   - {fileID: 21300000, guid: b91d79cb1a952324da9d9e0ead00b747, type: 3}
+  textColours:
+  - {r: 0.011764706, g: 0.05490196, b: 0.25490198, a: 1}
+  - {r: 0.6039216, g: 0.23137255, b: 0.011764706, a: 1}
   directions:
   - leftSpeaker: Uwe
     rightSpeaker: Ramesh
@@ -27,9 +30,8 @@ MonoBehaviour:
     leftSpeakerIdx: 0
     rightSpeakerIdx: 2
     imgIdx: 0
-    dialogue: 'Ramesh! Ramesh!
-
-'
+    colourIdx: 0
+    dialogue: Ramesh! Ramesh!
   - leftSpeaker: Uwe
     rightSpeaker: Ramesh
     isLeftSpeaking: 0
@@ -37,7 +39,8 @@ MonoBehaviour:
     leftSpeakerIdx: 0
     rightSpeakerIdx: 2
     imgIdx: 0
-    dialogue: "What\u2019s up?\r\n"
+    colourIdx: 1
+    dialogue: "What\u2019s up?\r"
   - leftSpeaker: Uwe
     rightSpeaker: Ramesh
     isLeftSpeaking: 1
@@ -45,8 +48,9 @@ MonoBehaviour:
     leftSpeakerIdx: 0
     rightSpeakerIdx: 2
     imgIdx: 0
+    colourIdx: 0
     dialogue: "There was this dude on the beach\u2026 I just saw his silhouette,
-      and, I don\u2019t know I\u2019ve never seen him before, but-\r\n"
+      and, I don\u2019t know I\u2019ve never seen him before, but-\r"
   - leftSpeaker: Uwe
     rightSpeaker: Ramesh
     isLeftSpeaking: 0
@@ -54,9 +58,8 @@ MonoBehaviour:
     leftSpeakerIdx: 0
     rightSpeakerIdx: 2
     imgIdx: 0
-    dialogue: 'Calm down my friend, get to the point.
-
-'
+    colourIdx: 1
+    dialogue: Calm down my friend, get to the point.
   - leftSpeaker: Uwe
     rightSpeaker: Ramesh
     isLeftSpeaking: 1
@@ -64,9 +67,8 @@ MonoBehaviour:
     leftSpeakerIdx: 1
     rightSpeakerIdx: 2
     imgIdx: 0
-    dialogue: 'Tricks Ramesh! You can do tricks on the wave!
-
-'
+    colourIdx: 0
+    dialogue: Tricks Ramesh! You can do tricks on the wave!
   - leftSpeaker: Uwe
     rightSpeaker: Ramesh
     isLeftSpeaking: 0
@@ -74,8 +76,9 @@ MonoBehaviour:
     leftSpeakerIdx: 1
     rightSpeakerIdx: 3
     imgIdx: 0
+    colourIdx: 1
     dialogue: "That's great, I\u2019m happy for you. I jus\u2019 hope you enjoy doing
-      them before that damn Greenstachs company suspends all surfing-\r\n"
+      them before that damn Greenstachs company suspends all surfing-\r"
   - leftSpeaker: Uwe
     rightSpeaker: Ramesh
     isLeftSpeaking: 1
@@ -83,8 +86,9 @@ MonoBehaviour:
     leftSpeakerIdx: 0
     rightSpeakerIdx: 3
     imgIdx: 0
+    colourIdx: 0
     dialogue: "That\u2019s just it Ramesh! Every time I do a trick, I just\u2026
-      I feel so\u2026 powerful\u2026 I have a newfound love for surfing. "
+      I feel so\u2026 powerful\u2026 I have a newfound love for surfing."
   - leftSpeaker: Uwe
     rightSpeaker: Ramesh
     isLeftSpeaking: 1
@@ -92,6 +96,7 @@ MonoBehaviour:
     leftSpeakerIdx: 1
     rightSpeakerIdx: 3
     imgIdx: 0
+    colourIdx: 0
     dialogue: "Ramesh, baby, I\u2019m gonna stop these guys! "
   - leftSpeaker: Uwe
     rightSpeaker: Ramesh
@@ -100,9 +105,8 @@ MonoBehaviour:
     leftSpeakerIdx: 1
     rightSpeakerIdx: 3
     imgIdx: 0
-    dialogue: 'More power to you brother.
-
-'
+    colourIdx: 1
+    dialogue: More power to you brother.
   - leftSpeaker: Uwe
     rightSpeaker: Ramesh
     isLeftSpeaking: 1
@@ -110,9 +114,10 @@ MonoBehaviour:
     leftSpeakerIdx: 1
     rightSpeakerIdx: 3
     imgIdx: 0
+    colourIdx: 0
     dialogue: "No, more power to us! Before long, they\u2019ll be out of here, and
       it\u2019ll be endless Grapefruit Gunshots and Pickle Surprises for the both
-      of us.\r\n"
+      of us.\r"
   - leftSpeaker: Uwe
     rightSpeaker: Ramesh
     isLeftSpeaking: 0
@@ -120,4 +125,5 @@ MonoBehaviour:
     leftSpeakerIdx: 0
     rightSpeakerIdx: 3
     imgIdx: 0
-    dialogue: "Sure, as long as you\u2019re paying.\r\n"
+    colourIdx: 1
+    dialogue: "Sure, as long as you\u2019re paying.\r"

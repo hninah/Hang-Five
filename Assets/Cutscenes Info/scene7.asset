@@ -18,6 +18,9 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 23e5f2966eef2b24994544422b320027, type: 3}
   sceneStills:
   - {fileID: 21300000, guid: 7396d3cc14a00904b8b9ec7b6419163e, type: 3}
+  textColours:
+  - {r: 0.011764706, g: 0.05490196, b: 0.25490198, a: 1}
+  - {r: 0.6039216, g: 0.23137255, b: 0.011764706, a: 1}
   directions:
   - leftSpeaker: Uwe
     rightSpeaker: Ramesh
@@ -26,6 +29,7 @@ MonoBehaviour:
     leftSpeakerIdx: 0
     rightSpeakerIdx: 1
     imgIdx: 0
+    colourIdx: 0
     dialogue: "Ramesh, what\u2019s going on. Why are you packing everything up?"
   - leftSpeaker: Uwe
     rightSpeaker: Ramesh
@@ -34,8 +38,9 @@ MonoBehaviour:
     leftSpeakerIdx: 0
     rightSpeakerIdx: 1
     imgIdx: 0
+    colourIdx: 1
     dialogue: "Well my friend, I\u2019m afraid this is the end of Ramesh\u2019s Tiki
-      Tikka Juice Hut.\r\n"
+      Tikka Juice Hut.\r"
   - leftSpeaker: Uwe
     rightSpeaker: Ramesh
     isLeftSpeaking: 1
@@ -43,7 +48,8 @@ MonoBehaviour:
     leftSpeakerIdx: 0
     rightSpeakerIdx: 1
     imgIdx: 0
-    dialogue: "What? No- that\u2019s- Ramesh, you can\u2019t leave!\r\n"
+    colourIdx: 0
+    dialogue: "What? No- that\u2019s- Ramesh, you can\u2019t leave!\r"
   - leftSpeaker: Uwe
     rightSpeaker: Ramesh
     isLeftSpeaking: 0
@@ -51,8 +57,9 @@ MonoBehaviour:
     leftSpeakerIdx: 0
     rightSpeakerIdx: 1
     imgIdx: 0
+    colourIdx: 1
     dialogue: "I\u2019m sorry, Uwe. But with all the construction the beach has dried
-      up. We\u2019ve got no customers and barely any inventory.\r\n"
+      up. We\u2019ve got no customers and barely any inventory.\r"
   - leftSpeaker: Uwe
     rightSpeaker: Ramesh
     isLeftSpeaking: 1
@@ -60,7 +67,8 @@ MonoBehaviour:
     leftSpeakerIdx: 0
     rightSpeakerIdx: 1
     imgIdx: 0
-    dialogue: "I\u2019m gonna stop them, you have to believe in me.\r\n"
+    colourIdx: 0
+    dialogue: "I\u2019m gonna stop them, you have to believe in me.\r"
   - leftSpeaker: Uwe
     rightSpeaker: Ramesh
     isLeftSpeaking: 0
@@ -68,6 +76,7 @@ MonoBehaviour:
     leftSpeakerIdx: 0
     rightSpeakerIdx: 1
     imgIdx: 0
+    colourIdx: 1
     dialogue: "I hope you do, really. But I can\u2019t wait around. I\u2019ve got
       mouths to feed."
   - leftSpeaker: Uwe
@@ -77,6 +86,7 @@ MonoBehaviour:
     leftSpeakerIdx: 0
     rightSpeakerIdx: 1
     imgIdx: 0
+    colourIdx: 1
     dialogue: "Even if I take the risk and wait, the mall will have its own Juice
       bar that\u2019s gonna price me out."
   - leftSpeaker: Uwe
@@ -86,6 +96,7 @@ MonoBehaviour:
     leftSpeakerIdx: 0
     rightSpeakerIdx: 1
     imgIdx: 0
+    colourIdx: 0
     dialogue: "They\u2019re not building a mall!"
   - leftSpeaker: Uwe
     rightSpeaker: Ramesh
@@ -94,9 +105,8 @@ MonoBehaviour:
     leftSpeakerIdx: 0
     rightSpeakerIdx: 1
     imgIdx: 0
-    dialogue: 'Oh really? What are they building then?
-
-'
+    colourIdx: 1
+    dialogue: Oh really? What are they building then?
   - leftSpeaker: Uwe
     rightSpeaker: Ramesh
     isLeftSpeaking: 1
@@ -104,6 +114,7 @@ MonoBehaviour:
     leftSpeakerIdx: 0
     rightSpeakerIdx: 1
     imgIdx: 0
+    colourIdx: 0
     dialogue: "I- I don\u2019t know yet. But I\u2019m gonna find out."
   - leftSpeaker: Uwe
     rightSpeaker: Ramesh
@@ -112,6 +123,7 @@ MonoBehaviour:
     leftSpeakerIdx: 0
     rightSpeakerIdx: 1
     imgIdx: 0
+    colourIdx: 1
     dialogue: "I wish you the best on your journey, but I can\u2019t wait any longer."
   - leftSpeaker: Uwe
     rightSpeaker: Ramesh
@@ -120,7 +132,8 @@ MonoBehaviour:
     leftSpeakerIdx: 0
     rightSpeakerIdx: 1
     imgIdx: 0
-    dialogue: "Ramesh, I- I\u2019m sorry. \r\n"
+    colourIdx: 0
+    dialogue: "Ramesh, I- I\u2019m sorry. \r"
   - leftSpeaker: Uwe
     rightSpeaker: Ramesh
     isLeftSpeaking: 0
@@ -128,6 +141,7 @@ MonoBehaviour:
     leftSpeakerIdx: 0
     rightSpeakerIdx: 2
     imgIdx: 0
+    colourIdx: 1
     dialogue: "Hey, it\u2019s ok. The endless summer had to end sometime. Goodbye
       Uwe."
   - leftSpeaker: Uwe
@@ -137,4 +151,5 @@ MonoBehaviour:
     leftSpeakerIdx: 0
     rightSpeakerIdx: 2
     imgIdx: 0
-    dialogue: "I\u2019ll stop these guys! I promise.\r\n"
+    colourIdx: 0
+    dialogue: "I\u2019ll stop these guys! I promise.\r"

@@ -20,6 +20,10 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 433f75f2fdaa60948b8f45ad0a1859d2, type: 3}
   sceneStills:
   - {fileID: 21300000, guid: b91d79cb1a952324da9d9e0ead00b747, type: 3}
+  textColours:
+  - {r: 0.011764706, g: 0.05490196, b: 0.25490198, a: 1}
+  - {r: 0.5647059, g: 0.49411765, b: 0.019607844, a: 1}
+  - {r: 0.7647059, g: 0, b: 0, a: 1}
   directions:
   - leftSpeaker: Uwe
     rightSpeaker: Bark Shaits
@@ -28,6 +32,7 @@ MonoBehaviour:
     leftSpeakerIdx: 0
     rightSpeakerIdx: 1
     imgIdx: 0
+    colourIdx: 0
     dialogue: "I haven\u2019t had a decent surf in days. This real estate company\u2019s
       got to go ASAP. "
   - leftSpeaker: Uwe
@@ -37,6 +42,7 @@ MonoBehaviour:
     leftSpeakerIdx: 0
     rightSpeakerIdx: 1
     imgIdx: 0
+    colourIdx: 1
     dialogue: "Really? They don\u2019t seem that bad to me. I actually think it\u2019s
       great they\u2019re here!"
   - leftSpeaker: Uwe
@@ -46,6 +52,7 @@ MonoBehaviour:
     leftSpeakerIdx: 0
     rightSpeakerIdx: 1
     imgIdx: 0
+    colourIdx: 0
     dialogue: "Huh?! What\u2019re you talking about? They\u2019re jacking up prices
       and driving everyone away from the Beach."
   - leftSpeaker: Uwe
@@ -55,6 +62,7 @@ MonoBehaviour:
     leftSpeakerIdx: 0
     rightSpeakerIdx: 1
     imgIdx: 0
+    colourIdx: 1
     dialogue: "I think that\u2019s an improvement. Bringing the property value up.
       Keeping a lot of\u2026 undesirables away.\r"
   - leftSpeaker: Uwe
@@ -64,6 +72,7 @@ MonoBehaviour:
     leftSpeakerIdx: 0
     rightSpeakerIdx: 1
     imgIdx: 0
+    colourIdx: 0
     dialogue: 'Undesirables? What the hell are you talking about?! '
   - leftSpeaker: Uwe
     rightSpeaker: Bark Shaits
@@ -72,6 +81,7 @@ MonoBehaviour:
     leftSpeakerIdx: 0
     rightSpeakerIdx: 1
     imgIdx: 0
+    colourIdx: 1
     dialogue: "Look, all I\u2019m saying is I feel a lot safer at the beach these
       days now that it\u2019s just us pure-skins."
   - leftSpeaker: Uwe
@@ -81,6 +91,7 @@ MonoBehaviour:
     leftSpeakerIdx: 4
     rightSpeakerIdx: 1
     imgIdx: 0
+    colourIdx: 0
     dialogue: Bro, I'm Indonesian!
   - leftSpeaker: Uwe
     rightSpeaker: Bark Shaits
@@ -89,6 +100,7 @@ MonoBehaviour:
     leftSpeakerIdx: 4
     rightSpeakerIdx: 1
     imgIdx: 0
+    colourIdx: 1
     dialogue: "You don\u2019t look like it. Besides, you\u2019re one of the good
       ones. All I\u2019m saying is, I feel a lot safer at the beach these days."
   - leftSpeaker: Uwe
@@ -98,6 +110,7 @@ MonoBehaviour:
     leftSpeakerIdx: 4
     rightSpeakerIdx: 1
     imgIdx: 0
+    colourIdx: 0
     dialogue: "It\u2019s literally more dangerous than it\u2019s ever been!"
   - leftSpeaker: Uwe
     rightSpeaker: Bark Shaits
@@ -106,6 +119,7 @@ MonoBehaviour:
     leftSpeakerIdx: 0
     rightSpeakerIdx: 1
     imgIdx: 0
+    colourIdx: 1
     dialogue: Oh please, I for one have never felt more protected-
   - leftSpeaker: Uwe
     rightSpeaker: Bark Shaits
@@ -114,6 +128,7 @@ MonoBehaviour:
     leftSpeakerIdx: 0
     rightSpeakerIdx: 2
     imgIdx: 0
+    colourIdx: 1
     dialogue: '!'
   - leftSpeaker: Uwe
     rightSpeaker: SHARK
@@ -122,6 +137,7 @@ MonoBehaviour:
     leftSpeakerIdx: 0
     rightSpeakerIdx: 3
     imgIdx: 0
+    colourIdx: 2
     dialogue: CHOMP!
   - leftSpeaker: Uwe
     rightSpeaker: 
@@ -130,4 +146,5 @@ MonoBehaviour:
     leftSpeakerIdx: 0
     rightSpeakerIdx: 3
     imgIdx: 0
+    colourIdx: 0
     dialogue: Oh!!
