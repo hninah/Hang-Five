@@ -303,44 +303,12 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2635400550284071258, guid: d8851553cc1a6a844b186b66632fca62, type: 3}
-      propertyPath: m_fontColor.b
-      value: 0.101960786
-      objectReference: {fileID: 0}
-    - target: {fileID: 2635400550284071258, guid: d8851553cc1a6a844b186b66632fca62, type: 3}
-      propertyPath: m_fontColor.g
-      value: 0.023529412
-      objectReference: {fileID: 0}
-    - target: {fileID: 2635400550284071258, guid: d8851553cc1a6a844b186b66632fca62, type: 3}
-      propertyPath: m_fontColor.r
-      value: 0.015686275
-      objectReference: {fileID: 0}
-    - target: {fileID: 2635400550284071258, guid: d8851553cc1a6a844b186b66632fca62, type: 3}
-      propertyPath: m_fontColor32.rgba
-      value: 4279207566
-      objectReference: {fileID: 0}
-    - target: {fileID: 2635400550284071258, guid: d8851553cc1a6a844b186b66632fca62, type: 3}
-      propertyPath: m_overrideHtmlColors
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2635400550284071258, guid: d8851553cc1a6a844b186b66632fca62, type: 3}
-      propertyPath: m_HorizontalAlignment
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4075561992960091530, guid: d8851553cc1a6a844b186b66632fca62, type: 3}
-      propertyPath: m_overrideHtmlColors
-      value: 1
+      propertyPath: m_text
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 8255707929884983756, guid: d8851553cc1a6a844b186b66632fca62, type: 3}
       propertyPath: m_Name
       value: CutsceneCanvas
-      objectReference: {fileID: 0}
-    - target: {fileID: 8577413767114451876, guid: d8851553cc1a6a844b186b66632fca62, type: 3}
-      propertyPath: m_overrideHtmlColors
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8866864694425078027, guid: d8851553cc1a6a844b186b66632fca62, type: 3}
-      propertyPath: charactersPerSecond
-      value: 30
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
