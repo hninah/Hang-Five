@@ -160,6 +160,7 @@ MonoBehaviour:
   cameraIdlePosition: {x: -1, y: 0, z: -10}
   shakeOffsetX: 0.5
   shakeOffsetY: 0.5
+  shakeFXTime: 0.2
 --- !u!81 &2592013
 AudioListener:
   m_ObjectHideFlags: 0
@@ -4037,6 +4038,30 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 2592012}
+        m_TargetAssemblyTypeName: SurfCamera, Assembly-CSharp
+        m_MethodName: set_ScreenShaking
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 2592012}
+        m_TargetAssemblyTypeName: SurfCamera, Assembly-CSharp
+        m_MethodName: set_IsShakeFX
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
   highScoreText: {fileID: 1920282483}
   endScoreText: {fileID: 1435940647}
 --- !u!4 &792524340
@@ -4840,7 +4865,7 @@ GameObject:
   - component: {fileID: 992769977}
   - component: {fileID: 992769976}
   m_Layer: 0
-  m_Name: TempCircle
+  m_Name: TempCircleFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4858,7 +4883,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6be03be24eafee742a73cf51801e76a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  expandRate: 80
+  expandRate: 140
   moveRate: 5
 --- !u!212 &992769977
 SpriteRenderer:
@@ -4902,7 +4927,7 @@ SpriteRenderer:
   m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 0.67070615, g: 0.9150943, b: 0.43596473, a: 0.12156863}
+  m_Color: {r: 0.67070615, g: 0.9150943, b: 0.43596473, a: 0.05490196}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

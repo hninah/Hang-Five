@@ -13,7 +13,10 @@ public class CircleExpand : MonoBehaviour
     void Start(){
         spriteRenderer = GetComponent<SpriteRenderer>();
         Camera camera = Camera.main;
-        maxSize = camera.orthographicSize * camera.aspect * 4.5f;
+        maxSize = camera.orthographicSize * camera.aspect * 5f;
+
+        //start in top left corner of camera field
+        transform.position = new Vector3(-camera.orthographicSize * camera.aspect, camera.orthographicSize, 0f);
     }
 
 
@@ -23,7 +26,7 @@ public class CircleExpand : MonoBehaviour
         transform.localScale += new Vector3(expandRate, expandRate, 0f)*Time.deltaTime;
 
         if (transform.localScale.x >= maxSize){
-            gameObject.active = false;
+            gameObject.SetActive(false);
         }
     }
 }
