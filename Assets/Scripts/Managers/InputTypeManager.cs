@@ -4,18 +4,20 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 
-public class InputManager : MonoBehaviour
+public class InputTypeManager : MonoBehaviour
 {
     //add new supported input types here as needed
     public enum InputType
     { 
         Touchscreen, 
-        KeyboardMouse
-        //other input types here
+        KeyboardMouse,
+        PSController,
+        XBoxController,
+        SwitchController
     }
 
     //variables
-    public static InputManager Instance;
+    public static InputTypeManager Instance;
     public InputType inputType;
 
     //called when InputManager is created

@@ -306,6 +306,18 @@ PrefabInstance:
       propertyPath: m_text
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 6721800545089032031, guid: d8851553cc1a6a844b186b66632fca62, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0.048224337
+      objectReference: {fileID: 0}
+    - target: {fileID: 6721800545089032031, guid: d8851553cc1a6a844b186b66632fca62, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 6.517
+      objectReference: {fileID: 0}
+    - target: {fileID: 6721800545089032031, guid: d8851553cc1a6a844b186b66632fca62, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -2.7415771
+      objectReference: {fileID: 0}
     - target: {fileID: 8255707929884983756, guid: d8851553cc1a6a844b186b66632fca62, type: 3}
       propertyPath: m_Name
       value: CutsceneCanvas
