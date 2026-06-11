@@ -9,10 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 564435e64bc0a3f4bafab6236709d96d, type: 3}
-  m_Name: L7Start
+  m_Script: {fileID: 11500000, guid: 443a146ab99b5444595b8b0763adf9bf, type: 3}
+  m_Name: InDevelopment
   m_EditorClassIdentifier: 
-  currentPattern: {fileID: 11400000, guid: 08d11ca797c67a144b82d98159131903, type: 2}
-  transitions:
-  - {fileID: 11400000, guid: 8f367ad3016af3f4cb4409a30b1f0024, type: 2}
-  conditionCheckTimer: 1
+  obstacleInfoArr: []

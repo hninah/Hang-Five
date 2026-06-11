@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 564435e64bc0a3f4bafab6236709d96d, type: 3}
-  m_Name: L7Start
+  m_Name: L10MiddleGap
   m_EditorClassIdentifier: 
-  currentPattern: {fileID: 11400000, guid: 08d11ca797c67a144b82d98159131903, type: 2}
+  currentPattern: {fileID: 11400000, guid: 5c1fb0928d4c5114a8bb9c16d2ed25f4, type: 2}
   transitions:
-  - {fileID: 11400000, guid: 8f367ad3016af3f4cb4409a30b1f0024, type: 2}
-  conditionCheckTimer: 1
+  - {fileID: 11400000, guid: 8afcec1f4e1bb45469494969c4758b59, type: 2}
+  conditionCheckTimer: 2.3

@@ -9,10 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 564435e64bc0a3f4bafab6236709d96d, type: 3}
-  m_Name: L7Start
+  m_Script: {fileID: 11500000, guid: 047398920545fa542967feae52df2a2e, type: 3}
+  m_Name: L10ToMix
   m_EditorClassIdentifier: 
-  currentPattern: {fileID: 11400000, guid: 08d11ca797c67a144b82d98159131903, type: 2}
-  transitions:
-  - {fileID: 11400000, guid: 8f367ad3016af3f4cb4409a30b1f0024, type: 2}
-  conditionCheckTimer: 1
+  patternState: {fileID: 11400000, guid: 7905af78f6d799f48bfc8eea412a9c6e, type: 2}
+  coolDownTime: 0
+  transitionConditions:
+  - {fileID: 11400000, guid: 6af4a9d18345dff439738a1630909c17, type: 2}

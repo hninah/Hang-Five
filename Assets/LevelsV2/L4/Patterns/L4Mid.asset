@@ -29,3 +29,11 @@ MonoBehaviour:
     spawnIdx: 2
     timeTillSpawn: 0
     randomSpawnY: 0
+  - obstacle: {fileID: 2963685289427379715, guid: b45699529837bd245a57f609efa5bed3, type: 3}
+    spawnIdx: 5
+    timeTillSpawn: 0.1
+    randomSpawnY: 0
+  - obstacle: {fileID: 2963685289427379715, guid: b45699529837bd245a57f609efa5bed3, type: 3}
+    spawnIdx: 10
+    timeTillSpawn: 0.2
+    randomSpawnY: 0

@@ -10,18 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 443a146ab99b5444595b8b0763adf9bf, type: 3}
-  m_Name: L7Hint
+  m_Name: CloseSpace
   m_EditorClassIdentifier: 
   obstacleInfoArr:
   - obstacle: {fileID: 2963685289427379715, guid: b45699529837bd245a57f609efa5bed3, type: 3}
-    spawnIdx: 2
+    spawnIdx: 0
     timeTillSpawn: 0
     randomSpawnY: 0
   - obstacle: {fileID: 2963685289427379715, guid: b45699529837bd245a57f609efa5bed3, type: 3}
-    spawnIdx: 1
-    timeTillSpawn: 0.2
-    randomSpawnY: 0
-  - obstacle: {fileID: 2963685289427379715, guid: b45699529837bd245a57f609efa5bed3, type: 3}
-    spawnIdx: 0
-    timeTillSpawn: 0.4
+    spawnIdx: 4
+    timeTillSpawn: 0
     randomSpawnY: 0

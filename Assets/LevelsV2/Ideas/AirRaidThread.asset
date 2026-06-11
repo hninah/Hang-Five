@@ -10,34 +10,38 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 443a146ab99b5444595b8b0763adf9bf, type: 3}
-  m_Name: L4End
+  m_Name: AirRaidThread
   m_EditorClassIdentifier: 
   obstacleInfoArr:
-  - obstacle: {fileID: 3973058621705695172, guid: c268e31c6cd22da4d8d7bb4e1df63a15, type: 3}
-    spawnIdx: 7
-    timeTillSpawn: 1.2
-    randomSpawnY: 0
-  - obstacle: {fileID: 2963685289427379715, guid: b45699529837bd245a57f609efa5bed3, type: 3}
+  - obstacle: {fileID: 2144488072472814359, guid: 8e5e73df4fcf70e488cdfae42a03cdaf, type: 3}
     spawnIdx: 0
     timeTillSpawn: 0
     randomSpawnY: 0
-  - obstacle: {fileID: 2963685289427379715, guid: b45699529837bd245a57f609efa5bed3, type: 3}
+  - obstacle: {fileID: 2144488072472814359, guid: 8e5e73df4fcf70e488cdfae42a03cdaf, type: 3}
     spawnIdx: 1
-    timeTillSpawn: 0
-    randomSpawnY: 0
-  - obstacle: {fileID: 2963685289427379715, guid: b45699529837bd245a57f609efa5bed3, type: 3}
-    spawnIdx: 2
-    timeTillSpawn: 0
-    randomSpawnY: 0
-  - obstacle: {fileID: 2963685289427379715, guid: b45699529837bd245a57f609efa5bed3, type: 3}
-    spawnIdx: 3
-    timeTillSpawn: 0
-    randomSpawnY: 0
-  - obstacle: {fileID: 2963685289427379715, guid: b45699529837bd245a57f609efa5bed3, type: 3}
-    spawnIdx: 5
-    timeTillSpawn: 0.1
-    randomSpawnY: 0
-  - obstacle: {fileID: 2963685289427379715, guid: b45699529837bd245a57f609efa5bed3, type: 3}
-    spawnIdx: 10
     timeTillSpawn: 0.2
+    randomSpawnY: 0
+  - obstacle: {fileID: 2144488072472814359, guid: 8e5e73df4fcf70e488cdfae42a03cdaf, type: 3}
+    spawnIdx: 3
+    timeTillSpawn: 0.6
+    randomSpawnY: 0
+  - obstacle: {fileID: 2144488072472814359, guid: 8e5e73df4fcf70e488cdfae42a03cdaf, type: 3}
+    spawnIdx: 4
+    timeTillSpawn: 0.8
+    randomSpawnY: 0
+  - obstacle: {fileID: 2963685289427379715, guid: b45699529837bd245a57f609efa5bed3, type: 3}
+    spawnIdx: 6
+    timeTillSpawn: 0.65
+    randomSpawnY: 0
+  - obstacle: {fileID: 2963685289427379715, guid: b45699529837bd245a57f609efa5bed3, type: 3}
+    spawnIdx: 7
+    timeTillSpawn: 0.65
+    randomSpawnY: 0
+  - obstacle: {fileID: 2963685289427379715, guid: b45699529837bd245a57f609efa5bed3, type: 3}
+    spawnIdx: 8
+    timeTillSpawn: 0.65
+    randomSpawnY: 0
+  - obstacle: {fileID: 2963685289427379715, guid: b45699529837bd245a57f609efa5bed3, type: 3}
+    spawnIdx: 9
+    timeTillSpawn: 0.65
     randomSpawnY: 0
