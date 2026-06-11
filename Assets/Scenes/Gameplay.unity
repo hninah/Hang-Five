@@ -1541,6 +1541,7 @@ GameObject:
   - component: {fileID: 382575499}
   - component: {fileID: 382575500}
   - component: {fileID: 382575501}
+  - component: {fileID: 382575502}
   m_Layer: 0
   m_Name: SpawnManager
   m_TagString: Untagged
@@ -1570,7 +1571,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 382575497}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 29518ab255e8c724dbcdbc567f2874a9, type: 3}
   m_Name: 
@@ -1639,8 +1640,23 @@ MonoBehaviour:
   - {fileID: 321033597}
   currentState: {fileID: 0}
   managerState: 1
-  debugging: 1
-  debugStartState: {fileID: 11400000, guid: 7529d207cfe818a4c8ae846fc0849825, type: 2}
+  debugging: 0
+  debugStartState: {fileID: 0}
+--- !u!114 &382575502
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 382575497}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7cfa763f4761b1641b492b4c923ae137, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  newLevelDesign: 0101010100000100000100000000
+  newLevelManager: {fileID: 382575497}
+  oldLevelManager: {fileID: 382575497}
 --- !u!1 &439849612
 GameObject:
   m_ObjectHideFlags: 0
@@ -9731,6 +9747,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 382575502}
+        m_TargetAssemblyTypeName: TempLevelHandler, Assembly-CSharp
+        m_MethodName: selectLevelManager
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
   endGame:
     m_PersistentCalls:
       m_Calls:
@@ -10557,7 +10585,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &2094178959
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -20,6 +20,7 @@ public class PatternStateManager : MonoBehaviour
     private float transitionCheckTimer = 0.0f;
     public State managerState = State.COOLDOWN;
     [SerializeField] private bool debugging = false;
+    public bool Debugging { get { return debugging; } }
     [SerializeField] private PatternState debugStartState;
     private float rngNum = 0.0f;
     public float RngNum { get { return rngNum; } }
@@ -34,7 +35,7 @@ public class PatternStateManager : MonoBehaviour
 
         _instance = this;
         currentState = getStartingState();
-        gameObject.SetActive(false);
+        this.enabled = false;
     }
 
     // Update is called once per frame
@@ -119,9 +120,11 @@ public class PatternStateManager : MonoBehaviour
     {
         Debug.Log($"Pattern State Debugging: {debugging}");
 
-        if (!debugging)
+        PatternState state = GameManager.Instance.getStartingState();
+
+        if (!debugging && state != null)
         {
-            return GameManager.Instance.getStartingState();
+            return state;
         }
 
         return debugStartState;

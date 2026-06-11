@@ -171,7 +171,7 @@ public class Player : MonoBehaviour
                     state = PlayerState.FLIPPING;
                     animator.SetBool("InAir", true);
                     animator.SetInteger("TrickAnim", Random.Range(0, 2));
-                    audioSource.PlayOneShot(trickStart, 0.3f);
+                    // audioSource.PlayOneShot(trickStart, 0.3f);
                 }
                 else if ((transform.position.y >= waveTop.position.y && flipImmunityTimer <= 0.0f) || transform.position.y < waveBottom.position.y)
                 {

@@ -18,7 +18,7 @@ public class NewPatternManager : MonoBehaviour
         currentPattern = Random.Range(0, patterns.Count);
 
         // We want to load the patterns, then shut this off so it doesn't update until time is right.
-        gameObject.SetActive(false);
+        this.enabled = false;
     }
 
     // Update is called once per frame
