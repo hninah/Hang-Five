@@ -34,7 +34,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.077782094, y: 0}
   m_AnchorMax: {x: 0.93000007, y: 1}
-  m_AnchoredPosition: {x: -0.9999542, y: 150}
+  m_AnchoredPosition: {x: -2, y: 177}
   m_SizeDelta: {x: 38, y: 181.022}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8939040039783962499
@@ -343,9 +343,51 @@ MonoBehaviour:
           m_StringArgument: Tap to Continue
           m_BoolArgument: 0
         m_CallState: 2
-  controllerNext:
+  PSNext:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 986279295084098774}
+        m_TargetAssemblyTypeName: TMPro.TMP_Text, Unity.TextMeshPro
+        m_MethodName: set_text
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Press X
+          m_BoolArgument: 0
+        m_CallState: 2
+  XBoxNext:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 986279295084098774}
+        m_TargetAssemblyTypeName: TMPro.TMP_Text, Unity.TextMeshPro
+        m_MethodName: set_text
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Press A
+          m_BoolArgument: 0
+        m_CallState: 2
+  SwitchNext:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 986279295084098774}
+        m_TargetAssemblyTypeName: TMPro.TMP_Text, Unity.TextMeshPro
+        m_MethodName: set_text
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Press B
+          m_BoolArgument: 0
+        m_CallState: 2
   keyboardEnd:
     m_PersistentCalls:
       m_Calls:
@@ -376,21 +418,15 @@ MonoBehaviour:
           m_StringArgument: Tap to Return to Gameplay
           m_BoolArgument: 0
         m_CallState: 2
-  controllerEnd:
+  PSEnd:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 986279295084098774}
-        m_TargetAssemblyTypeName: TMPro.TMP_Text, Unity.TextMeshPro
-        m_MethodName: set_text
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Something
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
+  XBoxEnd:
+    m_PersistentCalls:
+      m_Calls: []
+  SwitchEnd:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &2224361755216326420
 GameObject:
   m_ObjectHideFlags: 0
@@ -427,7 +463,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.065625, y: 0.34300002}
   m_AnchorMax: {x: 0.22687502, y: 0.41422224}
-  m_AnchoredPosition: {x: 3.5, y: -6}
+  m_AnchoredPosition: {x: 3.5, y: -8}
   m_SizeDelta: {x: 8, y: 12}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5117084500901741638
@@ -556,7 +592,7 @@ MonoBehaviour:
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
   m_TextStyleHashCode: -1183493901
-  m_overrideHtmlColors: 0
+  m_overrideHtmlColors: 1
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
@@ -636,7 +672,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.05648121, y: 0}
   m_AnchorMax: {x: 0.9284813, y: 1}
-  m_AnchoredPosition: {x: -1, y: 148}
+  m_AnchoredPosition: {x: 0, y: 180}
   m_SizeDelta: {x: 34.000427, y: 177.792}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2340748619069037572
@@ -841,7 +877,7 @@ MonoBehaviour:
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
   m_TextStyleHashCode: -1183493901
-  m_overrideHtmlColors: 0
+  m_overrideHtmlColors: 1
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
@@ -1038,7 +1074,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4279895556
-  m_fontColor: {r: 0.01517444, g: 0.025018794, b: 0.103773594, a: 1}
+  m_fontColor: {r: 0.015686275, g: 0.023529412, b: 0.101960786, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1051,7 +1087,7 @@ MonoBehaviour:
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
   m_TextStyleHashCode: -1183493901
-  m_overrideHtmlColors: 0
+  m_overrideHtmlColors: 1
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
@@ -1161,6 +1197,7 @@ MonoBehaviour:
   leftImage: {fileID: 3565240046334884281}
   rightImage: {fileID: 8438099065870930474}
   backgroundImage: {fileID: 7420445636545491465}
+  charactersPerSecond: 30
 --- !u!223 &6698525740254506520
 Canvas:
   m_ObjectHideFlags: 0

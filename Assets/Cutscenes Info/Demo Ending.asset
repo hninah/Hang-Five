@@ -17,7 +17,10 @@ MonoBehaviour:
   - {fileID: 21300000, guid: d37d63abaf6c441429e37a5eb4319bf6, type: 3}
   - {fileID: 21300000, guid: 9f463d9f5893fc74abe8f1212c86005f, type: 3}
   sceneStills:
-  - {fileID: 21300000, guid: a57a485f8ada0254785ef3930d811cb7, type: 3}
+  - {fileID: 21300000, guid: 7396d3cc14a00904b8b9ec7b6419163e, type: 3}
+  textColours:
+  - {r: 0.011764706, g: 0.05490196, b: 0.25490198, a: 1}
+  - {r: 0.007843138, g: 0.25490198, b: 0.015686275, a: 1}
   directions:
   - leftSpeaker: Uwe
     rightSpeaker: Holden
@@ -26,7 +29,8 @@ MonoBehaviour:
     leftSpeakerIdx: 0
     rightSpeakerIdx: 1
     imgIdx: 0
-    dialogue: "So, do you like sharks? \r"
+    colourIdx: 1
+    dialogue: "So, do you like sharks?\r"
   - leftSpeaker: Uwe
     rightSpeaker: Holden
     isLeftSpeaking: 1
@@ -34,7 +38,8 @@ MonoBehaviour:
     leftSpeakerIdx: 0
     rightSpeakerIdx: 1
     imgIdx: 0
-    dialogue: "You got a lot of nerve showing your face around here! \r"
+    colourIdx: 0
+    dialogue: "You got a lot of nerve showing your face around here!\r"
   - leftSpeaker: Uwe
     rightSpeaker: Holden
     isLeftSpeaking: 0
@@ -42,6 +47,7 @@ MonoBehaviour:
     leftSpeakerIdx: 0
     rightSpeakerIdx: 1
     imgIdx: 0
+    colourIdx: 1
     dialogue: "Yeah sorry about your friend with the fat face-\r"
   - leftSpeaker: Uwe
     rightSpeaker: Holden
@@ -50,6 +56,7 @@ MonoBehaviour:
     leftSpeakerIdx: 0
     rightSpeakerIdx: 1
     imgIdx: 0
+    colourIdx: 0
     dialogue: "He wasn't my friend.\r"
   - leftSpeaker: Uwe
     rightSpeaker: Holden
@@ -58,6 +65,7 @@ MonoBehaviour:
     leftSpeakerIdx: 0
     rightSpeakerIdx: 1
     imgIdx: 0
+    colourIdx: 1
     dialogue: Yeah well from what I gathered he was a good son. A damn patriot if
       you ask me.
   - leftSpeaker: Uwe
@@ -67,8 +75,9 @@ MonoBehaviour:
     leftSpeakerIdx: 0
     rightSpeakerIdx: 1
     imgIdx: 0
+    colourIdx: 1
     dialogue: "Y'know, I litter the ocean with wrecking balls, you don\u2019t stop
-      surfing. "
+      surfing."
   - leftSpeaker: Uwe
     rightSpeaker: Holden
     isLeftSpeaking: 0
@@ -76,8 +85,9 @@ MonoBehaviour:
     leftSpeakerIdx: 0
     rightSpeakerIdx: 1
     imgIdx: 0
+    colourIdx: 1
     dialogue: "I send genetically engineered attack sharks into the sea, you don\u2019t
-      stop surfing. "
+      stop surfing."
   - leftSpeaker: Uwe
     rightSpeaker: Holden
     isLeftSpeaking: 0
@@ -85,6 +95,7 @@ MonoBehaviour:
     leftSpeakerIdx: 0
     rightSpeakerIdx: 1
     imgIdx: 0
+    colourIdx: 1
     dialogue: "I spend hours of my own time getting seagulls familiar with your scent,
       training them to dive into waves and pluck your eyes out, yet you still won\u2019t
       stop!"
@@ -95,6 +106,7 @@ MonoBehaviour:
     leftSpeakerIdx: 0
     rightSpeakerIdx: 1
     imgIdx: 0
+    colourIdx: 1
     dialogue: I gotta admit, I admire your tenacity.
   - leftSpeaker: Uwe
     rightSpeaker: Holden
@@ -103,6 +115,7 @@ MonoBehaviour:
     leftSpeakerIdx: 0
     rightSpeakerIdx: 1
     imgIdx: 0
+    colourIdx: 0
     dialogue: "And I admire your melting skin. Get the hell off my beach bro, the
       shopping mall\u2019s not getting made."
   - leftSpeaker: Uwe
@@ -112,6 +125,7 @@ MonoBehaviour:
     leftSpeakerIdx: 0
     rightSpeakerIdx: 2
     imgIdx: 0
+    colourIdx: 1
     dialogue: Ha ha ha ha ha ha ha ha.
   - leftSpeaker: Uwe
     rightSpeaker: Holden
@@ -120,6 +134,7 @@ MonoBehaviour:
     leftSpeakerIdx: 0
     rightSpeakerIdx: 2
     imgIdx: 0
+    colourIdx: 0
     dialogue: "What\u2019s funny?"
   - leftSpeaker: Uwe
     rightSpeaker: Holden
@@ -128,6 +143,7 @@ MonoBehaviour:
     leftSpeakerIdx: 0
     rightSpeakerIdx: 1
     imgIdx: 0
+    colourIdx: 1
     dialogue: "Here I was thinking you were a cut above the rest, but you\u2019re
       no brighter than a piccadilly snowcone."
   - leftSpeaker: Uwe
@@ -137,6 +153,7 @@ MonoBehaviour:
     leftSpeakerIdx: 0
     rightSpeakerIdx: 1
     imgIdx: 0
+    colourIdx: 0
     dialogue: Speak English!
   - leftSpeaker: Uwe
     rightSpeaker: Holden
@@ -145,6 +162,7 @@ MonoBehaviour:
     leftSpeakerIdx: 0
     rightSpeakerIdx: 1
     imgIdx: 0
+    colourIdx: 1
     dialogue: "You really think I\u2019d go through all this trouble just to build
       a mall?"
   - leftSpeaker: Uwe
@@ -154,6 +172,7 @@ MonoBehaviour:
     leftSpeakerIdx: 0
     rightSpeakerIdx: 1
     imgIdx: 0
+    colourIdx: 0
     dialogue: What?! Explain-
   - leftSpeaker: Uwe
     rightSpeaker: Holden
@@ -162,6 +181,7 @@ MonoBehaviour:
     leftSpeakerIdx: 0
     rightSpeakerIdx: 2
     imgIdx: 0
+    colourIdx: 1
     dialogue: "I\u2019ll be seeing you again soon. Ha ha ha ha ha\u2026"
   - leftSpeaker: Uwe
     rightSpeaker: Holden
@@ -170,4 +190,5 @@ MonoBehaviour:
     leftSpeakerIdx: 0
     rightSpeakerIdx: 2
     imgIdx: 0
+    colourIdx: 0
     dialogue: "Dammit! What\u2019s going on?\r"

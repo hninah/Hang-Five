@@ -42,6 +42,7 @@ public class GameManager : MonoBehaviour
     // checks if player is in the boss level and if they reach the target score 
     public bool inBossLevel = false;
 
+
     private void Awake()
     {
         if (Instance == null)
@@ -71,6 +72,15 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+
+
+    //MainMenu.cs uses this start endless mode when the Endless button is pressed
+    public void startEndlessMode(){
+        GameManager.Instance.tutorialCompleted = true;
+        beatBoss = true;
+        //this means we've passed the last score threshold
+        currentStage = scoreRequired.Count;
     }
 
 
@@ -172,6 +182,7 @@ public class GameManager : MonoBehaviour
             // no longer in the boss level but in the infinite level
             if (currentStage >= scoreRequired.Count)
             {
+                Debug.Log("in endless level");
                 stageCleared = false;
 
                 if (finalScore > highScore)

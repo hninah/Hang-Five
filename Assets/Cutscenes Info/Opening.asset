@@ -20,7 +20,10 @@ MonoBehaviour:
   - {fileID: 21300000, guid: f3f229a9dc844814da08eab1e3dd6299, type: 3}
   - {fileID: 21300000, guid: 470dc91e34c80744e88dcae0e387fbc4, type: 3}
   sceneStills:
-  - {fileID: 21300000, guid: f95a98fe17bf9034082aad2bf7cebfd3, type: 3}
+  - {fileID: 21300000, guid: b91d79cb1a952324da9d9e0ead00b747, type: 3}
+  textColours:
+  - {r: 0.011764706, g: 0.05490196, b: 0.25490198, a: 1}
+  - {r: 0.007843138, g: 0.25490198, b: 0.015686275, a: 1}
   directions:
   - leftSpeaker: Uwe
     rightSpeaker: Holden
@@ -29,6 +32,7 @@ MonoBehaviour:
     leftSpeakerIdx: 4
     rightSpeakerIdx: 1
     imgIdx: 0
+    colourIdx: 1
     dialogue: "That was quite the tumble you took out there. Didn\u2019t I tell all
       you water hippies to skip town?"
   - leftSpeaker: Uwe
@@ -38,6 +42,7 @@ MonoBehaviour:
     leftSpeakerIdx: 4
     rightSpeakerIdx: 1
     imgIdx: 0
+    colourIdx: 0
     dialogue: "Huh? I\u2019ve never seen you around here before, who the hell are
       you?"
   - leftSpeaker: Uwe
@@ -47,6 +52,7 @@ MonoBehaviour:
     leftSpeakerIdx: 4
     rightSpeakerIdx: 1
     imgIdx: 0
+    colourIdx: 1
     dialogue: The name is Holden Greenstachs-
   - leftSpeaker: Uwe
     rightSpeaker: Holden
@@ -55,6 +61,7 @@ MonoBehaviour:
     leftSpeakerIdx: 4
     rightSpeakerIdx: 1
     imgIdx: 0
+    colourIdx: 0
     dialogue: 'Greenstachs? As in Greenstachs Realty? '
   - leftSpeaker: Uwe
     rightSpeaker: Holden
@@ -63,6 +70,7 @@ MonoBehaviour:
     leftSpeakerIdx: 0
     rightSpeakerIdx: 1
     imgIdx: 0
+    colourIdx: 0
     dialogue: "You\u2019re the guys trying to turn Big Wave Beach into a shopping
       mall!"
   - leftSpeaker: Uwe
@@ -72,6 +80,7 @@ MonoBehaviour:
     leftSpeakerIdx: 0
     rightSpeakerIdx: 2
     imgIdx: 0
+    colourIdx: 1
     dialogue: "Heh heh heh\u2026 yeah, somethin\u2019 like that.\r\n"
   - leftSpeaker: Uwe
     rightSpeaker: Holden
@@ -80,6 +89,7 @@ MonoBehaviour:
     leftSpeakerIdx: 0
     rightSpeakerIdx: 2
     imgIdx: 0
+    colourIdx: 0
     dialogue: "Well I\u2019m not goin\u2019 nowhere jack! I\u2019m not gonna let
       you turn this place into some fat cat fart factory! Dig?"
   - leftSpeaker: Uwe
@@ -89,6 +99,7 @@ MonoBehaviour:
     leftSpeakerIdx: 0
     rightSpeakerIdx: 1
     imgIdx: 0
+    colourIdx: 1
     dialogue: And pray tell how you plan on stopping me, coral muncher.
   - leftSpeaker: Uwe
     rightSpeaker: Holden
@@ -97,6 +108,7 @@ MonoBehaviour:
     leftSpeakerIdx: 0
     rightSpeakerIdx: 1
     imgIdx: 0
+    colourIdx: 0
     dialogue: "I\u2019m gonna surf, and keep surfing, and never stop surfing. Got
       it? These waves are in my blood, man. You\u2019re nothin\u2019."
   - leftSpeaker: Uwe
@@ -106,6 +118,7 @@ MonoBehaviour:
     leftSpeakerIdx: 0
     rightSpeakerIdx: 1
     imgIdx: 0
+    colourIdx: 1
     dialogue: "I admire the gumption, but you\u2019ll need a little more than that
       to-"
   - leftSpeaker: Uwe
@@ -115,6 +128,7 @@ MonoBehaviour:
     leftSpeakerIdx: 3
     rightSpeakerIdx: 1
     imgIdx: 0
+    colourIdx: 0
     dialogue: "Also, California Constitution, Article 4, Section 19, if I\u2019m
       out there surfing, you can\u2019t do any construction."
   - leftSpeaker: Uwe
@@ -124,6 +138,7 @@ MonoBehaviour:
     leftSpeakerIdx: 3
     rightSpeakerIdx: 1
     imgIdx: 0
+    colourIdx: 1
     dialogue: 'Look who has a brain! What a pleasant surprise. '
   - leftSpeaker: Uwe
     rightSpeaker: Holden
@@ -132,6 +147,7 @@ MonoBehaviour:
     leftSpeakerIdx: 3
     rightSpeakerIdx: 1
     imgIdx: 0
+    colourIdx: 1
     dialogue: "You might be smart for a west coaster, but if you think that\u2019ll
       actually stop me you might as well-"
   - leftSpeaker: Uwe
@@ -141,6 +157,7 @@ MonoBehaviour:
     leftSpeakerIdx: 5
     rightSpeakerIdx: 1
     imgIdx: 0
+    colourIdx: 0
     dialogue: 'Yeah like, whatever man.
 
 '
@@ -151,4 +168,5 @@ MonoBehaviour:
     leftSpeakerIdx: 3
     rightSpeakerIdx: 1
     imgIdx: 0
+    colourIdx: 0
     dialogue: Cowabunga!
