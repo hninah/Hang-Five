@@ -18,6 +18,12 @@ public class SurfCamera : MonoBehaviour
     public float shakeOffsetX = 0.3f;
     public float shakeOffsetY = 0.3f;
 
+    //camera shake version for target score effect
+    public float shakeFXTime = 0.5f;
+    private bool isShakeFX = false;
+    public bool IsShakeFX { get { return isShakeFX; } set { isShakeFX = value; } }
+    private float timer = 0f;
+
     void Start()
     {
         cameraIdlePosition = transform.position;
@@ -29,6 +35,19 @@ public class SurfCamera : MonoBehaviour
         if (screenShaking)
         {
             transform.position = cameraIdlePosition + new Vector3(Random.Range(0.0f, shakeOffsetX), Random.Range(0.0f, shakeOffsetY), 0.0f);
+            
+            //set a timer for the target score shake effect
+            if (isShakeFX && timer < shakeFXTime){
+                timer += Time.deltaTime;
+                Debug.Log("timer = " + timer);
+            }
+            //stop shaking when timer ends
+            if(timer >= shakeFXTime){
+                screenShaking = false;
+                timer = 0f;
+                isShakeFX = false;
+                Debug.Log("stopped shaking");
+            }
             return;
         }
 

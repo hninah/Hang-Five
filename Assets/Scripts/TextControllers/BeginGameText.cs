@@ -14,20 +14,32 @@ public class BeginGameText : MonoBehaviour
     [Header("Start Game Prompt")]
     public UnityEvent touchscreenPrompt = new UnityEvent();
     public UnityEvent keyboardPrompt = new UnityEvent();
+    public UnityEvent PSPrompt = new UnityEvent();
+    public UnityEvent XBoxPrompt = new UnityEvent();
+    public UnityEvent SwitchPrompt = new UnityEvent();
 
     //type of input (as classified by InputManager's enum named InputType)
-    private InputManager.InputType input;
+    private InputTypeManager.InputType input;
 
 
     // Start is called before the first frame update
     void Start(){
-        input = InputManager.Instance.inputType;
+        input = InputTypeManager.Instance.inputType;
 
-        if (input == InputManager.InputType.Touchscreen){
+        if (input == InputTypeManager.InputType.Touchscreen){
             touchscreenPrompt.Invoke();
         }
-        else if (input == InputManager.InputType.KeyboardMouse){
+        else if (input == InputTypeManager.InputType.KeyboardMouse){
             keyboardPrompt.Invoke();
+        }
+        else if (input == InputTypeManager.InputType.PSController){
+            PSPrompt.Invoke();
+        }
+        else if (input == InputTypeManager.InputType.XBoxController){
+            XBoxPrompt.Invoke();
+        }
+        else if (input == InputTypeManager.InputType.SwitchController){
+            SwitchPrompt.Invoke();
         }
         //if it's none of these options, it stays on the default text
         //  (whatever's in the text box in the Inspector)

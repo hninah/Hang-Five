@@ -18,7 +18,10 @@ MonoBehaviour:
   - {fileID: 21300000, guid: f3f229a9dc844814da08eab1e3dd6299, type: 3}
   - {fileID: 21300000, guid: 433f75f2fdaa60948b8f45ad0a1859d2, type: 3}
   sceneStills:
-  - {fileID: 21300000, guid: a57a485f8ada0254785ef3930d811cb7, type: 3}
+  - {fileID: 21300000, guid: 7396d3cc14a00904b8b9ec7b6419163e, type: 3}
+  textColours:
+  - {r: 0.011764706, g: 0.05490196, b: 0.25490198, a: 1}
+  - {r: 0.007843138, g: 0.25490198, b: 0.015686275, a: 1}
   directions:
   - leftSpeaker: Uwe
     rightSpeaker: Holden
@@ -27,9 +30,8 @@ MonoBehaviour:
     leftSpeakerIdx: 0
     rightSpeakerIdx: 1
     imgIdx: 0
-    dialogue: 'Alright, that''s enough games you little shit. Quit it with the surfing.
-
-'
+    colourIdx: 1
+    dialogue: Alright, that's enough games you little shit. Quit it with the surfing.
   - leftSpeaker: Uwe
     rightSpeaker: Holden
     isLeftSpeaking: 1
@@ -37,9 +39,8 @@ MonoBehaviour:
     leftSpeakerIdx: 0
     rightSpeakerIdx: 1
     imgIdx: 0
-    dialogue: 'What happened to that southern charm-
-
-'
+    colourIdx: 0
+    dialogue: What happened to that southern charm-
   - leftSpeaker: Uwe
     rightSpeaker: Holden
     isLeftSpeaking: 0
@@ -47,9 +48,8 @@ MonoBehaviour:
     leftSpeakerIdx: 0
     rightSpeakerIdx: 1
     imgIdx: 0
-    dialogue: 'Shut up! Get the hell off my beach. This is your final warning.
-
-'
+    colourIdx: 1
+    dialogue: Shut up! Get the hell off my beach. This is your final warning.
   - leftSpeaker: Uwe
     rightSpeaker: Holden
     isLeftSpeaking: 1
@@ -57,9 +57,8 @@ MonoBehaviour:
     leftSpeakerIdx: 0
     rightSpeakerIdx: 1
     imgIdx: 0
-    dialogue: 'Aw really? We were just getting to know each other.
-
-'
+    colourIdx: 0
+    dialogue: Aw really? We were just getting to know each other.
   - leftSpeaker: Uwe
     rightSpeaker: Holden
     isLeftSpeaking: 0
@@ -67,7 +66,8 @@ MonoBehaviour:
     leftSpeakerIdx: 0
     rightSpeakerIdx: 1
     imgIdx: 0
-    dialogue: "You don\u2019t know a damn thing, and you never will.  "
+    colourIdx: 1
+    dialogue: "You don\u2019t know a damn thing, and you never will."
   - leftSpeaker: Uwe
     rightSpeaker: Holden
     isLeftSpeaking: 1
@@ -75,9 +75,10 @@ MonoBehaviour:
     leftSpeakerIdx: 3
     rightSpeakerIdx: 1
     imgIdx: 0
+    colourIdx: 0
     dialogue: "Look I don\u2019t care if it\u2019s a mall or some other junk, whatever
       you\u2019re here to do is just not happening. I\u2019ve lost too much to give
-      up now.\r\n"
+      up now.\r"
   - leftSpeaker: Uwe
     rightSpeaker: Holden
     isLeftSpeaking: 0
@@ -85,6 +86,7 @@ MonoBehaviour:
     leftSpeakerIdx: 2
     rightSpeakerIdx: 1
     imgIdx: 0
+    colourIdx: 1
     dialogue: "*brrzzp* Yeah, he\u2019s still not cooperating. Give clearance for
       operation Eagle Fang. Over. *brrzzp*"
   - leftSpeaker: Uwe
@@ -94,9 +96,8 @@ MonoBehaviour:
     leftSpeakerIdx: 2
     rightSpeakerIdx: 1
     imgIdx: 0
-    dialogue: 'What the fuck?
-
-'
+    colourIdx: 0
+    dialogue: What the fuck?
   - leftSpeaker: Uwe
     rightSpeaker: Holden
     isLeftSpeaking: 0
@@ -104,4 +105,5 @@ MonoBehaviour:
     leftSpeakerIdx: 2
     rightSpeakerIdx: 1
     imgIdx: 0
-    dialogue: "You\u2019re dead, kid. Dead.\r\n"
+    colourIdx: 1
+    dialogue: "You\u2019re dead, kid. Dead.\r"

@@ -20,7 +20,11 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 23e5f2966eef2b24994544422b320027, type: 3}
   - {fileID: 21300000, guid: 6afe3efb80fb72a40abd765373f6598b, type: 3}
   sceneStills:
-  - {fileID: 21300000, guid: 3a9ef1041e533494cb1d9dac226293ef, type: 3}
+  - {fileID: 21300000, guid: 4fa72b28b27596c4dbb0b339774ac0b9, type: 3}
+  textColours:
+  - {r: 0.011764706, g: 0.05490196, b: 0.25490198, a: 1}
+  - {r: 0, g: 0, b: 0, a: 1}
+  - {r: 0.6039216, g: 0.23137255, b: 0.011764706, a: 1}
   directions:
   - leftSpeaker: Uwe
     rightSpeaker: Mystery Man
@@ -29,7 +33,8 @@ MonoBehaviour:
     leftSpeakerIdx: 0
     rightSpeakerIdx: 3
     imgIdx: 0
-    dialogue: "They\u2019re gonna kill me\u2026 they\u2019re trying to kill me\u2026\r\n"
+    colourIdx: 0
+    dialogue: "They\u2019re gonna kill me\u2026 they\u2019re trying to kill me\u2026\r"
   - leftSpeaker: Uwe
     rightSpeaker: Mystery Man
     isLeftSpeaking: 0
@@ -37,7 +42,8 @@ MonoBehaviour:
     leftSpeakerIdx: 0
     rightSpeakerIdx: 3
     imgIdx: 0
-    dialogue: "Breathe my friend\u2026\r\n"
+    colourIdx: 1
+    dialogue: "Breathe my friend\u2026\r"
   - leftSpeaker: Uwe
     rightSpeaker: Mystery Man
     isLeftSpeaking: 1
@@ -45,6 +51,7 @@ MonoBehaviour:
     leftSpeakerIdx: 1
     rightSpeakerIdx: 3
     imgIdx: 0
+    colourIdx: 0
     dialogue: "Stay back! Stay back, OK?! Who are you? Huh? \r"
   - leftSpeaker: Uwe
     rightSpeaker: Mystery Man
@@ -53,6 +60,7 @@ MonoBehaviour:
     leftSpeakerIdx: 1
     rightSpeakerIdx: 3
     imgIdx: 0
+    colourIdx: 1
     dialogue: "You\u2019re closer to the answer than you\u2019ve ever been\u2026 "
   - leftSpeaker: Uwe
     rightSpeaker: Mystery Man
@@ -61,6 +69,7 @@ MonoBehaviour:
     leftSpeakerIdx: 1
     rightSpeakerIdx: 3
     imgIdx: 0
+    colourIdx: 0
     dialogue: Shut up, ok, just shut up with that shit and tell me who you are!
   - leftSpeaker: Uwe
     rightSpeaker: Mystery Man
@@ -69,7 +78,8 @@ MonoBehaviour:
     leftSpeakerIdx: 1
     rightSpeakerIdx: 3
     imgIdx: 0
-    dialogue: "Very well my friend\u2026\r\n"
+    colourIdx: 1
+    dialogue: "Very well my friend\u2026\r"
   - leftSpeaker: Uwe
     rightSpeaker: Mystery Man
     isLeftSpeaking: 1
@@ -77,6 +87,7 @@ MonoBehaviour:
     leftSpeakerIdx: 2
     rightSpeakerIdx: 3
     imgIdx: 0
+    colourIdx: 0
     dialogue: "Oh, oh man am I glad to see you!\r"
   - leftSpeaker: Uwe
     rightSpeaker: Ramesh
@@ -85,6 +96,7 @@ MonoBehaviour:
     leftSpeakerIdx: 2
     rightSpeakerIdx: 4
     imgIdx: 0
+    colourIdx: 2
     dialogue: "Likewise brother.\r"
   - leftSpeaker: Uwe
     rightSpeaker: Ramesh
@@ -93,9 +105,8 @@ MonoBehaviour:
     leftSpeakerIdx: 2
     rightSpeakerIdx: 4
     imgIdx: 0
-    dialogue: 'I thought you left?
-
-'
+    colourIdx: 0
+    dialogue: I thought you left?
   - leftSpeaker: Uwe
     rightSpeaker: Ramesh
     isLeftSpeaking: 0
@@ -103,6 +114,7 @@ MonoBehaviour:
     leftSpeakerIdx: 2
     rightSpeakerIdx: 5
     imgIdx: 0
+    colourIdx: 2
     dialogue: "I did, but something didn\u2019t sit right with me. I started researching
       the company here."
   - leftSpeaker: Uwe
@@ -112,6 +124,7 @@ MonoBehaviour:
     leftSpeakerIdx: 0
     rightSpeakerIdx: 5
     imgIdx: 0
+    colourIdx: 2
     dialogue: I looked up names, manufacturing contracts, and everything traced back
       to the Department of Defense.
   - leftSpeaker: Uwe
@@ -121,7 +134,8 @@ MonoBehaviour:
     leftSpeakerIdx: 0
     rightSpeakerIdx: 5
     imgIdx: 0
-    dialogue: 'I felt I should tell you. '
+    colourIdx: 2
+    dialogue: I felt I should tell you.
   - leftSpeaker: Uwe
     rightSpeaker: Ramesh
     isLeftSpeaking: 1
@@ -129,7 +143,8 @@ MonoBehaviour:
     leftSpeakerIdx: 0
     rightSpeakerIdx: 5
     imgIdx: 0
-    dialogue: "The DOD?! What\u2019re they doing here?\r\n"
+    colourIdx: 0
+    dialogue: "The DOD?! What\u2019re they doing here?\r"
   - leftSpeaker: Uwe
     rightSpeaker: Ramesh
     isLeftSpeaking: 0
@@ -137,6 +152,7 @@ MonoBehaviour:
     leftSpeakerIdx: 0
     rightSpeakerIdx: 5
     imgIdx: 0
+    colourIdx: 2
     dialogue: "I don\u2019t know, but if anyone can find out, it\u2019s you, Uwe."
   - leftSpeaker: Uwe
     rightSpeaker: Ramesh
@@ -145,6 +161,7 @@ MonoBehaviour:
     leftSpeakerIdx: 0
     rightSpeakerIdx: 5
     imgIdx: 0
+    colourIdx: 0
     dialogue: A construction company was one thing, but how am I supposed to stop
       the military?
   - leftSpeaker: Uwe
@@ -154,6 +171,7 @@ MonoBehaviour:
     leftSpeakerIdx: 0
     rightSpeakerIdx: 5
     imgIdx: 0
+    colourIdx: 2
     dialogue: "You\u2019re gonna surf, and keep surfing, and never stop surfing,
       with style."
   - leftSpeaker: Uwe
@@ -163,8 +181,9 @@ MonoBehaviour:
     leftSpeakerIdx: 2
     rightSpeakerIdx: 5
     imgIdx: 0
+    colourIdx: 0
     dialogue: "I suppose there\u2019s no other choice then. I\u2019ve gotta ask,
-      how did you learn about surf tricks?\r\n"
+      how did you learn about surf tricks?\r"
   - leftSpeaker: Uwe
     rightSpeaker: Ramesh
     isLeftSpeaking: 0
@@ -172,6 +191,7 @@ MonoBehaviour:
     leftSpeakerIdx: 2
     rightSpeakerIdx: 5
     imgIdx: 0
+    colourIdx: 2
     dialogue: How do you think I ended up here? I opened up the Juice Bar to support
       my surfing endeavors. I was quite the athlete in my day
   - leftSpeaker: Uwe
@@ -181,6 +201,7 @@ MonoBehaviour:
     leftSpeakerIdx: 2
     rightSpeakerIdx: 5
     imgIdx: 0
+    colourIdx: 0
     dialogue: Huh, go figure. Why the secrecy though? Why hide your identity from
       me?
   - leftSpeaker: Uwe
@@ -190,9 +211,8 @@ MonoBehaviour:
     leftSpeakerIdx: 2
     rightSpeakerIdx: 5
     imgIdx: 0
-    dialogue: 'Old Indian Custom.
-
-'
+    colourIdx: 2
+    dialogue: Old Indian Custom.
   - leftSpeaker: Uwe
     rightSpeaker: Ramesh
     isLeftSpeaking: 1
@@ -200,6 +220,5 @@ MonoBehaviour:
     leftSpeakerIdx: 2
     rightSpeakerIdx: 5
     imgIdx: 0
-    dialogue: 'Good enough for me.
-
-'
+    colourIdx: 0
+    dialogue: Good enough for me.

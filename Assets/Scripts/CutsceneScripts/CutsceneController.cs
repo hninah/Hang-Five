@@ -85,7 +85,8 @@ public class CutsceneController : MonoBehaviour
             prepareDialogue();
         }
 
-        //fade the first non-speaker and set up background
+        //fade the first non-speaker and set up background and text colour
+        dialogueText.color = getTextColour();
         updateSpeakers();
         updateSpeakerDisplay();
         updateBackgroundDisplay();
@@ -105,6 +106,7 @@ public class CutsceneController : MonoBehaviour
     void OnDisable(){
         cutsceneInput.Disable();
     }
+
 
     void prepareDialogue()
     {
@@ -140,6 +142,7 @@ public class CutsceneController : MonoBehaviour
         }
     }
 
+
     void nextLine(){
         ///Debug.Log("entering nextLine: currIndex = " + currIndex);
         //increment directions index
@@ -147,6 +150,8 @@ public class CutsceneController : MonoBehaviour
 
         //if didn't finish directions, set up next line
         if (currIndex < dirCount){
+            dialogueText.color = getTextColour();
+
             //set next line of dialogue
             prepareDialogue();
 
@@ -176,6 +181,12 @@ public class CutsceneController : MonoBehaviour
 
         //return to gameplay
         SceneManager.LoadScene("Gameplay");
+    }
+
+
+    Color getTextColour(){
+        var colourIndex = sceneInfo.directions[currIndex].colourIdx;
+        return sceneInfo.textColours[colourIndex];
     }
 
 
@@ -231,6 +242,8 @@ public class CutsceneController : MonoBehaviour
             leftImage.color = unfadedColour;
             leftNamePanel.color = unfadedColour;
             leftNameText.enabled = true;
+            //match name colour to the speaker's dialogue text colour
+            leftNameText.color = getTextColour();
         }
         //otherwise greyed-out sprite if not speaking
         else{
@@ -245,6 +258,8 @@ public class CutsceneController : MonoBehaviour
             rightImage.color = unfadedColour;
             rightNamePanel.color = unfadedColour;
             rightNameText.enabled = true;
+            //match name colour to the speaker's dialogue text colour
+            rightNameText.color = getTextColour();  
         }
         //otherwise greyed-out sprite if not speaking
         else{

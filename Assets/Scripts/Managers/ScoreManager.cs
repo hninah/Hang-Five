@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
+using UnityEngine.Events;
 
 public class ScoreManager : MonoBehaviour
 {
@@ -14,6 +15,8 @@ public class ScoreManager : MonoBehaviour
     public float scoreMultiplier = 1f;
 
     private bool gameRunning = false;
+    private bool didScoreFX = false;
+    public UnityEvent targetScoreFX = new UnityEvent();
 
     [SerializeField] private TMP_Text highScoreText;
     [SerializeField] private TMP_Text endScoreText;
@@ -45,6 +48,7 @@ public class ScoreManager : MonoBehaviour
     {
         Debug.Log("OnGameEnd beatBoss = " + GameManager.Instance.beatBoss);
         gameRunning = false;
+        didScoreFX = false; //reset this for next level
 
         int finalScore = Mathf.FloorToInt(score);
         endScoreText.text = "Your Score: " + finalScore;
@@ -84,6 +88,14 @@ public class ScoreManager : MonoBehaviour
         score += speed * scoreMultiplier * Time.deltaTime;
 
         scoreText.text = Mathf.FloorToInt(score).ToString();
+
+        //effects when player passes current target
+        if (!GameManager.Instance.beatBoss && 
+                score >= GameManager.Instance.targetScore && !didScoreFX)
+        {
+            didScoreFX = true;
+            targetScoreFX.Invoke();
+        }
     }
 
     public void ResetScore()

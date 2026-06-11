@@ -18,7 +18,10 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6afe3efb80fb72a40abd765373f6598b, type: 3}
   - {fileID: 21300000, guid: 433f75f2fdaa60948b8f45ad0a1859d2, type: 3}
   sceneStills:
-  - {fileID: 21300000, guid: a57a485f8ada0254785ef3930d811cb7, type: 3}
+  - {fileID: 21300000, guid: 7396d3cc14a00904b8b9ec7b6419163e, type: 3}
+  textColours:
+  - {r: 0.011764706, g: 0.05490196, b: 0.25490198, a: 1}
+  - {r: 0.6039216, g: 0.23137255, b: 0.011764706, a: 1}
   directions:
   - leftSpeaker: Uwe
     rightSpeaker: Ramesh
@@ -27,6 +30,7 @@ MonoBehaviour:
     leftSpeakerIdx: 3
     rightSpeakerIdx: 1
     imgIdx: 0
+    colourIdx: 0
     dialogue: "This company\u2019s gone too damn far man! It was one thing to do
       construction, but to litter the ocean with sharks?"
   - leftSpeaker: Uwe
@@ -36,6 +40,7 @@ MonoBehaviour:
     leftSpeakerIdx: 0
     rightSpeakerIdx: 1
     imgIdx: 0
+    colourIdx: 1
     dialogue: "I can\u2019t believe they killed Bark! He was the first friend I made
       when I came here!"
   - leftSpeaker: Uwe
@@ -45,6 +50,7 @@ MonoBehaviour:
     leftSpeakerIdx: 0
     rightSpeakerIdx: 1
     imgIdx: 0
+    colourIdx: 0
     dialogue: "Oh, yeah\u2026 it\u2019s a real shame\u2026"
   - leftSpeaker: Uwe
     rightSpeaker: Ramesh
@@ -53,8 +59,9 @@ MonoBehaviour:
     leftSpeakerIdx: 0
     rightSpeakerIdx: 1
     imgIdx: 0
-    dialogue: 'He was always so kind, he loved everyone. I heard you were with him
-      when he died. Please tell me, what was the last thing you guys talked about? '
+    colourIdx: 1
+    dialogue: He was always so kind, he loved everyone. I heard you were with him
+      when he died. Please tell me, what was the last thing you guys talked about?
   - leftSpeaker: Uwe
     rightSpeaker: Ramesh
     isLeftSpeaking: 1
@@ -62,6 +69,7 @@ MonoBehaviour:
     leftSpeakerIdx: 0
     rightSpeakerIdx: 1
     imgIdx: 0
+    colourIdx: 0
     dialogue: "\u2026"
   - leftSpeaker: Uwe
     rightSpeaker: Ramesh
@@ -70,6 +78,7 @@ MonoBehaviour:
     leftSpeakerIdx: 0
     rightSpeakerIdx: 1
     imgIdx: 0
+    colourIdx: 1
     dialogue: I would love to hear the last words from someone with such a kind and
       open soul.
   - leftSpeaker: Uwe
@@ -79,6 +88,7 @@ MonoBehaviour:
     leftSpeakerIdx: 0
     rightSpeakerIdx: 1
     imgIdx: 0
+    colourIdx: 0
     dialogue: "Look man, I don\u2019t think you\u2019re gonna like what he said-"
   - leftSpeaker: Uwe
     rightSpeaker: Ramesh
@@ -87,6 +97,7 @@ MonoBehaviour:
     leftSpeakerIdx: 0
     rightSpeakerIdx: 1
     imgIdx: 0
+    colourIdx: 1
     dialogue: "Hey, no pressure to share. Everyone grieves differently. I\u2019ll
       always remember him as someone who loved everybody."
   - leftSpeaker: Uwe
@@ -96,6 +107,7 @@ MonoBehaviour:
     leftSpeakerIdx: 0
     rightSpeakerIdx: 1
     imgIdx: 0
+    colourIdx: 1
     dialogue: Someone who thought all people were equal, and that we all belonged
       on the beach.
   - leftSpeaker: Uwe
@@ -105,6 +117,7 @@ MonoBehaviour:
     leftSpeakerIdx: 0
     rightSpeakerIdx: 1
     imgIdx: 0
+    colourIdx: 1
     dialogue: He was my damn hero.
   - leftSpeaker: Uwe
     rightSpeaker: Ramesh
@@ -113,4 +126,5 @@ MonoBehaviour:
     leftSpeakerIdx: 0
     rightSpeakerIdx: 1
     imgIdx: 0
+    colourIdx: 0
     dialogue: I've gotta stop this company...

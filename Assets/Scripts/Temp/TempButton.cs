@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Events;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 
@@ -12,7 +13,11 @@ public class TempButton : MonoBehaviour
     public GameObject nextButton;
     private Vector3 startPos;
     public float hoverScale = 1.15f;
-    private bool hasPressed = false;
+    private bool hasPressedContinue = false;
+
+    //display a warning the first time the player tries to quit
+    private bool hasPressedQuit = false;
+    public UnityEvent quitMessage = new UnityEvent();
 
     void Start()
     {
@@ -43,8 +48,8 @@ public class TempButton : MonoBehaviour
     }
     public void buttonPressContinue()
     {
-        if (hasPressed) return;
-        hasPressed = true;
+        if (hasPressedContinue) return;
+        hasPressedContinue = true;
         Time.timeScale = 1f;
         if (!CutsceneManager.Instance.isFinished() && GameManager.Instance.stageCleared)
         {
@@ -65,6 +70,13 @@ public class TempButton : MonoBehaviour
 
     public void buttonPressQuit()
     {
+        //display message
+        if (!hasPressedQuit){
+            hasPressedQuit = true; //record the first time we press Quit
+            quitMessage.Invoke();
+            return;
+        } 
+
         Time.timeScale = 1f;
         CutsceneManager.Instance.resetCutscenes();
         GameManager.Instance.resetGameState();
