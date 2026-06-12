@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 564435e64bc0a3f4bafab6236709d96d, type: 3}
   m_Name: Testing
   m_EditorClassIdentifier: 
-  currentPattern: {fileID: 11400000, guid: 2f13a7fcfb4218e479844d25d5d91df9, type: 2}
+  currentPattern: {fileID: 11400000, guid: 8efdae9aefa8fcc47b74df0019bc2a71, type: 2}
   transitions: []
   conditionCheckTimer: 0.5

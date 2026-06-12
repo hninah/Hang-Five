@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0889e64af05d4fd48a78bb30d1e6f66f, type: 3}
   m_Name: L1ScoreMax
   m_EditorClassIdentifier: 
-  scoreThreshold: 300
+  scoreThreshold: 500
   condition: 0
