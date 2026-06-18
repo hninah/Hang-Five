@@ -39,7 +39,7 @@ public class TutorialText : MonoBehaviour
     //step 1 of tutorial
     public void setBottomTargetText(){
         input = InputTypeManager.Instance.inputType;
-
+        
         if (input == InputTypeManager.InputType.Touchscreen){
             touchscreenBottomTarget.Invoke();
         }

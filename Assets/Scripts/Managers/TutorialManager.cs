@@ -95,7 +95,7 @@ public class TutorialManager : MonoBehaviour
         yield return new WaitForSecondsRealtime(2f);
         // switch to gameplay scene
         GameManager.Instance.tutorialCompleted = true;
-        SceneManager.LoadScene("Gameplay");
+        SceneTransitioner.Instance.LoadScene("Gameplay");
     }
 
     public void PlayerCrashed()
@@ -129,6 +129,6 @@ public class TutorialManager : MonoBehaviour
         currentStep = TutorialStep.Complete;
 
         GameManager.Instance.tutorialCompleted = true;
-        SceneManager.LoadScene("Gameplay");
+        SceneTransitioner.Instance.LoadScene("Gameplay");
     }
 }

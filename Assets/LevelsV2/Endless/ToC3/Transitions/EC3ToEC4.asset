@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 047398920545fa542967feae52df2a2e, type: 3}
+  m_Name: EC3ToEC4
+  m_EditorClassIdentifier: 
+  patternState: {fileID: 11400000, guid: 5ce7121fcd530a947985355f1999cfcd, type: 2}
+  coolDownTime: 0
+  transitionConditions:
+  - {fileID: 11400000, guid: 31f1feed3440b0d49924927c91297ab6, type: 2}

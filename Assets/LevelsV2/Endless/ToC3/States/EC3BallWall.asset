@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 564435e64bc0a3f4bafab6236709d96d, type: 3}
+  m_Name: EC3BallWall
+  m_EditorClassIdentifier: 
+  currentPattern: {fileID: 11400000, guid: 1ffc29d19a07e0b4aa25e875b1cea383, type: 2}
+  transitions:
+  - {fileID: 11400000, guid: af988a1d9d3233c4b96072289c1defc2, type: 2}
+  - {fileID: 11400000, guid: afb64886534130142a0a02dafff010e4, type: 2}
+  conditionCheckTimer: 1.7

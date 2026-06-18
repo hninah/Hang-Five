@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04972553d9b2d6e44ae78331f56c49a9, type: 3}
+  m_Name: EvilBark
+  m_EditorClassIdentifier: 
+  characterName: Evil Bark
+  voiceClips:
+  - {fileID: 8300000, guid: cfe3217f7abeea846b21b30831ce55dc, type: 3}
+  - {fileID: 8300000, guid: 34672a079122dec4ca1a2e5175b4e952, type: 3}
+  - {fileID: 8300000, guid: 3cf786a7004aaa34f8ddde4bd2157265, type: 3}
+  - {fileID: 8300000, guid: 03a760383706c88459152f0a8efc33cc, type: 3}
+  - {fileID: 8300000, guid: 70f1578f37bfd6f42929e7453e35783e, type: 3}
+  - {fileID: 8300000, guid: dd73fa72194a12f469609a6b5b4a5de5, type: 3}
+  - {fileID: 8300000, guid: 2326a44c0218d7649a3e0685b31c9d2a, type: 3}
+  - {fileID: 8300000, guid: ee02626ed1786b84e8ec1cb4248c6550, type: 3}
+  - {fileID: 8300000, guid: 0f3d656589ae33f4f9cc9f26330cf896, type: 3}
+  - {fileID: 8300000, guid: 0a16f4b93a2149e4d8c5a8c61f82dba1, type: 3}
+  - {fileID: 8300000, guid: e3ccaf7aa4f4afc429fca7d13b1a48db, type: 3}
+  - {fileID: 8300000, guid: a061836d6f01b7d41b22f1e104e80531, type: 3}
+  - {fileID: 8300000, guid: aff4748a6b0b207439fa8683c7e00bb6, type: 3}
+  - {fileID: 8300000, guid: 227750f8c112f24479cae04e7fce0ba1, type: 3}
+  - {fileID: 8300000, guid: a93dbbf018b0c1f4e91041506cbe0230, type: 3}
+  - {fileID: 8300000, guid: 7dcbc2bae9cd5084fb3b0438031484f0, type: 3}
+  - {fileID: 8300000, guid: 1ba5c05be0ffaec488ecbc8cde94e9a4, type: 3}
+  - {fileID: 8300000, guid: 8430720b145a38a40adf1e5c43107cb1, type: 3}

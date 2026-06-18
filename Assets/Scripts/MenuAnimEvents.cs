@@ -21,11 +21,11 @@ public class MenuAnimEvents : MonoBehaviour
     {
         if (!GameManager.Instance.tutorialCompleted)
         {
-            SceneManager.LoadScene("Tutorial");
+            SceneTransitioner.Instance.LoadScene("Tutorial");
         }
         else
         {
-            SceneManager.LoadScene("Gameplay");
+            SceneTransitioner.Instance.LoadScene("Gameplay");
         }
     }
 }

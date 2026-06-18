@@ -9,7 +9,8 @@ public class PatternStateManager : MonoBehaviour
         TRANSITION_TIMING,
         COOLDOWN,
         SPAWNING,
-        SPAWN_WAIT
+        SPAWN_WAIT,
+        ENDLESS_TRANSITION
     }
 
     private static PatternStateManager _instance;
@@ -25,12 +26,26 @@ public class PatternStateManager : MonoBehaviour
     private float rngNum = 0.0f;
     public float RngNum { get { return rngNum; } }
 
+    private bool inEndless = false;
+    [SerializeField] private bool debugEndless = false;
+
     // Start is called before the first frame update
     void Start()
     {
         if (_instance != null)
         {
             Destroy(gameObject);
+        }
+
+        if (GameManager.Instance != null && GameManager.Instance.beatBoss)
+        {
+            inEndless = true;
+        }
+
+        if (debugEndless)
+        {
+            debugging = true;
+            inEndless = true;
         }
 
         _instance = this;
@@ -52,7 +67,6 @@ public class PatternStateManager : MonoBehaviour
                 coolDownTimer = Mathf.Max(coolDownTimer - Time.deltaTime, 0.0f);
 
                 managerState = coolDownTimer <= 0.0f ? State.SPAWNING : managerState;
-
                 break;
 
             case State.TRANSITION_TIMING:
@@ -63,26 +77,15 @@ public class PatternStateManager : MonoBehaviour
                     break;
                 }
 
-                int j = 1;
-                int numTransitions = currentState.transitions.Length;
                 rngNum = Random.Range(0.0f, 1.0f);
 
-                foreach (PatternStateTransition transition in currentState.transitions)
+                if (!inEndless)
                 {
-                    if (transition.stateTransition(Player.Instance))
-                    {
-                        currentState = transition.patternState;
-                        coolDownTimer = transition.coolDownTime;
-                        break;
-                    }
-
-                    j++;
+                    selectPattern();
                 }
-
-                if (j > numTransitions)
+                else
                 {
-                    Debug.LogError("Unable to find valid pattern state transition. Re-using current state.");
-                    coolDownTimer = 2.0f;
+                    selectEndlessPattern();
                 }
 
                 managerState = State.COOLDOWN;
@@ -106,6 +109,51 @@ public class PatternStateManager : MonoBehaviour
         }
     }
 
+    private void selectPattern()
+    {
+        int j = 1;
+        int numTransitions = currentState.transitions.Length;
+
+        foreach (PatternStateTransition transition in currentState.transitions)
+        {
+            if (transition.stateTransition(Player.Instance))
+            {
+                currentState = transition.patternState;
+                coolDownTimer = transition.coolDownTime;
+                break;
+            }
+
+            j++;
+        }
+
+        if (j > numTransitions)
+        {
+            Debug.LogError("Unable to find valid pattern state transition. Re-using current state.");
+            coolDownTimer = 2.0f;
+        }
+    }
+
+    private void selectEndlessPattern()
+    {
+        if (currentState.transitions.Length == 0)
+        {
+            print("We have no transitions.");
+            return;
+        }
+
+        // We've met the transition to the next score checkpoint
+        if (currentState.transitions[0].stateTransition(Player.Instance))
+        {
+            currentState = currentState.transitions[0].getNextState();
+            coolDownTimer = currentState.transitions[0].coolDownTime;
+            return;
+        }
+
+        // I don't want to have to write out a billion probability conditions, so we're doing this instead
+        currentState = currentState.transitions[1].getNextState();
+        coolDownTimer = currentState.transitions[1].coolDownTime;
+    }
+
     private void spawnPattern()
     {
         for (int i = 0; i < currentState.currentPattern.obstacleInfoArr.Length; ++i)
@@ -120,7 +168,7 @@ public class PatternStateManager : MonoBehaviour
     {
         Debug.Log($"Pattern State Debugging: {debugging}");
 
-        PatternState state = GameManager.Instance.getStartingState();
+        PatternState state = GameManager.Instance != null ? GameManager.Instance.getStartingState() : null;
 
         if (!debugging && state != null)
         {

@@ -55,6 +55,11 @@ public class CutsceneController : MonoBehaviour
     [SerializeField] float charactersPerSecond = 30;
     float characterUpdateTime { get { return 1 / charactersPerSecond; } }
     private Coroutine currentTextProgress;
+    private bool revealText = false;
+    [SerializeField] private List<CharacterVoice> characterVoices;
+    private CharacterVoice currentVoice;
+    private Dictionary<string, CharacterVoice> nameToVoiceMap = new Dictionary<string, CharacterVoice>();
+    [SerializeField] private AudioSource voiceSource;
 
     //set up the input and first line
     void Awake(){
@@ -64,6 +69,12 @@ public class CutsceneController : MonoBehaviour
 
        //start the cutscene input
         cutsceneInput = new PlayerInput();
+
+        // Initialize the Character voices into a dictionary for easier indexing later
+        foreach (CharacterVoice voice in characterVoices)
+        {
+            nameToVoiceMap[voice.characterName] = voice;
+        }
 
         //get current cutscene info from manager
         if (CutsceneManager.Instance != null && !CutsceneManager.Instance.isFinished()){
@@ -133,8 +144,17 @@ public class CutsceneController : MonoBehaviour
     {
         while (textQueue.Count > 0)
         {
-            // Adds characters to the text at a speed of charactersPerSecond
-            yield return new WaitForSeconds(characterUpdateTime);
+            // We only want the progressive text to happen if the player doesn't try to advance.
+            if (!revealText)
+            {
+                // Adds characters to the text at a speed of charactersPerSecond
+                yield return new WaitForSeconds(characterUpdateTime);
+
+                if (currentVoice != null)
+                {
+                    voiceSource.PlayOneShot(currentVoice.getVoiceClip(), 0.7f);
+                }
+            }
 
             builder.Append(textQueue.Dequeue());
 
@@ -145,6 +165,15 @@ public class CutsceneController : MonoBehaviour
 
     void nextLine(){
         ///Debug.Log("entering nextLine: currIndex = " + currIndex);
+        if (!revealText && textQueue.Count > 0)
+        {
+            revealText = true;
+            return;
+        }
+
+        // The player will need to press a button again to skip to the next line of dialogue
+        revealText = false;
+
         //increment directions index
         ++currIndex; 
 
@@ -180,7 +209,7 @@ public class CutsceneController : MonoBehaviour
         ///Debug.Log("Leaving the cutscene");
 
         //return to gameplay
-        SceneManager.LoadScene("Gameplay");
+        SceneTransitioner.Instance.LoadScene("Gameplay");
     }
 
 
@@ -231,6 +260,15 @@ public class CutsceneController : MonoBehaviour
         //update speaker names in case the speaker changed
         leftNameText.text = sceneInfo.directions[currIndex].leftSpeaker;
         rightNameText.text = sceneInfo.directions[currIndex].rightSpeaker;
+
+        //update speaker with correct voice
+        string speakerName = sceneInfo.directions[currIndex].isLeftSpeaking ? sceneInfo.directions[currIndex].leftSpeaker : sceneInfo.directions[currIndex].rightSpeaker;
+        if (CutsceneManager.Instance != null && CutsceneManager.Instance.getCurrentCutscene() >= 9 && speakerName == "Bark Shaits")
+        {
+            // A duct tape fix since we don't have an easy way to discern who a speaker is besides their name, and his name is still bark shaits in the cutscenes that matter
+            speakerName = "Evil Bark";
+        }
+        currentVoice = nameToVoiceMap.ContainsKey(speakerName) ? nameToVoiceMap[speakerName] : null;
     }
 
 

@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 564435e64bc0a3f4bafab6236709d96d, type: 3}
+  m_Name: EC1RandGull
+  m_EditorClassIdentifier: 
+  currentPattern: {fileID: 11400000, guid: dfc573559163f1d44832fb0101e467d4, type: 2}
+  transitions:
+  - {fileID: 11400000, guid: af87db285229aed4899f253a34d99120, type: 2}
+  - {fileID: 11400000, guid: a1b15a3bd5476d64cad1e3bac39d1c75, type: 2}
+  conditionCheckTimer: 0.5

@@ -53,7 +53,7 @@ public class TempButton : MonoBehaviour
         Time.timeScale = 1f;
         if (!CutsceneManager.Instance.isFinished() && GameManager.Instance.stageCleared)
         {
-            SceneManager.LoadScene("Cutscene");
+            SceneTransitioner.Instance.LoadScene("Cutscene");
         }
         else
         {
@@ -80,7 +80,7 @@ public class TempButton : MonoBehaviour
         Time.timeScale = 1f;
         CutsceneManager.Instance.resetCutscenes();
         GameManager.Instance.resetGameState();
-        SceneManager.LoadScene("MainMenu");
+        SceneTransitioner.Instance.LoadScene("MainMenu");
     }
 
 

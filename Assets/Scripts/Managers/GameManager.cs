@@ -151,7 +151,14 @@ public class GameManager : MonoBehaviour
 
     public PatternState getStartingState()
     {
-        return startingStates[CutsceneManager.Instance.getCurrentCutscene()];
+        int idx = beatBoss ? 13 : CutsceneManager.Instance.getCurrentCutscene();
+
+        if (idx < 0 || idx > startingStates.Length)
+        {
+            return null;
+        }
+
+        return startingStates[idx];
     }
 
 

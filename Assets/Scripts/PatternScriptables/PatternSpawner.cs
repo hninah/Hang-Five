@@ -19,7 +19,7 @@ public class PatternSpawner : MonoBehaviour
 
             if (randomSpawn)
             {
-                spawnPosition.y = Random.Range(-5.8f, 2.31f);
+                spawnPosition.y = Random.Range(-4.2f, 1.85f);
                 randomSpawn = false;
             }
 

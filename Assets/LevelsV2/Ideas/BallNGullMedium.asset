@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 443a146ab99b5444595b8b0763adf9bf, type: 3}
+  m_Name: BallNGullMedium
+  m_EditorClassIdentifier: 
+  obstacleInfoArr:
+  - obstacle: {fileID: 2963685289427379715, guid: b45699529837bd245a57f609efa5bed3, type: 3}
+    spawnIdx: 1
+    timeTillSpawn: 0
+    randomSpawnY: 0
+  - obstacle: {fileID: 2144488072472814359, guid: 8e5e73df4fcf70e488cdfae42a03cdaf, type: 3}
+    spawnIdx: 2
+    timeTillSpawn: 0
+    randomSpawnY: 0
+  - obstacle: {fileID: 2963685289427379715, guid: b45699529837bd245a57f609efa5bed3, type: 3}
+    spawnIdx: 3
+    timeTillSpawn: 0.3
+    randomSpawnY: 0

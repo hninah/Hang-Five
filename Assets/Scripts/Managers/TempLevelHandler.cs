@@ -29,12 +29,11 @@ public class TempLevelHandler : MonoBehaviour
 
     public void selectLevelManager()
     {
-        Debug.Log(CutsceneManager.Instance.getCurrentCutscene());
-        bool beatGame = GameManager.Instance.beatBoss;
+        bool beatGame = GameManager.Instance == null ? false : GameManager.Instance.beatBoss;
         bool hasCutsceneManager = CutsceneManager.Instance != null;
         bool validStateTypeLevel = hasCutsceneManager ? newLevelType(CutsceneManager.Instance.getCurrentCutscene()) : PatternStateManager.Instance.Debugging;
 
-        if (!beatGame && validStateTypeLevel)
+        if (validStateTypeLevel || PatternStateManager.Instance.Debugging)
         {
             Debug.Log("PATTERN STATE MANAGER IN USE.");
             newLevelManager.GetComponent<PatternStateManager>().enabled = true;

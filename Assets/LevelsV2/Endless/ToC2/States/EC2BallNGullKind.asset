@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 564435e64bc0a3f4bafab6236709d96d, type: 3}
+  m_Name: EC2BallNGullKind
+  m_EditorClassIdentifier: 
+  currentPattern: {fileID: 11400000, guid: eb57204e3f11f6643ad18cf6d62287da, type: 2}
+  transitions:
+  - {fileID: 11400000, guid: 1ea7dd67292d46f4799f49df33213b15, type: 2}
+  - {fileID: 11400000, guid: 300d94bb8c6dcaf43ab585bd89029e13, type: 2}
+  conditionCheckTimer: 1.6

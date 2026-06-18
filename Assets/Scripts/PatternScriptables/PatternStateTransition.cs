@@ -14,7 +14,7 @@ public class PatternStateTransition : ScriptableObject
 
     public PatternTransitionCondition[] transitionConditions;
 
-    public bool stateTransition(Player player)
+    public virtual bool stateTransition(Player player)
     {
         foreach (PatternTransitionCondition condition in transitionConditions)
         {
@@ -25,5 +25,10 @@ public class PatternStateTransition : ScriptableObject
         }
 
         return true;
+    }
+
+    public virtual PatternState getNextState()
+    {
+        return patternState;
     }
 }

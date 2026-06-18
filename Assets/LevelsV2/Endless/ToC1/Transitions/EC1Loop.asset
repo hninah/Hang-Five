@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3996c6ffd31e1484996e2d21a0be9377, type: 3}
+  m_Name: EC1Loop
+  m_EditorClassIdentifier: 
+  patternState: {fileID: 11400000, guid: e4bc2531744f3f549a42b9911ede577f, type: 2}
+  coolDownTime: 0
+  transitionConditions:
+  - {fileID: 11400000, guid: 6af4a9d18345dff439738a1630909c17, type: 2}
+  transitionStates:
+  - {fileID: 11400000, guid: 2a59ef31cf8e2ee44afb2817c77ec2ed, type: 2}
+  - {fileID: 11400000, guid: d9023caec0d358d469b7c384254e2fa4, type: 2}
+  - {fileID: 11400000, guid: 3fcf647501947444cb7c8a5a3a5a74bf, type: 2}
+  - {fileID: 11400000, guid: 6f1e1daf1bf0ffd46aefd8f70c9f5137, type: 2}
+  - {fileID: 11400000, guid: cb4b4e18b37a77b4db8fe53aa3da034d, type: 2}
+  - {fileID: 11400000, guid: e4bc2531744f3f549a42b9911ede577f, type: 2}
+  - {fileID: 11400000, guid: c5105b20dcbf5a54885c0356b2abca86, type: 2}
