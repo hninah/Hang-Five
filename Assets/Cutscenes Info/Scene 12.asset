@@ -13,14 +13,14 @@ MonoBehaviour:
   m_Name: Scene 12
   m_EditorClassIdentifier: 
   speakerSprites:
-  - {fileID: 21300000, guid: d2e63eb6867cd73469e92e26006f3133, type: 3}
-  - {fileID: 21300000, guid: c9c3bcea0c73cf342adcef0b0a29ac10, type: 3}
-  - {fileID: 21300000, guid: 1dcddc6faae0ed8479b9ea6f3ca8bcc7, type: 3}
-  - {fileID: 21300000, guid: 9c836a704a16e924e882110d8acbca87, type: 3}
-  - {fileID: 21300000, guid: 8ad0163066f21a24998ceb67fe0de3e2, type: 3}
-  - {fileID: 21300000, guid: 6569f3bad81167743b09b2f983828fdb, type: 3}
-  - {fileID: 21300000, guid: 5b16b05fb59b3a64cac6addf6999c1c3, type: 3}
-  - {fileID: 21300000, guid: 59510ffb5be38444f8af66795b07b942, type: 3}
+  - {fileID: 21300000, guid: a3923ef0619533b46a8341f649d249b9, type: 3}
+  - {fileID: 21300000, guid: 46d6e552355251f469d8f648b4b502e3, type: 3}
+  - {fileID: 21300000, guid: df3af13f6190f3d45ab931e4083fcd1b, type: 3}
+  - {fileID: 21300000, guid: 37b74624468b92f42ab335bea66e16a1, type: 3}
+  - {fileID: 21300000, guid: 371eb23850c23df4b97a855d0b9ddba3, type: 3}
+  - {fileID: 21300000, guid: 4aa80d4eae0f0ed418709abae8605161, type: 3}
+  - {fileID: 21300000, guid: 528154f4a1eb0b94490c0cf40434fd84, type: 3}
+  - {fileID: 21300000, guid: 593f99842150aa44f80086fdbae55bb8, type: 3}
   sceneStills:
   - {fileID: 21300000, guid: 7396d3cc14a00904b8b9ec7b6419163e, type: 3}
   textColours:

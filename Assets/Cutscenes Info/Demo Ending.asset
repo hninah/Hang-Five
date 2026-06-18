@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Demo Ending
   m_EditorClassIdentifier: 
   speakerSprites:
-  - {fileID: 21300000, guid: 433f75f2fdaa60948b8f45ad0a1859d2, type: 3}
-  - {fileID: 21300000, guid: d37d63abaf6c441429e37a5eb4319bf6, type: 3}
-  - {fileID: 21300000, guid: 9f463d9f5893fc74abe8f1212c86005f, type: 3}
+  - {fileID: 21300000, guid: a4093143c1b5b1c48b96db579f56cfeb, type: 3}
+  - {fileID: 53800276, guid: 5a226bd02d5be234097a6f0b41f05655, type: 3}
+  - {fileID: 1682699705, guid: 4a96a675a2897bd46961fff24e027011, type: 3}
   sceneStills:
   - {fileID: 21300000, guid: 7396d3cc14a00904b8b9ec7b6419163e, type: 3}
   textColours:

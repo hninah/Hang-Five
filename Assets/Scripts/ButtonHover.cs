@@ -6,20 +6,32 @@ using UnityEngine.InputSystem;
 
 public class ButtonHover : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
-    private Animator animator;
     private Vector3 startPos;
     public float hoverScale = 1.15f;
 
     //input actions to generalize for different inputs
     private PlayerInput playerInput;
     private InputAction submit;
+    
+    //check if there's actually an animator for this button
+    private Animator animator;
+    private bool hasAnimator = false;
 
 
     void Awake(){
         playerInput = new PlayerInput();
+
         animator = GetComponent<Animator>();
+        if (animator != null){
+            hasAnimator = true;
+        }
+    }
+
+
+    void Start(){
         startPos = transform.localPosition;
     }
+
 
     void OnEnable(){
         playerInput.Enable();
@@ -38,7 +50,7 @@ public class ButtonHover : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
 
         GameObject selected = EventSystem.current.currentSelectedGameObject;
 
-        if (selected == gameObject){
+        if (selected == gameObject && hasAnimator == true){
             animator.SetBool("hover", true);
         }
     }
@@ -65,18 +77,22 @@ public class ButtonHover : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
     //run button animation if mouse is over the button
     public void OnPointerEnter(PointerEventData eventData)
     {
-        animator.SetBool("hover", true);
+        if (hasAnimator == true){
+            animator.SetBool("hover", true);
+        }
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        animator.SetBool("hover", false);
+        if (hasAnimator == true){
+            animator.SetBool("hover", false);
+        }
     }
 }
 
 
 
-/// ORIGINAL BUTTON HOVER FOR REFERENCE ///
+/// EARLIER BUTTON HOVER FOR REFERENCE ///
 /*
 public class ButtonHover : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
