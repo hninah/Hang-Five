@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Tricks
   m_EditorClassIdentifier: 
   speakerSprites:
-  - {fileID: 21300000, guid: f3f229a9dc844814da08eab1e3dd6299, type: 3}
-  - {fileID: 21300000, guid: 1599abee4fed5634fb3a9fca33be6f63, type: 3}
+  - {fileID: 21300000, guid: d6225790f61e4c244832205e3c3f3776, type: 3}
+  - {fileID: 21300000, guid: e368aa8fde89f7a4991a9a20001dea17, type: 3}
   sceneStills:
   - {fileID: 21300000, guid: 4fa72b28b27596c4dbb0b339774ac0b9, type: 3}
   textColours:

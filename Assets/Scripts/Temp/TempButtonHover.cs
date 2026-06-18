@@ -15,6 +15,7 @@ public class TempButtonHover : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //always hover
         float t = Time.time;
         float y = Mathf.Sin(t * 4f) * 2f;
         transform.localPosition = startPos + new Vector3(0, y, 0);

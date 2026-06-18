@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: Ramesh Intro
   m_EditorClassIdentifier: 
   speakerSprites:
-  - {fileID: 21300000, guid: 470dc91e34c80744e88dcae0e387fbc4, type: 3}
-  - {fileID: 21300000, guid: f3f229a9dc844814da08eab1e3dd6299, type: 3}
-  - {fileID: 21300000, guid: 6afe3efb80fb72a40abd765373f6598b, type: 3}
-  - {fileID: 21300000, guid: 6569f3bad81167743b09b2f983828fdb, type: 3}
-  - {fileID: 21300000, guid: 433f75f2fdaa60948b8f45ad0a1859d2, type: 3}
+  - {fileID: 21300000, guid: 88753f2c15863c74094d40b8ca4de063, type: 3}
+  - {fileID: 21300000, guid: d6225790f61e4c244832205e3c3f3776, type: 3}
+  - {fileID: 21300000, guid: c03553d42ea79554e9930fb21a174ecd, type: 3}
+  - {fileID: 21300000, guid: 4aa80d4eae0f0ed418709abae8605161, type: 3}
+  - {fileID: 21300000, guid: a4093143c1b5b1c48b96db579f56cfeb, type: 3}
   sceneStills:
   - {fileID: 21300000, guid: b91d79cb1a952324da9d9e0ead00b747, type: 3}
   textColours:

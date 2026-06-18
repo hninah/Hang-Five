@@ -21,6 +21,7 @@ public class MenuAnimEvents : MonoBehaviour
     {
         if (!GameManager.Instance.tutorialCompleted)
         {
+            //SceneManager.LoadScene("AnimatedCutscene");
             SceneManager.LoadScene("Tutorial");
         }
         else

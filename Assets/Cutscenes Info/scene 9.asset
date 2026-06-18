@@ -13,18 +13,18 @@ MonoBehaviour:
   m_Name: scene 9
   m_EditorClassIdentifier: 
   speakerSprites:
-  - {fileID: 21300000, guid: 94f00ab4694278841ad6f37bb21b1ab0, type: 3}
-  - {fileID: 21300000, guid: 33e755e8e3d062a43b73ee7871459816, type: 3}
-  - {fileID: 21300000, guid: 4148b6e50937c054385b814e45e0960e, type: 3}
-  - {fileID: 21300000, guid: d804a78ff59d5e6488e9ec34e2ac6706, type: 3}
-  - {fileID: 21300000, guid: 4768187127b129846b926ab8b3bf0eb7, type: 3}
-  - {fileID: 21300000, guid: 03fb54c6ce18a7849ae07882d1bca245, type: 3}
-  - {fileID: 21300000, guid: b36817e67d2c6d3409e1e73df666b75a, type: 3}
-  - {fileID: 21300000, guid: 71b85d8339e81c84ca4b4bd8487ca420, type: 3}
-  - {fileID: 21300000, guid: f3f229a9dc844814da08eab1e3dd6299, type: 3}
-  - {fileID: 21300000, guid: 433f75f2fdaa60948b8f45ad0a1859d2, type: 3}
-  - {fileID: 21300000, guid: ae9ae039b7ac3e249aea6fe424d68c5e, type: 3}
-  - {fileID: 21300000, guid: 1599abee4fed5634fb3a9fca33be6f63, type: 3}
+  - {fileID: 21300000, guid: 4fbe794db4a586f4c89d6efb6abfd8b9, type: 3}
+  - {fileID: 21300000, guid: 61c9acbb7caaac349b7da191645d34e6, type: 3}
+  - {fileID: 21300000, guid: fea581179ab3a9642bdc609dd0182c17, type: 3}
+  - {fileID: 21300000, guid: 105fc0301aee9b3468b83be9f1aa9b36, type: 3}
+  - {fileID: 21300000, guid: 317bf8bf0c5a2404291563968fe1d0b8, type: 3}
+  - {fileID: 21300000, guid: 4a37e385d0678214791b69c722eb2ba8, type: 3}
+  - {fileID: 21300000, guid: 1d0d5a508da91b242b95174118a3c6b3, type: 3}
+  - {fileID: 21300000, guid: f0dfdc94e0c6e184bb876865aa42cf57, type: 3}
+  - {fileID: 21300000, guid: d6225790f61e4c244832205e3c3f3776, type: 3}
+  - {fileID: 21300000, guid: a4093143c1b5b1c48b96db579f56cfeb, type: 3}
+  - {fileID: 21300000, guid: 48f54c6b8e19cc94b82015f5c247dcaf, type: 3}
+  - {fileID: 21300000, guid: e368aa8fde89f7a4991a9a20001dea17, type: 3}
   - {fileID: 21300000, guid: db6a5431ce94cab409f66eda1465ff39, type: 3}
   sceneStills:
   - {fileID: 21300000, guid: 4fa72b28b27596c4dbb0b339774ac0b9, type: 3}
