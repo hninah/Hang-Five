@@ -9,10 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 047398920545fa542967feae52df2a2e, type: 3}
-  m_Name: EToEC1
+  m_Script: {fileID: 11500000, guid: 0889e64af05d4fd48a78bb30d1e6f66f, type: 3}
+  m_Name: ToC1
   m_EditorClassIdentifier: 
-  patternState: {fileID: 11400000, guid: 3fcf647501947444cb7c8a5a3a5a74bf, type: 2}
-  coolDownTime: 0
-  transitionConditions:
-  - {fileID: 11400000, guid: 753d5261c943e6e45bcb6784de92803f, type: 2}
+  scoreThreshold: 300
+  condition: 0
